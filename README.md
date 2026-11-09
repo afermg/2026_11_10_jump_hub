@@ -21,12 +21,17 @@ git status --short
 git log --oneline --left-right HEAD...oppy-overleaf/master
 ```
 
-Reconcile upstream changes first; stop on substantive conflicts. After reviewing and committing focused changes, publish without force:
+**Presenter preference (9 November 2026): push requested slide updates to Overleaf by default after building, validating and committing them, unless explicitly asked for a local-only preview.** This is authorization for the requested deck edits, not permission to overwrite concurrent author changes, alter project sharing, or submit anything to a venue. No background synchronization service is implied.
+
+Reconcile upstream changes first; stop on substantive conflicts. Publish without force and verify local HEAD equals the freshly fetched live Overleaf branch:
 
 ```sh
-git push origin HEAD:main
 git push oppy-overleaf HEAD:master
+git fetch oppy-overleaf master
+test "$(git rev-parse HEAD)" = "$(git rev-parse oppy-overleaf/master)"
 ```
+
+The GitHub mirror can be synchronized separately with `git push origin HEAD:main`.
 
 Keep GitHub private unless explicitly approved otherwise; preserve the presenter's Overleaf sharing settings. The closing **Slides QR and link intentionally still point to the public FASEB PDF**, not this new draft. Replace them together only after deciding how to distribute the new talk. The inherited demo recording and JUMP Hub links are unchanged.
 
@@ -50,4 +55,4 @@ Source: [FASEB deck](https://github.com/afermg/2026_10_21_faseb_jump_hub), exact
 
 The nocodazole preflight reproduces published summary-table values, with URLs and input hashes in its saved provenance. The annotation snapshot defines peers independently of the inspected rankings. Two deterministic gallery previews were visually reviewed and added without image modification; their source URLs/hashes and limitations are recorded separately. No full replicate-level analysis, peer enrichment, dose/time alignment or end-to-end live backend rehearsal has been completed. Existing attribution and third-party terms remain; no new blanket license is granted. The inherited cp_measure speed claim and other date-sensitive content can be revisited during revision.
 
-Validation: local XeLaTeX build and QPDF checks; native Overleaf compilation is a separate gate. Browser preview rendering is not implied by a Git push. Nocodazole preflight was executed against cached compound inputs; saved outputs and preview hashes are recorded. Historical SLC2A2 query tests are retained. The current revision is a local preview until explicitly published.
+Validation: local XeLaTeX build and QPDF checks; native Overleaf compilation is a separate gate. Browser preview rendering is not implied by a Git push. Nocodazole preflight was executed against cached compound inputs; saved outputs and preview hashes are recorded. Historical SLC2A2 query tests are retained. Publish validated slide edits to Overleaf by default as specified above; report Git publication separately from native Overleaf compilation and browser rendering.
