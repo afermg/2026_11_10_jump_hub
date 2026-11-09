@@ -167,69 +167,89 @@ The Hub contains practical guides to help biologists use JUMP.
 # No-code guides include availability queries, JUMP_rr and Morpheus heatmaps. Dataset explanations describe experimental context. The Guide to Cell Painting for Biologists is an external Cimini Lab resource linked by the Hub, not a guide newly authored by us.
 # The MisLocus how-to is a separate VarChAMP companion workflow, not a JUMP assay or one of the Colab notebooks. Do not promise it runs in Colab.
 
-** Was my compound tested? Nocodazole
+** First, an extreme example: nocodazole
 #+BEGIN_EXPORT latex
-\begin{block}{A familiar biological question}
-Can morphology recover nocodazole's annotated mechanism?
-\end{block}
-\begin{itemize}
-\item Nocodazole is present: \texttt{JCP2022\_047835}.
-\item Annotated mechanism: tubulin polymerization inhibitor.
-\item Colchicine, vinblastine, vincristine and mebendazole are also present.
-\item For this example, use CellProfiler-derived profiles only.
-\end{itemize}
+\begin{columns}[c,onlytextwidth]
+\begin{column}{0.48\textwidth}
+\centering\textbf{DMSO control}\par\smallskip
+\includegraphics[width=0.88\linewidth,height=0.60\textheight,keepaspectratio]{assets/dmso-source2-A02-site1.jpg}
+\end{column}
+\begin{column}{0.48\textwidth}
+\centering\textbf{Nocodazole}\par\smallskip
+\includegraphics[width=0.88\linewidth,height=0.60\textheight,keepaspectratio]{assets/nocodazole-source2-P15-site1.jpg}
+\end{column}
+\end{columns}
 \medskip
-{\small Start with a simple query: ``Find nocodazole and its annotations in JUMP.''}
-\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broad.io/compound}{JUMP\_rr compounds}; Repurposing annotations; checked 9 November 2026}
+{\small An obvious change in this field pair. Could cell density dominate the profile?}
+\par\smallskip
+{\scriptsize Same source and plate; one illustrative field pair, not a direct assay of microtubules.}
 #+END_EXPORT
 
-# Presence verified in current compound match, interpretable feature and gallery tables; see demo/rehearsal-nocodazole/.
-# Annotation class was defined before inspecting match rankings: microtubule inhibitor or tubulin polymerization inhibitor, excluding stabilizing-agent labels. All 20 unique IDs, including nocodazole, occur in the match and feature tables.
-# Annotation source: JUMP_lite/metadata/repurposed_compounds.tsv at dedfa397eea20542ce113c7dba38945ba6f26afd; duplicated rows deduplicated. This supplies annotations only: the query uses full JUMP_rr, not the JUMP-lite image cohort.
-# Nocodazole's annotation target field lists HPGDS, not a complete mechanistic target set. Use the MOA annotation here; do not infer tubulin target genes from that field.
+# Nocodazole is now the opening extreme reference, not the main investigation.
+# Unchanged source_2/1086292020 previews, DMSO A02 and nocodazole P15, site 1; see demo/rehearsal-nocodazole/image-provenance.json.
+# The sparse treated field does not prove toxicity or mitotic arrest; CP does not directly stain tubulin.
+# Original nocodazole activity/match extracts remain in demo/rehearsal-nocodazole/; they are not blebbistatin evidence.
 
-** Which compounds look similar to nocodazole?
+** Next: blebbistatin, a known biological effect
 #+BEGIN_EXPORT latex
-\textbf{Query: ``Show nocodazole's closest published matches.''}\par\medskip
-\begin{tabular}{@{}l r l@{}}
-\textbf{Annotated peer} & \textbf{Similarity} & \textbf{JUMP reagent ID} \\[5pt]
-Colchicine & 0.934 & \texttt{JCP2022\_033814} \\
-CYT-997 & 0.916 & \texttt{JCP2022\_056401} \\
-Parbendazole & 0.916 & \texttt{JCP2022\_110440} \\
-Oxibendazole & 0.902 & \texttt{JCP2022\_077096}
+\begin{block}{A more focused question}
+Can we see evidence consistent with altered contractility or cytokinesis?
+\end{block}
+\begin{itemize}
+\item Blebbistatin inhibits myosin II; it can impair contractility and cell division.
+\item JUMP reagent: \texttt{JCP2022\_052617}, annotated blebbistatin-(+/-).
+\item Inspect cell shape, nuclear organization and matched controls.
+\item Use CellProfiler-derived profiles; distinguish prior biology from observations.
+\end{itemize}
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://doi.org/10.1126/science.1081412}{Straight et al., Science (2003)}; \href{https://broad.io/compound}{JUMP\_rr}; Repurposing annotations}
+#+END_EXPORT
+
+# Known biological action: Straight et al. (2003), DOI 10.1126/science.1081412. Expected cytokinesis changes are prior biology, not inferred from our preview.
+# JUMP uses the racemate blebbistatin-(+/-), JCP2022_052617 / LZAXPYOBKSJSEX-UHFFFAOYSA-N; do not describe it as enantiopure active reagent.
+# Saved summaries and input hashes: demo/rehearsal-blebbistatin/. A lower activity score does not establish lower toxicity, stronger specificity or reproducibility.
+
+** Which compounds look similar to blebbistatin?
+#+BEGIN_EXPORT latex
+\textbf{Query: ``Show the closest published matches and resolve their annotations.''}\par\medskip
+\begin{tabular}{@{}l r@{}}
+\textbf{Returned match} & \textbf{Similarity} \\[5pt]
+PF-04418948 & 0.737 \\
+\texttt{JCP2022\_018073} & 0.732 \\
+\texttt{JCP2022\_034452} & 0.731
 \end{tabular}
 \medskip
 \begin{itemize}
-\item Four annotated peers occur among the five highest returned matches.
-\item Similar morphology suggests a useful biological connection.
+\item These are profile matches, not verified myosin-II inhibitors.
+\item Missing names or annotations need resolution, not a biological label.
+\item Do the matches share a phenotype, or a confounding change?
 \end{itemize}
-{\footnotesize CellProfiler-derived, batch-corrected profiles; published ranked subset, not an exhaustive screen.}
+{\footnotesize Published ranked subset; the saved annotation snapshot is incomplete.}
 \par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broad.io/compound}{JUMP\_rr compound matches}; checked 9 November 2026}
 #+END_EXPORT
 
-# These four rows are the annotation-defined peers among the five highest returned matches, not the complete top five. JCP2022_096054, similarity 0.913, is the other returned compound and lacks a name/MOA in this annotation snapshot; do not call it unrelated.
-# Scores are published values, not recomputed. Similarity is cosine similarity in processed CellProfiler-derived profiles, not raw-feature identity and not a learned representation comparison.
-# Vinblastine, vincristine and mebendazole are present in JUMP_rr but absent from nocodazole's 20 returned match rows. Absence from this subset does not establish low similarity.
+# Existing published scores, not recomputed: demo/rehearsal-blebbistatin/matches.csv.
+# The top match is JCP2022_052140 / PF-04418948, annotated prostaglandin inhibitor in the snapshot, not established as a myosin-II peer.
+# Two next IDs lack names/MOA in that snapshot; absence of annotations is not proof of unrelated biology.
+# Resolve identities/annotations and examine confounding before mechanistic interpretation. No exhaustive enrichment analysis was run.
 
-** Does nocodazole change cell morphology?
+** Does blebbistatin change cell morphology?
 #+BEGIN_EXPORT latex
 \begin{block}{Published activity result}
-Corrected activity p-value: \textbf{0.00003}
+Corrected activity p-value: \textbf{0.01278}
 \end{block}
 \begin{itemize}
-\item A detectable profile in this published analysis.
-\item Fewer neighboring cells: Cohen's $d=-3.306$.
-\item Lower nuclear form factor: Cohen's $d=-3.110$.
+\item A detectable profile at a 0.05 threshold in this analysis.
+\item Higher nuclear DNA-channel median intensity: Cohen's $d=2.241$.
+\item Intensity alone does not establish DNA content or failed cytokinesis.
 \end{itemize}
 \medskip
-\textbf{Follow-up question:} could cell density contribute to the matches?
+\textbf{Follow-up question:} do images and replicate measurements support the known phenotype?
 \par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broad.io/compound_feature}{JUMP\_rr compound features}; checked 9 November 2026}
 #+END_EXPORT
 
-# The reported activity p-value is rounded source output. Activity score is 0.88636; the match and feature views agree. Feature effects are not the activity p-value.
-# Named measurements: Cells_Neighbors_NumberOfNeighbors_5 and Nuclei_AreaShape_FormFactor. Interpret directions relative to controls under the table's normalization.
-# Several highly ranked columns are object/parent/neighbor identifiers, not valid biological measurements of cell count. Do not interpret Number_Object_Number or ParentNucleiIncludingEdges as counts. The live analysis should use actual counts and QC metadata.
-# Nuclear form factor is a morphological summary, not direct evidence of mitotic arrest, microtubule loss or viability.
+# Published activity score 0.67118 and corrected p-value 0.01278 agree across match and feature tables.
+# Nuclear DNA-channel median intensity is an observed summary feature, not a measurement of DNA amount, ploidy, nuclei per cell or cytokinesis.
+# Nuclear size, staining/processing, segmentation and density may contribute. Need aligned images, actual counts/QC and replicate-level checks.
 
 ** Use JUMP to investigate a phenotype
 #+BEGIN_EXPORT latex
@@ -237,7 +257,7 @@ Corrected activity p-value: \textbf{0.00003}
 \begin{column}{0.48\textwidth}
 \textbf{Simple questions in JUMP\_rr}
 \begin{enumerate}
-\item Was nocodazole tested?
+\item Was blebbistatin tested?
 \item Does it have a detectable profile?
 \item Which compounds look similar?
 \item Which measurements change?
@@ -253,35 +273,35 @@ Corrected activity p-value: \textbf{0.00003}
 \end{column}
 \end{columns}
 \bigskip
-\centering One compound, one biological question, CellProfiler profiles.
+\centering One extreme reference, then a focused CellProfiler investigation.
 #+END_EXPORT
 
 # The ranked tables support the simple queries, not a full replicate-level or enrichment analysis. Those require aligned full well-level profiles, annotations and metadata. This next investigation is the live workflow, not a preclaimed result.
 
-** What do nocodazole-treated cells look like?
+** What do blebbistatin-treated cells look like?
 #+BEGIN_EXPORT latex
 \begin{columns}[c,onlytextwidth]
 \begin{column}{0.48\textwidth}
 \centering\textbf{DMSO control}\par\smallskip
-\includegraphics[width=0.88\linewidth,height=0.62\textheight,keepaspectratio]{assets/dmso-source2-A02-site1.jpg}\par
+\includegraphics[width=0.88\linewidth,height=0.62\textheight,keepaspectratio]{assets/dmso-source2-A02-1086291986-site1.jpg}\par
 {\scriptsize A02, site 1}
 \end{column}
 \begin{column}{0.48\textwidth}
-\centering\textbf{Nocodazole}\par\smallskip
-\includegraphics[width=0.88\linewidth,height=0.62\textheight,keepaspectratio]{assets/nocodazole-source2-P15-site1.jpg}\par
-{\scriptsize P15, site 1}
+\centering\textbf{Blebbistatin}\par\smallskip
+\includegraphics[width=0.88\linewidth,height=0.62\textheight,keepaspectratio]{assets/blebbistatin-source2-M16-1086291986-site1.jpg}\par
+{\scriptsize M16, site 1}
 \end{column}
 \end{columns}
 \smallskip
-{\small Same source and plate: source\_2 / 1086292020. Inspect density and cell appearance.}
+{\small Same source and plate: source\_2 / 1086291986. What would we measure to test cytokinesis?}
 \par\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broad.io/compound_gallery}{JUMP gallery / Ardigen previews}}
 #+END_EXPORT
 
-# Unmodified published JPEG previews, both 996 x 996 pixels; no new cropping, rescaling of channels or contrast enhancement. Pre-rendered contrast calibration is not documented, so do not claim quantitatively matched intensity scales.
-# Deterministic preview selection: first nocodazole gallery row, site 1; first same-source/plate DMSO well in lexical order, site 1. DMSO is resolved through compound metadata to JCP2022_033924 / IAZDPXIOMUYVGZ-UHFFFAOYSA-N, not by matching the string DMSO inside arbitrary InChIKeys.
-# Viewed both images: the nocodazole field is visibly sparser with several small rounded bright objects; the control field is denser with more spread-out cells. One field per condition is illustrative, not a replicate-level result or proof of toxicity/mitotic arrest.
-# Standard Cell Painting does not directly stain tubulin. Dose/time alignment and image-to-profile cohort inclusion remain to be checked for the full live analysis.
-# Source URLs and image SHA256 hashes: demo/rehearsal-nocodazole/image-provenance.json.
+# Both previews are original 996x996 JPEGs, no pixel edits; contrast calibration is undocumented, so avoid quantitative intensity comparison.
+# Deterministic selection: lexical first source/plate/well blebbistatin row, same-source/plate lexical first DMSO, site 1. Treatment M16; DMSO A02.
+# Visual review shows extended cell outlines and several neighboring/closely paired nuclei in the treated field. This is not a count of multinucleated cells or proof of cytokinesis failure; cell boundaries need segmentation.
+# Eight gallery wells (three excluding source_7), 256 same-source/plate DMSO wells; these are availability, not validated profile replicates.
+# Source URLs, unchanged-image hashes and selection: demo/rehearsal-blebbistatin/image-provenance.json. Dose/time and profile-image alignment remain unchecked.
 
 ** We can leverage the curated documentation to build interactive tools and interrogate the data :noexport:
 #+BEGIN_QUOTE
@@ -296,18 +316,18 @@ Example prompt: Using the JUMP Hub docs, create a marimo dashboard to link selec
 # Speaker note: Use an external AI assistant, not a built-in Hub chatbot. Generated code is a draft requiring verification.
 # Presenter experience: without shared tools, agents may solve the same problem in different ways. Tested implementations, recorded parameters and versions support consistency; experts validate the biological interpretation.
 # Stable identifiers and documented inputs/outputs support repeatable analysis. No claim that every AI/model supports this workflow.
-# The old recorded marimo notebook remains in the appendix; the main demo now investigates nocodazole with an agent.
+# The old recorded marimo notebook remains in the appendix; the main demo now investigates blebbistatin with an agent, after the extreme nocodazole reference.
 
-** Live demo: investigate nocodazole's matches
+** Live demo: investigate blebbistatin's phenotype
 #+BEGIN_EXPORT latex
-\begin{block}{From a simple query to an investigation}
-Investigate whether nocodazole retrieves other microtubule-disrupting compounds using CellProfiler profiles. Compare their retrieval against unrelated compounds, check consistency across replicates, and show representative images alongside the quantitative results.
+\begin{block}{From prior biology to a testable question}
+Blebbistatin can disrupt contractility and cytokinesis. Query its CellProfiler profiles, inspect images and matched controls, and test whether cell shape and nuclear organization are consistent across replicates. Treat profile matches as hypotheses, not mechanistic proof.
 \end{block}
 \medskip
 \textbf{My follow-up:}\par
 ``Could this reflect cell density or toxicity? Check cell counts and quality-control measurements.''\par\medskip
 \textbf{Finish with:}\par
-``Turn the result into one slide with an image comparison, a retrieval plot and the main limitation. Build a preview.''
+``Turn the result into one slide with an image comparison, a quantitative check and the main limitation. Build a preview.''
 \par\smallskip
 {\footnotesize External agent and backends on Oppy; forwarded interface on the MacBook.}
 #+END_EXPORT
@@ -318,32 +338,18 @@ Investigate whether nocodazole retrieves other microtubule-disrupting compounds 
 # No representation comparison or model inference. A build preview is not permission to publish a manuscript or alter shared Overleaf content.
 # If execution stalls, show the cached summary and label it as the preflight result; do not imply that the full analysis already ran.
 
-** What we know, and what we will check
+** What we will check
 #+BEGIN_EXPORT latex
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.48\textwidth}
-\textbf{Checked before the demo}
-\begin{itemize}
-\item Nocodazole and 19 annotated peers are present.
-\item Colchicine is its top returned match.
-\item Images and same-plate DMSO controls are available.
-\end{itemize}
-\end{column}
-\begin{column}{0.48\textwidth}
 \textbf{The live investigation}
 \begin{itemize}
 \item How consistent are the replicates?
-\item Are annotated peers preferentially retrieved?
+\item Do images and measurements support the expected phenotype?
 \item How much is explained by density or QC?
 \end{itemize}
-\end{column}
-\end{columns}
-\bigskip
-\centering From a recognizable phenotype to a testable biological hypothesis.
 #+END_EXPORT
 
-# 20 annotation-class IDs include nocodazole; all appear in current match and feature tables. Gallery counts: 18 nocodazole wells, of which 5 are source_7; never call this 18 validated profile replicates. There are 969 same-source/plate DMSO gallery wells across the full 18-well gallery set.
-# Saved code, table extracts and hashes: demo/rehearsal-nocodazole/. Historical SLC2A2 rehearsal retained separately, not presented as the current example.
+# The left checked-results column and the closing slogan were removed at the presenter's request. Keep only the investigation checklist.
+# Blebbistatin preflight: demo/rehearsal-blebbistatin/. Nocodazole remains the extreme opening reference; its saved data remain separate. No new replicate-level or direct cytokinesis analysis was performed.
 ** Try different image-analysis models with Nahual :noexport:
 #+BEGIN_EXPORT latex
 \begin{columns}[T,onlytextwidth]
@@ -827,7 +833,7 @@ Interactive marimo notebook --- separate recorded example
 \par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://doi.org/10.5281/zenodo.23462248}{Source: Muñoz (2026), JUMP Target-2 notebook recording}}
 #+END_EXPORT
 
-# Original FASEB recorded demo retained for questions; not the nocodazole investigation.
+# Original FASEB recorded demo retained for questions; separate from both compound examples.
 # Public recording: https://doi.org/10.5281/zenodo.23462248 (CC BY 4.0).
 # The MP4 is not embedded; prefer downloaded playback on stage. Gallery samples six cells, not all selected cells.
 # Notebook source: /work/users/amunoz/projects/jump-cell-browser-demo/notebook.py.
@@ -839,7 +845,7 @@ Interactive marimo notebook --- separate recorded example
 \end{center}
 \begin{itemize}
 \item Second selection: 224 cells; compare images and measurements.
-\item Not the nocodazole query; no treatment/control assignments in this example.
+\item Not the compound queries; no treatment/control assignments in this example.
 \end{itemize}
 \par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://doi.org/10.5281/zenodo.23462248}{Source: Muñoz (2026), JUMP Target-2 notebook recording}}
 #+END_EXPORT
@@ -856,12 +862,12 @@ Interactive marimo notebook --- separate recorded example
 # Temporary end-of-deck sequence, at the presenter's request; do not move into the main talk yet.
 # The 11 independent frames are maintained once in tutorial-walkthrough.tex, shared by Org export and the Overleaf root.
 # Walk through availability -> definitions/rows -> filters -> activity -> features -> matches -> images/controls.
-# Original tutorial highlight boxes/arrows are preserved. Historical SLC2A2 and MYT1 examples are NOT the nocodazole query.
+# Original tutorial highlight boxes/arrows are preserved. Historical SLC2A2 and MYT1 examples are separate from the current compound queries.
 # Added interpretation cues are slide captions, not edits to the screenshot pixels. Treat old interface values as historical.
 # Activity p-values apply per perturbation; feature significance is a different test. Displayed zeroes are rounded.
 # Availability is not activity; profile similarity is not proof of shared mechanism or phenotypic rescue.
 # The genetic-control screenshot uses no-guide/non-targeting; the main compound demo requires DMSO controls instead.
-# Each slide credits Broad Institute and links the relevant Zenodo record and CC BY 4.0 license.
+# Gray source/license/history footers are hidden at the presenter's request; attribution remains in TeX comments and docs/tutorial-walkthrough.md.
 # Exact source URLs, dimensions, source-document commit and SHA256 hashes: docs/tutorial-screenshots-provenance.json.
 # Slide-by-slide interpretation notes: docs/tutorial-walkthrough.md.
 

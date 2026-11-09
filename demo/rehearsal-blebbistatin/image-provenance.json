@@ -1,0 +1,31 @@
+{
+  "selection": "Lexical first source/plate/well for treatment, same-source/plate lexical first DMSO, site 1; chosen without viewing images.",
+  "images": [
+    {
+      "condition": "blebbistatin",
+      "Source": "source_2",
+      "Plate": "1086291986",
+      "Well": "M16",
+      "JCP2022": "JCP2022_052617",
+      "site": 1,
+      "url": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_2/1086291986/M16_1.jpg",
+      "path": "assets/blebbistatin-source2-M16-1086291986-site1.jpg",
+      "sha256": "ad797ff48d1c97f9ab1afca342ce1d181cccf36903481401f9c7bca836401799",
+      "bytes": 403494,
+      "transformation": "None"
+    },
+    {
+      "condition": "DMSO",
+      "Source": "source_2",
+      "Plate": "1086291986",
+      "Well": "A02",
+      "JCP2022": "JCP2022_033924",
+      "site": 1,
+      "url": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_2/1086291986/A02_1.jpg",
+      "path": "assets/dmso-source2-A02-1086291986-site1.jpg",
+      "sha256": "bb410faca665b152e07208a90a7f6a092a4e7c8dfaae3fbcfc58436ec937dceb",
+      "bytes": 345836,
+      "transformation": "None"
+    }
+  ]
+}

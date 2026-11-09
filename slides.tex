@@ -98,48 +98,62 @@ The Hub contains practical guides to help biologists use JUMP.
 \textbf{Further resources} & \href{https://broadinstitute.github.io/jump_hub/explanations/data_description.html}{Dataset explanations}, \href{https://broadinstitute.github.io/jump_hub/howto/notebooks/17_mislocus_example.html}{protein-localisation analysis} and a \href{https://ciminilab.github.io/GuideToCellPainting/}{Guide to Cell Painting for Biologists}.
 \end{tabular}\par\bigskip
 \end{frame}
-\begin{frame}[label={sec:org0000009}]{Was my compound tested? Nocodazole}
-\begin{block}{A familiar biological question}
-Can morphology recover nocodazole's annotated mechanism?
+\begin{frame}[label={demo:extreme-nocodazole}]{First, an extreme example: nocodazole}
+\begin{columns}[c,onlytextwidth]
+\begin{column}{0.48\textwidth}
+\centering\textbf{DMSO control}\par\smallskip
+\includegraphics[width=0.88\linewidth,height=0.60\textheight,keepaspectratio]{assets/dmso-source2-A02-site1.jpg}
+\end{column}
+\begin{column}{0.48\textwidth}
+\centering\textbf{Nocodazole}\par\smallskip
+\includegraphics[width=0.88\linewidth,height=0.60\textheight,keepaspectratio]{assets/nocodazole-source2-P15-site1.jpg}
+\end{column}
+\end{columns}
+\medskip
+{\small An obvious change in this field pair. Could cell density dominate the profile?}
+\par\smallskip
+{\scriptsize Same source and plate; one illustrative field pair, not a direct assay of microtubules.}
+\end{frame}
+\begin{frame}[label={sec:org0000009}]{Next: blebbistatin, a known biological effect}
+\begin{block}{A more focused question}
+Can we see evidence consistent with altered contractility or cytokinesis?
 \end{block}
 \begin{itemize}
-\item Nocodazole is present: \texttt{JCP2022\_047835}.
-\item Annotated mechanism: tubulin polymerization inhibitor.
-\item Colchicine, vinblastine, vincristine and mebendazole are also present.
-\item For this example, use CellProfiler-derived profiles only.
+\item Blebbistatin inhibits myosin II; it can impair contractility and cell division.
+\item JUMP reagent: \texttt{JCP2022\_052617}, annotated blebbistatin-(+/-).
+\item Inspect cell shape, nuclear organization and matched controls.
+\item Use CellProfiler-derived profiles; distinguish prior biology from observations.
 \end{itemize}
-\medskip
-{\small Start with a simple query: ``Find nocodazole and its annotations in JUMP.''}
-\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broad.io/compound}{JUMP\_rr compounds}; Repurposing annotations; checked 9 November 2026}
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://doi.org/10.1126/science.1081412}{Straight et al., Science (2003)}; \href{https://broad.io/compound}{JUMP\_rr}; Repurposing annotations}
 \end{frame}
-\begin{frame}[label={sec:org000000a}]{Which compounds look similar to nocodazole?}
-\textbf{Query: ``Show nocodazole's closest published matches.''}\par\medskip
-\begin{tabular}{@{}l r l@{}}
-\textbf{Annotated peer} & \textbf{Similarity} & \textbf{JUMP reagent ID} \\[5pt]
-Colchicine & 0.934 & \texttt{JCP2022\_033814} \\
-CYT-997 & 0.916 & \texttt{JCP2022\_056401} \\
-Parbendazole & 0.916 & \texttt{JCP2022\_110440} \\
-Oxibendazole & 0.902 & \texttt{JCP2022\_077096}
+\begin{frame}[label={sec:org000000a}]{Which compounds look similar to blebbistatin?}
+\textbf{Query: ``Show the closest published matches and resolve their annotations.''}\par\medskip
+\begin{tabular}{@{}l r@{}}
+\textbf{Returned match} & \textbf{Similarity} \\[5pt]
+PF-04418948 & 0.737 \\
+\texttt{JCP2022\_018073} & 0.732 \\
+\texttt{JCP2022\_034452} & 0.731
 \end{tabular}
 \medskip
 \begin{itemize}
-\item Four annotated peers occur among the five highest returned matches.
-\item Similar morphology suggests a useful biological connection.
+\item These are profile matches, not verified myosin-II inhibitors.
+\item Missing names or annotations need resolution, not a biological label.
+\item Do the matches share a phenotype, or a confounding change?
 \end{itemize}
-{\footnotesize CellProfiler-derived, batch-corrected profiles; published ranked subset, not an exhaustive screen.}
+{\footnotesize Published ranked subset; the saved annotation snapshot is incomplete.}
 \par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broad.io/compound}{JUMP\_rr compound matches}; checked 9 November 2026}
 \end{frame}
-\begin{frame}[label={sec:org000000b}]{Does nocodazole change cell morphology?}
+\begin{frame}[label={sec:org000000b}]{Does blebbistatin change cell morphology?}
 \begin{block}{Published activity result}
-Corrected activity p-value: \textbf{0.00003}
+Corrected activity p-value: \textbf{0.01278}
 \end{block}
 \begin{itemize}
-\item A detectable profile in this published analysis.
-\item Fewer neighboring cells: Cohen's $d=-3.306$.
-\item Lower nuclear form factor: Cohen's $d=-3.110$.
+\item A detectable profile at a 0.05 threshold in this analysis.
+\item Higher nuclear DNA-channel median intensity: Cohen's $d=2.241$.
+\item Intensity alone does not establish DNA content or failed cytokinesis.
 \end{itemize}
 \medskip
-\textbf{Follow-up question:} could cell density contribute to the matches?
+\textbf{Follow-up question:} do images and replicate measurements support the known phenotype?
 \par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broad.io/compound_feature}{JUMP\_rr compound features}; checked 9 November 2026}
 \end{frame}
 \begin{frame}[label={sec:org000000c}]{Use JUMP to investigate a phenotype}
@@ -147,7 +161,7 @@ Corrected activity p-value: \textbf{0.00003}
 \begin{column}{0.48\textwidth}
 \textbf{Simple questions in JUMP\_rr}
 \begin{enumerate}
-\item Was nocodazole tested?
+\item Was blebbistatin tested?
 \item Does it have a detectable profile?
 \item Which compounds look similar?
 \item Which measurements change?
@@ -163,58 +177,44 @@ Corrected activity p-value: \textbf{0.00003}
 \end{column}
 \end{columns}
 \bigskip
-\centering One compound, one biological question, CellProfiler profiles.
+\centering One extreme reference, then a focused CellProfiler investigation.
 \end{frame}
-\begin{frame}[label={sec:org000000d}]{What do nocodazole-treated cells look like?}
+\begin{frame}[label={sec:org000000d}]{What do blebbistatin-treated cells look like?}
 \begin{columns}[c,onlytextwidth]
 \begin{column}{0.48\textwidth}
 \centering\textbf{DMSO control}\par\smallskip
-\includegraphics[width=0.88\linewidth,height=0.62\textheight,keepaspectratio]{assets/dmso-source2-A02-site1.jpg}\par
+\includegraphics[width=0.88\linewidth,height=0.62\textheight,keepaspectratio]{assets/dmso-source2-A02-1086291986-site1.jpg}\par
 {\scriptsize A02, site 1}
 \end{column}
 \begin{column}{0.48\textwidth}
-\centering\textbf{Nocodazole}\par\smallskip
-\includegraphics[width=0.88\linewidth,height=0.62\textheight,keepaspectratio]{assets/nocodazole-source2-P15-site1.jpg}\par
-{\scriptsize P15, site 1}
+\centering\textbf{Blebbistatin}\par\smallskip
+\includegraphics[width=0.88\linewidth,height=0.62\textheight,keepaspectratio]{assets/blebbistatin-source2-M16-1086291986-site1.jpg}\par
+{\scriptsize M16, site 1}
 \end{column}
 \end{columns}
 \smallskip
-{\small Same source and plate: source\_2 / 1086292020. Inspect density and cell appearance.}
+{\small Same source and plate: source\_2 / 1086291986. What would we measure to test cytokinesis?}
 \par\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broad.io/compound_gallery}{JUMP gallery / Ardigen previews}}
 \end{frame}
-\begin{frame}[label={sec:org000000f}]{Live demo: investigate nocodazole's matches}
-\begin{block}{From a simple query to an investigation}
-Investigate whether nocodazole retrieves other microtubule-disrupting compounds using CellProfiler profiles. Compare their retrieval against unrelated compounds, check consistency across replicates, and show representative images alongside the quantitative results.
+\begin{frame}[label={sec:org000000f}]{Live demo: investigate blebbistatin's phenotype}
+\begin{block}{From prior biology to a testable question}
+Blebbistatin can disrupt contractility and cytokinesis. Query its CellProfiler profiles, inspect images and matched controls, and test whether cell shape and nuclear organization are consistent across replicates. Treat profile matches as hypotheses, not mechanistic proof.
 \end{block}
 \medskip
 \textbf{My follow-up:}\par
 ``Could this reflect cell density or toxicity? Check cell counts and quality-control measurements.''\par\medskip
 \textbf{Finish with:}\par
-``Turn the result into one slide with an image comparison, a retrieval plot and the main limitation. Build a preview.''
+``Turn the result into one slide with an image comparison, a quantitative check and the main limitation. Build a preview.''
 \par\smallskip
 {\footnotesize External agent and backends on Oppy; forwarded interface on the MacBook.}
 \end{frame}
-\begin{frame}[label={sec:org0000010}]{What we know, and what we will check}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.48\textwidth}
-\textbf{Checked before the demo}
-\begin{itemize}
-\item Nocodazole and 19 annotated peers are present.
-\item Colchicine is its top returned match.
-\item Images and same-plate DMSO controls are available.
-\end{itemize}
-\end{column}
-\begin{column}{0.48\textwidth}
+\begin{frame}[label={sec:org0000010}]{What we will check}
 \textbf{The live investigation}
 \begin{itemize}
 \item How consistent are the replicates?
-\item Are annotated peers preferentially retrieved?
+\item Do images and measurements support the expected phenotype?
 \item How much is explained by density or QC?
 \end{itemize}
-\end{column}
-\end{columns}
-\bigskip
-\centering From a recognizable phenotype to a testable biological hypothesis.
 \end{frame}
 \begin{frame}[label={sec:org0000012}]{Not just JUMP: Extract morphological profiles from your own images}
 \begin{columns} [c,onlytextwidth]
@@ -521,7 +521,7 @@ Interactive marimo notebook --- separate recorded example
 \end{center}
 \begin{itemize}
 \item Second selection: 224 cells; compare images and measurements.
-\item Not the nocodazole query; no treatment/control assignments in this example.
+\item Not the compound queries; no treatment/control assignments in this example.
 \end{itemize}
 \par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://doi.org/10.5281/zenodo.23462248}{Source: Muñoz (2026), JUMP Target-2 notebook recording}}
 \end{frame}

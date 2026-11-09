@@ -1,79 +1,62 @@
-# Nocodazole demo — CellProfiler only
+# Demo: an extreme reference, then a known biological effect
 
-**Story:** simple JUMP_rr questions → investigate whether morphology retrieves related biology → create a slide preview.
+**Sequence:** nocodazole as an obvious extreme example → blebbistatin as the main CellProfiler-only investigation → ask the agent to query, inspect and test rather than assume mechanism from a match.
 
-The main talk uses one compound throughout. Word2vec, representation comparisons, and “Modern tools make image analysis more accessible” are now extra slides. The previous SLC2A2 query and saved results remain historical fallback material, not the current example.
+## Stage cues
 
-## Checked preflight
+- **PDF7:** show nocodazole and same-plate DMSO. Ask whether the obvious density/appearance change could dominate the profile. This is one field pair, not a direct assay of microtubule loss or proof of toxicity.
+- **PDF8:** introduce blebbistatin's known myosin-II inhibition and possible effects on contractility/cytokinesis. These are prior biology, not conclusions inferred from JUMP.
+- **PDF9–12:** ask about matches, activity, measurements, images and controls for blebbistatin. Keep the distinction between published observations and the expected phenotype.
+- **PDF13:** switch to the live agent using [prompts.md](prompts.md).
+- **PDF14:** return to the full-width investigation checklist. The checked-results column and closing slogan were removed at the presenter's request.
+- Main talk ends at **PDF21**; existing extra slides are PDF22–31. The annotated tutorial walkthrough is **PDF32–42**, still at the end. The two historical single-cell recording slides are PDF30–31.
 
-Public JUMP_rr compound match, interpretable-feature and gallery tables were retrieved on November 9, 2026. Their CloudFront response headers identified Zenodo record **20496083**. URLs, byte counts and SHA-256 hashes are in [provenance.json](rehearsal-nocodazole/provenance.json). Mutable `latest` URLs may subsequently change.
+## Why blebbistatin?
 
-- **Nocodazole:** `JCP2022_047835`, InChIKey `KYRVNWMVYQXFEU-UHFFFAOYSA-N`.
-- Published corrected activity p-value **0.00003**, activity score **0.88636**; match and feature views agree.
-- **20 distinct compounds including nocodazole** have an annotation containing “microtubule inhibitor” or “tubulin polymerization inhibitor”, excluding labels also containing “stabilizing”. All 20 are present in the match and feature tables.
-- Names/annotations come from the recorded Repurposing TSV in JUMP_lite; the actual query is against full JUMP_rr, not the JUMP-lite image cohort. Duplicate annotation rows were deduplicated. The target column is incomplete/inconsistent for this purpose (nocodazole lists HPGDS); use the MOA class, not inferred target genes.
+Known action: inhibition of myosin II, which can alter actomyosin contractility and cytokinesis. [Straight et al., Science (2003)](https://doi.org/10.1126/science.1081412) established the cytokinesis application. The JUMP annotation identifies **blebbistatin-(+/-)**, not an enantiopure reagent.
 
-| Example | JCP2022 ID | Gallery wells | Corrected activity p-value |
-| --- | --- | ---: | ---: |
-| Nocodazole | JCP2022_047835 | 18 | 0.00003 |
-| Colchicine | JCP2022_033814 | 145 | 0.00003 |
-| Vinblastine | JCP2022_042769 | 5 | 0.00160 |
-| Vincristine | JCP2022_063730 | 10 | 0.00003 |
-| Mebendazole | JCP2022_065384 | 5 | 0.00060 |
+The example lets us ask concrete morphology questions: cell shape, nuclear organization and, with validated segmentation, nuclei per cell. It does **not** let us infer cytokinesis failure from DNA intensity, nearby nuclei, or a single merged image.
 
-Gallery counts are **not validated profile replicate counts**. Nocodazole includes five source_7 gallery wells (13 excluding source_7). Confirm the live analysis's profile cohort before selecting images/replicates.
+Cytochalasin D was considered first but its exact PubChem InChIKey (`SDZRWUKZFQQKKV-JHADDHBZSA-N`) did not resolve in the cached JUMP compound metadata used here; no claim that it is universally absent from every JUMP release is made. Blebbistatin was selected for known biology and availability, not a flattering mechanism-retrieval result. The actual matches are retained even when their biology is unresolved.
 
-Four annotation-defined peers appear among nocodazole's five highest returned matches:
+## Checked blebbistatin preflight
 
-| Peer | Published cosine similarity |
-| --- | ---: |
-| Colchicine | 0.934 |
-| CYT-997 | 0.916 |
-| Parbendazole | 0.916 |
-| Oxibendazole | 0.902 |
+Reused the same public summary-table snapshot as the nocodazole preflight. These are **published summary values**, not newly computed p-values or a completed replicate analysis.
 
-The fifth compound, `JCP2022_096054` (0.913), lacks a name/MOA in the chosen annotation snapshot; do not label it unrelated. Vinblastine/vincristine/mebendazole are present but not in nocodazole's 20 returned rows. That is not evidence of low similarity: these are published ranked subsets.
+- Reagent **JCP2022_052617**, InChIKey **LZAXPYOBKSJSEX-UHFFFAOYSA-N**.
+- Corrected activity p-value **0.01278**, activity score **0.67118**; feature and match views agree.
+- Nocodazole's activity score in the same snapshot is **0.88636**. A lower score is not proof of lower toxicity, a weaker mechanism, greater specificity or better reproducibility. The two drugs' doses/times have not been aligned.
+- Reported nuclear DNA-channel median intensity: **Cohen's d = 2.241**. This is not an assay of DNA content, ploidy or failed cytokinesis. Staining, morphology and processing can affect it.
+- Top returned match **PF-04418948 / JCP2022_052140, similarity 0.737**. The saved annotation calls it a prostaglandin inhibitor, not a verified myosin-II peer. Next: **JCP2022_018073 (0.732)** and **JCP2022_034452 (0.731)**, whose names/MOAs are unresolved in this limited annotation snapshot. Do not label unannotated compounds unrelated or infer a common mechanism from similarity.
+- **8 gallery wells**, only **3 excluding source_7**. These counts describe image availability, not validated profile replicates. Across the full set, **256** DMSO wells match source+plate.
 
-Leading meaningful feature examples include fewer neighboring cells (Cohen's d −3.306) and lower nuclear form factor (−3.110). Some other highly ranked columns are object/parent/neighbor identifiers: **do not interpret them as biological cell counts**. Obtain actual cell-count and QC metadata for the live check.
+The public match and feature tables are ranked subsets; they do not support exhaustive enrichment or replicate-consistency claims. [Saved outputs and input hashes](rehearsal-blebbistatin/) retain those limitations.
 
-## Image preview
+## Image comparison
 
-The deck includes two unmodified 996×996 JPEG previews: source_2, plate 1086292020, site 1; nocodazole P15 and DMSO A02. The selection was deterministic (first treated gallery row; lexically first matched DMSO well), not chosen by appearance. DMSO was resolved by its exact InChIKey and JCP2022 ID, not a substring search.
+Original 996×996 merged JPEG previews: **source_2 / plate 1086291986 / site 1**, blebbistatin **M16**, DMSO **A02**. Selection was deterministic before viewing: lexically first treatment source/plate/well and same-source/plate lexically first control, site 1. No cropping, recoloring or contrast editing was performed. [Image provenance](rehearsal-blebbistatin/image-provenance.json) stores URLs and hashes.
 
-Visual review: the treatment field is sparser with several small rounded bright objects, while the control field is denser and more spread out. This is one illustrative field pair, not evidence of replicate consistency, toxicity, mitotic arrest or mechanism. Original JPEG contrast calibration is undocumented; no intensity comparison is claimed. Cell Painting does not directly stain tubulin. URLs, hashes and selection details are in [image-provenance.json](rehearsal-nocodazole/image-provenance.json).
+Visual review: extended outlines and several closely paired/neighboring nuclei can be seen in the treatment field. This does not assign nuclei to individual cells, quantify multinucleation or establish failed cytokinesis. Boundaries require validated segmentation; pre-rendered contrast calibration is undocumented, so do not compare intensities quantitatively between the JPEGs. The image/profile cohort, dose/time, actual counts, QC and replicate consistency still need verification.
 
-Across the full 18-well nocodazole gallery set, 969 DMSO gallery wells match source+plate. This does not establish dose/time or image/profile-cohort equivalence.
+The original nocodazole field pair and saved analysis are retained independently. [Historical preflight details](nocodazole-reference.md) describe its source_2 / 1086292020 comparison and annotation-based match results; those are not blebbistatin results.
 
-## Flow and deployment
-
-- Main PDF7–11: simple questions about nocodazole—availability, matches, activity/features, investigation plan and image comparison.
-- PDF12: switch to the agent for the longer investigation; use [prompts.md](prompts.md).
-- Intervene with the cell-density/toxicity question.
-- Ask for one-slide output and a preview, not publication.
-- PDF13: return to “What we know, and what we will check”. Do not present unfinished checks as results.
-- Main talk ends at PDF20. Ten extra slides follow, including the five moved slides and the historical single-cell recording.
-
-Run computation and backends on **Oppy**, with the interface forwarded to the **MacBook**. Do not copy the full dataset to the laptop or start duplicate services. Backend availability, forwarding, authenticated editor access and end-to-end live execution still need rehearsal; this preflight did not configure them.
-
-## Remaining live-workflow prerequisites
-
-1. Select the actual full well-level CP profile release; verify source/cohort and profile-image alignment.
-2. Retrieve dose/time, replicate, actual count and QC metadata.
-3. Define annotated peers and a defensible annotated comparator set before ranking.
-4. Check replicate consistency and peer retrieval versus the comparator set.
-5. Rehearse the running analysis and slide-preview backends through the forwarded MBP interface.
-
-The example is ready for the simple-question slides, but the deeper statistical workflow is not yet validated.
-
-## Reproduce the summary extraction
+## Reproduce the offline summary extraction
 
 ```sh
-uv run demo/check_nocodazole.py \
+uv run demo/check_blebbistatin.py \
   --data /work/scratch/amunoz/jump-nocodazole-preflight-20261109/data \
   --annotations /work/users/amunoz/projects/JUMP_lite/metadata/repurposed_compounds.tsv \
   --output /path/to/new-results
 ```
 
-The extractor is offline: prefetch the three compound Parquets, `compound.csv.gz`, and the recorded annotation TSV from the URLs in the manifest. It pins Polars 1.40.1 and refuses an existing output directory. This reproduces summary extraction, not a new statistical analysis. Cache the uv environment before an offline rehearsal.
+The script pins Polars 1.40.1, performs no network/LLM calls and refuses existing output directories. Prefetch the three compound Parquets and recorded annotation TSV from URLs in the saved provenance; cache the uv environment for offline use. Exact input hashes are recorded, including the annotation snapshot. The extractor records preview URLs but does not download images itself.
 
-If live execution stalls for roughly 30 seconds, open the saved extracts and preview pair and say: **“This is the query I checked ahead of time; the replicate-level investigation is the next step.”** Do not claim cached results were generated live.
+## Remaining live-workflow requirements
+
+1. Confirm the intended full well-level CP profile release and image/profile alignment, source, dose and timing.
+2. Retrieve true cell counts, QC and replicate metadata. Object IDs and parent IDs are not biological counts.
+3. Validate cell/nucleus segmentation before using nuclei-per-cell as a cytokinesis-related measure.
+4. Test consistency across replicates, distinguish cell density/technical changes from the expected morphology, and resolve match annotations before mechanistic interpretation.
+5. Rehearse analysis and slide-preview backends on **Oppy**, using the forwarded **MacBook** interface. Backend readiness has not been established by this preflight.
+
+If execution stalls, show the saved blebbistatin query and image pair and identify them honestly as **preflight results**, not a live or completed replicate-level analysis. Reuse approved running backends; do not launch duplicate services or download full datasets to the laptop without checking.

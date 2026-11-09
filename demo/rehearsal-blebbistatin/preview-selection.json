@@ -1,0 +1,20 @@
+[
+  {
+    "condition": "blebbistatin",
+    "Source": "source_2",
+    "Plate": "1086291986",
+    "Well": "M16",
+    "JCP2022": "JCP2022_052617",
+    "site": 1,
+    "url": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_2/1086291986/M16_1.jpg"
+  },
+  {
+    "condition": "DMSO",
+    "Source": "source_2",
+    "Plate": "1086291986",
+    "Well": "A02",
+    "JCP2022": "JCP2022_033924",
+    "site": 1,
+    "url": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_2/1086291986/A02_1.jpg"
+  }
+]
