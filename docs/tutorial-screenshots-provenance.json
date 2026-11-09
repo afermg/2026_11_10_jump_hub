@@ -1,0 +1,164 @@
+{
+  "retrieved_utc": "2026-11-09T22:05:56.107132+00:00",
+  "tutorial_url": "https://broadinstitute.github.io/jump_hub/howto/interactive/1_jumprr_steps.html",
+  "source_markdown_url": "https://raw.githubusercontent.com/broadinstitute/jump_hub/86c0ff7c3420b236ab6c29fe49587bc3ba96fb77/howto/interactive/1_jumprr_steps.md",
+  "source_commit": "86c0ff7c3420b236ab6c29fe49587bc3ba96fb77",
+  "source_sha256": "997ec076a4537ef45b9823cd4518feebc1ea0c5505f85931747dcade80dd86bf",
+  "transformations": "None: source PNG bytes retained, no cropping/redrawing/upscaling. Proportional scaling only in slides.",
+  "records": {
+    "15252378": {
+      "title": "JUMP-hub Tutorial",
+      "creators": [
+        {
+          "name": "Broad Institute",
+          "affiliation": null
+        }
+      ],
+      "license": {
+        "id": "cc-by-4.0"
+      },
+      "access_right": "open",
+      "url": "https://zenodo.org/records/15252378"
+    },
+    "16878487": {
+      "title": "JUMP-hub Tutorial",
+      "creators": [
+        {
+          "name": "Broad Institute",
+          "affiliation": null
+        }
+      ],
+      "license": {
+        "id": "cc-by-4.0"
+      },
+      "access_right": "open",
+      "url": "https://zenodo.org/records/16878487"
+    },
+    "16878778": {
+      "title": "JUMP-hub Tutorial",
+      "creators": [
+        {
+          "name": "Broad Institute",
+          "affiliation": null
+        }
+      ],
+      "license": {
+        "id": "cc-by-4.0"
+      },
+      "access_right": "open",
+      "url": "https://zenodo.org/records/16878778"
+    }
+  },
+  "images": [
+    {
+      "order": 1,
+      "path": "assets/tutorial-screenshots/01-Figure1.png",
+      "source_url": "https://zenodo.org/api/records/15252378/files/Figure1.png/content",
+      "source_filename": "Figure1.png",
+      "sha256": "c87cb63ac27c0f5c25383ffc43f691719ff46b6bd8cda49671975dfac053c8bd",
+      "bytes": 792803,
+      "width": 2348,
+      "height": 1222
+    },
+    {
+      "order": 2,
+      "path": "assets/tutorial-screenshots/02-Figure2.png",
+      "source_url": "https://zenodo.org/api/records/15252378/files/Figure2.png/content",
+      "source_filename": "Figure2.png",
+      "sha256": "3df4739b6b6b68ea5a3fe854938d68195dbec42182e07d3554cdbf3e2d55da71",
+      "bytes": 663600,
+      "width": 3215,
+      "height": 731
+    },
+    {
+      "order": 3,
+      "path": "assets/tutorial-screenshots/03-Figure3.png",
+      "source_url": "https://zenodo.org/api/records/16878487/files/Figure3.png/content",
+      "source_filename": "Figure3.png",
+      "sha256": "a8d6ea409a19694e0cb444be20fbc44b3b4566b59daee321281975baa782bcdf",
+      "bytes": 645273,
+      "width": 2309,
+      "height": 1688
+    },
+    {
+      "order": 4,
+      "path": "assets/tutorial-screenshots/04-gallery_negcon_123.png",
+      "source_url": "https://zenodo.org/api/records/16878778/files/gallery_negcon_123.png/content",
+      "source_filename": "gallery_negcon_123.png",
+      "sha256": "f16468e7ff1fdbdec0672bb2cda95c6e836e57e315699dc88ffb4ed6af13cc93",
+      "bytes": 355341,
+      "width": 1219,
+      "height": 936
+    },
+    {
+      "order": 5,
+      "path": "assets/tutorial-screenshots/05-gallery_negcon_456789.png",
+      "source_url": "https://zenodo.org/api/records/16878778/files/gallery_negcon_456789.png/content",
+      "source_filename": "gallery_negcon_456789.png",
+      "sha256": "53f840369cebf768ffcf8db257b64d19150f94700b5acbdd3ab164f4ea5c1093",
+      "bytes": 396485,
+      "width": 1153,
+      "height": 996
+    },
+    {
+      "order": 6,
+      "path": "assets/tutorial-screenshots/06-Figure4.png",
+      "source_url": "https://zenodo.org/api/records/15252378/files/Figure4.png/content",
+      "source_filename": "Figure4.png",
+      "sha256": "12a2ace818c1620bd3493b06a94f6b0d2f3b468f8ac284c00e6207add362635a",
+      "bytes": 432580,
+      "width": 2275,
+      "height": 1004
+    },
+    {
+      "order": 7,
+      "path": "assets/tutorial-screenshots/07-Figure5.png",
+      "source_url": "https://zenodo.org/api/records/15252378/files/Figure5.png/content",
+      "source_filename": "Figure5.png",
+      "sha256": "ae2ac1c4f1c3f93d37af0af982a36efbf8a72ce4e557639c370407490a60f911",
+      "bytes": 304952,
+      "width": 2154,
+      "height": 1075
+    },
+    {
+      "order": 8,
+      "path": "assets/tutorial-screenshots/08-Figure6.png",
+      "source_url": "https://zenodo.org/api/records/15252378/files/Figure6.png/content",
+      "source_filename": "Figure6.png",
+      "sha256": "0ca334019bb165f63025085e2bd273c5e81e5dce5adedbcc6aa5d6294f33d204",
+      "bytes": 272660,
+      "width": 2246,
+      "height": 693
+    },
+    {
+      "order": 9,
+      "path": "assets/tutorial-screenshots/09-Figure7.png",
+      "source_url": "https://zenodo.org/api/records/15252378/files/Figure7.png/content",
+      "source_filename": "Figure7.png",
+      "sha256": "4c61c9e769d491b80860910bc8f4c4d4b1f166a660d61ca5ad29989c21513312",
+      "bytes": 245433,
+      "width": 2106,
+      "height": 1266
+    },
+    {
+      "order": 10,
+      "path": "assets/tutorial-screenshots/10-Figure8.png",
+      "source_url": "https://zenodo.org/api/records/15252378/files/Figure8.png/content",
+      "source_filename": "Figure8.png",
+      "sha256": "ab95586189fe8bc07fcc4471122ebbf1f4254fd061add4b96fb41ab631f379a7",
+      "bytes": 321353,
+      "width": 2324,
+      "height": 1830
+    },
+    {
+      "order": 11,
+      "path": "assets/tutorial-screenshots/11-Figure9.png",
+      "source_url": "https://zenodo.org/api/records/15252378/files/Figure9.png/content",
+      "source_filename": "Figure9.png",
+      "sha256": "8b172238768c81066d91d2782168f7dbd5d941215d9ea286f4e6842ef2a1afdf",
+      "bytes": 1658436,
+      "width": 2254,
+      "height": 1540
+    }
+  ]
+}

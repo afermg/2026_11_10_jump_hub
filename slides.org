@@ -848,6 +848,23 @@ Interactive marimo notebook --- separate recorded example
 # Reference includes selected cells; feature-based selection changes distributions by construction.
 # UMAP separation does not establish treatment effects or mechanism. Cells are not independent experimental replicates.
 
+* Tutorial screenshot walkthrough
+#+BEGIN_EXPORT latex
+\input{tutorial-walkthrough.tex}
+#+END_EXPORT
+
+# Temporary end-of-deck sequence, at the presenter's request; do not move into the main talk yet.
+# The 11 independent frames are maintained once in tutorial-walkthrough.tex, shared by Org export and the Overleaf root.
+# Walk through availability -> definitions/rows -> filters -> activity -> features -> matches -> images/controls.
+# Original tutorial highlight boxes/arrows are preserved. Historical SLC2A2 and MYT1 examples are NOT the nocodazole query.
+# Added interpretation cues are slide captions, not edits to the screenshot pixels. Treat old interface values as historical.
+# Activity p-values apply per perturbation; feature significance is a different test. Displayed zeroes are rounded.
+# Availability is not activity; profile similarity is not proof of shared mechanism or phenotypic rescue.
+# The genetic-control screenshot uses no-guide/non-targeting; the main compound demo requires DMSO controls instead.
+# Each slide credits Broad Institute and links the relevant Zenodo record and CC BY 4.0 license.
+# Exact source URLs, dimensions, source-document commit and SHA256 hashes: docs/tutorial-screenshots-provenance.json.
+# Slide-by-slide interpretation notes: docs/tutorial-walkthrough.md.
+
 * Historical individual model figures :noexport:
 # Superseded by the single combined controls-only figure; retained solely as historical source, never exported.
 ** PLK1 positive control: MorphEm

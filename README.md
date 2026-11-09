@@ -4,13 +4,14 @@ Alán F. Muñoz's November 10 talk, adapted from the FASEB presentation. One noc
 
 - [Overleaf editor](https://overleaf.quasimorphic.com/project/6af238ebaa6d5b0395871289) — root **slides.tex**, compiler **XeLaTeX**. Its current link-sharing setting was preserved.
 - [Private GitHub repository](https://github.com/afermg/2026_11_10_jump_hub).
-- [PDF preview](slides.pdf) — **30 pages**: main talk through the QR on PDF20, then ten extra slides. No slides were deleted by the five-slide move.
+- [PDF preview](slides.pdf) — **41 pages**: main talk through the QR on PDF20, ten existing extra slides, then an eleven-step tutorial screenshot walkthrough on **PDF31–41**. No existing slides were moved or deleted when appending the screenshots.
+- [Tutorial walkthrough source](tutorial-walkthrough.tex) and [interpretation notes](docs/tutorial-walkthrough.md). Original highlighted tutorial images are preserved unchanged; placement in the main talk will be decided later.
 - [Agent demo runbook](demo/README.md), [copyable prompts](demo/prompts.md), [nocodazole preflight code](demo/check_nocodazole.py) and [saved results](demo/rehearsal-nocodazole/). The earlier SLC2A2 script/results are retained as historical material.
 - Local checkout: `/home/amunoz/Documents/broad/drafts/slides/2026_11_10_jump_hub`.
 
 ## Editing and synchronization
 
-`slides.tex` is the Overleaf entry point. `slides.org` retains the editable Org source and extensive presenter notes; keep both aligned when changing content. `main.tex` is a fallback that inputs `slides.tex`.
+`slides.tex` is the Overleaf entry point. `slides.org` retains the editable Org source and extensive presenter notes; keep both aligned when changing content. Both include `tutorial-walkthrough.tex` for the temporary end-of-deck screenshot sequence, so edit those frames there. `main.tex` is a fallback that inputs `slides.tex`.
 
 This deck is **independent** of the original FASEB repository/project and its Org publishing timer. There is **no automatic synchronization** for this new deck. Fetch both remotes before editing and preserve direct author changes. Do not regenerate TeX from stale Org over newer Overleaf wording.
 
@@ -51,7 +52,7 @@ Review `build/slides.pdf`, then copy it to `slides.pdf` and commit the snapshot.
 
 Source: [FASEB deck](https://github.com/afermg/2026_10_21_faseb_jump_hub), exact commit `abdd682d172d44a7f3b5d514328dd37bc8b4bfab`. All tracked source assets were copied unchanged. The original repository and Overleaf project were not modified.
 
-`docs/` is a historical copy of the FASEB provenance, speaker notes, timing, demo instructions and operations records from `/work/users/amunoz/projects/org-overleaf-sync/docs`. These describe the **October deck**, not new November validations or active automation. **Do not follow its old project-binding or publishing commands for this deck.** Use this README for the new workflow.
+Most of `docs/` is a historical copy of the FASEB provenance, speaker notes, timing, demo instructions and operations records from `/work/users/amunoz/projects/org-overleaf-sync/docs`. Those inherited files describe the **October deck**, not new November validations or active automation. The newly added `tutorial-walkthrough.md` and `tutorial-screenshots-provenance.json` document the November screenshot addition. **Do not follow its old project-binding or publishing commands for this deck.** Use this README for the new workflow.
 
 The nocodazole preflight reproduces published summary-table values, with URLs and input hashes in its saved provenance. The annotation snapshot defines peers independently of the inspected rankings. Two deterministic gallery previews were visually reviewed and added without image modification; their source URLs/hashes and limitations are recorded separately. No full replicate-level analysis, peer enrichment, dose/time alignment or end-to-end live backend rehearsal has been completed. Existing attribution and third-party terms remain; no new blanket license is granted. The inherited cp_measure speed claim and other date-sensitive content can be revisited during revision.
 
