@@ -17,8 +17,9 @@
 
 # Talk date: 10 November 2026. Venue, title revisions and duration not yet specified.
 # Adapted from the FASEB deck at abdd682d172d44a7f3b5d514328dd37bc8b4bfab.
-# Inherited baseline: biologist audience, 25-minute slot with prerecorded demo.
-# Inherited pace: 23 minutes plus 2 minutes of buffer; see docs/presenter-notes.md.
+# Biologist audience; live coding-agent JUMP query replaces the scheduled recording.
+# Aim for a 5–7 minute demo; total duration and the old FASEB timing require rehearsal.
+# Current demo instructions: demo/README.md. docs/presenter-notes.md is historical.
 # Keep slides direct and question-led. Interpretation limits belong in notes.
 # References and QR close the main talk; additional slides follow for questions. Illustration provenance stays in the evidence documents.
 # Direct Overleaf edits take content priority: preserve and port them into Org.
@@ -349,57 +350,70 @@ Example prompt: Using the JUMP Hub docs, create a marimo dashboard to link selec
 # Speaker note: Use an external AI assistant, not a built-in Hub chatbot. Generated code is a draft requiring verification.
 # Presenter experience: without shared tools, agents may solve the same problem in different ways. Tested implementations, recorded parameters and versions support consistency; experts validate the biological interpretation.
 # Stable identifiers and documented inputs/outputs support repeatable analysis. No claim that every AI/model supports this workflow.
-# The following recorded marimo notebook is implemented; it is a separate single-cell example, not a gene/control study.
+# The old recorded marimo notebook remains in the appendix; the main demo now queries SLC2A2 with an agent.
 
-** Identify and explore cell subpopulations
-Interactive marimo notebook
-
+** Live demo: ask an agent to query JUMP
 #+BEGIN_EXPORT latex
-\begin{columns}[c,onlytextwidth]
+\begin{block}{Our question}
+Is SLC2A2 in JUMP? Does perturbing it change cell morphology?
+Which other perturbations look similar?
+\end{block}
+\begin{columns}[T,onlytextwidth]
 \begin{column}{0.59\textwidth}
-\centering
-\href{https://doi.org/10.5281/zenodo.23462248}{\includegraphics[width=\linewidth,height=0.60\textheight,keepaspectratio]{assets/demo-selection-545.png}}\par\smallskip
-{\scriptsize Each dot is a cell: 2,223 from one Target-2 plate.\par
-Select cells; inspect images, area and other features.\par}
+\small
+\textbf{Start with documentation, not a guessed answer.}\par\medskip
+Read the JUMP Hub documentation. Check SLC2A2 availability and reagent IDs. Compare CRISPR and ORF activity separately. Show the source tables and the code you run.
 \end{column}
 \begin{column}{0.38\textwidth}
 \small
-\textbf{AI can assemble these tools into workflows.}\par\medskip
-\textit{Example prompt: Using the JUMP Hub docs, create a marimo dashboard to link selected cells to images and measurements.}\par\medskip
-Standard tools support reproducible analysis; biological expertise remains essential.\par
+\textbf{Then ask for evidence.}
+\begin{enumerate}
+\item Retrieve similar and opposing profiles.
+\item Explain the leading features.
+\item Find images and same-plate controls.
+\end{enumerate}
 \end{column}
 \end{columns}
+\medskip
+{\footnotesize External coding agent + public JUMP tools; not a built-in Hub chatbot.}
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broadinstitute.github.io/jump_hub/}{JUMP Hub}; \href{https://broadinstitute.github.io/jump_hub/howto/interactive/1_jumprr_steps.html}{worked tutorial}}
 #+END_EXPORT
 
+# Demo cue: PDF16. Switch to the external agent; use demo/prompts.md in three short turns.
+# Initial gene SLC2A2 is a worked tutorial example, not an audience-selected discovery.
+# Agent reads documentation, inspects schemas and executes a bounded public-data query.
+# Rehearsal query_jump.py is a reviewed fallback, not an agent and not proof that a live agent has been rehearsed.
+# No new dashboard or full image download is required. Optional dashboard is a stretch goal after evidence is checked.
+# Allow 5–7 minutes; switch to saved CSVs if the network/agent stalls, and label the fallback honestly.
+
+** Return with evidence, not just an answer
 #+BEGIN_EXPORT latex
-\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://doi.org/10.5281/zenodo.23462248}{Source: Muñoz (2026), JUMP Target-2 notebook recording}}
+\small
+\textbf{SLC2A2: a checked rehearsal query, not a new discovery}\par\medskip
+\begin{tabular}{@{}l l r@{}}
+\textbf{Perturbation} & \textbf{JUMP reagent ID} & \textbf{Activity corrected p-value} \\[4pt]
+CRISPR & \texttt{JCP2022\_806487} & 0.00018 \\
+ORF & \texttt{JCP2022\_910380} & 0.09482
+\end{tabular}
+\medskip
+\begin{itemize}
+\item At 0.05: CRISPR is significant; ORF is not in this analysis.
+\item Top returned CRISPR match: RAD51 (similarity 0.621).
+\item Check features, cell counts and images against same-plate controls.
+\end{itemize}
+{\footnotesize Published ranked subsets, not an exhaustive screen. Similarity suggests hypotheses, not a shared mechanism. Missing significance is not proof of no effect.}\par\smallskip
+{\scriptsize Saved tables and code provide an offline fallback; live outputs may change.}
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broad.io/crispr_feature}{CRISPR features}; \href{https://broad.io/orf_feature}{ORF features}; \href{https://broad.io/crispr}{CRISPR matches}; queried 9 November 2026}
 #+END_EXPORT
 
-# Playback cue: PDF page 16, visible slide number 15. Play jump-cell-interactivity.mp4 in a local player; return to PDF page 17.
-# The MP4 is a companion file, not embedded media. Narrate select -> inspect -> change channel -> reset -> select elsewhere.
-# Public recording: https://doi.org/10.5281/zenodo.23462248 (CC BY 4.0). Both snapshot images and their demo links are clickable.
-# Prefer local playback on stage; the public link is for later viewing.
-# This still shows a 545-cell selection; the gallery samples six cells, not every selected cell.
-# Notebook source: /work/users/amunoz/projects/jump-cell-browser-demo/notebook.py. No public notebook URL is asserted.
-# If playback fails, use this still and the next slide without troubleshooting on stage.
-
-** How do cells in another region compare?
-#+BEGIN_EXPORT latex
-\begin{center}
-\href{https://doi.org/10.5281/zenodo.23462248}{\includegraphics[width=0.96\linewidth,height=0.51\textheight,keepaspectratio]{assets/demo-selection-224.png}}
-\end{center}
-#+END_EXPORT
-
-- Second selection: 224 cells.
-- Compare images and measurements.
-
-#+BEGIN_EXPORT latex
-\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://doi.org/10.5281/zenodo.23462248}{Source: Muñoz (2026), JUMP Target-2 notebook recording}}
-#+END_EXPORT
-
-# Speaker note: One plate, six wells, twelve fields; no treatment or control assignments.
-# The reference is all loaded cells, including the selection. Feature-based selection changes distributions by construction.
-# UMAP separation does not establish treatment effects or mechanism. Cells are not independent experimental replicates.
+# Return cue: PDF17. Verified values come from demo/rehearsal-slc2a2/ with URL+SHA256 provenance.
+# Feature and match tables agree on reagent IDs and activity values. These are existing published statistics, not newly computed p-values.
+# CRISPR/ORF results are separate perturbations, not a controlled symmetric dose-response experiment.
+# Availability counts are reagent coverage, not replicates. Significant perturbation-level activity differs from per-feature significance.
+# RAD51 is highest among returned non-self matches; query is not an exhaustive all-pairs search.
+# Leading features include DNA granularity and reduced cell count; do not infer a direct pathway or transport mechanism.
+# Retrieved six SLC2A2 CRISPR image wells and 125 no-guide/non-targeting wells on matching source+plate.
+# Image URLs/control metadata were retrieved; biological visual inspection remains a live-demo/rehearsal step.
 # The middle 50% is an interquartile range, not a confidence interval.
 # Crops share pixel scale and fixed contrast; white outlines identify the selected objects, with some neighbors/truncation visible.
 # This Target-2 Zstd example is separate from the main JUMP-lite release cohort.
@@ -782,6 +796,37 @@ Recover replicate perturbations and known biological relationships.\par\smallski
 # Printed task-cell numbers are absolute scores: NAP for the six PA/PC tasks and Recall@1% for five MOTIVE tasks. Colors divide each score by its task-column maximum; the final All column is the mean of these normalized scores. A red cell does not mean perfect accuracy, and values cannot be treated as the same metric across all columns. Each representation averages over normalization configurations, not only its best run.
 # Preserve all original rows,values,labels and color scale,including CellCount and ViT-rand baselines. CellProfiler and CellCount are descriptive Raw-only references with more than four sites per well; image representations use four sites. No controlled CellProfiler superiority or compressed-setting ranking claim. Exact middle-model ranks remain uncertain; some model pretraining overlaps JUMP. Known annotation retrieval does not prove mechanism or physical interaction.
 # Raw-image paper inputs/processing differ from the current matched MQ/clipped-input UMAP illustration on page18. No new inference,recomputation or favorable-row selection. Extracted original RGB/alpha pixels from the public PDF,composited on white without resizing or redrawing. Full caption/source receipt: figures/jump-lite-model-comparison/.
+
+** Backup: explore cell subpopulations
+Interactive marimo notebook --- separate recorded example
+#+BEGIN_EXPORT latex
+\begin{center}
+\href{https://doi.org/10.5281/zenodo.23462248}{\includegraphics[width=0.85\linewidth,height=0.59\textheight,keepaspectratio]{assets/demo-selection-545.png}}
+\end{center}
+{\small Each dot is a cell: 2,223 from one Target-2 plate. Shown selection: 545 cells. Inspect images, area and other features.}
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://doi.org/10.5281/zenodo.23462248}{Source: Muñoz (2026), JUMP Target-2 notebook recording}}
+#+END_EXPORT
+
+# Original FASEB recorded demo retained for questions; not the SLC2A2 gene query.
+# Public recording: https://doi.org/10.5281/zenodo.23462248 (CC BY 4.0).
+# The MP4 is not embedded; prefer downloaded playback on stage. Gallery samples six cells, not all selected cells.
+# Notebook source: /work/users/amunoz/projects/jump-cell-browser-demo/notebook.py.
+
+** Backup: compare another cell selection
+#+BEGIN_EXPORT latex
+\begin{center}
+\href{https://doi.org/10.5281/zenodo.23462248}{\includegraphics[width=0.96\linewidth,height=0.51\textheight,keepaspectratio]{assets/demo-selection-224.png}}
+\end{center}
+\begin{itemize}
+\item Second selection: 224 cells; compare images and measurements.
+\item Not the SLC2A2 query; no treatment/control assignments in this example.
+\end{itemize}
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://doi.org/10.5281/zenodo.23462248}{Source: Muñoz (2026), JUMP Target-2 notebook recording}}
+#+END_EXPORT
+
+# One plate, six wells, twelve fields; no treatment/control assignments.
+# Reference includes selected cells; feature-based selection changes distributions by construction.
+# UMAP separation does not establish treatment effects or mechanism. Cells are not independent experimental replicates.
 
 * Historical individual model figures :noexport:
 # Superseded by the single combined controls-only figure; retained solely as historical source, never exported.

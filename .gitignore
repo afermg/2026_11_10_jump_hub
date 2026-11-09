@@ -1,5 +1,7 @@
 # PDF snapshots are private; intermediate build products stay local.
 /build/
+__pycache__/
+*.pyc
 *.pdf
 # These specific vector figures are source artwork, not the presentation PDF.
 !assets/vector-interpretability.pdf

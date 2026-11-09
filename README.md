@@ -1,10 +1,11 @@
 # JUMP Hub — 10 November 2026
 
-Starter for Alán F. Muñoz's November 10 talk, adapted from the FASEB presentation. The original scientific content, figures, references and additional slides are unchanged. Only the date and obsolete FASEB subtitle have been updated; venue, duration and further title/content changes await discussion.
+Alán F. Muñoz's November 10 talk, adapted from the FASEB presentation. The main demo now shows an external coding agent querying JUMP for SLC2A2, followed by a checked evidence summary. The earlier single-cell recording is retained as two backup slides. Other original scientific content, figures and references remain unchanged; venue, total duration and further revisions await discussion.
 
 - [Private Overleaf editor](https://overleaf.quasimorphic.com/project/6af238ebaa6d5b0395871289) — root **slides.tex**, compiler **XeLaTeX**.
 - [Private GitHub repository](https://github.com/afermg/2026_11_10_jump_hub).
-- [PDF preview](slides.pdf) — all **28 pages**, including three additional slides after the QR slide. The FASEB public PDF contained only pages 1–25.
+- [PDF preview](slides.pdf) — **30 pages**: main talk through the QR on PDF25, then five backup slides. The FASEB public PDF contained only pages 1–25.
+- [Agent demo runbook](demo/README.md), [copyable prompts](demo/prompts.md), [rehearsal query](demo/query_jump.py) and [saved results](demo/rehearsal-slc2a2/).
 - Local checkout: `/home/amunoz/Documents/broad/drafts/slides/2026_11_10_jump_hub`.
 
 ## Editing and synchronization
@@ -47,6 +48,6 @@ Source: [FASEB deck](https://github.com/afermg/2026_10_21_faseb_jump_hub), exact
 
 `docs/` is a historical copy of the FASEB provenance, speaker notes, timing, demo instructions and operations records from `/work/users/amunoz/projects/org-overleaf-sync/docs`. These describe the **October deck**, not new November validations or active automation. **Do not follow its old project-binding or publishing commands for this deck.** Use this README for the new workflow.
 
-No scientific analyses or quantitative updates were performed during setup. Existing illustrative-data qualifications, attribution and third-party terms remain; no new blanket license is granted. The inherited cp_measure speed claim and other date-sensitive content can be revisited during revision.
+The SLC2A2 demo reproduces published summary-table values, with URLs and input hashes in its saved provenance. It does not recompute statistics, establish a mechanism or constitute a completed live-agent/image-review rehearsal. Existing illustrative-data qualifications, attribution and third-party terms remain; no new blanket license is granted. The inherited cp_measure speed claim and other date-sensitive content can be revisited during revision.
 
-Validation: local XeLaTeX build (28 pages) and QPDF checks; native Overleaf compile is checked separately during setup. Browser preview rendering is not implied by a Git push.
+Validation: local XeLaTeX build and QPDF checks; native Overleaf compilation is a separate gate. Browser preview rendering is not implied by a Git push. The demo query was tested with SLC2A2 and an absent symbol, including cached/offline data access.

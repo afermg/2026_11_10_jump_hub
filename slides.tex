@@ -209,37 +209,48 @@ MYT1 and PROZ gallery examples
 \textbf{Explore your results} & {\small marimo} \\[0.9em]
 \end{tabular}
 \end{frame}
-\begin{frame}[label={sec:org000000f}]{Identify and explore cell subpopulations}
-Interactive marimo notebook
-
-\begin{columns}[c,onlytextwidth]
+\begin{frame}[label={sec:org000000f}]{Live demo: ask an agent to query JUMP}
+\begin{block}{Our question}
+Is SLC2A2 in JUMP? Does perturbing it change cell morphology?
+Which other perturbations look similar?
+\end{block}
+\begin{columns}[T,onlytextwidth]
 \begin{column}{0.59\textwidth}
-\centering
-\href{https://doi.org/10.5281/zenodo.23462248}{\includegraphics[width=\linewidth,height=0.60\textheight,keepaspectratio]{assets/demo-selection-545.png}}\par\smallskip
-{\scriptsize Each dot is a cell: 2,223 from one Target-2 plate.\par
-Select cells; inspect images, area and other features.\par}
+\small
+\textbf{Start with documentation, not a guessed answer.}\par\medskip
+Read the JUMP Hub documentation. Check SLC2A2 availability and reagent IDs. Compare CRISPR and ORF activity separately. Show the source tables and the code you run.
 \end{column}
 \begin{column}{0.38\textwidth}
 \small
-\textbf{AI can assemble these tools into workflows.}\par\medskip
-\textit{Example prompt: Using the JUMP Hub docs, create a marimo dashboard to link selected cells to images and measurements.}\par\medskip
-Standard tools support reproducible analysis; biological expertise remains essential.\par
+\textbf{Then ask for evidence.}
+\begin{enumerate}
+\item Retrieve similar and opposing profiles.
+\item Explain the leading features.
+\item Find images and same-plate controls.
+\end{enumerate}
 \end{column}
 \end{columns}
-
-\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://doi.org/10.5281/zenodo.23462248}{Source: Muñoz (2026), JUMP Target-2 notebook recording}}
+\medskip
+{\footnotesize External coding agent + public JUMP tools; not a built-in Hub chatbot.}
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broadinstitute.github.io/jump_hub/}{JUMP Hub}; \href{https://broadinstitute.github.io/jump_hub/howto/interactive/1_jumprr_steps.html}{worked tutorial}}
 \end{frame}
-\begin{frame}[label={sec:org0000010}]{How do cells in another region compare?}
-\begin{center}
-\href{https://doi.org/10.5281/zenodo.23462248}{\includegraphics[width=0.96\linewidth,height=0.51\textheight,keepaspectratio]{assets/demo-selection-224.png}}
-\end{center}
-
+\begin{frame}[label={sec:org0000010}]{Return with evidence, not just an answer}
+\small
+\textbf{SLC2A2: a checked rehearsal query, not a new discovery}\par\medskip
+\begin{tabular}{@{}l l r@{}}
+\textbf{Perturbation} & \textbf{JUMP reagent ID} & \textbf{Activity corrected p-value} \\[4pt]
+CRISPR & \texttt{JCP2022\_806487} & 0.00018 \\
+ORF & \texttt{JCP2022\_910380} & 0.09482
+\end{tabular}
+\medskip
 \begin{itemize}
-\item Second selection: 224 cells.
-\item Compare images and measurements.
+\item At 0.05: CRISPR is significant; ORF is not in this analysis.
+\item Top returned CRISPR match: RAD51 (similarity 0.621).
+\item Check features, cell counts and images against same-plate controls.
 \end{itemize}
-
-\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://doi.org/10.5281/zenodo.23462248}{Source: Muñoz (2026), JUMP Target-2 notebook recording}}
+{\footnotesize Published ranked subsets, not an exhaustive screen. Similarity suggests hypotheses, not a shared mechanism. Missing significance is not proof of no effect.}\par\smallskip
+{\scriptsize Saved tables and code provide an offline fallback; live outputs may change.}
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broad.io/crispr_feature}{CRISPR features}; \href{https://broad.io/orf_feature}{ORF features}; \href{https://broad.io/crispr}{CRISPR matches}; queried 9 November 2026}
 \end{frame}
 \begin{frame}[label={sec:org0000011}]{Positive controls contextualize perturbations in both learned and classical representations}
 \begin{center}
@@ -480,5 +491,23 @@ Recover replicate perturbations and known biological relationships.\par\smallski
 \includegraphics[width=0.99\linewidth,height=0.73\textheight,keepaspectratio]{assets/jump-lite-model-comparison.png}\par\smallskip
 {\scriptsize Raw images; colors normalized within each task. CellProfiler/count references use more sites per well.\par}
 {\fontsize{5.5}{6.5}\selectfont\color{gray}\hfill\href{https://arxiv.org/abs/2608.07632v3}{Adapted from Muñoz et al. (2026), Figure 5}\par}
+\end{frame}
+\begin{frame}[label={backup:recorded-cell-browser}]{Backup: explore cell subpopulations}
+Interactive marimo notebook --- separate recorded example
+\begin{center}
+\href{https://doi.org/10.5281/zenodo.23462248}{\includegraphics[width=0.85\linewidth,height=0.59\textheight,keepaspectratio]{assets/demo-selection-545.png}}
+\end{center}
+{\small Each dot is a cell: 2,223 from one Target-2 plate. Shown selection: 545 cells. Inspect images, area and other features.}
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://doi.org/10.5281/zenodo.23462248}{Source: Muñoz (2026), JUMP Target-2 notebook recording}}
+\end{frame}
+\begin{frame}[label={backup:recorded-second-selection}]{Backup: compare another cell selection}
+\begin{center}
+\href{https://doi.org/10.5281/zenodo.23462248}{\includegraphics[width=0.96\linewidth,height=0.51\textheight,keepaspectratio]{assets/demo-selection-224.png}}
+\end{center}
+\begin{itemize}
+\item Second selection: 224 cells; compare images and measurements.
+\item Not the SLC2A2 query; no treatment/control assignments in this example.
+\end{itemize}
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://doi.org/10.5281/zenodo.23462248}{Source: Muñoz (2026), JUMP Target-2 notebook recording}}
 \end{frame}
 \end{document}
