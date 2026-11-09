@@ -1,0 +1,46 @@
+{
+  "queried_utc": "2026-11-09T21:41:05.042505+00:00",
+  "inputs": {
+    "compound": {
+      "url": "https://d3dw4c1b79pj57.cloudfront.net/latest/compound.parquet/content",
+      "bytes": 146681765,
+      "sha256": "de888e47326e99038fa0984036f7a0034f2a6805fbe55e5e44ec98a38738bd63"
+    },
+    "compound_interpretable_features": {
+      "url": "https://d3dw4c1b79pj57.cloudfront.net/latest/compound_interpretable_features.parquet/content",
+      "bytes": 61718719,
+      "sha256": "b18478ced41342f43f78c407424e492edd6ea59989203706a5ff376175617ea9"
+    },
+    "compound_gallery": {
+      "url": "https://d3dw4c1b79pj57.cloudfront.net/latest/compound_gallery.parquet/content",
+      "bytes": 41679618,
+      "sha256": "07bf7ecbe1a8e9ef622ce199c267faa6a5aa90f4e399bf535dc6fbd3f74df9dd"
+    },
+    "annotations": {
+      "path": "/work/users/amunoz/projects/JUMP_lite/metadata/repurposed_compounds.tsv",
+      "sha256": "6842edd9bfcb88c3240f4785e459b80375b474c3ad7f175f7c52936dfeb0482e",
+      "source": "https://github.com/afermg/JUMP_lite/blob/dedfa397eea20542ce113c7dba38945ba6f26afd/metadata/repurposed_compounds.tsv"
+    },
+    "compound_metadata": {
+      "path": "/work/scratch/amunoz/jump-nocodazole-preflight-20261109/data/compound.csv.gz",
+      "sha256": "8885960e92ebd99eb33699a79129f517e668d78dd94f0d7478d39c9825bd3c0a",
+      "source": "https://raw.githubusercontent.com/jump-cellpainting/datasets/main/metadata/compound.csv.gz"
+    }
+  },
+  "summary": {
+    "annotated_class_including_nocodazole": 20,
+    "class_present_in_matches": 20,
+    "class_present_in_features": 20,
+    "nocodazole_gallery_wells": 18,
+    "nocodazole_gallery_wells_excluding_source7": 13,
+    "same_source_plate_DMSO_wells": 969,
+    "published_match_rows": 20
+  },
+  "representation": "CellProfiler-derived batch-corrected match profiles; interpretable CP feature summaries separately",
+  "limits": [
+    "Published ranked subsets; no exhaustive enrichment or replicate analysis performed.",
+    "Gallery counts are image availability, not profile replicate counts.",
+    "Dose/time and profile-image cohort alignment still need verification.",
+    "Use MOA class, not the incomplete target column, to define peers."
+  ]
+}

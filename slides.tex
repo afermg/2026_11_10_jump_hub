@@ -56,44 +56,6 @@ Profiles are numerical descriptions of cells.
 
 \par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://doi.org/10.1038/s41573-020-00117-w}{Adapted from Chandrasekaran et al. (2021), Fig. 1a}}
 \end{frame}
-\begin{frame}[label={sec:org0000003}]{Morphological profiling: How to turn images into profiles}
-Start with a simple question: are control and perturbed cells different?
-
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.48\textwidth}
-\begin{block}{Classical features (e.g., CellProfiler)}
-\begin{itemize}
-\item Size, shape, intensity, texture and relationships between channels and objects.
-\item Interpretable but partially redundant.
-\end{itemize}
-\end{block}
-\end{column}
-\begin{column}{0.48\textwidth}
-\begin{block}{Learned representations}
-\begin{itemize}
-\item Features learned from images by neural networks (deep learning).
-\item Non-redundant numerical vectors (embeddings).
-\end{itemize}
-\end{block}
-\end{column}
-\end{columns}
-\end{frame}
-\begin{frame}[label={sec:org0000004}]{Words as vectors: word2vec}
-\par
-{\centering\small Learning can be viewed as compression\par}
-\smallskip
-
-\begin{center}
-\includegraphics[keepaspectratio,width=0.99\linewidth,height=0.70\textheight]{assets/word2vec-king-queen.pdf}
-\end{center}
-
-\hfill{\scriptsize\href{https://arxiv.org/abs/1301.3781}{Mikolov et al. (2013)}}
-\end{frame}
-\begin{frame}[label={sec:org0000005}]{From words to cells: vectors for comparison}
-\begin{center}
-\includegraphics[keepaspectratio,width=0.99\linewidth,height=0.83\textheight]{assets/vector-control-perturbation.pdf}
-\end{center}
-\end{frame}
 \begin{frame}[label={sec:org0000006}]{JUMP: Joint Undertaking for Morphological Profiling}
 \begin{itemize}
 \item Public Cell Painting data: 12 laboratories, around 136,000 perturbations.
@@ -136,128 +98,123 @@ The Hub contains practical guides to help biologists use JUMP.
 \textbf{Further resources} & \href{https://broadinstitute.github.io/jump_hub/explanations/data_description.html}{Dataset explanations}, \href{https://broadinstitute.github.io/jump_hub/howto/notebooks/17_mislocus_example.html}{protein-localisation analysis} and a \href{https://ciminilab.github.io/GuideToCellPainting/}{Guide to Cell Painting for Biologists}.
 \end{tabular}\par\bigskip
 \end{frame}
-\begin{frame}[label={sec:org0000009}]{Was my gene or compound tested?}
-\begin{itemize}
-\item Find your compound and see whether it was tested.
-\item Find your gene and see whether it was knocked out or overexpressed.
-\item View the available profiles, images and metadata.
-\end{itemize}
-
-\begin{center}
-\includegraphics[keepaspectratio,width=0.90\linewidth,height=0.42\textheight]{assets/hub-identifiers.png}
-\end{center}
-\end{frame}
-\begin{frame}[label={sec:org000000a}]{Which perturbations produce related phenotypes?}
-MYT1 example
-
-\begin{center}
-\includegraphics[keepaspectratio,width=0.93\linewidth,height=0.55\textheight]{assets/hub-matches.png}
-\end{center}
-
-\begin{itemize}
-\item Precomputed comparisons between perturbation profiles.
-\item Look for perturbations that match \textit{and} oppose your perturbation of interest.
-\end{itemize}
-\end{frame}
-\begin{frame}[label={sec:org000000b}]{How does cell morphology change?}
-AVPR2 overexpression example
-
-\begin{center}
-\includegraphics[keepaspectratio,width=0.98\linewidth,height=0.47\textheight]{assets/hub-features.png}
-\end{center}
-
-\begin{itemize}
-\item Feature to investigate: mitochondria--AGP overlap.
-\item Check images: mitochondria versus actin, Golgi and plasma membrane.
-\end{itemize}
-\end{frame}
-\begin{frame}[label={sec:org000000c}]{Use JUMP as a screen for your phenotype of interest}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.46\textwidth}
-\textbf{Feature families}\par\medskip
-\small
-\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.32\linewidth}>{\raggedright\arraybackslash}p{0.60\linewidth}@{}}
-\textbf{Size / shape} & Nuclear area, elongation \\[6pt]
-\textbf{Intensity} & Mitochondrial staining \\[6pt]
-\textbf{Texture} & Fine/coarse patterns \\[6pt]
-\textbf{Correlation} & Between-channel patterns \\[6pt]
-\textbf{Distribution} & Peripheral/perinuclear signal
-\end{tabular}
-\end{column}
-\begin{column}{0.50\textwidth}
-\textbf{Which perturbations change nuclear size?}
-\begin{itemize}
-\item Select nuclear area.
-\item Rank perturbations by feature value.
-\item Check activity, images and controls.
-\end{itemize}
-\end{column}
-\end{columns}
-\end{frame}
-\begin{frame}[label={sec:org000000d}]{What do the perturbed cells look like?}
-MYT1 and PROZ gallery examples
-
-\begin{center}
-\includegraphics[keepaspectratio,width=0.93\linewidth,height=0.55\textheight]{assets/hub-gallery.png}
-\end{center}
-\end{frame}
-\begin{frame}[label={sec:org000000e}]{Modern tools make image analysis more accessible}
-\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.49\textwidth}>{\raggedright\arraybackslash}p{0.46\textwidth}@{}}
-\textbf{Find cells, nuclei and spots} & {\small Cellpose (cells and nuclei); Spotiflow (spots)} \\[0.9em]
-\textbf{Follow cells and organelles over time} & {\small Trackastra / Ultrack} \\[0.9em]
-\textbf{Measure cell and organelle appearance} & {\small cp\_measure} \\[0.9em]
-\textbf{Explore your results} & {\small marimo} \\[0.9em]
-\end{tabular}
-\end{frame}
-\begin{frame}[label={sec:org000000f}]{Live demo: ask an agent to query JUMP}
-\begin{block}{Our question}
-Is SLC2A2 in JUMP? Does perturbing it change cell morphology?
-Which other perturbations look similar?
+\begin{frame}[label={sec:org0000009}]{Was my compound tested? Nocodazole}
+\begin{block}{A familiar biological question}
+Can morphology recover nocodazole's annotated mechanism?
 \end{block}
+\begin{itemize}
+\item Nocodazole is present: \texttt{JCP2022\_047835}.
+\item Annotated mechanism: tubulin polymerization inhibitor.
+\item Colchicine, vinblastine, vincristine and mebendazole are also present.
+\item For this example, use CellProfiler-derived profiles only.
+\end{itemize}
+\medskip
+{\small Start with a simple query: ``Find nocodazole and its annotations in JUMP.''}
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broad.io/compound}{JUMP\_rr compounds}; Repurposing annotations; checked 9 November 2026}
+\end{frame}
+\begin{frame}[label={sec:org000000a}]{Which compounds look similar to nocodazole?}
+\textbf{Query: ``Show nocodazole's closest published matches.''}\par\medskip
+\begin{tabular}{@{}l r l@{}}
+\textbf{Annotated peer} & \textbf{Similarity} & \textbf{JUMP reagent ID} \\[5pt]
+Colchicine & 0.934 & \texttt{JCP2022\_033814} \\
+CYT-997 & 0.916 & \texttt{JCP2022\_056401} \\
+Parbendazole & 0.916 & \texttt{JCP2022\_110440} \\
+Oxibendazole & 0.902 & \texttt{JCP2022\_077096}
+\end{tabular}
+\medskip
+\begin{itemize}
+\item Four annotated peers occur among the five highest returned matches.
+\item Similar morphology suggests a useful biological connection.
+\end{itemize}
+{\footnotesize CellProfiler-derived, batch-corrected profiles; published ranked subset, not an exhaustive screen.}
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broad.io/compound}{JUMP\_rr compound matches}; checked 9 November 2026}
+\end{frame}
+\begin{frame}[label={sec:org000000b}]{Does nocodazole change cell morphology?}
+\begin{block}{Published activity result}
+Corrected activity p-value: \textbf{0.00003}
+\end{block}
+\begin{itemize}
+\item A detectable profile in this published analysis.
+\item Fewer neighboring cells: Cohen's $d=-3.306$.
+\item Lower nuclear form factor: Cohen's $d=-3.110$.
+\end{itemize}
+\medskip
+\textbf{Follow-up question:} could cell density contribute to the matches?
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broad.io/compound_feature}{JUMP\_rr compound features}; checked 9 November 2026}
+\end{frame}
+\begin{frame}[label={sec:org000000c}]{Use JUMP to investigate a phenotype}
 \begin{columns}[T,onlytextwidth]
-\begin{column}{0.59\textwidth}
-\small
-\textbf{Start with documentation, not a guessed answer.}\par\medskip
-Read the JUMP Hub documentation. Check SLC2A2 availability and reagent IDs. Compare CRISPR and ORF activity separately. Show the source tables and the code you run.
-\end{column}
-\begin{column}{0.38\textwidth}
-\small
-\textbf{Then ask for evidence.}
+\begin{column}{0.48\textwidth}
+\textbf{Simple questions in JUMP\_rr}
 \begin{enumerate}
-\item Retrieve similar and opposing profiles.
-\item Explain the leading features.
-\item Find images and same-plate controls.
+\item Was nocodazole tested?
+\item Does it have a detectable profile?
+\item Which compounds look similar?
+\item Which measurements change?
 \end{enumerate}
 \end{column}
-\end{columns}
-\medskip
-{\footnotesize External coding agent + public JUMP tools; not a built-in Hub chatbot.}
-\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broadinstitute.github.io/jump_hub/}{JUMP Hub}; \href{https://broadinstitute.github.io/jump_hub/howto/interactive/1_jumprr_steps.html}{worked tutorial}}
-\end{frame}
-\begin{frame}[label={sec:org0000010}]{Return with evidence, not just an answer}
-\small
-\textbf{SLC2A2: a checked rehearsal query, not a new discovery}\par\medskip
-\begin{tabular}{@{}l l r@{}}
-\textbf{Perturbation} & \textbf{JUMP reagent ID} & \textbf{Activity corrected p-value} \\[4pt]
-CRISPR & \texttt{JCP2022\_806487} & 0.00018 \\
-ORF & \texttt{JCP2022\_910380} & 0.09482
-\end{tabular}
-\medskip
+\begin{column}{0.48\textwidth}
+\textbf{Then investigate the result}
 \begin{itemize}
-\item At 0.05: CRISPR is significant; ORF is not in this analysis.
-\item Top returned CRISPR match: RAD51 (similarity 0.621).
-\item Check features, cell counts and images against same-plate controls.
+\item Check images and matched controls.
+\item Check consistency across replicates.
+\item Test whether cell density explains part of the similarity.
 \end{itemize}
-{\footnotesize Published ranked subsets, not an exhaustive screen. Similarity suggests hypotheses, not a shared mechanism. Missing significance is not proof of no effect.}\par\smallskip
-{\scriptsize Saved tables and code provide an offline fallback; live outputs may change.}
-\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broad.io/crispr_feature}{CRISPR features}; \href{https://broad.io/orf_feature}{ORF features}; \href{https://broad.io/crispr}{CRISPR matches}; queried 9 November 2026}
+\end{column}
+\end{columns}
+\bigskip
+\centering One compound, one biological question, CellProfiler profiles.
 \end{frame}
-\begin{frame}[label={sec:org0000011}]{Positive controls contextualize perturbations in both learned and classical representations}
-\begin{center}
-\includegraphics[keepaspectratio,width=0.94\linewidth,height=0.80\textheight]{assets/real-embeddings-combined.png}
-\end{center}
-
-\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://arxiv.org/abs/2608.07632v3}{Data: JUMP-lite (2026)}; models: \href{https://huggingface.co/CaicedoLab/MorphEm}{MorphEm}, \href{https://github.com/facebookresearch/dinov2}{DINOv2}, \href{https://huggingface.co/recursionpharma/OpenPhenom}{OpenPhenom}, \href{https://github.com/CellProfiling/subcell-embed}{SubCell}; \href{https://github.com/broadinstitute/jump-profiling-recipe/tree/a917fa79342ff92cf0ea05d6d9174d9028a90f8f}{CellProfiler/Harmony recipe}}
+\begin{frame}[label={sec:org000000d}]{What do nocodazole-treated cells look like?}
+\begin{columns}[c,onlytextwidth]
+\begin{column}{0.48\textwidth}
+\centering\textbf{DMSO control}\par\smallskip
+\includegraphics[width=0.88\linewidth,height=0.62\textheight,keepaspectratio]{assets/dmso-source2-A02-site1.jpg}\par
+{\scriptsize A02, site 1}
+\end{column}
+\begin{column}{0.48\textwidth}
+\centering\textbf{Nocodazole}\par\smallskip
+\includegraphics[width=0.88\linewidth,height=0.62\textheight,keepaspectratio]{assets/nocodazole-source2-P15-site1.jpg}\par
+{\scriptsize P15, site 1}
+\end{column}
+\end{columns}
+\smallskip
+{\small Same source and plate: source\_2 / 1086292020. Inspect density and cell appearance.}
+\par\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broad.io/compound_gallery}{JUMP gallery / Ardigen previews}}
+\end{frame}
+\begin{frame}[label={sec:org000000f}]{Live demo: investigate nocodazole's matches}
+\begin{block}{From a simple query to an investigation}
+Investigate whether nocodazole retrieves other microtubule-disrupting compounds using CellProfiler profiles. Compare their retrieval against unrelated compounds, check consistency across replicates, and show representative images alongside the quantitative results.
+\end{block}
+\medskip
+\textbf{My follow-up:}\par
+``Could this reflect cell density or toxicity? Check cell counts and quality-control measurements.''\par\medskip
+\textbf{Finish with:}\par
+``Turn the result into one slide with an image comparison, a retrieval plot and the main limitation. Build a preview.''
+\par\smallskip
+{\footnotesize External agent and backends on Oppy; forwarded interface on the MacBook.}
+\end{frame}
+\begin{frame}[label={sec:org0000010}]{What we know, and what we will check}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.48\textwidth}
+\textbf{Checked before the demo}
+\begin{itemize}
+\item Nocodazole and 19 annotated peers are present.
+\item Colchicine is its top returned match.
+\item Images and same-plate DMSO controls are available.
+\end{itemize}
+\end{column}
+\begin{column}{0.48\textwidth}
+\textbf{The live investigation}
+\begin{itemize}
+\item How consistent are the replicates?
+\item Are annotated peers preferentially retrieved?
+\item How much is explained by density or QC?
+\end{itemize}
+\end{column}
+\end{columns}
+\bigskip
+\centering From a recognizable phenotype to a testable biological hypothesis.
 \end{frame}
 \begin{frame}[label={sec:org0000012}]{Not just JUMP: Extract morphological profiles from your own images}
 \begin{columns} [c,onlytextwidth]
@@ -457,6 +414,64 @@ Runxi Shen
 \section*{Additional slides}
 \label{sec:org000001d}
 
+\begin{frame}[label={sec:org0000003}]{Morphological profiling: How to turn images into profiles}
+Start with a simple question: are control and perturbed cells different?
+
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.48\textwidth}
+\begin{block}{Classical features (e.g., CellProfiler)}
+\begin{itemize}
+\item Size, shape, intensity, texture and relationships between channels and objects.
+\item Interpretable but partially redundant.
+\end{itemize}
+\end{block}
+\end{column}
+\begin{column}{0.48\textwidth}
+\begin{block}{Learned representations}
+\begin{itemize}
+\item Features learned from images by neural networks (deep learning).
+\item Non-redundant numerical vectors (embeddings).
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[label={sec:org0000004}]{Words as vectors: word2vec}
+\par
+{\centering\small Learning can be viewed as compression\par}
+\smallskip
+
+\begin{center}
+\includegraphics[keepaspectratio,width=0.99\linewidth,height=0.70\textheight]{assets/word2vec-king-queen.pdf}
+\end{center}
+
+\hfill{\scriptsize\href{https://arxiv.org/abs/1301.3781}{Mikolov et al. (2013)}}
+\end{frame}
+
+\begin{frame}[label={sec:org0000005}]{From words to cells: vectors for comparison}
+\begin{center}
+\includegraphics[keepaspectratio,width=0.99\linewidth,height=0.83\textheight]{assets/vector-control-perturbation.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}[label={sec:org000000e}]{Modern tools make image analysis more accessible}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.49\textwidth}>{\raggedright\arraybackslash}p{0.46\textwidth}@{}}
+\textbf{Find cells, nuclei and spots} & {\small Cellpose (cells and nuclei); Spotiflow (spots)} \\[0.9em]
+\textbf{Follow cells and organelles over time} & {\small Trackastra / Ultrack} \\[0.9em]
+\textbf{Measure cell and organelle appearance} & {\small cp\_measure} \\[0.9em]
+\textbf{Explore your results} & {\small marimo} \\[0.9em]
+\end{tabular}
+\end{frame}
+
+\begin{frame}[label={sec:org0000011}]{Positive controls contextualize perturbations in both learned and classical representations}
+\begin{center}
+\includegraphics[keepaspectratio,width=0.94\linewidth,height=0.80\textheight]{assets/real-embeddings-combined.png}
+\end{center}
+
+\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://arxiv.org/abs/2608.07632v3}{Data: JUMP-lite (2026)}; models: \href{https://huggingface.co/CaicedoLab/MorphEm}{MorphEm}, \href{https://github.com/facebookresearch/dinov2}{DINOv2}, \href{https://huggingface.co/recursionpharma/OpenPhenom}{OpenPhenom}, \href{https://github.com/CellProfiling/subcell-embed}{SubCell}; \href{https://github.com/broadinstitute/jump-profiling-recipe/tree/a917fa79342ff92cf0ea05d6d9174d9028a90f8f}{CellProfiler/Harmony recipe}}
+\end{frame}
+
 \begin{frame}[label={sec:org000001a}]{JUMP-lite: a compact benchmark}
 \begin{columns}[c,onlytextwidth]
 \begin{column}{0.52\textwidth}
@@ -506,7 +521,7 @@ Interactive marimo notebook --- separate recorded example
 \end{center}
 \begin{itemize}
 \item Second selection: 224 cells; compare images and measurements.
-\item Not the SLC2A2 query; no treatment/control assignments in this example.
+\item Not the nocodazole query; no treatment/control assignments in this example.
 \end{itemize}
 \par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://doi.org/10.5281/zenodo.23462248}{Source: Muñoz (2026), JUMP Target-2 notebook recording}}
 \end{frame}

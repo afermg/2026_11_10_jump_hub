@@ -1,21 +1,41 @@
-# Live prompts: use an agent to query JUMP
+# One example throughout: nocodazole, CellProfiler only
 
-Use an external coding agent with web access and a Python execution tool. These are prompts for the presenter to send, not instructions to execute automatically on opening this file. Start in a fresh, disposable analysis folder. SLC2A2 is a worked example in the Hub tutorial, not a surprise discovery.
+Start with the simple JUMP_rr questions, then switch to the longer live investigation. All computation/backends run on Oppy; use the forwarded interface on the MacBook. These are presenter prompts, not instructions to execute on opening this file.
 
-## 1. Find the data (~2 minutes)
+## Simple questions
 
-> I study SLC2A2. Is it represented in JUMP, and does perturbing it change cell morphology? Start at https://broadinstitute.github.io/jump_hub/ and read the relevant documentation. Use the public data and tools linked there, not an answer from memory. Check gene availability and resolve the exact JCP2022 reagent IDs. Treat CRISPR and ORF separately. Inspect the actual table schemas before writing queries. Execute the code and show a small table of reagent IDs, phenotypic activity and corrected activity p-values, with source URLs. Download only the small summary tables, not the full image dataset. If the data cannot be reached or the symbol is absent, say so; do not invent results.
+1. **Find it:** “Find nocodazole in JUMP. What annotations, doses and replicates are available?”
+2. **Activity:** “Does nocodazole produce a detectable morphological profile?”
+3. **Matches:** “Which compounds have CellProfiler-derived profiles most similar to nocodazole? Show their mechanism-of-action annotations.”
+4. **Measurements:** “Which morphological measurements change after nocodazole treatment?”
+5. **Images:** “Show nocodazole-treated cells beside DMSO controls from the same source and plate.”
 
-## 2. Follow the evidence (~2 minutes)
+Presenter note: availability, activity, published match/feature rows and a single preview pair have been checked. Dose/time metadata and profile replicate alignment have not. Do not imply that every part of question 1 is already answered.
 
-> For SLC2A2 CRISPR, retrieve the five most similar and five most opposing non-self perturbations among the published match rows. Include their JCP2022 IDs and signed similarity values. Identify the leading reported morphological features with effect sizes and feature ranks. Distinguish perturbation-level activity statistics from per-feature statistics. Tell me whether these tables contain all comparisons/features or only ranked subsets. Save the query code, CSV outputs, retrieval time and input hashes so I can reproduce what you did.
+## Live investigation
 
-## 3. Check the images and interpretation (~2 minutes)
+> Investigate whether nocodazole retrieves other microtubule-disrupting compounds using CellProfiler profiles. Compare their retrieval against unrelated compounds, check consistency across replicates, and show representative images alongside the quantitative results.
 
-> Find image examples for SLC2A2 CRISPR and documented negative controls from the same source and plates. Show the source, plate, well and image URLs; explain how you matched the controls. Open a small, clearly labeled selection of images, rather than downloading all fields. Tell me what we can inspect for cell-count, staining, focus or segmentation issues. Separate actual visual observations from hypotheses. Do these results establish a shared mechanism with a match, or only suggest follow-up experiments? State the main limitations and one useful follow-up.
+## Human intervention
 
-## Optional stretch: turn the query into a small explorer
+> Could this reflect cell density or toxicity? Check cell counts and available quality-control measurements before interpreting the matches.
 
-> Now that the query is checked, make a small interactive explorer with a gene input, separate CRISPR/ORF results, source links, match tables and labeled image/control views. Reuse the verified query code and cached data. Display missing data and source limitations explicitly. Do not silently change analysis parameters or recompute significance.
+## Produce something useful
 
-Building an explorer is optional; the core demo succeeds with sourced tables and inspected images. Do not start an application server or install new tools on the presenter's machine without checking first.
+> Create one slide answering: “Can morphology recover nocodazole's annotated mechanism?” Include a control/treatment image comparison, a retrieval plot and one sentence describing the main limitation. Build a preview without publishing.
+
+## Optional editorial follow-up
+
+> Make the headline less causal and show me the revised slide.
+
+## Off-screen analysis setup
+
+- Keep to CellProfiler-derived data; no representation comparison or model inference.
+- Start from JCP2022_047835 / KYRVNWMVYQXFEU-UHFFFAOYSA-N, with the cached public summary tables and documented annotation snapshot.
+- Use annotations to define peers before ranking. Do not classify unannotated compounds as unrelated; use a documented, annotated comparator set.
+- The published match table is a ranked subset, not enough to calculate exhaustive peer enrichment or replicate consistency. Fetch aligned full well-level profiles only after confirming the intended source/cohort, dose/time and metadata.
+- Match tables use processed/batch-corrected CP-derived profiles. Feature tables report interpretable CP measurements; they are not raw axes of the match space.
+- Use true cell counts and QC measurements. Object numbers, parent IDs and closest-object IDs are not cell-count measurements even if ranked highly in the feature table.
+- Standard Cell Painting does not stain tubulin. Image appearance is downstream morphology, not direct visualization of microtubule loss.
+- Reuse approved running backends; do not invent ports or launch/reconfigure services on either host without checking.
+- If the live analysis stalls, show `rehearsal-nocodazole/` and label it as the preflight, not a completed live replicate/enrichment analysis.

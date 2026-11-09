@@ -1,11 +1,11 @@
 # JUMP Hub — 10 November 2026
 
-Alán F. Muñoz's November 10 talk, adapted from the FASEB presentation. The main demo now shows an external coding agent querying JUMP for SLC2A2, followed by a checked evidence summary. The earlier single-cell recording is retained as two backup slides. Other original scientific content, figures and references remain unchanged; venue, total duration and further revisions await discussion.
+Alán F. Muñoz's November 10 talk, adapted from the FASEB presentation. One nocodazole example now connects simple JUMP_rr questions to a live CellProfiler-only investigation. Published matches, activity/features, annotated peers and a same-plate DMSO image pair have been checked; the full replicate/QC analysis and backend forwarding still need rehearsal. Word2vec, representation background/comparison and the modern-tools overview are now extra slides. The earlier single-cell recording remains available as backup.
 
 - [Overleaf editor](https://overleaf.quasimorphic.com/project/6af238ebaa6d5b0395871289) — root **slides.tex**, compiler **XeLaTeX**. Its current link-sharing setting was preserved.
 - [Private GitHub repository](https://github.com/afermg/2026_11_10_jump_hub).
-- [PDF preview](slides.pdf) — **30 pages**: main talk through the QR on PDF25, then five backup slides. The FASEB public PDF contained only pages 1–25.
-- [Agent demo runbook](demo/README.md), [copyable prompts](demo/prompts.md), [rehearsal query](demo/query_jump.py) and [saved results](demo/rehearsal-slc2a2/).
+- [PDF preview](slides.pdf) — **30 pages**: main talk through the QR on PDF20, then ten extra slides. No slides were deleted by the five-slide move.
+- [Agent demo runbook](demo/README.md), [copyable prompts](demo/prompts.md), [nocodazole preflight code](demo/check_nocodazole.py) and [saved results](demo/rehearsal-nocodazole/). The earlier SLC2A2 script/results are retained as historical material.
 - Local checkout: `/home/amunoz/Documents/broad/drafts/slides/2026_11_10_jump_hub`.
 
 ## Editing and synchronization
@@ -48,6 +48,6 @@ Source: [FASEB deck](https://github.com/afermg/2026_10_21_faseb_jump_hub), exact
 
 `docs/` is a historical copy of the FASEB provenance, speaker notes, timing, demo instructions and operations records from `/work/users/amunoz/projects/org-overleaf-sync/docs`. These describe the **October deck**, not new November validations or active automation. **Do not follow its old project-binding or publishing commands for this deck.** Use this README for the new workflow.
 
-The SLC2A2 demo reproduces published summary-table values, with URLs and input hashes in its saved provenance. It does not recompute statistics, establish a mechanism or constitute a completed live-agent/image-review rehearsal. Existing illustrative-data qualifications, attribution and third-party terms remain; no new blanket license is granted. The inherited cp_measure speed claim and other date-sensitive content can be revisited during revision.
+The nocodazole preflight reproduces published summary-table values, with URLs and input hashes in its saved provenance. The annotation snapshot defines peers independently of the inspected rankings. Two deterministic gallery previews were visually reviewed and added without image modification; their source URLs/hashes and limitations are recorded separately. No full replicate-level analysis, peer enrichment, dose/time alignment or end-to-end live backend rehearsal has been completed. Existing attribution and third-party terms remain; no new blanket license is granted. The inherited cp_measure speed claim and other date-sensitive content can be revisited during revision.
 
-Validation: local XeLaTeX build and QPDF checks; native Overleaf compilation is a separate gate. Browser preview rendering is not implied by a Git push. The demo query was tested with SLC2A2 and an absent symbol, including cached/offline data access.
+Validation: local XeLaTeX build and QPDF checks; native Overleaf compilation is a separate gate. Browser preview rendering is not implied by a Git push. Nocodazole preflight was executed against cached compound inputs; saved outputs and preview hashes are recorded. Historical SLC2A2 query tests are retained. The current revision is a local preview until explicitly published.

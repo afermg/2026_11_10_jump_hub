@@ -1,72 +1,79 @@
-# Demo: ask an agent to query JUMP
+# Nocodazole demo — CellProfiler only
 
-## Story and stage cues
+**Story:** simple JUMP_rr questions → investigate whether morphology retrieves related biology → create a slide preview.
 
-**Question:** Is SLC2A2 represented in JUMP, does its perturbation change morphology, and what looks similar?
+The main talk uses one compound throughout. Word2vec, representation comparisons, and “Modern tools make image analysis more accessible” are now extra slides. The previous SLC2A2 query and saved results remain historical fallback material, not the current example.
 
-The audience sees a researcher ask an ordinary-language question, an external coding agent consult documentation and run a query, then the researcher check the returned evidence. This is not a built-in JUMP chatbot, autonomous biological discovery, or a benchmark of agents.
+## Checked preflight
 
-- **PDF16:** show the question; switch to the agent in a fresh analysis folder.
-- **First turn (~2 min):** use [prompt 1](prompts.md). Read the Hub, resolve identifiers, query CRISPR and ORF separately.
-- **Second turn (~2 min):** use prompt 2. Retrieve signed profile matches and feature summaries; show sources and code.
-- **Third turn (~2 min):** use prompt 3. Open a few labeled images with same-source/plate controls. Discuss artifacts and limits.
-- **PDF17:** return to the checked evidence summary. Conclude: faster access to evidence, not a replacement for interpretation.
-- **PDF29–30:** optional, separate prerecorded single-cell explorer from FASEB. Do not present that recording as the SLC2A2 query.
+Public JUMP_rr compound match, interpretable-feature and gallery tables were retrieved on November 9, 2026. Their CloudFront response headers identified Zenodo record **20496083**. URLs, byte counts and SHA-256 hashes are in [provenance.json](rehearsal-nocodazole/provenance.json). Mutable `latest` URLs may subsequently change.
 
-Allow **5–7 minutes**. The original FASEB 23-minute narration plan is historical and needs a new full-talk rehearsal. The example gene is easily changed, but the saved results and slide values are specifically SLC2A2. Re-query and update them before switching genes.
+- **Nocodazole:** `JCP2022_047835`, InChIKey `KYRVNWMVYQXFEU-UHFFFAOYSA-N`.
+- Published corrected activity p-value **0.00003**, activity score **0.88636**; match and feature views agree.
+- **20 distinct compounds including nocodazole** have an annotation containing “microtubule inhibitor” or “tubulin polymerization inhibitor”, excluding labels also containing “stabilizing”. All 20 are present in the match and feature tables.
+- Names/annotations come from the recorded Repurposing TSV in JUMP_lite; the actual query is against full JUMP_rr, not the JUMP-lite image cohort. Duplicate annotation rows were deduplicated. The target column is incomplete/inconsistent for this purpose (nocodazole lists HPGDS); use the MOA class, not inferred target genes.
 
-## What has actually been checked
+| Example | JCP2022 ID | Gallery wells | Corrected activity p-value |
+| --- | --- | ---: | ---: |
+| Nocodazole | JCP2022_047835 | 18 | 0.00003 |
+| Colchicine | JCP2022_033814 | 145 | 0.00003 |
+| Vinblastine | JCP2022_042769 | 5 | 0.00160 |
+| Vincristine | JCP2022_063730 | 10 | 0.00003 |
+| Mebendazole | JCP2022_065384 | 5 | 0.00060 |
 
-A read-only Python rehearsal retrieved the public summary tables and the checksum-verified gene-coverage table. It did not rehearse an independent live agent, run a new statistical analysis, or visually validate phenotypes. The [saved CSVs](rehearsal-slc2a2/) are the offline fallback.
+Gallery counts are **not validated profile replicate counts**. Nocodazole includes five source_7 gallery wells (13 excluding source_7). Confirm the live analysis's profile cohort before selecting images/replicates.
 
-| Modality | Reagent | Corrected activity p-value | Activity score |
-|---|---|---:|---:|
-| CRISPR | JCP2022_806487 | 0.00018 | 0.91909 |
-| ORF | JCP2022_910380 | 0.09482 | 0.74732 |
+Four annotation-defined peers appear among nocodazole's five highest returned matches:
 
-At 0.05, the published CRISPR activity result is significant and the ORF result is not. This is not proof of no ORF effect, nor a claim of statistical significance for every feature. Scores are reproduced from source tables, not recomputed.
+| Peer | Published cosine similarity |
+| --- | ---: |
+| Colchicine | 0.934 |
+| CYT-997 | 0.916 |
+| Parbendazole | 0.916 |
+| Oxibendazole | 0.902 |
 
-Top returned non-self CRISPR match: **RAD51, JCP2022_805807, similarity 0.621**. Other leading returned matches include BACE1, FANCM, TONSL and POLE. These are candidates for interpretation, not established pathway members or direct interactions. Opposing matches do not establish phenotypic rescue.
+The fifth compound, `JCP2022_096054` (0.913), lacks a name/MOA in the chosen annotation snapshot; do not label it unrelated. Vinblastine/vincristine/mebendazole are present but not in nocodazole's 20 returned rows. That is not evidence of low similarity: these are published ranked subsets.
 
-Leading returned CRISPR features include DNA granularity and reduced cell count. Inspect cell density, viability and technical effects before inferring a specific mechanism. Feature significance displayed as 0.0 is rounded source output, not an exact probability of zero. Both feature and match tables are published ranked subsets, not exhaustive screens.
+Leading meaningful feature examples include fewer neighboring cells (Cohen's d −3.306) and lower nuclear form factor (−3.110). Some other highly ranked columns are object/parent/neighbor identifiers: **do not interpret them as biological cell counts**. Obtain actual cell-count and QC metadata for the live check.
 
-The gallery query returned **6 SLC2A2 CRISPR wells and 125 genetic-control wells** on matching source+plate pairs. Those are retrieved metadata rows, not a claim that all images were reviewed, nor proof that controls share every experimental condition. Image fields contain JSON with URLs; do not execute their contents. The live demo still needs an image-viewing rehearsal.
+## Image preview
 
-## Reproduce or use the fallback
+The deck includes two unmodified 996×996 JPEG previews: source_2, plate 1086292020, site 1; nocodazole P15 and DMSO A02. The selection was deterministic (first treated gallery row; lexically first matched DMSO well), not chosen by appearance. DMSO was resolved by its exact InChIKey and JCP2022 ID, not a substring search.
 
-Requires `uv`; the script pins Polars 1.40.1. It does not invoke an LLM.
+Visual review: the treatment field is sparser with several small rounded bright objects, while the control field is denser and more spread out. This is one illustrative field pair, not evidence of replicate consistency, toxicity, mitotic arrest or mechanism. Original JPEG contrast calibration is undocumented; no intensity comparison is claimed. Cell Painting does not directly stain tubulin. URLs, hashes and selection details are in [image-provenance.json](rehearsal-nocodazole/image-provenance.json).
+
+Across the full 18-well nocodazole gallery set, 969 DMSO gallery wells match source+plate. This does not establish dose/time or image/profile-cohort equivalence.
+
+## Flow and deployment
+
+- Main PDF7–11: simple questions about nocodazole—availability, matches, activity/features, investigation plan and image comparison.
+- PDF12: switch to the agent for the longer investigation; use [prompts.md](prompts.md).
+- Intervene with the cell-density/toxicity question.
+- Ask for one-slide output and a preview, not publication.
+- PDF13: return to “What we know, and what we will check”. Do not present unfinished checks as results.
+- Main talk ends at PDF20. Ten extra slides follow, including the five moved slides and the historical single-cell recording.
+
+Run computation and backends on **Oppy**, with the interface forwarded to the **MacBook**. Do not copy the full dataset to the laptop or start duplicate services. Backend availability, forwarding, authenticated editor access and end-to-end live execution still need rehearsal; this preflight did not configure them.
+
+## Remaining live-workflow prerequisites
+
+1. Select the actual full well-level CP profile release; verify source/cohort and profile-image alignment.
+2. Retrieve dose/time, replicate, actual count and QC metadata.
+3. Define annotated peers and a defensible annotated comparator set before ranking.
+4. Check replicate consistency and peer retrieval versus the comparator set.
+5. Rehearse the running analysis and slide-preview backends through the forwarded MBP interface.
+
+The example is ready for the simple-question slides, but the deeper statistical workflow is not yet validated.
+
+## Reproduce the summary extraction
 
 ```sh
-uv run demo/query_jump.py --gene SLC2A2 \
-  --cache-dir /path/to/jump-demo-cache \
-  --output /path/to/new-results-folder
+uv run demo/check_nocodazole.py \
+  --data /work/scratch/amunoz/jump-nocodazole-preflight-20261109/data \
+  --annotations /work/users/amunoz/projects/JUMP_lite/metadata/repurposed_compounds.tsv \
+  --output /path/to/new-results
 ```
 
-First run downloads approximately 83 MB of public summary tables, not the full images. The output directory must not exist; the script refuses to overwrite prior evidence. Use a new cache directory to refresh mutable `latest` URLs. Existing cached inputs are intentionally reused.
+The extractor is offline: prefetch the three compound Parquets, `compound.csv.gz`, and the recorded annotation TSV from the URLs in the manifest. It pins Polars 1.40.1 and refuses an existing output directory. This reproduces summary extraction, not a new statistical analysis. Cache the uv environment before an offline rehearsal.
 
-For offline rehearsal after prefetching inputs:
-
-```sh
-uv run demo/query_jump.py --gene SLC2A2 \
-  --cache-dir /path/to/jump-demo-cache \
-  --output /path/to/new-offline-results-folder --offline
-```
-
-Preinstall/cache the `uv` dependency too; `--offline` blocks data retrieval, not uv's environment provisioning. Saved CSVs require no Python environment. They include availability, separate modality activity/features, similar/opposing matches and CRISPR images/controls. `provenance.json` records source URLs, query time, input SHA256 hashes and library version. The coverage file is checked against the hash published by JUMP Hub; the other hashes identify this rehearsal snapshot, not independently authenticated releases.
-
-On Oppy, the rehearsal input cache is `/work/scratch/amunoz/oppy-builds/jump-hub-20261110-agent-demo/data`. Transfer/cache it on the actual presentation laptop before travel; this setup did not perform that transfer. Cached raw Parquet files are not committed to the presentation repository.
-
-If TLS certificate discovery fails in a managed Python installation, configure its trusted system CA bundle (on Oppy, `SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt`). Never disable TLS verification.
-
-## On-stage failure plan
-
-If the agent/network stalls for roughly 30 seconds, say: **“I saved the same query ahead of time; let's inspect that result.”** Open the committed CSVs, provenance and query code, then return to PDF17. Do not imply a cached result was generated live. The saved image URLs still require network access; download a small reviewed selection before relying on an offline image demonstration. The old recording is a separate optional illustration, not a substitute claimed as this query.
-
-## Sources and maintenance
-
-- [JUMP Hub](https://broadinstitute.github.io/jump_hub/).
-- [Worked tutorial](https://broadinstitute.github.io/jump_hub/howto/interactive/1_jumprr_steps.html): availability, activity/features, matches and same-plate controls.
-- [Public JUMP_rr access links](https://github.com/broadinstitute/monorepo/tree/main/libs/jump_rr#quick-data-access): links resolved to Datasette Lite with public Parquet inputs during rehearsal.
-- [Gene coverage](https://zenodo.org/records/16883068): official symbols; availability counts are reagent coverage, not replicate counts.
-
-Documentation inspected in the existing local JUMP Hub checkout at commit `80810c06bfc47f8482cfb9fddcf1a352bc38f9f0`; that checkout and its unrelated work were not modified. Runtime table snapshots are identified by the output manifest, not that documentation commit. Dynamic `latest` inputs can change: re-query shortly before the talk and check against the committed reference; investigate discrepancies rather than hard-coding expected biology.
+If live execution stalls for roughly 30 seconds, open the saved extracts and preview pair and say: **“This is the query I checked ahead of time; the replicate-level investigation is the next step.”** Do not claim cached results were generated live.

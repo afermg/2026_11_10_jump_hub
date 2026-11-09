@@ -1,0 +1,32 @@
+{
+  "review_date": "2026-11-09",
+  "source": "Published JUMP_rr compound gallery / Ardigen JPEG previews",
+  "selection": "First nocodazole gallery row, site 1; lexically first DMSO well on the same source and plate, site 1. Not selected by image appearance.",
+  "images": [
+    {
+      "condition": "nocodazole",
+      "JCP2022": "JCP2022_047835",
+      "source": "source_2",
+      "plate": "1086292020",
+      "well": "P15",
+      "site": 1,
+      "url": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_2/1086292020/P15_1.jpg",
+      "file": "assets/nocodazole-source2-P15-site1.jpg",
+      "sha256": "387bd196665064f968d9890c86609d23262f8f53c52b940a43dade904e566265"
+    },
+    {
+      "condition": "DMSO",
+      "JCP2022": "JCP2022_033924",
+      "source": "source_2",
+      "plate": "1086292020",
+      "well": "A02",
+      "site": 1,
+      "url": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_2/1086292020/A02_1.jpg",
+      "file": "assets/dmso-source2-A02-site1.jpg",
+      "sha256": "f2baaa9be800a89e8c2ce9041648a6478758be4e3ea357d9b4c24a1340e73efa"
+    }
+  ],
+  "processing": "Original JPEG bytes copied unchanged; equal display sizes. No new crop or contrast adjustment. Original rendering/contrast calibration not verified.",
+  "visual_observation": "The nocodazole field is sparser and contains several small rounded bright objects; the control field is denser with more spread-out cells.",
+  "limits": "One field per condition. Not evidence of replicate consistency, mechanism, cell-cycle state or toxicity. Dose/time and profile-image cohort alignment remain unverified. Cell Painting does not directly stain tubulin. Existing image attribution and third-party terms apply."
+}

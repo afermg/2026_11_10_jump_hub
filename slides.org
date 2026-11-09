@@ -65,74 +65,6 @@ Profiles are numerical descriptions of cells.
 # Colors and shapes are illustrative, not measured phenotypes or validated health labels. Original source and Mac-edit hashes remain in docs/assets.json; the superseded color-consistent derivative is retained separately.
 # Similarity helps prioritize biological hypotheses; it does not establish mechanism.
 
-** Morphological profiling: How to turn images into profiles
-Start with a simple question: are control and perturbed cells different?
-
-#+BEGIN_EXPORT latex
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.48\textwidth}
-\begin{block}{Classical features (e.g., CellProfiler)}
-\begin{itemize}
-\item Size, shape, intensity, texture and relationships between channels and objects.
-\item Interpretable but partially redundant.
-\end{itemize}
-\end{block}
-\end{column}
-\begin{column}{0.48\textwidth}
-\begin{block}{Learned representations}
-\begin{itemize}
-\item Features learned from images by neural networks (deep learning).
-\item Non-redundant numerical vectors (embeddings).
-\end{itemize}
-\end{block}
-\end{column}
-\end{columns}
-#+END_EXPORT
-
-# Speaker note: Both routes produce vectors; cell/image features can be aggregated into well/perturbation profiles.
-# Normalization, training objectives and experimental context affect comparisons. Retain images for inspection.
-# Neither route alone establishes mechanism or removes batch effects. Do not claim one universally outperforms the other.
-
-** Words as vectors: word2vec
-#+BEGIN_EXPORT latex
-\par
-{\centering\small Learning can be viewed as compression\par}
-\smallskip
-#+END_EXPORT
-
-#+ATTR_LATEX: :width 0.99\linewidth :height 0.70\textheight :options keepaspectratio
-[[file:assets/word2vec-king-queen.pdf]]
-
-#+BEGIN_EXPORT latex
-\hfill{\scriptsize\href{https://arxiv.org/abs/1301.3781}{Mikolov et al. (2013)}}
-#+END_EXPORT
-
-# Speaker note: Start with words before moving to cells. Word2vec learns numerical word representations from language context.
-# The man-to-woman and king-to-queen analogy is a teaching example: king minus man plus woman can point toward queen in a learned vector space.
-# These two-dimensional positions are invented, not a trained model output or a quantitative test. The arithmetic is approximate and depends on training and evaluation.
-# At the presenter's request the on-graphic "Illustrative 2D positions" caption is removed; this clarification remains in these notes and the SVG description.
-# The presenter subsequently requested generic Feature 1 / Feature 2 labels; these are not assigned artificial semantic meanings.
-# Real embeddings have many dimensions; individual axes are not predefined concepts such as age, gender or biological properties. Learned relations can reflect corpus biases.
-# The user-supplied Words As Vectors image inspired the teaching sequence; this is original vector artwork, not a claim that its hand-labelled axes are real word2vec coordinates.
-# Main-talk placement: word2vec, then cell vectors, then JUMP; 30 seconds, borrowed from the earlier profiles introduction.
-
-** From words to cells: vectors for comparison
-#+ATTR_LATEX: :width 0.99\linewidth :height 0.83\textheight :options keepaspectratio
-[[file:assets/vector-control-perturbation.pdf]]
-
-# Speaker note: Restored as a separate slide after word2vec at the presenter's explicit request. Allow30seconds for each;their combined60seconds are unchanged. Keep the simpler control-versus-perturbed comparison established earlier in the talk.
-# Blue means Control examples A/B; orange means Perturbation examples C/D, not different cell types. The coordinates are invented and unchanged; they are not an assay result or a demonstration of treatment translation.
-# Word2vec is an analogy for numerical representations, not the algorithm used for these cells. Classical measurements and learned image embeddings are distinct routes.
-# This original illustration is a teaching cartoon, not measured data. The presenter requested removing the visible Same cells/illustrative-positions footer; keep the limitation here and in provenance.
-# Cell cartoons retain their clearer boundaries,nuclei and separate branched/punctate mitochondrial shapes. Only the legend labels change;coordinates,colors and right-hand embedding geometry remain unchanged. The original artwork is preserved alongside this derivative.
-# The vertical axis reads exactly Granularity Mito Channel,at the presenter's request.
-# A/B are Control examples and C/D Perturbation examples. The vertical axis is an illustrative mitochondrial-channel granularity measurement at a specified spatial scale.
-# The larger orange examples illustrate one possible morphological difference,not a universal perturbation effect or evidence of causality. Biological interpretation requires controls,context and experimental validation.
-# Granularity describes image-signal structure across spatial scales;it is not a direct measure of mitochondrial fragmentation,organelle number or cristae. The retained network-like/punctate cartoons do not determine the invented scores. Both example groups span the illustrated granularity values.
-# Named measurements have explicit definitions; learned coordinates can mix visual patterns and need not map one-to-one to a biological feature.
-# Only two illustrative embedding coordinates are shown, not a fitted UMAP or measured model output. Similarity can still help compare cells; preprocessing, scaling and metric choice matter.
-# Classical features are not automatically mechanistic explanations, and interpretability methods can sometimes help investigate learned representations.
-
 ** JUMP: Joint Undertaking for Morphological Profiling
 #+BEGIN_EXPORT latex
 \begin{itemize}
@@ -235,107 +167,121 @@ The Hub contains practical guides to help biologists use JUMP.
 # No-code guides include availability queries, JUMP_rr and Morpheus heatmaps. Dataset explanations describe experimental context. The Guide to Cell Painting for Biologists is an external Cimini Lab resource linked by the Hub, not a guide newly authored by us.
 # The MisLocus how-to is a separate VarChAMP companion workflow, not a JUMP assay or one of the Colab notebooks. Do not promise it runs in Colab.
 
-** Was my gene or compound tested?
-- Find your compound and see whether it was tested.
-- Find your gene and see whether it was knocked out or overexpressed.
-- View the available profiles, images and metadata.
+** Was my compound tested? Nocodazole
+#+BEGIN_EXPORT latex
+\begin{block}{A familiar biological question}
+Can morphology recover nocodazole's annotated mechanism?
+\end{block}
+\begin{itemize}
+\item Nocodazole is present: \texttt{JCP2022\_047835}.
+\item Annotated mechanism: tubulin polymerization inhibitor.
+\item Colchicine, vinblastine, vincristine and mebendazole are also present.
+\item For this example, use CellProfiler-derived profiles only.
+\end{itemize}
+\medskip
+{\small Start with a simple query: ``Find nocodazole and its annotations in JUMP.''}
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broad.io/compound}{JUMP\_rr compounds}; Repurposing annotations; checked 9 November 2026}
+#+END_EXPORT
 
-#+ATTR_LATEX: :width 0.90\linewidth :height 0.42\textheight :options keepaspectratio
-[[file:assets/hub-identifiers.png]]
+# Presence verified in current compound match, interpretable feature and gallery tables; see demo/rehearsal-nocodazole/.
+# Annotation class was defined before inspecting match rankings: microtubule inhibitor or tubulin polymerization inhibitor, excluding stabilizing-agent labels. All 20 unique IDs, including nocodazole, occur in the match and feature tables.
+# Annotation source: JUMP_lite/metadata/repurposed_compounds.tsv at dedfa397eea20542ce113c7dba38945ba6f26afd; duplicated rows deduplicated. This supplies annotations only: the query uses full JUMP_rr, not the JUMP-lite image cohort.
+# Nocodazole's annotation target field lists HPGDS, not a complete mechanistic target set. Use the MOA annotation here; do not infer tubulin target genes from that field.
 
-# Historical artwork provenance is retained in docs/assets.json; visible Cell Circuits credit removed at the presenter's request.
-# Speaker note: Use the current availability tools for a new query. The illustration is an archived 2024 interface.
+** Which compounds look similar to nocodazole?
+#+BEGIN_EXPORT latex
+\textbf{Query: ``Show nocodazole's closest published matches.''}\par\medskip
+\begin{tabular}{@{}l r l@{}}
+\textbf{Annotated peer} & \textbf{Similarity} & \textbf{JUMP reagent ID} \\[5pt]
+Colchicine & 0.934 & \texttt{JCP2022\_033814} \\
+CYT-997 & 0.916 & \texttt{JCP2022\_056401} \\
+Parbendazole & 0.916 & \texttt{JCP2022\_110440} \\
+Oxibendazole & 0.902 & \texttt{JCP2022\_077096}
+\end{tabular}
+\medskip
+\begin{itemize}
+\item Four annotated peers occur among the five highest returned matches.
+\item Similar morphology suggests a useful biological connection.
+\end{itemize}
+{\footnotesize CellProfiler-derived, batch-corrected profiles; published ranked subset, not an exhaustive screen.}
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broad.io/compound}{JUMP\_rr compound matches}; checked 9 November 2026}
+#+END_EXPORT
 
-** Which perturbations produce related phenotypes?
-MYT1 example
+# These four rows are the annotation-defined peers among the five highest returned matches, not the complete top five. JCP2022_096054, similarity 0.913, is the other returned compound and lacks a name/MOA in this annotation snapshot; do not call it unrelated.
+# Scores are published values, not recomputed. Similarity is cosine similarity in processed CellProfiler-derived profiles, not raw-feature identity and not a learned representation comparison.
+# Vinblastine, vincristine and mebendazole are present in JUMP_rr but absent from nocodazole's 20 returned match rows. Absence from this subset does not establish low similarity.
 
-#+ATTR_LATEX: :width 0.93\linewidth :height 0.55\textheight :options keepaspectratio
-[[file:assets/hub-matches.png]]
+** Does nocodazole change cell morphology?
+#+BEGIN_EXPORT latex
+\begin{block}{Published activity result}
+Corrected activity p-value: \textbf{0.00003}
+\end{block}
+\begin{itemize}
+\item A detectable profile in this published analysis.
+\item Fewer neighboring cells: Cohen's $d=-3.306$.
+\item Lower nuclear form factor: Cohen's $d=-3.110$.
+\end{itemize}
+\medskip
+\textbf{Follow-up question:} could cell density contribute to the matches?
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broad.io/compound_feature}{JUMP\_rr compound features}; checked 9 November 2026}
+#+END_EXPORT
 
-- Precomputed comparisons between perturbation profiles.
-- Look for perturbations that match \textit{and} oppose your perturbation of interest.
+# The reported activity p-value is rounded source output. Activity score is 0.88636; the match and feature views agree. Feature effects are not the activity p-value.
+# Named measurements: Cells_Neighbors_NumberOfNeighbors_5 and Nuclei_AreaShape_FormFactor. Interpret directions relative to controls under the table's normalization.
+# Several highly ranked columns are object/parent/neighbor identifiers, not valid biological measurements of cell count. Do not interpret Number_Object_Number or ParentNucleiIncludingEdges as counts. The live analysis should use actual counts and QC metadata.
+# Nuclear form factor is a morphological summary, not direct evidence of mitotic arrest, microtubule loss or viability.
 
-# Historical artwork provenance is retained in docs/assets.json; visible Cell Circuits credit removed at the presenter's request.
-# Speaker note: These are precomputed comparisons between perturbation profiles in the available tables, not a claim of exhaustive coverage or experiments combining two perturbations.
-# JSON export is documented by the current JUMP_rr tutorial. Do not promise a CSV button.
-# Profile similarity is not proof of a shared mechanism. This historical MYT1 example is separate from AVPR2 below. Its rightmost JCP2022 column reads JCP2022_804400: the same CRISPR reagent used in the additional embedding figures, not ORF overexpression. Those new figures use different processing and are not a reproduction of these similarity scores.
-
-** How does cell morphology change?
-AVPR2 overexpression example
-
-#+ATTR_LATEX: :width 0.98\linewidth :height 0.47\textheight :options keepaspectratio
-[[file:assets/hub-features.png]]
-
-- Feature to investigate: mitochondria--AGP overlap.
-- Check images: mitochondria versus actin, Golgi and plasma membrane.
-
-# Historical artwork provenance is retained in docs/assets.json; visible Cell Circuits credit removed at the presenter's request.
-# Speaker note: JCP2022_905491 maps to AVPR2 in the pinned ORF metadata, so the perturbation is overexpression.
-# Screenshot: Cells / Correlation_K_Mito / AGP, normalized feature median -0.21309228714749423.
-# The K overlap coefficient is intensity-dependent. Its normalized median is not a raw overlap fraction or a negative Pearson correlation.
-# The screenshot does not establish a decrease in physical colocalization; do not repeat that unverified directional claim.
-# Concrete next question: does the image pattern reflect mitochondrial redistribution, AGP changes, or intensity differences? Inspect replicates/controls.
-
-** Use JUMP as a screen for your phenotype of interest
+** Use JUMP to investigate a phenotype
 #+BEGIN_EXPORT latex
 \begin{columns}[T,onlytextwidth]
-\begin{column}{0.46\textwidth}
-\textbf{Feature families}\par\medskip
-\small
-\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.32\linewidth}>{\raggedright\arraybackslash}p{0.60\linewidth}@{}}
-\textbf{Size / shape} & Nuclear area, elongation \\[6pt]
-\textbf{Intensity} & Mitochondrial staining \\[6pt]
-\textbf{Texture} & Fine/coarse patterns \\[6pt]
-\textbf{Correlation} & Between-channel patterns \\[6pt]
-\textbf{Distribution} & Peripheral/perinuclear signal
-\end{tabular}
+\begin{column}{0.48\textwidth}
+\textbf{Simple questions in JUMP\_rr}
+\begin{enumerate}
+\item Was nocodazole tested?
+\item Does it have a detectable profile?
+\item Which compounds look similar?
+\item Which measurements change?
+\end{enumerate}
 \end{column}
-\begin{column}{0.50\textwidth}
-\textbf{Which perturbations change nuclear size?}
+\begin{column}{0.48\textwidth}
+\textbf{Then investigate the result}
 \begin{itemize}
-\item Select nuclear area.
-\item Rank perturbations by feature value.
-\item Check activity, images and controls.
+\item Check images and matched controls.
+\item Check consistency across replicates.
+\item Test whether cell density explains part of the similarity.
 \end{itemize}
 \end{column}
 \end{columns}
+\bigskip
+\centering One compound, one biological question, CellProfiler profiles.
 #+END_EXPORT
 
-# Speaker note: Nuclear area corresponds to Nuclei_AreaShape_Area. This is a query recipe, not a claimed result list.
-# Feature tables retain ranked subsets (top features/genes); use full profiles for an exhaustive screen.
-# Keep perturbation-level activity distinct from per-feature significance. Check controls, batch effects and multiple testing.
-# Mitochondrial staining intensity alone is not an absolute measurement of mitochondrial abundance.
+# The ranked tables support the simple queries, not a full replicate-level or enrichment analysis. Those require aligned full well-level profiles, annotations and metadata. This next investigation is the live workflow, not a preclaimed result.
 
-** What do the perturbed cells look like?
-MYT1 and PROZ gallery examples
-
-#+ATTR_LATEX: :width 0.93\linewidth :height 0.55\textheight :options keepaspectratio
-[[file:assets/hub-gallery.png]]
-
-# Historical artwork provenance is retained in docs/assets.json; visible Cell Circuits credit removed at the presenter's request.
-# Speaker note: Inspect fields and channels; retrieve matched controls.
-# Speaker note: PROZ is not a negative-control label; the historical gallery is not a matched-control comparison.
-
-** Modern tools make image analysis more accessible
+** What do nocodazole-treated cells look like?
 #+BEGIN_EXPORT latex
-\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.49\textwidth}>{\raggedright\arraybackslash}p{0.46\textwidth}@{}}
-\textbf{Find cells, nuclei and spots} & {\small Cellpose (cells and nuclei); Spotiflow (spots)} \\[0.9em]
-\textbf{Follow cells and organelles over time} & {\small Trackastra / Ultrack} \\[0.9em]
-\textbf{Measure cell and organelle appearance} & {\small cp\_measure} \\[0.9em]
-\textbf{Explore your results} & {\small marimo} \\[0.9em]
-\end{tabular}
+\begin{columns}[c,onlytextwidth]
+\begin{column}{0.48\textwidth}
+\centering\textbf{DMSO control}\par\smallskip
+\includegraphics[width=0.88\linewidth,height=0.62\textheight,keepaspectratio]{assets/dmso-source2-A02-site1.jpg}\par
+{\scriptsize A02, site 1}
+\end{column}
+\begin{column}{0.48\textwidth}
+\centering\textbf{Nocodazole}\par\smallskip
+\includegraphics[width=0.88\linewidth,height=0.62\textheight,keepaspectratio]{assets/nocodazole-source2-P15-site1.jpg}\par
+{\scriptsize P15, site 1}
+\end{column}
+\end{columns}
+\smallskip
+{\small Same source and plate: source\_2 / 1086292020. Inspect density and cell appearance.}
+\par\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broad.io/compound_gallery}{JUMP gallery / Ardigen previews}}
 #+END_EXPORT
 
-# Speaker note: Lead with four biological actions, not package explanations: find cells/spots, follow cells over time, measure cell appearance, explore results. Tool names are supporting examples, not a required pipeline. Accessibility refers to image analysis, not the price of imaging hardware.
-# Parquet/Zarr/JPEG XL implementation details move off the visible toolbox into these notes; the main talk need not teach storage formats. The post-QR Nahual model catalogue remains available for technical questions.
-# Cellpose provides cell/nucleus segmentation. Spotiflow detects fluorescent puncta; its Nahual wrapper converts detected centres into configurable disk labels, not measured object boundaries.
-# Trackastra links segmented cells/nuclei; Ultrack combines candidate segmentations and tracking. Restored names are task alternatives with model-specific inputs, not a claim of validated tracking for every organelle.
-# Generalist/specialised learned representations can be adapted where model weights, training interfaces and licences permit; fine-tuning needs appropriate data and held-out evaluation.
-# Parquet is columnar tabular storage, Zarr stores chunked multidimensional arrays, and JPEG XL is an image codec; they serve different roles.
-# The agent-integration claim reflects the presenter's experience, not a measured speedup or a fully autonomous workflow. Experts validate the biology.
-# marimo and uv address recurring Python workflow friction: reactive execution reduces hidden notebook state; uv manages Python environments and dependencies with lockfiles.
-# These are complementary tools, not a claim that every packaging or reproducibility problem is solved. Biological validation remains necessary.
-# Source links are on References; illustration provenance is retained in docs/provenance.md.
+# Unmodified published JPEG previews, both 996 x 996 pixels; no new cropping, rescaling of channels or contrast enhancement. Pre-rendered contrast calibration is not documented, so do not claim quantitatively matched intensity scales.
+# Deterministic preview selection: first nocodazole gallery row, site 1; first same-source/plate DMSO well in lexical order, site 1. DMSO is resolved through compound metadata to JCP2022_033924 / IAZDPXIOMUYVGZ-UHFFFAOYSA-N, not by matching the string DMSO inside arbitrary InChIKeys.
+# Viewed both images: the nocodazole field is visibly sparser with several small rounded bright objects; the control field is denser with more spread-out cells. One field per condition is illustrative, not a replicate-level result or proof of toxicity/mitotic arrest.
+# Standard Cell Painting does not directly stain tubulin. Dose/time alignment and image-to-profile cohort inclusion remain to be checked for the full live analysis.
+# Source URLs and image SHA256 hashes: demo/rehearsal-nocodazole/image-provenance.json.
 
 ** We can leverage the curated documentation to build interactive tools and interrogate the data :noexport:
 #+BEGIN_QUOTE
@@ -350,74 +296,54 @@ Example prompt: Using the JUMP Hub docs, create a marimo dashboard to link selec
 # Speaker note: Use an external AI assistant, not a built-in Hub chatbot. Generated code is a draft requiring verification.
 # Presenter experience: without shared tools, agents may solve the same problem in different ways. Tested implementations, recorded parameters and versions support consistency; experts validate the biological interpretation.
 # Stable identifiers and documented inputs/outputs support repeatable analysis. No claim that every AI/model supports this workflow.
-# The old recorded marimo notebook remains in the appendix; the main demo now queries SLC2A2 with an agent.
+# The old recorded marimo notebook remains in the appendix; the main demo now investigates nocodazole with an agent.
 
-** Live demo: ask an agent to query JUMP
+** Live demo: investigate nocodazole's matches
 #+BEGIN_EXPORT latex
-\begin{block}{Our question}
-Is SLC2A2 in JUMP? Does perturbing it change cell morphology?
-Which other perturbations look similar?
+\begin{block}{From a simple query to an investigation}
+Investigate whether nocodazole retrieves other microtubule-disrupting compounds using CellProfiler profiles. Compare their retrieval against unrelated compounds, check consistency across replicates, and show representative images alongside the quantitative results.
 \end{block}
+\medskip
+\textbf{My follow-up:}\par
+``Could this reflect cell density or toxicity? Check cell counts and quality-control measurements.''\par\medskip
+\textbf{Finish with:}\par
+``Turn the result into one slide with an image comparison, a retrieval plot and the main limitation. Build a preview.''
+\par\smallskip
+{\footnotesize External agent and backends on Oppy; forwarded interface on the MacBook.}
+#+END_EXPORT
+
+# Switch to the live workflow after showing the simple JUMP_rr questions. Use demo/prompts.md. Backend forwarding is the intended architecture, not a claim that readiness has been checked.
+# Define related compounds from annotations before ranking; do not label unannotated compounds as unrelated. Use a documented annotated comparator set.
+# Rehearsal has checked published summary tables and a single preview pair. Full-profile cohort alignment, dose/time metadata, replicate consistency, background comparison and actual count/QC checks remain live-workflow prerequisites.
+# No representation comparison or model inference. A build preview is not permission to publish a manuscript or alter shared Overleaf content.
+# If execution stalls, show the cached summary and label it as the preflight result; do not imply that the full analysis already ran.
+
+** What we know, and what we will check
+#+BEGIN_EXPORT latex
 \begin{columns}[T,onlytextwidth]
-\begin{column}{0.59\textwidth}
-\small
-\textbf{Start with documentation, not a guessed answer.}\par\medskip
-Read the JUMP Hub documentation. Check SLC2A2 availability and reagent IDs. Compare CRISPR and ORF activity separately. Show the source tables and the code you run.
+\begin{column}{0.48\textwidth}
+\textbf{Checked before the demo}
+\begin{itemize}
+\item Nocodazole and 19 annotated peers are present.
+\item Colchicine is its top returned match.
+\item Images and same-plate DMSO controls are available.
+\end{itemize}
 \end{column}
-\begin{column}{0.38\textwidth}
-\small
-\textbf{Then ask for evidence.}
-\begin{enumerate}
-\item Retrieve similar and opposing profiles.
-\item Explain the leading features.
-\item Find images and same-plate controls.
-\end{enumerate}
+\begin{column}{0.48\textwidth}
+\textbf{The live investigation}
+\begin{itemize}
+\item How consistent are the replicates?
+\item Are annotated peers preferentially retrieved?
+\item How much is explained by density or QC?
+\end{itemize}
 \end{column}
 \end{columns}
-\medskip
-{\footnotesize External coding agent + public JUMP tools; not a built-in Hub chatbot.}
-\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broadinstitute.github.io/jump_hub/}{JUMP Hub}; \href{https://broadinstitute.github.io/jump_hub/howto/interactive/1_jumprr_steps.html}{worked tutorial}}
+\bigskip
+\centering From a recognizable phenotype to a testable biological hypothesis.
 #+END_EXPORT
 
-# Demo cue: PDF16. Switch to the external agent; use demo/prompts.md in three short turns.
-# Initial gene SLC2A2 is a worked tutorial example, not an audience-selected discovery.
-# Agent reads documentation, inspects schemas and executes a bounded public-data query.
-# Rehearsal query_jump.py is a reviewed fallback, not an agent and not proof that a live agent has been rehearsed.
-# No new dashboard or full image download is required. Optional dashboard is a stretch goal after evidence is checked.
-# Allow 5–7 minutes; switch to saved CSVs if the network/agent stalls, and label the fallback honestly.
-
-** Return with evidence, not just an answer
-#+BEGIN_EXPORT latex
-\small
-\textbf{SLC2A2: a checked rehearsal query, not a new discovery}\par\medskip
-\begin{tabular}{@{}l l r@{}}
-\textbf{Perturbation} & \textbf{JUMP reagent ID} & \textbf{Activity corrected p-value} \\[4pt]
-CRISPR & \texttt{JCP2022\_806487} & 0.00018 \\
-ORF & \texttt{JCP2022\_910380} & 0.09482
-\end{tabular}
-\medskip
-\begin{itemize}
-\item At 0.05: CRISPR is significant; ORF is not in this analysis.
-\item Top returned CRISPR match: RAD51 (similarity 0.621).
-\item Check features, cell counts and images against same-plate controls.
-\end{itemize}
-{\footnotesize Published ranked subsets, not an exhaustive screen. Similarity suggests hypotheses, not a shared mechanism. Missing significance is not proof of no effect.}\par\smallskip
-{\scriptsize Saved tables and code provide an offline fallback; live outputs may change.}
-\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broad.io/crispr_feature}{CRISPR features}; \href{https://broad.io/orf_feature}{ORF features}; \href{https://broad.io/crispr}{CRISPR matches}; queried 9 November 2026}
-#+END_EXPORT
-
-# Return cue: PDF17. Verified values come from demo/rehearsal-slc2a2/ with URL+SHA256 provenance.
-# Feature and match tables agree on reagent IDs and activity values. These are existing published statistics, not newly computed p-values.
-# CRISPR/ORF results are separate perturbations, not a controlled symmetric dose-response experiment.
-# Availability counts are reagent coverage, not replicates. Significant perturbation-level activity differs from per-feature significance.
-# RAD51 is highest among returned non-self matches; query is not an exhaustive all-pairs search.
-# Leading features include DNA granularity and reduced cell count; do not infer a direct pathway or transport mechanism.
-# Retrieved six SLC2A2 CRISPR image wells and 125 no-guide/non-targeting wells on matching source+plate.
-# Image URLs/control metadata were retrieved; biological visual inspection remains a live-demo/rehearsal step.
-# The middle 50% is an interquartile range, not a confidence interval.
-# Crops share pixel scale and fixed contrast; white outlines identify the selected objects, with some neighbors/truncation visible.
-# This Target-2 Zstd example is separate from the main JUMP-lite release cohort.
-
+# 20 annotation-class IDs include nocodazole; all appear in current match and feature tables. Gallery counts: 18 nocodazole wells, of which 5 are source_7; never call this 18 validated profile replicates. There are 969 same-source/plate DMSO gallery wells across the full 18-well gallery set.
+# Saved code, table extracts and hashes: demo/rehearsal-nocodazole/. Historical SLC2A2 rehearsal retained separately, not presented as the current example.
 ** Try different image-analysis models with Nahual :noexport:
 #+BEGIN_EXPORT latex
 \begin{columns}[T,onlytextwidth]
@@ -447,19 +373,6 @@ ORF & \texttt{JCP2022\_910380} & 0.09482
 # DINOv2/v3 provide generalist visual features; OpenPhenom and MorphEm are microscopy-oriented ViT examples. Cellpose/StarDist provide masks; Trackastra links cells over time.
 # Nix deploys the wrappers. Most neural models require GPU resources; model-specific preprocessing, licences, weights and output conventions still apply.
 # Do not imply embeddings from different models share coordinates or dimensions, or that every wrapper was runtime-tested for this talk.
-
-** Positive controls contextualize perturbations in both learned and classical representations
-#+ATTR_LATEX: :width 0.94\linewidth :height 0.80\textheight :options keepaspectratio
-[[file:assets/real-embeddings-combined.png]]
-
-#+BEGIN_EXPORT latex
-\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://arxiv.org/abs/2608.07632v3}{Data: JUMP-lite (2026)}; models: \href{https://huggingface.co/CaicedoLab/MorphEm}{MorphEm}, \href{https://github.com/facebookresearch/dinov2}{DINOv2}, \href{https://huggingface.co/recursionpharma/OpenPhenom}{OpenPhenom}, \href{https://github.com/CellProfiling/subcell-embed}{SubCell}; \href{https://github.com/broadinstitute/jump-profiling-recipe/tree/a917fa79342ff92cf0ea05d6d9174d9028a90f8f}{CellProfiler/Harmony recipe}}
-#+END_EXPORT
-
-# Current paired example: 5,750 matched wells: 567 PLK1 positive-control wells, 10 GJA8 perturbation wells and 5,173 negative controls. GJA8 is a discovery-selected phenotype example, NOT an annotated positive control or independent validation reagent. Two of 569 PLK1 wells were excluded for known missing MQ image chunks. Same wells in every panel; MYT1/NPC1 and other exploratory candidates are excluded before fitting/display.
-# Large left panel uses genuine Nuclei_AreaShape_Area and Nuclei_AreaShape_Eccentricity, centered on plate-negative medians and scaled by pooled discovery-negative MAD*1.4826. These are named measured features, not UMAP/PCA axes or learned coordinates. The full-range view retains all wells; the labeled inset magnifies the control/GJA8 region. PLK1 shows smaller, more eccentric nuclei relative to controls; GJA8 shows larger, moderately more eccentric nuclei in these well-level measurements. Do not infer mechanism from these features.
-# Six embedding panels use fixed UMAP: CellProfiler+Harmony, MorphEm, DINOv2, OpenPhenom, SubCell and ViT-random, last. The displayed label is SubCell; the underlying data remain clipped-input SubCell only. Standard SubCell and the cell-count representation are omitted. Shared parameters: 15 neighbors, min_dist 0.1, Euclidean, spectral initialization, seed 20261020, single thread. No parameter tuning for separation. CellProfiler input remains the released259-coordinate corrected representation; its final visualization is UMAP, not PCA. No new Harmony fit or model inference.
-# GJA8 came from the prior frozen discovery-only CP screen; feature axes were selected exploratorily using discovery comparisons. PLK1 was originally highlighted after inspecting earlier results. This is an illustrative comparison, not a model ranking, causal claim or independent-guide validation. UMAP need not isolate GJA8 from controls. Same wells do not guarantee identical image encoding, aggregation or preprocessing. Removing the count plot does not rule out density/viability effects; prior count-baseline results are retained in the research archive. Current data/provenance: figures/two-phenotypes/. Main-talk slide immediately before profile extraction. Pacing:30s here plus45s for extraction, preserving their combined75s allocation.
 
 ** Not just JUMP: Extract morphological profiles from your own images
 #+BEGIN_EXPORT latex
@@ -719,6 +632,113 @@ Runxi Shen
 
 * Additional slides
 
+** Morphological profiling: How to turn images into profiles
+Start with a simple question: are control and perturbed cells different?
+
+#+BEGIN_EXPORT latex
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.48\textwidth}
+\begin{block}{Classical features (e.g., CellProfiler)}
+\begin{itemize}
+\item Size, shape, intensity, texture and relationships between channels and objects.
+\item Interpretable but partially redundant.
+\end{itemize}
+\end{block}
+\end{column}
+\begin{column}{0.48\textwidth}
+\begin{block}{Learned representations}
+\begin{itemize}
+\item Features learned from images by neural networks (deep learning).
+\item Non-redundant numerical vectors (embeddings).
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+#+END_EXPORT
+
+# Speaker note: Both routes produce vectors; cell/image features can be aggregated into well/perturbation profiles.
+# Normalization, training objectives and experimental context affect comparisons. Retain images for inspection.
+# Neither route alone establishes mechanism or removes batch effects. Do not claim one universally outperforms the other.
+
+
+** Words as vectors: word2vec
+#+BEGIN_EXPORT latex
+\par
+{\centering\small Learning can be viewed as compression\par}
+\smallskip
+#+END_EXPORT
+
+#+ATTR_LATEX: :width 0.99\linewidth :height 0.70\textheight :options keepaspectratio
+[[file:assets/word2vec-king-queen.pdf]]
+
+#+BEGIN_EXPORT latex
+\hfill{\scriptsize\href{https://arxiv.org/abs/1301.3781}{Mikolov et al. (2013)}}
+#+END_EXPORT
+
+# Speaker note: Start with words before moving to cells. Word2vec learns numerical word representations from language context.
+# The man-to-woman and king-to-queen analogy is a teaching example: king minus man plus woman can point toward queen in a learned vector space.
+# These two-dimensional positions are invented, not a trained model output or a quantitative test. The arithmetic is approximate and depends on training and evaluation.
+# At the presenter's request the on-graphic "Illustrative 2D positions" caption is removed; this clarification remains in these notes and the SVG description.
+# The presenter subsequently requested generic Feature 1 / Feature 2 labels; these are not assigned artificial semantic meanings.
+# Real embeddings have many dimensions; individual axes are not predefined concepts such as age, gender or biological properties. Learned relations can reflect corpus biases.
+# The user-supplied Words As Vectors image inspired the teaching sequence; this is original vector artwork, not a claim that its hand-labelled axes are real word2vec coordinates.
+# Moved to additional slides on 9 November 2026; optional representation background, not main-talk timing.
+
+
+** From words to cells: vectors for comparison
+#+ATTR_LATEX: :width 0.99\linewidth :height 0.83\textheight :options keepaspectratio
+[[file:assets/vector-control-perturbation.pdf]]
+
+# Speaker note: Restored as a separate slide after word2vec at the presenter's explicit request. Allow30seconds for each;their combined60seconds are unchanged. Keep the simpler control-versus-perturbed comparison established earlier in the talk.
+# Blue means Control examples A/B; orange means Perturbation examples C/D, not different cell types. The coordinates are invented and unchanged; they are not an assay result or a demonstration of treatment translation.
+# Word2vec is an analogy for numerical representations, not the algorithm used for these cells. Classical measurements and learned image embeddings are distinct routes.
+# This original illustration is a teaching cartoon, not measured data. The presenter requested removing the visible Same cells/illustrative-positions footer; keep the limitation here and in provenance.
+# Cell cartoons retain their clearer boundaries,nuclei and separate branched/punctate mitochondrial shapes. Only the legend labels change;coordinates,colors and right-hand embedding geometry remain unchanged. The original artwork is preserved alongside this derivative.
+# The vertical axis reads exactly Granularity Mito Channel,at the presenter's request.
+# A/B are Control examples and C/D Perturbation examples. The vertical axis is an illustrative mitochondrial-channel granularity measurement at a specified spatial scale.
+# The larger orange examples illustrate one possible morphological difference,not a universal perturbation effect or evidence of causality. Biological interpretation requires controls,context and experimental validation.
+# Granularity describes image-signal structure across spatial scales;it is not a direct measure of mitochondrial fragmentation,organelle number or cristae. The retained network-like/punctate cartoons do not determine the invented scores. Both example groups span the illustrated granularity values.
+# Named measurements have explicit definitions; learned coordinates can mix visual patterns and need not map one-to-one to a biological feature.
+# Only two illustrative embedding coordinates are shown, not a fitted UMAP or measured model output. Similarity can still help compare cells; preprocessing, scaling and metric choice matter.
+# Classical features are not automatically mechanistic explanations, and interpretability methods can sometimes help investigate learned representations.
+
+
+** Modern tools make image analysis more accessible
+#+BEGIN_EXPORT latex
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.49\textwidth}>{\raggedright\arraybackslash}p{0.46\textwidth}@{}}
+\textbf{Find cells, nuclei and spots} & {\small Cellpose (cells and nuclei); Spotiflow (spots)} \\[0.9em]
+\textbf{Follow cells and organelles over time} & {\small Trackastra / Ultrack} \\[0.9em]
+\textbf{Measure cell and organelle appearance} & {\small cp\_measure} \\[0.9em]
+\textbf{Explore your results} & {\small marimo} \\[0.9em]
+\end{tabular}
+#+END_EXPORT
+
+# Speaker note: Lead with four biological actions, not package explanations: find cells/spots, follow cells over time, measure cell appearance, explore results. Tool names are supporting examples, not a required pipeline. Accessibility refers to image analysis, not the price of imaging hardware.
+# Parquet/Zarr/JPEG XL implementation details move off the visible toolbox into these notes; the main talk need not teach storage formats. The post-QR Nahual model catalogue remains available for technical questions.
+# Cellpose provides cell/nucleus segmentation. Spotiflow detects fluorescent puncta; its Nahual wrapper converts detected centres into configurable disk labels, not measured object boundaries.
+# Trackastra links segmented cells/nuclei; Ultrack combines candidate segmentations and tracking. Restored names are task alternatives with model-specific inputs, not a claim of validated tracking for every organelle.
+# Generalist/specialised learned representations can be adapted where model weights, training interfaces and licences permit; fine-tuning needs appropriate data and held-out evaluation.
+# Parquet is columnar tabular storage, Zarr stores chunked multidimensional arrays, and JPEG XL is an image codec; they serve different roles.
+# The agent-integration claim reflects the presenter's experience, not a measured speedup or a fully autonomous workflow. Experts validate the biology.
+# marimo and uv address recurring Python workflow friction: reactive execution reduces hidden notebook state; uv manages Python environments and dependencies with lockfiles.
+# These are complementary tools, not a claim that every packaging or reproducibility problem is solved. Biological validation remains necessary.
+# Source links are on References; illustration provenance is retained in docs/provenance.md.
+
+
+** Positive controls contextualize perturbations in both learned and classical representations
+#+ATTR_LATEX: :width 0.94\linewidth :height 0.80\textheight :options keepaspectratio
+[[file:assets/real-embeddings-combined.png]]
+
+#+BEGIN_EXPORT latex
+\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://arxiv.org/abs/2608.07632v3}{Data: JUMP-lite (2026)}; models: \href{https://huggingface.co/CaicedoLab/MorphEm}{MorphEm}, \href{https://github.com/facebookresearch/dinov2}{DINOv2}, \href{https://huggingface.co/recursionpharma/OpenPhenom}{OpenPhenom}, \href{https://github.com/CellProfiling/subcell-embed}{SubCell}; \href{https://github.com/broadinstitute/jump-profiling-recipe/tree/a917fa79342ff92cf0ea05d6d9174d9028a90f8f}{CellProfiler/Harmony recipe}}
+#+END_EXPORT
+
+# Current paired example: 5,750 matched wells: 567 PLK1 positive-control wells, 10 GJA8 perturbation wells and 5,173 negative controls. GJA8 is a discovery-selected phenotype example, NOT an annotated positive control or independent validation reagent. Two of 569 PLK1 wells were excluded for known missing MQ image chunks. Same wells in every panel; MYT1/NPC1 and other exploratory candidates are excluded before fitting/display.
+# Large left panel uses genuine Nuclei_AreaShape_Area and Nuclei_AreaShape_Eccentricity, centered on plate-negative medians and scaled by pooled discovery-negative MAD*1.4826. These are named measured features, not UMAP/PCA axes or learned coordinates. The full-range view retains all wells; the labeled inset magnifies the control/GJA8 region. PLK1 shows smaller, more eccentric nuclei relative to controls; GJA8 shows larger, moderately more eccentric nuclei in these well-level measurements. Do not infer mechanism from these features.
+# Six embedding panels use fixed UMAP: CellProfiler+Harmony, MorphEm, DINOv2, OpenPhenom, SubCell and ViT-random, last. The displayed label is SubCell; the underlying data remain clipped-input SubCell only. Standard SubCell and the cell-count representation are omitted. Shared parameters: 15 neighbors, min_dist 0.1, Euclidean, spectral initialization, seed 20261020, single thread. No parameter tuning for separation. CellProfiler input remains the released259-coordinate corrected representation; its final visualization is UMAP, not PCA. No new Harmony fit or model inference.
+# GJA8 came from the prior frozen discovery-only CP screen; feature axes were selected exploratorily using discovery comparisons. PLK1 was originally highlighted after inspecting earlier results. This is an illustrative comparison, not a model ranking, causal claim or independent-guide validation. UMAP need not isolate GJA8 from controls. Same wells do not guarantee identical image encoding, aggregation or preprocessing. Removing the count plot does not rule out density/viability effects; prior count-baseline results are retained in the research archive. Current data/provenance: figures/two-phenotypes/. Main-talk slide immediately before profile extraction. Pacing:30s here plus45s for extraction, preserving their combined75s allocation.
+
+
 ** JUMP-lite: a compact benchmark
 #+BEGIN_EXPORT latex
 \begin{columns}[c,onlytextwidth]
@@ -807,7 +827,7 @@ Interactive marimo notebook --- separate recorded example
 \par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://doi.org/10.5281/zenodo.23462248}{Source: Muñoz (2026), JUMP Target-2 notebook recording}}
 #+END_EXPORT
 
-# Original FASEB recorded demo retained for questions; not the SLC2A2 gene query.
+# Original FASEB recorded demo retained for questions; not the nocodazole investigation.
 # Public recording: https://doi.org/10.5281/zenodo.23462248 (CC BY 4.0).
 # The MP4 is not embedded; prefer downloaded playback on stage. Gallery samples six cells, not all selected cells.
 # Notebook source: /work/users/amunoz/projects/jump-cell-browser-demo/notebook.py.
@@ -819,7 +839,7 @@ Interactive marimo notebook --- separate recorded example
 \end{center}
 \begin{itemize}
 \item Second selection: 224 cells; compare images and measurements.
-\item Not the SLC2A2 query; no treatment/control assignments in this example.
+\item Not the nocodazole query; no treatment/control assignments in this example.
 \end{itemize}
 \par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://doi.org/10.5281/zenodo.23462248}{Source: Muñoz (2026), JUMP Target-2 notebook recording}}
 #+END_EXPORT
