@@ -2,7 +2,7 @@
 
 Alán F. Muñoz's November 10 talk, adapted from the FASEB presentation. The main demo now shows an external coding agent querying JUMP for SLC2A2, followed by a checked evidence summary. The earlier single-cell recording is retained as two backup slides. Other original scientific content, figures and references remain unchanged; venue, total duration and further revisions await discussion.
 
-- [Private Overleaf editor](https://overleaf.quasimorphic.com/project/6af238ebaa6d5b0395871289) — root **slides.tex**, compiler **XeLaTeX**.
+- [Overleaf editor](https://overleaf.quasimorphic.com/project/6af238ebaa6d5b0395871289) — root **slides.tex**, compiler **XeLaTeX**. Its current link-sharing setting was preserved.
 - [Private GitHub repository](https://github.com/afermg/2026_11_10_jump_hub).
 - [PDF preview](slides.pdf) — **30 pages**: main talk through the QR on PDF25, then five backup slides. The FASEB public PDF contained only pages 1–25.
 - [Agent demo runbook](demo/README.md), [copyable prompts](demo/prompts.md), [rehearsal query](demo/query_jump.py) and [saved results](demo/rehearsal-slc2a2/).
@@ -28,7 +28,7 @@ git push origin HEAD:main
 git push oppy-overleaf HEAD:master
 ```
 
-Keep both destinations private unless explicitly approved otherwise. The closing **Slides QR and link intentionally still point to the public FASEB PDF**, not this private draft. Replace them together only after deciding how to distribute the new talk. The inherited demo recording and JUMP Hub links are unchanged.
+Keep GitHub private unless explicitly approved otherwise; preserve the presenter's Overleaf sharing settings. The closing **Slides QR and link intentionally still point to the public FASEB PDF**, not this new draft. Replace them together only after deciding how to distribute the new talk. The inherited demo recording and JUMP Hub links are unchanged.
 
 ## Build
 
