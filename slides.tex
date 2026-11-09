@@ -1,0 +1,484 @@
+% Intended LaTeX compiler: xelatex
+\documentclass[aspectratio=169,10pt]{beamer}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{fontspec}
+\usepackage{array}
+\setsansfont{FiraSans-Regular.otf}[BoldFont=FiraSans-Bold.otf,ItalicFont=FiraSans-Italic.otf,BoldItalicFont=FiraSans-BoldItalic.otf]
+\AtBeginDocument{\AtBeginSection[]{}}
+\institute{Carpenter-Shen Lab, Purdue University; Carpenter-Singh Lab, Broad Institute}
+\usetheme{moloch}
+\author{Alán F. Muñoz}
+\date{10 November 2026}
+\title{Uncovering biological relationships through morphological profiling: The JUMP-Cell Painting dataset and tools}
+\subtitle{}
+\hypersetup{
+ pdfauthor={Alán F. Muñoz},
+ pdftitle={Uncovering biological relationships through morphological profiling: The JUMP-Cell Painting dataset and tools},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 30.2 (Org mode 9.7.11)},
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\section*{Conference draft}
+\label{sec:org0000019}
+\begin{frame}[label={sec:org0000001}]{What is Cell Painting?}
+\begin{columns}[c,onlytextwidth]
+\begin{column}{0.36\textwidth}
+\begin{itemize}
+\item Fluorescence microscopy of cell morphology.
+\item Six dyes, five imaging channels.
+\item Shape, intensity and texture reveal cellular responses.
+\end{itemize}
+\end{column}
+\begin{column}{0.60\textwidth}
+\centering
+\includegraphics[width=0.98\linewidth,height=0.85\textheight,keepaspectratio]{assets/cell-painting-channels.png}
+\end{column}
+\end{columns}
+
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://github.com/afermg/2024_10_i2k_poster_flashtalk/blob/bf1db9f818dcc2704bd5ad388c3173a3426f8faf/figs/cellpainting.png}{Source: Muñoz, I2K (2024); assay: Bray et al. (2016)}}
+\end{frame}
+\begin{frame}[label={sec:org0000002}]{Cell Painting turns images into measurements}
+Profiles are numerical descriptions of cells.
+
+\begin{center}
+\includegraphics[keepaspectratio,width=0.99\linewidth,height=0.66\textheight]{assets/cell-painting-edited.pdf}
+\end{center}
+
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://doi.org/10.1038/s41573-020-00117-w}{Adapted from Chandrasekaran et al. (2021), Fig. 1a}}
+\end{frame}
+\begin{frame}[label={sec:org0000003}]{Morphological profiling: How to turn images into profiles}
+Start with a simple question: are control and perturbed cells different?
+
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.48\textwidth}
+\begin{block}{Classical features (e.g., CellProfiler)}
+\begin{itemize}
+\item Size, shape, intensity, texture and relationships between channels and objects.
+\item Interpretable but partially redundant.
+\end{itemize}
+\end{block}
+\end{column}
+\begin{column}{0.48\textwidth}
+\begin{block}{Learned representations}
+\begin{itemize}
+\item Features learned from images by neural networks (deep learning).
+\item Non-redundant numerical vectors (embeddings).
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+\end{frame}
+\begin{frame}[label={sec:org0000004}]{Words as vectors: word2vec}
+\par
+{\centering\small Learning can be viewed as compression\par}
+\smallskip
+
+\begin{center}
+\includegraphics[keepaspectratio,width=0.99\linewidth,height=0.70\textheight]{assets/word2vec-king-queen.pdf}
+\end{center}
+
+\hfill{\scriptsize\href{https://arxiv.org/abs/1301.3781}{Mikolov et al. (2013)}}
+\end{frame}
+\begin{frame}[label={sec:org0000005}]{From words to cells: vectors for comparison}
+\begin{center}
+\includegraphics[keepaspectratio,width=0.99\linewidth,height=0.83\textheight]{assets/vector-control-perturbation.pdf}
+\end{center}
+\end{frame}
+\begin{frame}[label={sec:org0000006}]{JUMP: Joint Undertaking for Morphological Profiling}
+\begin{itemize}
+\item Public Cell Painting data: 12 laboratories, around 136,000 perturbations.
+\item \href{https://github.com/broadinstitute/jump-profiling-recipe/tree/d2512d978ca17aafead0e99de66386337e6312e4/inputs/cell_counts}{1.8 billion cells}; \textasciitilde{}58.3 million images.
+\end{itemize}
+\begin{center}
+\fbox{\parbox[c][29mm][c]{0.27\linewidth}{\centering CRISPR knockout\par\medskip{\Large\bfseries 7,975}\par gene targets}}
+\quad
+\fbox{\parbox[c][29mm][c]{0.27\linewidth}{\centering\small Gene overexpression (ORF)\par\smallskip{\Large\bfseries 12,609}\par genes}}
+\quad
+\fbox{\parbox[c][29mm][c]{0.27\linewidth}{\centering Compound treatment\par\medskip{\Large\bfseries 115,794}\par compounds}}
+\end{center}
+\end{frame}
+\begin{frame}[label={sec:org0000007}]{We make JUMP accessible via the JUMP Hub}
+\begin{columns}[c,onlytextwidth]
+\begin{column}{0.60\textwidth}
+\centering
+\includegraphics[width=0.98\linewidth,height=0.71\textheight,keepaspectratio]{assets/jump-hub-homepage.png}
+\end{column}
+\begin{column}{0.37\textwidth}
+\textbf{Biologists can find out:}\par\smallskip
+\begin{itemize}
+\item Does my gene or compound have a phenotype?
+\item Which perturbations cause similar phenotypes?
+\item What changes in cells and organelles?
+\item Is the phenotype heterogeneous across cells/samples?
+\end{itemize}
+\end{column}
+\end{columns}
+
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broadinstitute.github.io/jump_hub/}{Source: JUMP Hub (2026)}}
+\end{frame}
+\begin{frame}[label={sec:org0000008}]{Tutorials, how-tos and resources}
+The Hub contains practical guides to help biologists use JUMP.
+
+\medskip
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.27\textwidth}>{\raggedright\arraybackslash}p{0.68\textwidth}@{}}
+\textbf{How-to guides} & \href{https://broadinstitute.github.io/jump_hub/howto/interactive/1_jumprr_steps.html}{No-code gene/compound queries}; \href{https://broadinstitute.github.io/jump_hub/howto/interactive/0_overview.html\#morpheus}{explore similarity heatmaps}. \\[1em]
+\textbf{Tutorials} & \href{https://broadinstitute.github.io/jump_hub/howto/notebooks/0_overview.html}{Curated runnable notebooks for profiles, metadata and statistical analysis.} \\[1em]
+\textbf{Further resources} & \href{https://broadinstitute.github.io/jump_hub/explanations/data_description.html}{Dataset explanations}, \href{https://broadinstitute.github.io/jump_hub/howto/notebooks/17_mislocus_example.html}{protein-localisation analysis} and a \href{https://ciminilab.github.io/GuideToCellPainting/}{Guide to Cell Painting for Biologists}.
+\end{tabular}\par\bigskip
+\end{frame}
+\begin{frame}[label={sec:org0000009}]{Was my gene or compound tested?}
+\begin{itemize}
+\item Find your compound and see whether it was tested.
+\item Find your gene and see whether it was knocked out or overexpressed.
+\item View the available profiles, images and metadata.
+\end{itemize}
+
+\begin{center}
+\includegraphics[keepaspectratio,width=0.90\linewidth,height=0.42\textheight]{assets/hub-identifiers.png}
+\end{center}
+\end{frame}
+\begin{frame}[label={sec:org000000a}]{Which perturbations produce related phenotypes?}
+MYT1 example
+
+\begin{center}
+\includegraphics[keepaspectratio,width=0.93\linewidth,height=0.55\textheight]{assets/hub-matches.png}
+\end{center}
+
+\begin{itemize}
+\item Precomputed comparisons between perturbation profiles.
+\item Look for perturbations that match \textit{and} oppose your perturbation of interest.
+\end{itemize}
+\end{frame}
+\begin{frame}[label={sec:org000000b}]{How does cell morphology change?}
+AVPR2 overexpression example
+
+\begin{center}
+\includegraphics[keepaspectratio,width=0.98\linewidth,height=0.47\textheight]{assets/hub-features.png}
+\end{center}
+
+\begin{itemize}
+\item Feature to investigate: mitochondria--AGP overlap.
+\item Check images: mitochondria versus actin, Golgi and plasma membrane.
+\end{itemize}
+\end{frame}
+\begin{frame}[label={sec:org000000c}]{Use JUMP as a screen for your phenotype of interest}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.46\textwidth}
+\textbf{Feature families}\par\medskip
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.32\linewidth}>{\raggedright\arraybackslash}p{0.60\linewidth}@{}}
+\textbf{Size / shape} & Nuclear area, elongation \\[6pt]
+\textbf{Intensity} & Mitochondrial staining \\[6pt]
+\textbf{Texture} & Fine/coarse patterns \\[6pt]
+\textbf{Correlation} & Between-channel patterns \\[6pt]
+\textbf{Distribution} & Peripheral/perinuclear signal
+\end{tabular}
+\end{column}
+\begin{column}{0.50\textwidth}
+\textbf{Which perturbations change nuclear size?}
+\begin{itemize}
+\item Select nuclear area.
+\item Rank perturbations by feature value.
+\item Check activity, images and controls.
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+\begin{frame}[label={sec:org000000d}]{What do the perturbed cells look like?}
+MYT1 and PROZ gallery examples
+
+\begin{center}
+\includegraphics[keepaspectratio,width=0.93\linewidth,height=0.55\textheight]{assets/hub-gallery.png}
+\end{center}
+\end{frame}
+\begin{frame}[label={sec:org000000e}]{Modern tools make image analysis more accessible}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.49\textwidth}>{\raggedright\arraybackslash}p{0.46\textwidth}@{}}
+\textbf{Find cells, nuclei and spots} & {\small Cellpose (cells and nuclei); Spotiflow (spots)} \\[0.9em]
+\textbf{Follow cells and organelles over time} & {\small Trackastra / Ultrack} \\[0.9em]
+\textbf{Measure cell and organelle appearance} & {\small cp\_measure} \\[0.9em]
+\textbf{Explore your results} & {\small marimo} \\[0.9em]
+\end{tabular}
+\end{frame}
+\begin{frame}[label={sec:org000000f}]{Identify and explore cell subpopulations}
+Interactive marimo notebook
+
+\begin{columns}[c,onlytextwidth]
+\begin{column}{0.59\textwidth}
+\centering
+\href{https://doi.org/10.5281/zenodo.23462248}{\includegraphics[width=\linewidth,height=0.60\textheight,keepaspectratio]{assets/demo-selection-545.png}}\par\smallskip
+{\scriptsize Each dot is a cell: 2,223 from one Target-2 plate.\par
+Select cells; inspect images, area and other features.\par}
+\end{column}
+\begin{column}{0.38\textwidth}
+\small
+\textbf{AI can assemble these tools into workflows.}\par\medskip
+\textit{Example prompt: Using the JUMP Hub docs, create a marimo dashboard to link selected cells to images and measurements.}\par\medskip
+Standard tools support reproducible analysis; biological expertise remains essential.\par
+\end{column}
+\end{columns}
+
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://doi.org/10.5281/zenodo.23462248}{Source: Muñoz (2026), JUMP Target-2 notebook recording}}
+\end{frame}
+\begin{frame}[label={sec:org0000010}]{How do cells in another region compare?}
+\begin{center}
+\href{https://doi.org/10.5281/zenodo.23462248}{\includegraphics[width=0.96\linewidth,height=0.51\textheight,keepaspectratio]{assets/demo-selection-224.png}}
+\end{center}
+
+\begin{itemize}
+\item Second selection: 224 cells.
+\item Compare images and measurements.
+\end{itemize}
+
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://doi.org/10.5281/zenodo.23462248}{Source: Muñoz (2026), JUMP Target-2 notebook recording}}
+\end{frame}
+\begin{frame}[label={sec:org0000011}]{Positive controls contextualize perturbations in both learned and classical representations}
+\begin{center}
+\includegraphics[keepaspectratio,width=0.94\linewidth,height=0.80\textheight]{assets/real-embeddings-combined.png}
+\end{center}
+
+\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://arxiv.org/abs/2608.07632v3}{Data: JUMP-lite (2026)}; models: \href{https://huggingface.co/CaicedoLab/MorphEm}{MorphEm}, \href{https://github.com/facebookresearch/dinov2}{DINOv2}, \href{https://huggingface.co/recursionpharma/OpenPhenom}{OpenPhenom}, \href{https://github.com/CellProfiling/subcell-embed}{SubCell}; \href{https://github.com/broadinstitute/jump-profiling-recipe/tree/a917fa79342ff92cf0ea05d6d9174d9028a90f8f}{CellProfiler/Harmony recipe}}
+\end{frame}
+\begin{frame}[label={sec:org0000012}]{Not just JUMP: Extract morphological profiles from your own images}
+\begin{columns} [c,onlytextwidth]
+\begin{column}{0.44\textwidth}
+\centering
+\includegraphics[width=0.98\linewidth,height=0.66\textheight,keepaspectratio]{assets/cp-measure-paper.png}
+\end{column}
+\begin{column}{0.53\textwidth}
+\textbf{cp\_measure: feature extraction in Python}
+\begin{itemize}
+\item Thousands of features across channels and compartments.
+\item Fits your Python pipeline.
+\item Fast software to obtain interpretable morphological features ($\sim$5x CellProfiler).
+\end{itemize}
+\end{column}
+\end{columns}
+
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://arxiv.org/abs/2507.01163v1}{Adapted from Muñoz et al. (2025), Fig. 1}}
+\end{frame}
+\begin{frame}[label={sec:org0000013}]{Applications of JUMP and our tools across biological questions}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.48\textwidth}
+\begin{block}{Evaluate new lysosomal fluorescence probes}
+\small Kenneth Li, Vendrell Lab, University of Edinburgh\par
+\begin{itemize}
+\item Lysosomal acidification probes in cardiomyocytes.
+\item Uptake, localization and morphology over time.
+\end{itemize}
+\end{block}
+\end{column}
+\begin{column}{0.48\textwidth}
+\begin{block}{MisLocus: protein mislocalisation}
+\small Johan Fredin, Carpenter-Shen Lab, Purdue University\par
+\begin{itemize}
+\item Which rare genetic mutations change protein location?
+\item Compare microscopy of reference and variant proteins.
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.48\textwidth}
+\begin{block}{Compare imaging modalities}
+\small Minh Doan, GSK Bioimaging Analytics\par
+\begin{itemize}
+\item Bright-field time series, Cell Painting, cell cycle and viability.
+\item Which dyes/imaging methods are better for an different Mechanisms of Action
+\end{itemize}
+\end{block}
+\end{column}
+\begin{column}{0.48\textwidth}
+\begin{block}{Integrated in spatial omics software}
+\small Tim Treis, Theis Lab, Helmholtz-Munich\par
+\begin{itemize}
+\item Integration of morphological features with Squidpy.
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+\end{frame}
+\begin{frame}[label={sec:org0000014}]{MisLocus: a single-cell image benchmark}
+\small MisLocus contains $\sim$3 million cells spanning 1,541 reference/variant alleles across 282 genes, excluding controls.\par\medskip
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.54\textwidth}
+\centering
+\small Does a variant change where the protein is located?\par\medskip
+\begin{minipage}[t]{0.47\linewidth}
+\centering
+LZTR1 reference\par\smallskip
+\includegraphics[width=\linewidth,keepaspectratio]{assets/mislocus-lztr1-reference.png}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.47\linewidth}
+\centering
+LZTR1 G248R\par\smallskip
+\includegraphics[width=\linewidth,keepaspectratio]{assets/mislocus-lztr1-g248r.png}
+\end{minipage}
+\end{column}
+\begin{column}{0.42\textwidth}
+\begin{block}{Protein mislocalisation}
+\begin{itemize}
+\item Compare reference and variant proteins.
+\item Test for localisation changes.
+\item Evaluate image representations.
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}\medskip
+\centering\small
+Unpublished data (preprint coming soon)
+
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}Images from Taipale lab}
+\end{frame}
+\begin{frame}[label={sec:org0000015}]{Take-home messages}
+\begin{itemize}
+\item JUMP provides public Cell Painting data for around 136,000 chemical and genetic perturbations.
+\item Biologists can use JUMP Hub to find tested genes and compounds, compare phenotypes and inspect images.
+\item Open-source image-analysis tools extend morphological profiling to your own experiments.
+\item Guides and notebooks help scientists or AI agents build analysis workflows.
+\end{itemize}
+\end{frame}
+\begin{frame}[label={sec:org0000016}]{Thank you}
+\centering
+\begin{columns}[c,onlytextwidth]
+\begin{column}{0.65\textwidth}
+\centering
+\includegraphics[width=0.30\linewidth,height=0.08\textheight,keepaspectratio]{assets/broad-logo.png}
+\end{column}
+\begin{column}{0.34\textwidth}
+\centering
+\includegraphics[width=0.70\linewidth,height=0.08\textheight,keepaspectratio]{assets/purdue-logo.png}
+\end{column}
+\end{columns}\par\smallskip
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.34\textwidth}
+\centering\small
+\textbf{Carpenter-Singh Lab}\par
+Anne E. Carpenter\par
+Shantanu Singh
+\end{column}
+\begin{column}{0.30\textwidth}
+\centering\small
+\textbf{Cimini Lab}\par
+Beth Cimini\par
+Paula Llanos
+\end{column}
+\begin{column}{0.34\textwidth}
+\centering\small
+\textbf{Carpenter-Shen Lab}\par
+Anne E. Carpenter\par
+Runxi Shen
+\end{column}
+\end{columns}\par\smallskip
+\includegraphics[width=0.98\linewidth,height=0.50\textheight,keepaspectratio]{assets/jump-partners.png}\par\medskip
+{\small Work on cp\_measure and JUMP-lite was supported by GSK and NIH MIRA (R35 GM122547).}\par
+\end{frame}
+\begin{frame}[label={sec:org0000017}]{References}
+{\footnotesize All named tools and models below are clickable.}
+\medskip
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.32\textwidth}
+\footnotesize
+\textbf{Assay, data and resources}
+\begin{itemize}
+\item \href{https://doi.org/10.1038/nprot.2016.105}{Cell Painting (Bray, 2016)}; \href{https://doi.org/10.1038/s41573-020-00117-w}{profiling review (2021)}.
+\item \href{https://jump-cellpainting.broadinstitute.org/}{JUMP consortium}; \href{https://github.com/jump-cellpainting/datasets/tree/016e865fa0691244e0860943e41c7d6a88ed2580/metadata}{counts}; \href{https://github.com/broadinstitute/jump_hub/blob/e742f5aa37472eb17f326ba8315d22b27e58f330/explanations/data_description.md}{centers}; \href{https://github.com/jump-cellpainting/datasets/blob/016e865fa0691244e0860943e41c7d6a88ed2580/stats/cpg0016_source_images_tiff_count.csv}{images}.
+\item \href{https://arxiv.org/abs/2608.07632v3}{JUMP-lite paper}; \href{https://github.com/afermg/JUMP_lite}{data/code}.
+\item \href{https://broadinstitute.github.io/jump_hub/}{JUMP Hub}; \href{https://broadinstitute.github.io/jump_hub/howto/interactive/1_jumprr_steps.html}{how-to guides}; \href{https://broadinstitute.github.io/jump_hub/howto/notebooks/0_overview.html}{notebooks}.
+\item \href{https://ciminilab.github.io/GuideToCellPainting/}{Guide to Cell Painting}.
+\item \href{https://doi.org/10.5281/zenodo.23462248}{Demo recording}; \href{https://github.com/afermg/JUMP_lite/blob/main/cpg_upload/TARGET2_ARTIFACTS_README.md}{Target-2 artifacts}.
+\item \href{https://arxiv.org/abs/1301.3781}{word2vec (Mikolov, 2013)}.
+\end{itemize}
+\end{column}
+\begin{column}{0.32\textwidth}
+\footnotesize
+\textbf{Image-analysis toolbox}
+\begin{itemize}
+\item \href{https://github.com/afermg/cp_measure}{cp\_measure}; \href{https://arxiv.org/abs/2507.01163v1}{paper}.
+\item \href{https://cellprofiler.org/}{CellProfiler}; \href{https://doi.org/10.1186/gb-2006-7-10-r100}{paper}.
+\item \href{https://github.com/MouseLand/cellpose}{Cellpose}; \href{https://github.com/stardist/stardist}{StarDist}.
+\item \href{https://github.com/weigertlab/spotiflow}{Spotiflow}: spot detection.
+\item \href{https://github.com/weigertlab/trackastra}{Trackastra}; \href{https://github.com/royerlab/ultrack}{Ultrack}.
+\item \href{https://github.com/afermg/nahual}{Nahual}: model interfaces.
+\item \href{https://marimo.io/}{marimo}; \href{https://docs.astral.sh/uv/}{uv}.
+\item \href{https://squidpy.readthedocs.io/}{Squidpy}; \href{https://github.com/cmap/morpheus.js}{Morpheus}.
+\end{itemize}
+\end{column}
+\begin{column}{0.32\textwidth}
+\footnotesize
+\textbf{Representations and methods}
+\begin{itemize}
+\item \href{https://github.com/facebookresearch/dinov2}{DINOv2}; \href{https://github.com/facebookresearch/dinov3}{DINOv3}.
+\item \href{https://huggingface.co/CaicedoLab/MorphEm}{MorphEm}.
+\item \href{https://huggingface.co/recursionpharma/OpenPhenom}{OpenPhenom}.
+\item \href{https://github.com/CellProfiling/subcell-embed}{SubCell}.
+\item \href{https://github.com/facebookresearch/dinov2}{ViT-random: DINOv2 code}.
+\item \href{https://github.com/immunogenomics/harmony}{Harmony}; \href{https://github.com/broadinstitute/jump-profiling-recipe/tree/a917fa79342ff92cf0ea05d6d9174d9028a90f8f}{JUMP recipe}.
+\item \href{https://parquet.apache.org/}{Parquet}; \href{https://zarr.dev/}{Zarr}; \href{https://jpeg.org/jpegxl/}{JPEG XL}.
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+\begin{frame}[label={sec:org0000018}]{JUMP Hub and slides}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.48\textwidth}
+\centering
+\href{https://broadinstitute.github.io/jump_hub/}{JUMP Hub}\par\smallskip
+\href{https://broadinstitute.github.io/jump_hub/}{\includegraphics[width=40mm]{assets/qr-jump-hub.png}}\par\smallskip
+\href{https://broad.io/jump}{\texttt{broad.io/jump}}
+\end{column}
+\begin{column}{0.48\textwidth}
+\centering
+\href{https://github.com/afermg/2026_10_21_faseb_jump_hub/blob/main/slides.pdf}{Slides (PDF)}\par\smallskip
+\href{https://github.com/afermg/2026_10_21_faseb_jump_hub/blob/main/slides.pdf}{\includegraphics[width=40mm]{assets/qr-slides.png}}
+\end{column}
+\end{columns}
+\end{frame}
+\section*{Additional slides}
+\label{sec:org000001d}
+
+\begin{frame}[label={sec:org000001a}]{JUMP-lite: a compact benchmark}
+\begin{columns}[c,onlytextwidth]
+\begin{column}{0.52\textwidth}
+\centering
+\includegraphics[width=\linewidth]{assets/jump-lite-workflow.png}
+\end{column}
+\begin{column}{0.46\textwidth}
+\centering
+\includegraphics[width=\linewidth,height=0.76\textheight,keepaspectratio]{assets/jump-lite-squares.png}
+\end{column}
+\end{columns}
+\medskip
+\centering
+{\footnotesize Same selected images: 8.7 TB $\rightarrow$ 92 GB ($\sim$94$\times$ smaller; lossy JPEG XL).}
+
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://arxiv.org/abs/2608.07632v3}{Adapted from Muñoz et al. (2026)}}
+\end{frame}
+\begin{frame}[label={sec:org000001b}]{Nahual: swap models within one workflow}
+\centering
+{\Large\bfseries Swap models. Keep your workflow.}\par\bigskip
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{@{}l l@{}}
+\textbf{Image features} & \fbox{DINOv2}\ $\leftrightarrow$\ \fbox{DINOv3}\ $\leftrightarrow$\ \fbox{OpenPhenom}\ $\leftrightarrow$\ \fbox{MorphEm} \\
+\textbf{Segmentation} & \fbox{Cellpose}\ $\leftrightarrow$\ \fbox{StarDist} \\
+\textbf{Spot detection} & \fbox{Spotiflow} \\
+\textbf{Tracking} & \fbox{Trackastra}\ $\leftrightarrow$\ \fbox{Ultrack}
+\end{tabular}
+\end{frame}
+\begin{frame}[label={sec:org000001c}]{JUMP-lite: comparing image representations}
+\centering\small
+Recover replicate perturbations and known biological relationships.\par\smallskip
+\includegraphics[width=0.99\linewidth,height=0.73\textheight,keepaspectratio]{assets/jump-lite-model-comparison.png}\par\smallskip
+{\scriptsize Raw images; colors normalized within each task. CellProfiler/count references use more sites per well.\par}
+{\fontsize{5.5}{6.5}\selectfont\color{gray}\hfill\href{https://arxiv.org/abs/2608.07632v3}{Adapted from Muñoz et al. (2026), Figure 5}\par}
+\end{frame}
+\end{document}

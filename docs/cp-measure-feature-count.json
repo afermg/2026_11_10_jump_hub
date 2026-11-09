@@ -1,0 +1,51 @@
+{
+  "matrix_shape": [
+    3,
+    995
+  ],
+  "columns_per_object": 995,
+  "object_types": 3,
+  "object_feature_pairs_for_a_combined_profile": 2985,
+  "config": {
+    "channels": [
+      "DNA",
+      "ER",
+      "RNA",
+      "AGP",
+      "Mito"
+    ],
+    "objects": [
+      "nuclei",
+      "cells",
+      "cytoplasm"
+    ],
+    "legacy": false,
+    "intensity": true,
+    "intensity_params": {},
+    "texture": true,
+    "texture_params": {},
+    "granularity": true,
+    "granularity_params": {},
+    "radial_distribution": true,
+    "radial_distribution_params": {},
+    "radial_zernikes": true,
+    "radial_zernikes_params": {},
+    "sizeshape": true,
+    "sizeshape_params": {},
+    "zernike": true,
+    "zernike_params": {},
+    "feret": true,
+    "correlation_pearson": true,
+    "correlation_costes": false,
+    "correlation_costes_params": {},
+    "correlation_manders_fold": true,
+    "correlation_manders_fold_params": {},
+    "correlation_rwc": true,
+    "correlation_rwc_params": {}
+  },
+  "warnings": [
+    "invalid value encountered in divide"
+  ],
+  "source_commit": "6ffe85e0e7111f4599ec5c884542a69bbbb9dc42",
+  "purpose": "Synthetic schema check, not a biological result or timing benchmark. Object types are rows in the API; a combined profile requires aggregation and pivoting by object type."
+}

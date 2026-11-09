@@ -1,0 +1,26 @@
+{
+  "repository": "https://github.com/jump-cellpainting/datasets",
+  "revision": "016e865fa0691244e0860943e41c7d6a88ed2580",
+  "definition": "Distinct Metadata_JCP2022 IDs represented in well.csv.gz, excluding canonical negcon and empty IDs; positive-control perturbations retained. Modalities are disjoint. ORF constructs and nonmissing annotated gene/locus IDs are counted separately. Empty, NA, nan and None identifiers are excluded from the gene/locus count; supplied XLOC annotations and the eGFP positive-control annotation are retained.",
+  "total": 138897,
+  "counts": {
+    "crispr": {
+      "distinct_perturbation_ids": 7975,
+      "distinct_annotated_gene_ids": 7975
+    },
+    "orf": {
+      "distinct_perturbation_ids": 15128,
+      "distinct_annotated_gene_ids": 12598
+    },
+    "compound": {
+      "distinct_perturbation_ids": 115794
+    }
+  },
+  "input_sha256": {
+    "compound.csv.gz": "8885960e92ebd99eb33699a79129f517e668d78dd94f0d7478d39c9825bd3c0a",
+    "crispr.csv.gz": "55e36e6802c6fc5f8e5d5258554368d64601f1847205e0fceb28a2c246c8d1ed",
+    "orf.csv.gz": "9c7ec4b0fa460a3a30f270a15f11b5e85cef9dd105c8a0ab8ab50f6cc98894b8",
+    "well.csv.gz": "fde9fe0678b8d9973f17e106e4cf7e62017110ee3b700f10e27122e1d5f291a1",
+    "metadata_perturbation_control.csv": "f513c4017555efa486d07c3e9924944d5b0c44d2f2e76ca6e1fc934f5f718ef6"
+  }
+}

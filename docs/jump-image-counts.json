@@ -1,0 +1,40 @@
+{
+  "dataset": "JUMP Cell Painting cpg0016",
+  "repository": "jump-cellpainting/datasets",
+  "revision": "016e865fa0691244e0860943e41c7d6a88ed2580",
+  "source_url": "https://github.com/jump-cellpainting/datasets/blob/016e865fa0691244e0860943e41c7d6a88ed2580/stats/cpg0016_source_images_tiff_count.csv",
+  "source_path": "stats/cpg0016_source_images_tiff_count.csv",
+  "source_git_blob": "57d5458cfe470808ac98d10f90897de6827c9fbd",
+  "source_sha256": "dfafff44030833b3f17fc7015a0d52f56a7aa758576e633ebdba706a44ffa4c2",
+  "count_unit": "TIFF image files (individual channels), not five-channel sites or cells",
+  "source_rows": 12,
+  "per_source_tiffs": {
+    "source_1": 1943040,
+    "source_2": 4217490,
+    "source_3": 7188480,
+    "source_4": 7658494,
+    "source_5": 7191860,
+    "source_6": 6804166,
+    "source_7": 2211830,
+    "source_8": 7473900,
+    "source_9": 3317760,
+    "source_10": 4093834,
+    "source_11": 3504002,
+    "source_13": 2662635
+  },
+  "total_tiff_images": 58267491,
+  "display": "~58.3 million single-channel TIFF images",
+  "aggregation": "sum(int(row[\"tiffs\"]) for row in csv.DictReader(source_file))",
+  "scope": "Published image-archive statistics at the pinned revision, including controls; not restricted to QC-passing profile-linked sites or the JUMP-lite cohort.",
+  "site_count_crosscheck": {
+    "source_url": "https://github.com/jump-cellpainting/datasets/blob/016e865fa0691244e0860943e41c7d6a88ed2580/stats/cpg0016_site_count.csv",
+    "source_sha256": "6a643d86a4bc4643e1231bbf1e37a4256bf89d4035fa6109d870e7df5d79d97c",
+    "plate_rows": 2380,
+    "sum_n_sites": 8126570,
+    "five_times_site_count": 40632850,
+    "reconciles_to_tiff_total": false,
+    "interpretation": "These published totals do not reconcile through a five-channel factor. Their coverage/accounting was not reconciled here; do not infer an exact imaging-site count by dividing TIFFs by five."
+  },
+  "channels_reference": "https://github.com/broadinstitute/jump_hub/blob/e742f5aa37472eb17f326ba8315d22b27e58f330/explanations/data_description.md",
+  "new_data_measurement": false
+}

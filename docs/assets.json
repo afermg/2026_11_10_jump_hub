@@ -1,0 +1,523 @@
+[
+  {
+    "asset": "deck/assets/cell-painting.png",
+    "repository": "afermg/2024_10_i2k_poster_flashtalk",
+    "revision": "bf1db9f818dcc2704bd5ad388c3173a3426f8faf",
+    "source_path": "figs/cell_painting_overview.png",
+    "source_sha256": "5f9a3cb64091085fb6394030750d5e5497b91f35da113f0b8fdc68b826fc2da8",
+    "crop_xyxy": null,
+    "sha256": "8395061b7987e2061601ac654d6b4ed5dab3c26a7dee13b2a41adfe612a0e1cb",
+    "transformation": "Adapted for the JUMP context: replace only the lower-left cell-source label in pixel box [0,218,112,268] with Human U2OS cells. No scientific illustration content outside that label is changed.",
+    "unchanged_pixels_outside_label_region": true,
+    "font": "/nix/store/8wam5bxvbq6acrflv9sh494yj4cnl27p-dejavu-fonts-minimal-2.37/share/fonts/truetype/DejaVuSans.ttf"
+  },
+  {
+    "asset": "deck/assets/hub-identifiers.png",
+    "repository": "afermg/2024_05_JUMPTools_CellCircuits",
+    "revision": "141710eed1eee8f7c4c6efcf595dc9f4922858ae",
+    "source_path": "imgs/babel.jpg",
+    "source_sha256": "1a98572dd6124ea66a61f7b298b297bbff28e5f1f4fd9e782bf14b9017c6c36d",
+    "crop_xyxy": [
+      20,
+      615,
+      1600,
+      1130
+    ],
+    "sha256": "20cf57de58ba0b41b6026354d3f4b809a863fd6edc287a80fe53e6eaedc18b33",
+    "visible_Cell_Circuits_credit_removed_by_presenter": true
+  },
+  {
+    "asset": "deck/assets/hub-matches.png",
+    "repository": "afermg/2024_05_JUMPTools_CellCircuits",
+    "revision": "141710eed1eee8f7c4c6efcf595dc9f4922858ae",
+    "source_path": "imgs/simile.jpg",
+    "source_sha256": "cbfc0aaf39594c1c5fff1a05f973a40fb0925a5a51d363c98567a486a4e73c7a",
+    "crop_xyxy": [
+      350,
+      680,
+      2580,
+      1455
+    ],
+    "sha256": "0be1e2fa6f131b46ff6fac4b7a907a3ad178c63f365ccc0ebe088b3c4d3a7c2c",
+    "visible_Cell_Circuits_credit_removed_by_presenter": true
+  },
+  {
+    "asset": "deck/assets/hub-features.png",
+    "repository": "afermg/2024_05_JUMPTools_CellCircuits",
+    "revision": "141710eed1eee8f7c4c6efcf595dc9f4922858ae",
+    "source_path": "imgs/feature.jpg",
+    "source_sha256": "812439c0aa636192203c9a261057c2269881d3295af445bf895825b1026f50f1",
+    "crop_xyxy": [
+      380,
+      1000,
+      2700,
+      1480
+    ],
+    "sha256": "a9777cd337c2bbb5b7f2ed805ac2f5fcb0c810968dbd4bdb2918f0ed5e1e2062",
+    "visible_Cell_Circuits_credit_removed_by_presenter": true
+  },
+  {
+    "asset": "deck/assets/hub-gallery.png",
+    "repository": "afermg/2024_05_JUMPTools_CellCircuits",
+    "revision": "141710eed1eee8f7c4c6efcf595dc9f4922858ae",
+    "source_path": "imgs/gallery.jpg",
+    "source_sha256": "85b173a21fd32ba95e739f1e33abc6b323f4843188679d563d9e3375735e143c",
+    "crop_xyxy": [
+      390,
+      465,
+      2200,
+      1000
+    ],
+    "sha256": "ccaf350824eca98b56a8beea8e2389cd5eb5c66ea2a2e7c2819e1ef5334254c3",
+    "visible_Cell_Circuits_credit_removed_by_presenter": true
+  },
+  {
+    "asset": "deck/assets/cp-measure-paper.png",
+    "type": "paper_figure",
+    "paper_url": "https://arxiv.org/abs/2507.01163v1",
+    "figure": "Figure 1",
+    "pdf_page": 1,
+    "source_pdf_sha256": "201b9e573ad7c6ef8a0094eb26852a7afea5b76f3980b3116a81f93c1c22cd23",
+    "render_dpi": 300,
+    "crop_pdf_points": [
+      305,
+      381,
+      525,
+      574
+    ],
+    "sha256": "00487734e480c8b6616827f3668c46c7d04f24063822068a78bce6ef33a95895"
+  },
+  {
+    "asset": "deck/assets/jump-lite-paper.png",
+    "type": "paper_figure",
+    "paper_url": "https://arxiv.org/abs/2608.07632v3",
+    "figure": "Figure 1b (storage-size comparison only)",
+    "current_usage": "Historical crop, no longer consumed; workflow/squares are on additional PDF27. Same-cohort compression differs from selection; citation on References25 and figure credit.",
+    "pdf_page": 2,
+    "source_pdf_sha256": "aea8286e7ba836f569e0f9d7e3fd7300fa2fac3394de624a0d2c9a2fad356dee",
+    "render_dpi": 300,
+    "crop_pdf_points": [
+      100,
+      50,
+      510,
+      223
+    ],
+    "intermediate_sha256": "78d952f815f72598d6a999c0f8d5dc14ba24179ab379a6b4b8fb1dabd3018840",
+    "intermediate_size_pixels": [
+      1708,
+      721
+    ],
+    "additional_crop_pixels_xyxy": [
+      1125,
+      30,
+      1690,
+      700
+    ],
+    "transformation": "Retain only the right-hand size-comparison panel from the previously rendered Figure 1a,b crop. Dataset-composition panel removed; retained pixels and size labels unchanged.",
+    "sha256": "c2f0526bd1eb66467016fea09220188079eb70747db527c10f5098f10575694e"
+  },
+  {
+    "asset": "deck/assets/broad-logo.png",
+    "type": "acknowledgement",
+    "repository": "afermg/2024_05_JUMPTools_CellCircuits",
+    "revision": "141710eed1eee8f7c4c6efcf595dc9f4922858ae",
+    "source_path": "imgs/broad_logo.png",
+    "source_sha256": "972455de1a9dec658c34bf2384a0534c4714bad0e423045bf46a2e4d3344d303",
+    "transformation": "none",
+    "sha256": "972455de1a9dec658c34bf2384a0534c4714bad0e423045bf46a2e4d3344d303"
+  },
+  {
+    "asset": "deck/assets/jump-partners.png",
+    "type": "acknowledgement",
+    "repository": "afermg/2024_05_JUMPTools_CellCircuits",
+    "revision": "141710eed1eee8f7c4c6efcf595dc9f4922858ae",
+    "source_path": "imgs/jump_partners.png",
+    "source_sha256": "804bcb5d2d9a03bc3954596b6ce2ba2a8055e397eadb38acdff9388c31c7dd45",
+    "transformation": "Replace only the original top headings within [0,0,1581,60] with JUMP partners / JUMP supporting partners / JUMP collaborators. Preserve every logo and collaborator entry below the header band.",
+    "sha256": "03efb194fc78aad64916760fecec5a468fb95e849a930bc5cca31e1a734a6b62",
+    "unchanged_pixels_outside_label_region": true,
+    "font": "/nix/store/8wam5bxvbq6acrflv9sh494yj4cnl27p-dejavu-fonts-minimal-2.37/share/fonts/truetype/DejaVuSans.ttf"
+  },
+  {
+    "asset": "deck/assets/qr-jump-hub.png",
+    "type": "qr_code",
+    "payload": "https://broadinstitute.github.io/jump_hub/",
+    "error_correction": "M",
+    "quiet_zone_modules": 4,
+    "decoded_and_verified": true,
+    "sha256": "8a568486c898bd538cf173dcf6b0a2d975c015ccb72b390b1c4ba3bf5cb7e68c"
+  },
+  {
+    "asset": "deck/assets/qr-jump-lite.png",
+    "type": "qr_code",
+    "payload": "https://github.com/afermg/JUMP_lite",
+    "error_correction": "M",
+    "quiet_zone_modules": 4,
+    "decoded_and_verified": true,
+    "sha256": "bd6d966513422dabc88153bfc643bd9b22a2fda4698a9a7a393455aab2e6425c"
+  },
+  {
+    "asset": "deck/assets/qr-cp-measure.png",
+    "type": "qr_code",
+    "payload": "https://github.com/afermg/cp_measure",
+    "error_correction": "M",
+    "quiet_zone_modules": 4,
+    "decoded_and_verified": true,
+    "sha256": "04122f1b944a8afbba9a95aaa3adf69002717bbb60248e017fc28ecc846d1169"
+  },
+  {
+    "asset": "deck/assets/demo-selection-545.png",
+    "type": "recorded_notebook_panels",
+    "source_path": "/work/users/amunoz/datasets/jump_conference_talk_20261014/notebook-demo/recording/large-013.jpg",
+    "source_sha256": "ff57d5f8fdd2339603565d8c4baeba136defceb232b6a5486eee74ddcd372697",
+    "selected_cells": 545,
+    "transformation": "Crop map [155,200,790,605] and gallery [810,210,1225,560]; place at [0,0] and [655,10] on a white 1070x405 canvas. No changes to plot points, images or labels.",
+    "sha256": "013465075f47b5ff73a6b88952cc5fb2a0b7400d5ffa21bb66e9fbdf58bf25ef"
+  },
+  {
+    "asset": "deck/assets/demo-selection-224.png",
+    "type": "recorded_notebook_panels",
+    "source_path": "/work/users/amunoz/datasets/jump_conference_talk_20261014/notebook-demo/recording/small-013.jpg",
+    "source_sha256": "9a903b54c065d42741fd189f4a64781abf854ad19663b3fbfa1da9001f72f070",
+    "selected_cells": 224,
+    "transformation": "Crop map [155,200,790,605] and gallery [810,210,1225,560]; place at [0,0] and [655,10] on a white 1070x405 canvas. No changes to plot points, images or labels.",
+    "sha256": "b900a45d03f30456aecf4b5e4b7de8bce23b9838bcbe0e1d4c35fd58b6fa3e05"
+  },
+  {
+    "asset": "deck/assets/purdue-logo.png",
+    "type": "acknowledgement",
+    "source_url": "https://www.purdue.edu/home/wp-content/themes/purdue-home-theme-beta/imgs/PU-H-light.svg",
+    "brand_guidelines": "https://www.purdue.edu/brand/visual-identity/logo/",
+    "source_sha256": "5443d07a2f553b5ece70395262d6f485e4b531297cafa4d906dbedb1dff548fd",
+    "transformation": "Official full-color horizontal logo, rasterized at 1600 pixels wide with librsvg; no recoloring or stretching.",
+    "sha256": "074c5a5740d71fc1755d5a8d3379065637e2f0665403f9534f726e4877f2bcbd"
+  },
+  {
+    "asset": "deck/assets/cell-painting-channels.png",
+    "repository": "afermg/2024_10_i2k_poster_flashtalk",
+    "revision": "bf1db9f818dcc2704bd5ad388c3173a3426f8faf",
+    "source_path": "figs/cellpainting.png",
+    "git_blob": "bb9dfbd38911a0ae96da2ed6be740bd77c353292",
+    "source_sha256": "2a6229f96ddb707f7818be07adcfb5868a19e8b6f0849feaf251addee7fba996",
+    "transformation": "none; original five-channel panel and merged view, including source labels and scale bar",
+    "sha256": "2a6229f96ddb707f7818be07adcfb5868a19e8b6f0849feaf251addee7fba996"
+  },
+  {
+    "asset": "deck/assets/jump-hub-homepage.png",
+    "type": "website_screenshot",
+    "source_url": "https://broadinstitute.github.io/jump_hub/",
+    "captured_on": "2026-10-21",
+    "viewport": [
+      1600,
+      1000
+    ],
+    "device_scale_factor": 3,
+    "pixel_dimensions": [2280, 1230],
+    "capture": "Fresh live-site capture using Playwright 1.60.0 / Firefox 150.0.2 in an isolated browser context. Native 4800x3000-pixel render; exact pixel crop of the Choose Your Own Path section. No upscaling, resampling or page-content edits. Same 760:410 display aspect ratio as the former crop.",
+    "css_clip": [420, 491, 760, 410],
+    "provenance": "figures/jump-hub-homepage/provenance.json",
+    "sha256": "bed705341af5d0eb34ba95ed2a3dd3098ff50eee0206f5a9286cb22aacd5a94c"
+  },
+  {
+    "asset": "deck/assets/qr-slides.png",
+    "type": "qr_code",
+    "payload": "https://github.com/afermg/2026_10_21_faseb_jump_hub/blob/main/slides.pdf",
+    "error_correction": "M",
+    "quiet_zone_modules": 4,
+    "decoded_and_verified": true,
+    "sha256": "5b5cf2e203ce7d90a8639363e230df5f0ad25c46d06ea731a8d2b86b37f0ff37",
+    "release_policy": "Repository stays private and the PDF stays unpushed until the presenter explicitly authorizes each release action."
+  },
+  {
+    "asset": "deck/assets/vector-interpretability.pdf",
+    "type": "original_teaching_schematic",
+    "editable_source": "deck/assets/vector-interpretability.svg",
+    "source_sha256": "d1265ca2f8337abe6e25fe9e6aa52ca693ca4e8818e178e4e7e9d582820f73f7",
+    "sha256": "ab5f5a240ed9c632ee873063f703fb6903af8caedbb119f46d5dbe29cb29c864",
+    "description": "Original illustrative cells with clearer/larger cartoons and exact Granularity Mito Channel label. Invented coordinates and learned-panel geometry retained; requested visible caveat removed, limitations retained in notes/provenance.",
+    "not_measured_data": true,
+    "raster_images_in_schematic": 0,
+    "source_reference": "User-supplied Words As Vectors diagram; analogy only, not reproduced inside the figure.",
+    "source_reference_sha256": "6d37878ec239fb5b5c7dc6cca10a1baae067bab2029dae88ebf111f009063c1d",
+    "generator": "figures/vector-interpretability/make_diagram.py",
+    "limitations": "Cell area alone does not diagnose senescence. Granularity is an image-signal measurement at a specified spatial scale, not mitochondrial fragmentation, organelle number or cristae. The retained network-like/punctate cartoons do not determine the invented scores. Both groups span the granularity values. No physical contact, causal relationship, measured embedding or universal lack of interpretability is claimed.",
+    "display_status": "Protected original retained unchanged;current slide uses the Control/Perturbation derivative.",
+    "current_pdf_page": null
+  },
+  {
+    "asset": "deck/assets/cell-painting-edited.pdf",
+    "type": "presenter_edited_vector_reconstruction",
+    "editable_source": "deck/assets/cell-painting-edited.svg",
+    "source_sha256": "ba164a5f732ac0fc826bc026b86b898e84f31180b9cafc269cdc119ac48056aa",
+    "sha256": "f84d50e232b9a742e8bd122611c59ad9af2f033a2dc06754f1bcc8b0d546f8be",
+    "mac_source": "/Users/alan/Downloads/jump-editable-figures.MS4HFe/cell-painting-editable.svg",
+    "mac_modified": "2026-10-19T10:02:02-04:00",
+    "renderer": "Inkscape 1.4.4 on the presenter's Mac; PDF text outlined, SVG text retained as editable",
+    "rendering_note": "Mac Fontconfig emitted a nonfatal configuration warning; PNG and PDF exported successfully and were visually inspected. PDF contains zero raster images and no font resources.",
+    "original_deck_asset": "deck/assets/cell-painting.png",
+    "original_deck_asset_sha256": "8395061b7987e2061601ac654d6b4ed5dab3c26a7dee13b2a41adfe612a0e1cb",
+    "original_published_source": "Chandrasekaran et al. (2021), Nature Reviews Drug Discovery, Figure 1a, DOI 10.1038/s41573-020-00117-w",
+    "transformation": "Editable workflow schematic redrawn from the previous PNG, then edited by the presenter. Pulled back byte-exact and rendered from that snapshot on the Mac. Original PNG retained in canonical history/assets but no longer consumed by the slide.",
+    "limitations": "Illustrative reconstruction, not recovered raw data or original vector artwork. Heatmap, graph and schematic internal geometry are not quantitative results.",
+    "display_status": "Active on PDF3;restored at presenter request from the exact pre-color-consistency Mac export.",
+    "current_pdf_page": 3
+  },
+  {
+    "asset": "deck/assets/word2vec-example.pdf",
+    "type": "original_teaching_schematic",
+    "editable_source": "deck/assets/word2vec-example.svg",
+    "source_sha256": "68910a01a6138594467bfcae374c3730a021015e0995c6661df2df74e30373f3",
+    "sha256": "69617d3fdf1672a3b63e40c3be877219816f939776af3b78d1eefdef9ba9b668",
+    "generator": "figures/word2vec-example/generate.py",
+    "method_reference": "Mikolov et al. (2013), https://arxiv.org/abs/1301.3781",
+    "description": "Original country-capital word-vector analogy on page5 before cell vectors6 and JUMP7. Requested generic Feature 1 horizontal and Feature 2 vertical labels are added; the old Coordinate labels and visible illustrative-position footer remain absent. All vector geometry, country/capital labels and equation are unchanged; scientific qualifications remain in notes and metadata.",
+    "raster_images_in_schematic": 0,
+    "not_measured_data": true,
+    "limitations": "Invented 2D positions, not trained word2vec output, a projection or an evaluation. Learned axes are not predefined semantic attributes. Analogy behavior depends on model/training and can reflect corpus biases.",
+    "display_status": "Historical country/capital example preserved unchanged;current PDF5 uses the king/queen derivative.",
+    "current_pdf_page": null
+  },
+  {
+    "asset": "deck/assets/jump-lite-workflow.png",
+    "type": "adapted_workflow_illustration",
+    "sha256": "599bb934c88381c742abf81e14e5a516ce6d4e1a776afb6f9fb5575a3c6aff84",
+    "editable_source": "figures/jump-lite-overview/jump-lite-workflow.svg",
+    "generator": "figures/jump-lite-overview/generate.py",
+    "source": "Presenter-supplied get_slide_3.pptx, slide 3, ppt/media/image14.png",
+    "source_pptx_sha256": "d9754486403b3f232dea90a62f47965f33d46c52c4790d7551e5267044096cd5",
+    "source_image_sha256": "5f7aca785c3bb97a4191cab6b863e9fe2e11d60a74fe26b922dab5b20e195bae",
+    "paper_reference": "https://arxiv.org/abs/2608.07632v3",
+    "crop_provenance": "figures/jump-lite-overview/provenance.json",
+    "transformation": "Three unaltered rectangular pixel crops (images, feature matrix, evaluation icons) arranged with new Fira Sans labels/arrows. Detailed preprocessing/model lists are omitted. Source images preserve aspect ratio.",
+    "limitations": "Illustrates benchmark purpose, not measured results, new biological validation or performance equivalence."
+  },
+  {
+    "asset": "deck/assets/jump-lite-squares.png",
+    "type": "simplified_area_encoded_storage_diagram",
+    "sha256": "3e7ca841c6d1f651fa09c09c83a297bd00adf8c4a40f2567ad4c4e93f859bb89",
+    "editable_source": "figures/jump-lite-overview/jump-lite-squares.svg",
+    "generator": "figures/jump-lite-overview/generate.py",
+    "paper_reference": "https://arxiv.org/abs/2608.07632v3",
+    "source": "Presenter-supplied PowerPoint slide 3, image14.png; JUMP-lite storage figure",
+    "transformation": "Redrawn nested squares with area ratios 115:8.7:0.092 TB. Intermediate 72 TB and 4.8 TB lossless tiers removed. Same-cohort 8.7 TB to 92 GB lossy-compression qualification remains in native slide text.",
+    "limitations": "Full-release to selected cohort involves selection; not a compression-only baseline. Rounded published storage sizes, no new measurement or quality-equivalence claim."
+  },
+  {
+    "asset": "deck/assets/mislocus-lztr1-reference.png",
+    "type": "presenter_supplied_microscopy_example",
+    "source": "get_slide_3.pptx slide 4",
+    "source_archive_member": "ppt/media/image17.png",
+    "sha256": "32f3ed5cc575ca518a93f8b95b11e34bca92b9f6fbeb9f3f5d1b05ace51d7f14",
+    "original_dimensions": [
+      358,
+      352
+    ],
+    "label": "LZTR1 reference",
+    "pdf_page": 21,
+    "pixel_bytes_preserved": true,
+    "aspect_ratio_preserved": true,
+    "cropped_or_enhanced": false,
+    "limitations": "Source-provided illustration, not new analysis. Image pair alone does not establish reproducibility, causation or clinical pathogenicity. No source clinical photo or contact emails included."
+  },
+  {
+    "asset": "deck/assets/mislocus-lztr1-g248r.png",
+    "type": "presenter_supplied_microscopy_example",
+    "source": "get_slide_3.pptx slide 4",
+    "source_archive_member": "ppt/media/image18.png",
+    "sha256": "fb2367ed229cf8bd2d6bcfe37ea3c99c4ed23a1147d2bc6630b2a9993cf112e8",
+    "original_dimensions": [
+      358,
+      347
+    ],
+    "label": "LZTR1 G248R",
+    "pdf_page": 21,
+    "pixel_bytes_preserved": true,
+    "aspect_ratio_preserved": true,
+    "cropped_or_enhanced": false,
+    "limitations": "Source-provided illustration, not new analysis. Image pair alone does not establish reproducibility, causation or clinical pathogenicity. No source clinical photo or contact emails included."
+  },
+  {
+    "asset": "deck/assets/real-embedding-morphem.png",
+    "type": "original_real_data_projection",
+    "sha256": "7716dfc2a376b698c6853ae5e939c96aa16da375022b07fbaec6491d62bd62e8",
+    "editable_source": "figures/real-embedding-examples/morphem.svg",
+    "provenance": "figures/real-embedding-examples/provenance.json",
+    "not_simulated": true,
+    "sample_unit": "well",
+    "shared_wells": 130,
+    "shared_sites": 520,
+    "perturbation": "MYT1 CRISPR, PLK1 and negative controls",
+    "limitations": "Selected demonstration, not model ranking, mechanism or no-phenotype test; retained overlap. Random weights/input variant labeled.",
+    "highlighted_example": "PLK1 positive control, selected after inspection",
+    "original_MYT1_comparator_retained": true,
+    "historical_not_consumed_in_current_deck": true
+  },
+  {
+    "asset": "deck/assets/real-embedding-dinov2.png",
+    "type": "original_real_data_projection",
+    "sha256": "b6f0fcb32752980ac5edf912c1eacd5f625cc142a93dec73d873d7a962d6ec6f",
+    "editable_source": "figures/real-embedding-examples/dinov2.svg",
+    "provenance": "figures/real-embedding-examples/provenance.json",
+    "not_simulated": true,
+    "sample_unit": "well",
+    "shared_wells": 130,
+    "shared_sites": 520,
+    "perturbation": "MYT1 CRISPR, PLK1 and negative controls",
+    "limitations": "Selected demonstration, not model ranking, mechanism or no-phenotype test; retained overlap. Random weights/input variant labeled.",
+    "highlighted_example": "PLK1 positive control, selected after inspection",
+    "original_MYT1_comparator_retained": true,
+    "historical_not_consumed_in_current_deck": true
+  },
+  {
+    "asset": "deck/assets/real-embedding-openphenom.png",
+    "type": "original_real_data_projection",
+    "sha256": "6274e2b2e6caf4a55c296833083802088dbec518f08769aaaabd20203d048101",
+    "editable_source": "figures/real-embedding-examples/openphenom.svg",
+    "provenance": "figures/real-embedding-examples/provenance.json",
+    "not_simulated": true,
+    "sample_unit": "well",
+    "shared_wells": 130,
+    "shared_sites": 520,
+    "perturbation": "MYT1 CRISPR, PLK1 and negative controls",
+    "limitations": "Selected demonstration, not model ranking, mechanism or no-phenotype test; retained overlap. Random weights/input variant labeled.",
+    "highlighted_example": "PLK1 positive control, selected after inspection",
+    "original_MYT1_comparator_retained": true,
+    "historical_not_consumed_in_current_deck": true
+  },
+  {
+    "asset": "deck/assets/real-embedding-subcell.png",
+    "type": "original_real_data_projection",
+    "sha256": "85d7331fbec088745fcf5cc93c8b8ff3ffea49c7db9e4d52cb020895a0146996",
+    "editable_source": "figures/real-embedding-examples/subcell.svg",
+    "provenance": "figures/real-embedding-examples/provenance.json",
+    "not_simulated": true,
+    "sample_unit": "well",
+    "shared_wells": 130,
+    "shared_sites": 520,
+    "perturbation": "MYT1 CRISPR, PLK1 and negative controls",
+    "limitations": "Selected demonstration, not model ranking, mechanism or no-phenotype test; retained overlap. Random weights/input variant labeled.",
+    "highlighted_example": "PLK1 positive control, selected after inspection",
+    "original_MYT1_comparator_retained": true,
+    "historical_not_consumed_in_current_deck": true
+  },
+  {
+    "asset": "deck/assets/real-embedding-dinov2_random.png",
+    "type": "original_real_data_projection",
+    "sha256": "1bd7ae3d893b7c6f9b0c5bd1fabc06c586944cec6ea7bc73f9cd469e76552f0a",
+    "editable_source": "figures/real-embedding-examples/dinov2_random.svg",
+    "provenance": "figures/real-embedding-examples/provenance.json",
+    "not_simulated": true,
+    "sample_unit": "well",
+    "shared_wells": 130,
+    "shared_sites": 520,
+    "perturbation": "MYT1 CRISPR, PLK1 and negative controls",
+    "limitations": "Selected demonstration, not model ranking, mechanism or no-phenotype test; retained overlap. Random weights/input variant labeled.",
+    "highlighted_example": "PLK1 positive control, selected after inspection",
+    "original_MYT1_comparator_retained": true,
+    "historical_not_consumed_in_current_deck": true
+  },
+  {
+    "asset": "deck/assets/real-embedding-subcell_clip01.png",
+    "type": "original_real_data_projection",
+    "sha256": "a200b9c523293db8e0fc6638026b49fb4178734fda4fd4fe90b6dda7d5845ab1",
+    "editable_source": "figures/real-embedding-examples/subcell_clip01.svg",
+    "provenance": "figures/real-embedding-examples/provenance.json",
+    "not_simulated": true,
+    "sample_unit": "well",
+    "shared_wells": 130,
+    "shared_sites": 520,
+    "perturbation": "MYT1 CRISPR, PLK1 and negative controls",
+    "limitations": "Selected demonstration, not model ranking, mechanism or no-phenotype test; retained overlap. Random weights/input variant labeled.",
+    "highlighted_example": "PLK1 positive control, selected after inspection",
+    "original_MYT1_comparator_retained": true,
+    "historical_not_consumed_in_current_deck": true
+  },
+  {
+    "asset": "deck/assets/real-embeddings-combined.png",
+    "sha256": "1829215610332a76111f09784ebb57b1c2add6e86f8b68b96b1da0515c736817",
+    "type": "original_analysis",
+    "pdf_page": 18,
+    "source": "Archived JUMP-lite MQ embeddings plus released Harmony-corrected CellProfiler representation",
+    "points": "5750 matched wells:567 PLK1 positive-control,10 GJA8 selected-phenotype and5173 negative-control wells; no MYT1",
+    "methods": "Six fixed UMAP panels,including CellProfiler/Harmony; one larger nuclear-area/eccentricity measurement panel with a labeled zoom. No cell-count or standard-SubCell panel.",
+    "provenance": "figures/two-phenotypes/provenance.json",
+    "adapted_artwork": false,
+    "display_model_order": [
+      "CellProfiler + Harmony",
+      "MorphEm",
+      "DINOv2",
+      "OpenPhenom",
+      "SubCell",
+      "ViT-random"
+    ],
+    "SubCell_input_unchanged": "subcell_clip01",
+    "explanatory_footer_displayed": false
+  },
+  {
+    "asset": "deck/assets/jump-lite-model-comparison.png",
+    "sha256": "c271861a15afb965f0ad3ec958c3c5a90641e13347225aea23576cfabae99bed",
+    "type": "published_figure_adaptation",
+    "pdf_page": 28,
+    "source": "https://arxiv.org/pdf/2608.07632v3",
+    "source_figure": 5,
+    "source_pdf_page": 7,
+    "source_pdf_sha256": "aea8286e7ba836f569e0f9d7e3fd7300fa2fac3394de624a0d2c9a2fad356dee",
+    "provenance": "figures/jump-lite-model-comparison/provenance.json",
+    "adapted_artwork": true,
+    "pixels": "Original RGB image and alpha mask,composited on white; no resize,crop,redraw or data changes"
+  },
+  {
+    "asset": "deck/assets/cell-painting-consistent-colors.png",
+    "sha256": "e7041316e57035c182355ad1bdfe2f9de8e189829abc1973d05259246aff082c",
+    "pdf_page": null,
+    "kind": "display-only derivative of existing schematic artwork",
+    "provenance": "figures/anne-open-comments/provenance.json",
+    "new_measurements": false,
+    "historical_pdf_page": 3,
+    "display_status": "Retained for provenance;not used in the current deck."
+  },
+  {
+    "asset": "deck/assets/representations-three-panels.png",
+    "sha256": "642d26538193d620db18e57bfdf017f7b1cb5919fe56e4d2c6f034c726de20e6",
+    "pdf_page": null,
+    "kind": "display-only derivative of existing schematic artwork",
+    "provenance": "figures/anne-open-comments/provenance.json",
+    "new_measurements": false,
+    "display_status": "Historical merged display;not used after the presenter requested separate slides."
+  },
+  {
+    "asset": "deck/assets/vector-control-perturbation.pdf",
+    "type": "label_only_derivative_of_original_teaching_schematic",
+    "editable_source": "figures/control-perturbation/vector-control-perturbation.svg",
+    "source_sha256": "f9c3bd900f0aa19fcb8391355e216d234344bbbfba05d574bae82ef54671183b",
+    "sha256": "68de9083d3acbca30f36c7de211b9cff4919b79905e17f82c3183519495d8a5b",
+    "current_pdf_page": 6,
+    "generator": "figures/control-perturbation/generate.py",
+    "original_svg_sha256": "d1265ca2f8337abe6e25fe9e6aa52ca693ca4e8818e178e4e7e9d582820f73f7",
+    "labels": {
+      "blue_A_B": "Control",
+      "orange_C_D": "Perturbation"
+    },
+    "original_artwork_overwritten": false,
+    "not_measured_data": true,
+    "raster_images_in_schematic": 0,
+    "limitations": "Invented coordinates;no general perturbation signature or causal result. Granularity is not a direct fragmentation or organelle-count measurement.",
+    "feature_heading": "Classical features",
+    "geometry_and_pixels_outside_authorized_text_regions_unchanged": true
+  },
+  {
+    "asset": "deck/assets/word2vec-king-queen.pdf",
+    "type": "label_updated_teaching_schematic",
+    "editable_source": "figures/word2vec-king-queen/word2vec-king-queen.svg",
+    "source_sha256": "485bfd2943d294d06ec982c36c865316b993cc29c268b2e44c35d46233808d06",
+    "sha256": "14ab9e5bc44e001b4a3f829117a55f1f87e480d49f29b5049f95e565f63b0e98",
+    "current_pdf_page": 5,
+    "generator": "figures/word2vec-king-queen/generate.py",
+    "method_reference": "https://arxiv.org/abs/1301.3781",
+    "description": "man → woman and king → queen;v(king) − v(man) + v(woman) ≈ v(queen). Original vector geometry,arrows,colors and generic axes are unchanged.",
+    "original_svg_sha256": "68910a01a6138594467bfcae374c3730a021015e0995c6661df2df74e30373f3",
+    "raster_images_in_schematic": 0,
+    "not_measured_data": true,
+    "limitations": "Invented positions,not trained word2vec output,projection or evaluation. Axes are not predefined semantic attributes;analogy behavior depends on training/model and may reflect corpus biases."
+  }
+]
