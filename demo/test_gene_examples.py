@@ -89,11 +89,27 @@ class GeneExamplesTests(unittest.TestCase):
     def test_expected_phenotype_uses_gallery_and_hover_tip(self):
         shared = (ROOT / 'opa1-literature.tex').read_text()
         frame = shared.split(']{Can we see the expected phenotype in JUMP?}', 1)[1].split('\\end{frame}', 1)[0]
-        self.assertIn('04-gallery-perturbation.png', frame)
+        self.assertIn('00-opa1-crispr-gallery.png', frame)
+        self.assertIn('CRISPR Gallery --- OPA1', frame)
+        self.assertLess(shared.index('00-opa1-crispr-gallery.png'), shared.index('\\TutorialGallerySlide'))
         self.assertIn('Imagus (Firefox)', frame)
         self.assertIn('Hover Zoom+ (Chrome)', frame)
         self.assertIn('\\scriptsize', frame)
         self.assertNotIn('\\begin{itemize}', frame)
+
+    def test_full_opa1_gallery_capture(self):
+        manifest = json.loads((ROOT / 'docs/opa1-full-gallery-provenance.json').read_text())
+        self.assertEqual(manifest['title'], 'CRISPR Gallery')
+        self.assertEqual(manifest['rows'], 5)
+        self.assertEqual(len(manifest['images']), 45)
+        self.assertTrue(all(image['loaded'] and (image['width'], image['height']) == (1280, 1080)
+                            for image in manifest['images']))
+        self.assertEqual([h for h in manifest['headers'] if h.startswith('Site ')],
+                         [f'Site {i}' for i in range(9)])
+        self.assertIn('Perturbation__exact=OPA1', manifest['url'])
+        self.assertNotIn('Plate__exact', manifest['url'])
+        data = (ROOT / manifest['path']).read_bytes()
+        self.assertEqual(hashlib.sha256(data).hexdigest(), manifest['sha256'])
 
     def test_sources_aligned_and_tools_preserved(self):
         org = (ROOT / 'slides.org').read_text()

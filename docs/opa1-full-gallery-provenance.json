@@ -1,0 +1,392 @@
+{
+  "captured_at": "2026-11-10T15:45:35.270207+00:00",
+  "url": "https://lite.datasette.io/?metadata=https://raw.githubusercontent.com/broadinstitute/monorepo/main/libs/jump_rr/metadata/crispr_gallery.json&install=datasette-json-html&parquet=https://d3dw4c1b79pj57.cloudfront.net/latest/crispr_gallery.parquet/content#/data/content?Perturbation__exact=OPA1&_col=Perturbation&_col=Plate&_col=Well&_col=Site+0&_col=Site+1&_col=Site+2&_col=Site+3&_col=Site+4&_col=Site+5&_col=Site+6&_col=Site+7&_col=Site+8",
+  "user_supplied_base": "https://lite.datasette.io/?metadata=https://raw.githubusercontent.com/broadinstitute/monorepo/main/libs/jump_rr/metadata/crispr_gallery.json&install=datasette-json-html&parquet=https://d3dw4c1b79pj57.cloudfront.net/latest/crispr_gallery.parquet/content#/data/content",
+  "title": "CRISPR Gallery",
+  "method": "Actual Firefox table-element screenshot. Only native gene filter and native column selection; all nine site columns and all five OPA1 wells. No plate filter, CSS rewriting, synthetic content, callouts, image resizing or sharpening. Source JPEGs are 1280x1080. Browser rendering at DPR 6.",
+  "path": "assets/opa1-tutorial-screenshots/00-opa1-crispr-gallery.png",
+  "sha256": "777a6918f2efd03357f51f49558d9c9a57fe18bfed6b99008864a32d0b8e9720",
+  "original_capture_sha256": "efb08bf59dce8f0da4096ee4e570b73637e9d07a70503b4502fea7116b4f2fbc",
+  "encoding": "Lossless PNG24 re-encoding with ImageMagick png:compression-level=9 and png:compression-filter=5. Pixel comparison AE=0; dimensions unchanged at 10008x3836. Needed to fit the Overleaf upload limit; no downsampling or color quantization.",
+  "browser": "156.0",
+  "device_pixel_ratio": 6,
+  "headers": [
+    "Link",
+    "rowid \u25bc",
+    "Perturbation",
+    "Plate",
+    "Well",
+    "Site 0",
+    "Site 1",
+    "Site 2",
+    "Site 3",
+    "Site 4",
+    "Site 5",
+    "Site 6",
+    "Site 7",
+    "Site 8"
+  ],
+  "rows": 5,
+  "images": [
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.21665954589844,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R1-06/D20_0.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.2166748046875,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R1-06/D20_1.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.21665954589844,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R1-06/D20_2.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.2166748046875,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R1-06/D20_3.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.21665954589844,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R1-06/D20_4.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.2166748046875,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R1-06/D20_5.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.21665954589844,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R1-06/D20_6.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.2166748046875,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R1-06/D20_7.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.21665954589844,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R1-06/D20_8.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.21665954589844,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R2-06/D20_0.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.2166748046875,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R2-06/D20_1.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.21665954589844,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R2-06/D20_2.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.2166748046875,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R2-06/D20_3.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.21665954589844,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R2-06/D20_4.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.2166748046875,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R2-06/D20_5.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.21665954589844,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R2-06/D20_6.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.2166748046875,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R2-06/D20_7.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.21665954589844,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R2-06/D20_8.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08334350585938,
+      "display_width": 135.21665954589844,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R3-06/D20_0.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08334350585938,
+      "display_width": 135.2166748046875,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R3-06/D20_1.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08334350585938,
+      "display_width": 135.21665954589844,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R3-06/D20_2.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08334350585938,
+      "display_width": 135.2166748046875,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R3-06/D20_3.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08334350585938,
+      "display_width": 135.21665954589844,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R3-06/D20_4.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08334350585938,
+      "display_width": 135.2166748046875,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R3-06/D20_5.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08334350585938,
+      "display_width": 135.21665954589844,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R3-06/D20_6.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08334350585938,
+      "display_width": 135.2166748046875,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R3-06/D20_7.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08334350585938,
+      "display_width": 135.21665954589844,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R3-06/D20_8.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.21665954589844,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R4-06/D20_0.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.2166748046875,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R4-06/D20_1.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.21665954589844,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R4-06/D20_2.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.2166748046875,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R4-06/D20_3.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.21665954589844,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R4-06/D20_4.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.2166748046875,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R4-06/D20_5.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.21665954589844,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R4-06/D20_6.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.2166748046875,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R4-06/D20_7.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.21665954589844,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R4-06/D20_8.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.21665954589844,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R5-06/D20_0.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.2166748046875,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R5-06/D20_1.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.21665954589844,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R5-06/D20_2.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.2166748046875,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R5-06/D20_3.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.21665954589844,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R5-06/D20_4.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.2166748046875,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R5-06/D20_5.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.21665954589844,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R5-06/D20_6.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.2166748046875,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R5-06/D20_7.jpg",
+      "width": 1280
+    },
+    {
+      "display_height": 114.08332824707033,
+      "display_width": 135.21665954589844,
+      "height": 1080,
+      "loaded": true,
+      "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R5-06/D20_8.jpg",
+      "width": 1280
+    }
+  ]
+}
