@@ -1,3 +1,5 @@
+# Historical presenter notes: slides.tex is now the sole live slide source.
+# Do not export this archived Org document over slides.tex; old includes are historical.
 #+TITLE: Uncovering biological relationships through morphological profiling: The JUMP-Cell Painting dataset and tools
 #+SUBTITLE:
 #+AUTHOR: Alán F. Muñoz
