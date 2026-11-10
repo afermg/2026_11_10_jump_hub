@@ -6,14 +6,14 @@ Alán F. Muñoz's November 10 talk, adapted from the FASEB presentation. OPA1 an
 - [Public GitHub repository](https://github.com/afermg/2026_11_10_jump_hub).
 - [Direct PDF download](https://raw.githubusercontent.com/afermg/2026_11_10_jump_hub/main/slides.pdf) — the Slides QR destination.
 - [PDF preview](slides.pdf) — **45 pages**: main talk through the QR on PDF35, followed by ten existing extra slides.
-- [Shared gene examples and workflow source](opa1-literature.tex), [current image/tool notes](docs/gene-examples.md), [raw-image provenance](docs/gene-examples-provenance.json), [historical literature notes](docs/opa1-literature.md), and [reusable tutorial frames](tutorial-walkthrough.tex).
+- [Complete slide source](slides.tex), [current image/tool notes](docs/gene-examples.md), [raw-image provenance](docs/gene-examples-provenance.json), and [historical literature notes](docs/opa1-literature.md).
 - Question-led tutorial images appear on **PDF11–13, 15–16, 19–21 and 23–25**, interleaved with the OPA1/DNM1L image and feature results. The AI-assisted gene explorer and phenotype viewer each have a slide, on **PDF27 and PDF28** respectively. Gray tutorial footers and visible “checked November …” timestamps are removed.
-- [Review walkthrough](demo/README.md), [published feature summary behind PDF22](demo/gene-feature-summary/), and [copyable agent prompts](demo/prompts.md). Edit the image, feature-summary and interface slides directly in **`opa1-literature.tex`**, included by `slides.tex` and `slides.org`. Earlier compound and SLC2A2 analysis artifacts are retained as historical material.
+- [Review walkthrough](demo/README.md), [published feature summary](demo/gene-feature-summary/), and [copyable agent prompts](demo/prompts.md). Edit every slide directly in **`slides.tex`**. Earlier compound and SLC2A2 analysis artifacts are retained as historical material.
 - Local checkout: `/home/amunoz/Documents/broad/drafts/slides/2026_11_10_jump_hub`.
 
 ## Editing and synchronization
 
-`slides.tex` is the Overleaf entry point. `slides.org` retains the editable Org source and extensive presenter notes; keep both aligned when changing content. Both load `tutorial-walkthrough.tex` (reusable frame commands) and `opa1-literature.tex` (the literature/workflow sequence). Edit each once in its shared file. `main.tex` is a fallback that inputs `slides.tex`.
+`slides.tex` is the sole slide source and the Overleaf entry point. All frames are written out directly, with no slide includes or custom slide commands. Move a complete `% BEGIN FRAME: ...` / `% END FRAME: ...` block to reorder a slide. Images remain in `assets/`. The former helper files and `main.tex` wrapper have been removed. `slides.org` retains historical presenter notes only; it is not synchronized and must not be exported over the live source.
 
 This deck is **independent** of the original FASEB repository/project and its Org publishing timer. There is **no automatic synchronization** for this new deck. Fetch both remotes before editing and preserve direct author changes. Do not regenerate TeX from stale Org over newer Overleaf wording.
 

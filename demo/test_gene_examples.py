@@ -44,7 +44,7 @@ class GeneExamplesTests(unittest.TestCase):
             ('DNM1L', 'Nuclei', 'ObjectSkeletonTotalObjectSkeletonLength', '', '_mito_skel', -3.551),
         ]
         keys = ['Perturbation', 'Compartment', 'Feature', 'Channel', 'Suffix']
-        tex = (ROOT / 'opa1-literature.tex').read_text()
+        tex = (ROOT / 'slides.tex').read_text()
         for *identity, effect in expected:
             selected = [r for r in rows if [r[k] for k in keys] == identity]
             self.assertEqual(len(selected), 1)
@@ -52,7 +52,7 @@ class GeneExamplesTests(unittest.TestCase):
             self.assertIn(f'${effect:+.2f}$', tex)
 
     def test_literature_precedes_jump_and_crop_hashes(self):
-        shared = (ROOT / 'opa1-literature.tex').read_text()
+        shared = (ROOT / 'slides.tex').read_text()
         self.assertLess(shared.index('literature:opa1-siRNA'), shared.index('JUMP example: OPA1'))
         self.assertLess(shared.index('literature:dnm1l-siRNA'), shared.index('JUMP example: OPA1'))
         self.assertIn('Fig. 3G/A', shared)
@@ -66,32 +66,32 @@ class GeneExamplesTests(unittest.TestCase):
             self.assertEqual(struct.unpack('>II', data[16:24]), (x1-x0, y1-y0))
 
     def test_question_table_example_order(self):
-        shared = (ROOT / 'opa1-literature.tex').read_text()
+        shared = (ROOT / 'slides.tex').read_text()
         sequence = [
-            '\\TutorialAvailabilitySlide',
-            '\\FilteringExampleSlide', '\\TutorialControlsSlide',
-            '\\TutorialDefinitionsSlide', '\\TutorialFiltersSlide',
-            '\\TutorialActivitySlide', '\\TutorialRowsSlide', '\\TutorialFeaturesSlide',
+            'label={tutorial:availability}',
+            'label={filtering_example}', 'label={tutorial:gallery-controls}',
+            'label={tutorial:interface}', 'label={tutorial:filters}',
+            'label={tutorial:activity}', 'label={tutorial:rows}', 'label={tutorial:features}',
             'CellProfiler detects mitochondrial feature changes',
-            '\\TutorialOrfSlide', '\\TutorialMatchesSlide', '\\TutorialExportSlide',
+            'label={tutorial:orf}', 'label={tutorial:matches}', 'label={tutorial:export}',
             'JUMP example: OPA1', 'JUMP example: DNM1L',
         ]
         positions = [shared.index(item) for item in sequence]
         self.assertEqual(positions, sorted(positions))
         for item in sequence:
             self.assertEqual(shared.count(item), 1)
-        tutorial = (ROOT / 'tutorial-walkthrough.tex').read_text()
+        tutorial = (ROOT / 'slides.tex').read_text()
         self.assertEqual(tutorial.count('\\textbf{How:}'), 11)
-        self.assertIn('We will compare knockouts and their negative controls.', shared)
+        self.assertIn('Can we validate the phenotypes using our high-throughput methods?', shared)
         self.assertIn('Mitochondrial organization changes.', shared)
         self.assertNotIn('These features do not directly establish', shared)
 
     def test_expected_phenotype_uses_gallery_and_hover_tip(self):
-        shared = (ROOT / 'opa1-literature.tex').read_text()
+        shared = (ROOT / 'slides.tex').read_text()
         frame = shared.split(']{How do the cells look?}', 1)[1].split('\\end{frame}', 1)[0]
         self.assertIn('00-opa1-crispr-gallery.png', frame)
         self.assertIn('CRISPR Gallery --- OPA1', frame)
-        self.assertLess(shared.index('00-opa1-crispr-gallery.png'), shared.index('\\FilteringExampleSlide'))
+        self.assertLess(shared.index('00-opa1-crispr-gallery.png'), shared.index('label={filtering_example}'))
         self.assertIn('Imagus (Firefox)', frame)
         self.assertIn('Hover Zoom+ (Chrome)', frame)
         self.assertIn('\\scriptsize', frame)
@@ -114,11 +114,21 @@ class GeneExamplesTests(unittest.TestCase):
     def test_sources_aligned_and_tools_preserved(self):
         org = (ROOT / 'slides.org').read_text()
         tex = (ROOT / 'slides.tex').read_text()
-        shared = (ROOT / 'opa1-literature.tex').read_text()
+        shared = (ROOT / 'slides.tex').read_text()
         self.assertIn('Historical: extreme nocodazole example :noexport:', org)
         self.assertNotIn('demo:extreme-nocodazole', tex)
-        for source in [org, tex]:
-            self.assertEqual(source.count('\\input{opa1-literature.tex}'), 1)
+        self.assertIn('Historical presenter notes', org)
+        self.assertNotIn('\\input{', tex)
+        self.assertNotIn('\\include{', tex)
+        self.assertNotIn('\\newcommand', tex)
+        starts = [line.removeprefix('% BEGIN FRAME: ') for line in tex.splitlines()
+                  if line.startswith('% BEGIN FRAME: ')]
+        ends = [line.removeprefix('% END FRAME: ') for line in tex.splitlines()
+                if line.startswith('% END FRAME: ')]
+        self.assertEqual(starts, ends)
+        self.assertEqual(len(starts), 44)
+        self.assertEqual(len(set(starts)), 44)
+        self.assertEqual([p.name for p in ROOT.glob('*.tex')], ['slides.tex'])
         for gene in ['OPA1', 'DNM1L']:
             for role in ['treatment', 'control']:
                 self.assertIn(f'{gene}-{role}-center512.png', shared)
@@ -139,7 +149,7 @@ class GeneExamplesTests(unittest.TestCase):
         self.assertIn('intensity limits 187--4463', shared)
 
     def test_validation_slide_and_baseline(self):
-        shared = (ROOT / 'opa1-literature.tex').read_text().replace('\\\\', ' ')
+        shared = (ROOT / 'slides.tex').read_text().replace('\\\\', ' ')
         title = 'we can validate existing knowledge to develop methods leading to new discoveries'
         self.assertEqual(shared.count(title), 1)
         self.assertLess(shared.index('JUMP example: DNM1L'), shared.index(title))
