@@ -86,6 +86,15 @@ class GeneExamplesTests(unittest.TestCase):
         self.assertIn('Mitochondrial organization changes.', shared)
         self.assertNotIn('These features do not directly establish', shared)
 
+    def test_expected_phenotype_uses_gallery_and_hover_tip(self):
+        shared = (ROOT / 'opa1-literature.tex').read_text()
+        frame = shared.split(']{Can we see the expected phenotype in JUMP?}', 1)[1].split('\\end{frame}', 1)[0]
+        self.assertIn('04-gallery-perturbation.png', frame)
+        self.assertIn('Imagus (Firefox)', frame)
+        self.assertIn('Hover Zoom+ (Chrome)', frame)
+        self.assertIn('\\scriptsize', frame)
+        self.assertNotIn('\\begin{itemize}', frame)
+
     def test_sources_aligned_and_tools_preserved(self):
         org = (ROOT / 'slides.org').read_text()
         tex = (ROOT / 'slides.tex').read_text()
