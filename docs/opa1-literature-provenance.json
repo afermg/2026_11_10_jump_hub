@@ -45,10 +45,18 @@
       ],
       "sha256": "e14ea3e9cd3887761ae06c7b2d56826d627c03185bbb2d62090d4d46e40f5e4b",
       "transform": "Crop only; no resize, contrast change or recoloring."
+    },
+    {
+      "path": "assets/opa1-literature/DRP1-siRNA-panel-B.png",
+      "panel": "Figure 3B, Drp1 siRNA, 2 days",
+      "crop_xyxy": [201, 0, 400, 147],
+      "sha256": "74fac7c091bd020ff015047bed82d0fa0a1d674fe0eb8dc3ff78579123bb2c8a",
+      "transform": "Crop only; no resize, contrast change or recoloring."
     }
   ],
   "published_observations": {
-    "microscopy": "HeLa cells; MitoTracker; Fig. 3A scrambled control and Fig. 3G pan-Opa1 siRNA, 2 d.",
+    "microscopy": "HeLa cells; MitoTracker; Fig. 3A scrambled oligonucleotides for Yme1, Fig. 3G pan-Opa1 siRNA at 2 d, Fig. 3B Drp1 siRNA at 2 d. Panel A is the paper's scrambled comparator, not evidence of a separately matched Drp1-specific control experiment.",
+    "drp1_observation": "Results describe the increased connectivity of Yme1-siRNA mitochondria as strikingly similar to Drp1-siRNA morphology in Fig. 3B. This is published siRNA evidence, not a claim about the displayed JUMP knockout fields.",
     "reported_quantification": "Results: 99% of cells transfected with Opa1 siRNA alone had fragmented mitochondria. This is the paper's reported value; no recount or new analysis.",
     "specificity_context": "The paper distinguishes pan-Opa1 depletion from exon-specific siRNA and combined Opa1/Yme1 perturbations."
   },

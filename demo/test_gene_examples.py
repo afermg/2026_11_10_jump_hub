@@ -51,6 +51,20 @@ class GeneExamplesTests(unittest.TestCase):
             self.assertEqual(float(selected[0]["Cohen's d"]), effect)
             self.assertIn(f'${effect:+.2f}$', tex)
 
+    def test_literature_precedes_jump_and_crop_hashes(self):
+        shared = (ROOT / 'opa1-literature.tex').read_text()
+        self.assertLess(shared.index('literature:opa1-siRNA'), shared.index('JUMP example: OPA1'))
+        self.assertLess(shared.index('literature:dnm1l-siRNA'), shared.index('JUMP example: OPA1'))
+        self.assertIn('Fig. 3G/A', shared)
+        self.assertIn('Fig. 3B/A', shared)
+        manifest = json.loads((ROOT / 'docs/opa1-literature-provenance.json').read_text())
+        self.assertEqual(len(manifest['panels']), 3)
+        for panel in manifest['panels']:
+            data = (ROOT / panel['path']).read_bytes()
+            self.assertEqual(hashlib.sha256(data).hexdigest(), panel['sha256'])
+            x0, y0, x1, y1 = panel['crop_xyxy']
+            self.assertEqual(struct.unpack('>II', data[16:24]), (x1-x0, y1-y0))
+
     def test_sources_aligned_and_tools_preserved(self):
         org = (ROOT / 'slides.org').read_text()
         tex = (ROOT / 'slides.tex').read_text()
