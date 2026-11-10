@@ -1,0 +1,292 @@
+{
+  "similarity_cosine": {
+    "DNM1L": -0.0071443042603271155,
+    "MFN1": 0.42366950907260975
+  },
+  "published_MFN1_similarity": 0.424,
+  "effect_validation": [
+    {
+      "gene": "OPA1",
+      "rows": 31,
+      "max_rounding_error_d": 0.0004829659446832224
+    },
+    {
+      "gene": "DNM1L",
+      "rows": 30,
+      "max_rounding_error_d": 0.00047512823173123664
+    }
+  ],
+  "counts": {
+    "OPA1": {
+      "ko_wells": 5,
+      "control_wells": 101,
+      "plates": [
+        "CP-CC9-R1-06",
+        "CP-CC9-R2-06",
+        "CP-CC9-R3-06",
+        "CP-CC9-R4-06",
+        "CP-CC9-R5-06"
+      ]
+    },
+    "DNM1L": {
+      "ko_wells": 6,
+      "control_wells": 125,
+      "plates": [
+        "CP-CC9-R1-02",
+        "CP-CC9-R2-02",
+        "CP-CC9-R3-02",
+        "CP-CC9-R5-02",
+        "CP-CC9-R7-02",
+        "CP-CC9-R8-02"
+      ]
+    }
+  },
+  "n_features": 3651,
+  "n_opposite": 497,
+  "n_opposite_both_fdr05": 15,
+  "n_opposite_mito_both_fdr05": 15,
+  "n_survive_welch": 8,
+  "top": [
+    {
+      "feature": "Nuclei_ObjectSkeleton_NumberTrunks_mito_skel",
+      "OPA1_d": 2.33034934005805,
+      "DNM1L_d": -4.204070375455641,
+      "OPA1_q": 2.47592108451361e-05,
+      "DNM1L_q": 1.148708377917692e-14,
+      "OPA1_sign_consistency": 1.0,
+      "DNM1L_sign_consistency": 1.0,
+      "both_welch_q05": true
+    },
+    {
+      "feature": "Cells_RadialDistribution_RadialCV_mito_tubeness_15of16",
+      "OPA1_d": -2.1381443977441563,
+      "DNM1L_d": 2.9734742215305627,
+      "OPA1_q": 8.858801078411712e-05,
+      "DNM1L_q": 1.6838040288361257e-08,
+      "OPA1_sign_consistency": 1.0,
+      "DNM1L_sign_consistency": 1.0,
+      "both_welch_q05": true
+    },
+    {
+      "feature": "Cells_RadialDistribution_RadialCV_mito_tubeness_18of20",
+      "OPA1_d": -3.16479570149316,
+      "DNM1L_d": 1.8147369490271488,
+      "OPA1_q": 2.843636313464802e-07,
+      "DNM1L_q": 0.0002716568720572791,
+      "OPA1_sign_consistency": 1.0,
+      "DNM1L_sign_consistency": 1.0,
+      "both_welch_q05": false
+    },
+    {
+      "feature": "Cells_RadialDistribution_RadialCV_mito_tubeness_14of16",
+      "OPA1_d": -2.9575490692787034,
+      "DNM1L_d": 1.775291682154294,
+      "OPA1_q": 5.339146362521868e-07,
+      "DNM1L_q": 0.00035909559931236116,
+      "OPA1_sign_consistency": 1.0,
+      "DNM1L_sign_consistency": 1.0,
+      "both_welch_q05": true
+    },
+    {
+      "feature": "Cells_RadialDistribution_RadialCV_mito_tubeness_13of16",
+      "OPA1_d": -1.7142371047588678,
+      "DNM1L_d": 1.8783218946173381,
+      "OPA1_q": 0.001321553764978993,
+      "DNM1L_q": 0.000181351259731015,
+      "OPA1_sign_consistency": 1.0,
+      "DNM1L_sign_consistency": 0.8333333333333334,
+      "both_welch_q05": true
+    },
+    {
+      "feature": "Cells_RadialDistribution_FracAtD_mito_tubeness_4of16",
+      "OPA1_d": 1.7831782650254488,
+      "DNM1L_d": -1.5832556148483605,
+      "OPA1_q": 0.0008394590027421781,
+      "DNM1L_q": 0.0014164226342590815,
+      "OPA1_sign_consistency": 1.0,
+      "DNM1L_sign_consistency": 0.8333333333333334,
+      "both_welch_q05": true
+    },
+    {
+      "feature": "Cells_RadialDistribution_RadialCV_mito_tubeness_16of20",
+      "OPA1_d": -1.571867038237674,
+      "DNM1L_d": 1.759362974762544,
+      "OPA1_q": 0.0031705663222186997,
+      "DNM1L_q": 0.00040977566137933414,
+      "OPA1_sign_consistency": 1.0,
+      "DNM1L_sign_consistency": 0.8333333333333334,
+      "both_welch_q05": true
+    },
+    {
+      "feature": "Cells_RadialDistribution_RadialCV_mito_tubeness_17of20",
+      "OPA1_d": -2.7981611243141593,
+      "DNM1L_d": 1.5362104489111152,
+      "OPA1_q": 1.044429177254787e-06,
+      "DNM1L_q": 0.0019450036455722394,
+      "OPA1_sign_consistency": 1.0,
+      "DNM1L_sign_consistency": 0.8333333333333334,
+      "both_welch_q05": true
+    },
+    {
+      "feature": "Cells_RadialDistribution_FracAtD_mito_tubeness_5of20",
+      "OPA1_d": 1.8995919333847087,
+      "DNM1L_d": -1.5349396748211903,
+      "OPA1_q": 0.00039623776695125974,
+      "DNM1L_q": 0.0019617282252992994,
+      "OPA1_sign_consistency": 1.0,
+      "DNM1L_sign_consistency": 0.8333333333333334,
+      "both_welch_q05": false
+    },
+    {
+      "feature": "Cells_RadialDistribution_FracAtD_mito_tubeness_4of20",
+      "OPA1_d": 1.6584126949218994,
+      "DNM1L_d": -1.5339238070021384,
+      "OPA1_q": 0.001857024428118491,
+      "DNM1L_q": 0.0019676576193328288,
+      "OPA1_sign_consistency": 1.0,
+      "DNM1L_sign_consistency": 0.8333333333333334,
+      "both_welch_q05": false
+    },
+    {
+      "feature": "Cells_RadialDistribution_FracAtD_mito_tubeness_3of20",
+      "OPA1_d": 1.5104970728949239,
+      "DNM1L_d": -1.6120122021623868,
+      "OPA1_q": 0.004634675852380875,
+      "DNM1L_q": 0.0011587802449147511,
+      "OPA1_sign_consistency": 1.0,
+      "DNM1L_sign_consistency": 1.0,
+      "both_welch_q05": true
+    },
+    {
+      "feature": "Cells_RadialDistribution_FracAtD_mito_tubeness_3of16",
+      "OPA1_d": 1.89708558480306,
+      "DNM1L_d": -1.4409396749663368,
+      "OPA1_q": 0.0004012819574684075,
+      "DNM1L_q": 0.0036354337964683158,
+      "OPA1_sign_consistency": 1.0,
+      "DNM1L_sign_consistency": 0.8333333333333334,
+      "both_welch_q05": false
+    },
+    {
+      "feature": "Cells_RadialDistribution_FracAtD_mito_tubeness_6of20",
+      "OPA1_d": 1.7476799466694266,
+      "DNM1L_d": -1.331998894087894,
+      "OPA1_q": 0.0010720843657278044,
+      "DNM1L_q": 0.007480136108777038,
+      "OPA1_sign_consistency": 1.0,
+      "DNM1L_sign_consistency": 0.8333333333333334,
+      "both_welch_q05": false
+    },
+    {
+      "feature": "Cells_RadialDistribution_RadialCV_mito_tubeness_19of20",
+      "OPA1_d": -1.311590778341197,
+      "DNM1L_d": 3.4490772254607185,
+      "OPA1_q": 0.013889924885752867,
+      "DNM1L_q": 5.7221955918133956e-11,
+      "OPA1_sign_consistency": 0.8,
+      "DNM1L_sign_consistency": 1.0,
+      "both_welch_q05": false
+    },
+    {
+      "feature": "Cells_RadialDistribution_FracAtD_mito_tubeness_5of16",
+      "OPA1_d": 1.7286664607572357,
+      "DNM1L_d": -1.2436118383655057,
+      "OPA1_q": 0.0012078857021517245,
+      "DNM1L_q": 0.01294698587482425,
+      "OPA1_sign_consistency": 1.0,
+      "DNM1L_sign_consistency": 0.8333333333333334,
+      "both_welch_q05": false
+    }
+  ],
+  "top_sensitivity_pass": [
+    {
+      "feature": "Nuclei_ObjectSkeleton_NumberTrunks_mito_skel",
+      "OPA1_d": 2.33034934005805,
+      "DNM1L_d": -4.204070375455641,
+      "OPA1_q": 2.47592108451361e-05,
+      "DNM1L_q": 1.148708377917692e-14,
+      "OPA1_sign_consistency": 1.0,
+      "DNM1L_sign_consistency": 1.0,
+      "both_welch_q05": true
+    },
+    {
+      "feature": "Cells_RadialDistribution_RadialCV_mito_tubeness_15of16",
+      "OPA1_d": -2.1381443977441563,
+      "DNM1L_d": 2.9734742215305627,
+      "OPA1_q": 8.858801078411712e-05,
+      "DNM1L_q": 1.6838040288361257e-08,
+      "OPA1_sign_consistency": 1.0,
+      "DNM1L_sign_consistency": 1.0,
+      "both_welch_q05": true
+    },
+    {
+      "feature": "Cells_RadialDistribution_RadialCV_mito_tubeness_14of16",
+      "OPA1_d": -2.9575490692787034,
+      "DNM1L_d": 1.775291682154294,
+      "OPA1_q": 5.339146362521868e-07,
+      "DNM1L_q": 0.00035909559931236116,
+      "OPA1_sign_consistency": 1.0,
+      "DNM1L_sign_consistency": 1.0,
+      "both_welch_q05": true
+    },
+    {
+      "feature": "Cells_RadialDistribution_RadialCV_mito_tubeness_13of16",
+      "OPA1_d": -1.7142371047588678,
+      "DNM1L_d": 1.8783218946173381,
+      "OPA1_q": 0.001321553764978993,
+      "DNM1L_q": 0.000181351259731015,
+      "OPA1_sign_consistency": 1.0,
+      "DNM1L_sign_consistency": 0.8333333333333334,
+      "both_welch_q05": true
+    },
+    {
+      "feature": "Cells_RadialDistribution_FracAtD_mito_tubeness_4of16",
+      "OPA1_d": 1.7831782650254488,
+      "DNM1L_d": -1.5832556148483605,
+      "OPA1_q": 0.0008394590027421781,
+      "DNM1L_q": 0.0014164226342590815,
+      "OPA1_sign_consistency": 1.0,
+      "DNM1L_sign_consistency": 0.8333333333333334,
+      "both_welch_q05": true
+    },
+    {
+      "feature": "Cells_RadialDistribution_RadialCV_mito_tubeness_16of20",
+      "OPA1_d": -1.571867038237674,
+      "DNM1L_d": 1.759362974762544,
+      "OPA1_q": 0.0031705663222186997,
+      "DNM1L_q": 0.00040977566137933414,
+      "OPA1_sign_consistency": 1.0,
+      "DNM1L_sign_consistency": 0.8333333333333334,
+      "both_welch_q05": true
+    },
+    {
+      "feature": "Cells_RadialDistribution_RadialCV_mito_tubeness_17of20",
+      "OPA1_d": -2.7981611243141593,
+      "DNM1L_d": 1.5362104489111152,
+      "OPA1_q": 1.044429177254787e-06,
+      "DNM1L_q": 0.0019450036455722394,
+      "OPA1_sign_consistency": 1.0,
+      "DNM1L_sign_consistency": 0.8333333333333334,
+      "both_welch_q05": true
+    },
+    {
+      "feature": "Cells_RadialDistribution_FracAtD_mito_tubeness_3of20",
+      "OPA1_d": 1.5104970728949239,
+      "DNM1L_d": -1.6120122021623868,
+      "OPA1_q": 0.004634675852380875,
+      "DNM1L_q": 0.0011587802449147511,
+      "OPA1_sign_consistency": 1.0,
+      "DNM1L_sign_consistency": 1.0,
+      "both_welch_q05": true
+    }
+  ],
+  "method": "Median KO profiles for corrected-profile cosine (259 dimensions). Feature Cohen d uses KO versus pooled no-guide and non-targeting wells from the same plates, matching JUMP_rr. Student pooled-variance t test with our BH per gene across all 3651 features (not the published table q values). Welch/BH sensitivity included. Opposite means d signs differ; balanced_opposition=min(abs(d_OPA1),abs(d_DNM1L)). Descriptive exploratory ranking, not independent validation; correlated features and only 5 OPA1 / 6 DNM1L KO wells. No claim of 15 independent mechanisms.",
+  "source_versions": {
+    "crispr_interpretable": "eG9D_hQ7M68jDiw7uy44Ve2DbDGS1Im2",
+    "crispr_corrected": "7tk_WtrHIZqOrgZECUNjdIgTwShTL.fy"
+  },
+  "sha256": {
+    "crispr_interpretable.parquet": "6153c9182faf0a0a9ba22448dfa5572bd7de9b943007356830304834e81a1d05",
+    "crispr_corrected.parquet": "019cd1b767db48dad6fbab5cbc483449a229a44c2193d2341a8d331d067204c8"
+  }
+}

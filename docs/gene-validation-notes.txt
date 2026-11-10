@@ -1,0 +1,36 @@
+Slide: we can validate existing knowledge to develop methods leading to new discoveries
+
+Presenter notes (intentionally NOT on the slide, at the presenter's request):
+The selected results are exploratory. There are 5 OPA1 and 6 DNM1L KO wells,
+and 101 / 125 negative-control wells on the corresponding plates. Controls
+include no-guide and non-targeting reagents. Many features, particularly
+neighboring radial bins, are correlated; 15 hits are not 15 independent
+mechanisms. Eight hits also pass the Welch unequal-variance sensitivity test.
+The two displayed control-comparison features pass both tests. In both, every
+KO well has the indicated direction relative to its own plate control median.
+Controls between KO averages does not imply nonoverlapping distributions.
+Skeleton trunks are a measured image descriptor, not a direct count of
+mitochondria or a direct measurement of fusion/fission rates.
+
+The scatter uses Cohen's d for all 3,651 original named features relative to
+each gene's own plate-matched controls. 3,154 (86.4%) move in the same direction.
+Orange identifies opposite-sign d and BH q<0.05 in both KOs, calculated using
+pooled-variance t tests and BH across features separately for each KO. This
+is our correction, not the published JUMP_rr q values. The Pearson correlation
+of these effect vectors is +0.814. This is a different representation and
+metric from the corrected-profile cosine, which is -0.00714 (not global
+anticorrelation). 1,002 features have same-direction significant effects.
+
+The right plots use normalized source feature values, BEFORE our control
+subtraction, to avoid making the midpoint result a consequence of centering.
+Negative values are possible because these are normalized profiles, not raw
+counts or raw intensity. Gray control groups remain separated by the KO's
+plates. Both control means lie between the KO means for all 15 selected hits.
+
+Replot: PATH=<TeX-bin>:$PATH uv run demo/plot_gene_validation.py
+Plot inputs, original analysis hashes, tests against 61 published rounded
+effect sizes, original sample counts, and summary statistics are retained in
+demo/opa1-dnm1l-analysis/. Original full-profile analysis scripts and downloaded
+data: /work/scratch/amunoz/oppy-builds/opa1-dnm1l-analysis/.
+Archived CRISPR v1.0a data match the source checksums used by JUMP_rr.
+The representative features are exact CellProfiler names recorded in the CSVs.

@@ -122,6 +122,24 @@ class GeneExamplesTests(unittest.TestCase):
         self.assertIn('intensity limits 219--3985', shared)
         self.assertIn('intensity limits 187--4463', shared)
 
+    def test_validation_slide_and_baseline(self):
+        shared = (ROOT / 'opa1-literature.tex').read_text().replace('\\\\', ' ')
+        title = 'we can validate existing knowledge to develop methods leading to new discoveries'
+        self.assertEqual(shared.count(title), 1)
+        self.assertLess(shared.index('JUMP example: DNM1L'), shared.index(title))
+        self.assertLess(shared.index(title), shared.index('Agents can help'))
+        frame = shared.split(']{' + title + '}', 1)[1].split('\\end{frame}', 1)[0]
+        self.assertIn('feature-validation.pdf', frame)
+        self.assertNotIn('exploratory', frame.lower())
+        self.assertNotIn('caveat', frame.lower())
+        with (ROOT / 'demo/opa1-dnm1l-analysis/all-features.csv').open() as f:
+            rows = list(csv.DictReader(f))
+        self.assertEqual(len(rows), 3651)
+        self.assertEqual(sum(float(r['OPA1_d'])*float(r['DNM1L_d'])>0 for r in rows), 3154)
+        hits = [r for r in rows if r['opposite']=='true' and r['both_q05']=='true']
+        self.assertEqual(len(hits), 15)
+        self.assertEqual(sum(r['both_welch_q05']=='true' for r in hits), 8)
+
 
 if __name__ == '__main__':
     unittest.main()
