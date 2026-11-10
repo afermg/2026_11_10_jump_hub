@@ -8,9 +8,9 @@
 | 8 | Published OPA1 siRNA versus scrambled comparator (Griparic 2007, Fig. 3G/A) |
 | 9 | Published DNM1L/DRP1 siRNA versus scrambled comparator (Griparic 2007, Fig. 3B/A) |
 | 10–13 | Find the genes → availability table, column definitions and filters |
-| 14–16 | See the phenotype → image-table filters and plate-matched genetic controls (MYT1 tutorial) |
+| 14–16 | See the phenotype → OPA1 image-table filters and plate-matched genetic controls |
 | 17–18 | Apply it: OPA1 and DNM1L CRISPR images, each with its own same-plate control |
-| 19–21 | Measure the differences → activity, feature rows and effect sizes (SLC2A2 tutorial) |
+| 19–21 | Measure the differences → OPA1 activity, feature rows and effect sizes |
 | 22 | Apply it: published OPA1/DNM1L mitochondrial feature effects |
 | 23–25 | Follow up → ORF comparison, related profiles, filtered-view export |
 | 26 | Agent prompt: expectations → traceable images → usable viewer |

@@ -202,7 +202,7 @@ The Hub contains practical guides to help biologists use JUMP.
 # PDF8–9 now show external-paper OPA1 and DRP1 siRNA examples (Griparic et al. Fig. 3G/A and B/A) before our JUMP CRISPR examples (PDF17–18), with the relevant gene/image/control table operations in between. Figure 3A is the published scrambled Yme1 comparator. Crop-only transforms and licenses: docs/opa1-literature-provenance.json. The 99% literature value and rescue slide remain outside the active deck.
 # The two interfaces remain live on Oppy: localhost:8766 gene/raw-image explorer, localhost:8765 phenotype review, privately forwarded to the MacBook. See docs/gene-examples.md. Each has its own slide (PDF27 gene explorer, PDF28 phenotype viewer) as a tool built with AI assistance; user inspection and tests remain essential.
 # Interleave goal → JUMP_rr action → example: PDF10–13 find genes, PDF14–16 retrieve images/controls, PDF17–18 show our images, PDF19–21 read activity/features, PDF22 show our feature summary, PDF23–25 ORF/matches/export. Each tutorial slide has a question title and a concrete How caption.
-# Hub screenshots retain original SLC2A2/MYT1 tutorial labels, not OPA1/DNM1L results. No new profile statistics or representation comparisons.
+# The eleven workflow panels use published OPA1 JUMP_rr rows and preview images: CRISPR JCP2022_804796, ORF JCP2022_906243, same-plate genetic controls and published matches. Inputs, rendering script and hashes: docs/opa1-tutorial-screenshots-provenance.json. No new profile statistics or representation comparisons.
 
 ** Historical: blebbistatin introduction :noexport:
 #+BEGIN_EXPORT latex
@@ -729,7 +729,7 @@ Start with a simple question: are control and perturbed cells different?
 \textbf{Find cells, nuclei and spots} & {\small Cellpose (cells and nuclei); Spotiflow (spots)} \\[0.9em]
 \textbf{Follow cells and organelles over time} & {\small Trackastra / Ultrack} \\[0.9em]
 \textbf{Measure cell and organelle appearance} & {\small cp\_measure} \\[0.9em]
-\textbf{Explore your results} & {\small marimo} \\[0.9em]
+\textbf{Explore your results} & {\small marimo / custom app} \\[0.9em]
 \end{tabular}
 #+END_EXPORT
 
@@ -872,13 +872,13 @@ Interactive marimo notebook --- separate recorded example
 # Originally appended at the end. Now the 11 tutorial frames are integrated with the gene-lookup and phenotype-reading workflows.
 # tutorial-walkthrough.tex defines reusable frame commands; opa1-literature.tex calls each once in context.
 # Workflow 1: gene availability -> definitions -> filters -> export. Workflow 2: rows -> activity -> features -> ORF -> matches -> images/controls.
-# Original tutorial highlight boxes/arrows are preserved. Historical SLC2A2 and MYT1 examples are separate from the current compound queries.
-# Added interpretation cues are slide captions, not edits to the screenshot pixels. Treat old interface values as historical.
+# Original SLC2A2/MYT1 tutorial PNGs remain archived under assets/tutorial-screenshots and docs/tutorial-screenshots-provenance.json; they are no longer used by the active frames.
+# Active panels are rendered from published OPA1 extracts without relabeling old pixels. Treat the archived interface values as historical.
 # Activity p-values apply per perturbation; feature significance is a different test. Displayed zeroes are rounded.
 # Availability is not activity; profile similarity is not proof of shared mechanism or phenotypic rescue.
-# The genetic-control screenshot uses no-guide/non-targeting; the main compound demo requires DMSO controls instead.
-# Gray source/license/history footers are hidden at the presenter's request; attribution remains in TeX comments and docs/tutorial-walkthrough.md.
-# Exact source URLs, dimensions, source-document commit and SHA256 hashes: docs/tutorial-screenshots-provenance.json.
+# The OPA1 genetic-control panel uses same-source, same-plate no-guide/non-targeting rows; compound examples would require DMSO controls instead.
+# Compact provenance stays in TeX comments and docs/tutorial-walkthrough.md rather than visible screenshot footers.
+# Exact input URLs, dimensions, preview-image hashes and output hashes: docs/opa1-tutorial-screenshots-provenance.json.
 # Slide-by-slide interpretation notes: docs/tutorial-walkthrough.md.
 
 * Historical individual model figures :noexport:

@@ -2,6 +2,7 @@
 /build/
 __pycache__/
 *.pyc
+/demo/tutorial-opa1/previews/
 *.pdf
 # These specific vector figures are source artwork, not the presentation PDF.
 !assets/vector-interpretability.pdf

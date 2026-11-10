@@ -1,0 +1,44 @@
+{
+  "query_utc": "2026-11-10T12:03:08.754698+00:00",
+  "gene": "OPA1",
+  "polars_version": "1.40.1",
+  "offline": true,
+  "inputs": {
+    "coverage": {
+      "url": "https://zenodo.org/api/records/16883068/files/table.csv/content",
+      "sha256": "40f12b266d632d8593b29c4a327cd82cffc36ad354e92815bf77e6d2f5008ec7",
+      "bytes": 290114
+    },
+    "crispr": {
+      "url": "https://d3dw4c1b79pj57.cloudfront.net/latest/crispr.parquet/content",
+      "sha256": "639cb7267ba54d551619e4e8a622445065680c53c21eee11933a497b1966100d",
+      "bytes": 14159101
+    },
+    "orf": {
+      "url": "https://d3dw4c1b79pj57.cloudfront.net/latest/orf.parquet/content",
+      "sha256": "cded790675d5cf2f9e0a17bda6f7eb25afc3c49df68d14ea1cacf6bdc4cd3356",
+      "bytes": 31536714
+    },
+    "crispr_interpretable_features": {
+      "url": "https://d3dw4c1b79pj57.cloudfront.net/latest/crispr_interpretable_features.parquet/content",
+      "sha256": "905abb022cb9b510baf3577331c2eca4b4cad7cf7b3e91fd2f8d6d01e9371219",
+      "bytes": 11977200
+    },
+    "orf_interpretable_features": {
+      "url": "https://d3dw4c1b79pj57.cloudfront.net/latest/orf_interpretable_features.parquet/content",
+      "sha256": "d7af02f376b760ff8cb2ae71c1323366dc36af97020ffd1f74bd402be639d921",
+      "bytes": 21622328
+    },
+    "crispr_gallery": {
+      "url": "https://d3dw4c1b79pj57.cloudfront.net/latest/crispr_gallery.parquet/content",
+      "sha256": "0049760efc70d652a52b8f5954aa6e244606f22f617cdee8e96723a8c075a305",
+      "bytes": 3327310
+    }
+  },
+  "summary": {
+    "availability_rows": 1,
+    "activity_rows": 2,
+    "crispr_image_wells": 5,
+    "same_plate_control_wells": 101
+  }
+}

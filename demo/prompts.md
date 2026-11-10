@@ -6,7 +6,7 @@
 
 ## 2. Find the data
 
-> Locate OPA1 and DNM1L in JUMP Hub. Show exact CRISPR and ORF identifiers, then link the CellProfiler feature, match and image resources. Use the Hub's worked tutorials to explain the views; keep their original example gene names visible.
+> Locate OPA1 and DNM1L in JUMP Hub. Show exact CRISPR and ORF identifiers, then link the CellProfiler feature, match and image resources. Use OPA1 consistently in the worked table views; regenerate the panels from the published rows rather than relabeling another gene's screenshots.
 
 ## 3. Build the raw-image explorer
 
