@@ -68,8 +68,8 @@ class GeneExamplesTests(unittest.TestCase):
     def test_question_table_example_order(self):
         shared = (ROOT / 'opa1-literature.tex').read_text()
         sequence = [
-            '\\TutorialGallerySlide', '\\TutorialControlsSlide',
             '\\TutorialAvailabilitySlide',
+            '\\FilteringExampleSlide', '\\TutorialControlsSlide',
             '\\TutorialDefinitionsSlide', '\\TutorialFiltersSlide',
             '\\TutorialActivitySlide', '\\TutorialRowsSlide', '\\TutorialFeaturesSlide',
             'CellProfiler detects mitochondrial feature changes',
@@ -88,10 +88,10 @@ class GeneExamplesTests(unittest.TestCase):
 
     def test_expected_phenotype_uses_gallery_and_hover_tip(self):
         shared = (ROOT / 'opa1-literature.tex').read_text()
-        frame = shared.split(']{Can we see the expected phenotype in JUMP?}', 1)[1].split('\\end{frame}', 1)[0]
+        frame = shared.split(']{How do the cells look?}', 1)[1].split('\\end{frame}', 1)[0]
         self.assertIn('00-opa1-crispr-gallery.png', frame)
         self.assertIn('CRISPR Gallery --- OPA1', frame)
-        self.assertLess(shared.index('00-opa1-crispr-gallery.png'), shared.index('\\TutorialGallerySlide'))
+        self.assertLess(shared.index('00-opa1-crispr-gallery.png'), shared.index('\\FilteringExampleSlide'))
         self.assertIn('Imagus (Firefox)', frame)
         self.assertIn('Hover Zoom+ (Chrome)', frame)
         self.assertIn('\\scriptsize', frame)

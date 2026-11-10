@@ -8,14 +8,14 @@
 \centering
 \includegraphics[width=0.98\linewidth,height=0.72\textheight,keepaspectratio]{assets/opa1-tutorial-screenshots/01-availability.png}
 \par\medskip
-{\footnotesize\raggedright\textbf{How:} search OPA, identify OPA1 among the returned genes, and check its CRISPR and ORF coverage before opening the other tables.\par}
+{\footnotesize\raggedright\textbf{How:} search OPA, identify OPA1 among the returned genes, and check which CRISPR and ORF perturbations we can follow into the feature tables.\par}
 % Published JUMP_rr coverage row; see docs/opa1-tutorial-screenshots-provenance.json.
 \end{frame}}
 
 \newcommand{\TutorialDefinitionsSlide}{%
 \begin{frame}[label={tutorial:interface}]{Which table columns answer our question?}
 \centering
-\includegraphics[trim=0 250bp 0 0,clip,width=0.98\linewidth,height=0.72\textheight,keepaspectratio]{assets/opa1-tutorial-screenshots/02-columns.png}
+\includegraphics[trim=10bp 175bp 10bp 225bp,clip,width=0.98\linewidth,height=0.72\textheight,keepaspectratio]{assets/opa1-tutorial-screenshots/02-columns.png}
 \par\medskip
 {\footnotesize\raggedright\textbf{How:} read the OPA1 row's reagent, compartment, feature, channel, per-feature significance and signed effect size.\par}
 % Published JUMP_rr OPA1 CRISPR feature row; see provenance JSON.
@@ -24,7 +24,9 @@
 \newcommand{\TutorialRowsSlide}{%
 \begin{frame}[label={tutorial:rows}]{What does one feature result describe?}
 \centering
-\includegraphics[trim=0 250bp 0 0,clip,width=0.98\linewidth,height=0.72\textheight,keepaspectratio]{assets/opa1-tutorial-screenshots/07-feature-row.png}
+{\small\textbf{OPA1 CRISPR: one feature, read across two close-ups}}\par\medskip
+\includegraphics[trim=175bp 700bp 680bp 40bp,clip,width=0.92\linewidth]{assets/opa1-tutorial-screenshots/07-feature-row.png}\par\bigskip
+\includegraphics[trim=720bp 700bp 150bp 40bp,clip,width=0.92\linewidth]{assets/opa1-tutorial-screenshots/07-feature-row.png}
 \par\medskip
 {\footnotesize\raggedright\textbf{How:} read across one OPA1 row: reagent, object, feature, channel, significance, effect size and rank. It summarizes a profile, not one cell.\par}
 % Published JUMP_rr OPA1 CRISPR feature row; see provenance JSON.
@@ -42,7 +44,7 @@
 \newcommand{\TutorialExportSlide}{%
 \begin{frame}[label={tutorial:export}]{How do we keep and share the result?}
 \centering
-\includegraphics[trim=0 250bp 0 0,clip,width=0.98\linewidth,height=0.72\textheight,keepaspectratio]{assets/opa1-tutorial-screenshots/11-export.png}
+\includegraphics[trim=10bp 495bp 840bp 35bp,clip,width=0.98\linewidth,height=0.66\textheight,keepaspectratio]{assets/opa1-tutorial-screenshots/11-export.png}
 \par\medskip
 {\footnotesize\raggedright\textbf{How:} keep OPA1 and the relevant objects, then export the rows with the reagent ID, filters and source URL.\par}
 % Published JUMP_rr OPA1 CRISPR feature rows; see provenance JSON.
@@ -60,7 +62,9 @@
 \newcommand{\TutorialFeaturesSlide}{%
 \begin{frame}[label={tutorial:features}]{Which features explain the differences?}
 \centering
-\includegraphics[trim=0 250bp 0 0,clip,width=0.98\linewidth,height=0.72\textheight,keepaspectratio]{assets/opa1-tutorial-screenshots/08-crispr-features.png}
+{\small\textbf{OPA1 CRISPR: the top-ranked feature}}\par\medskip
+\includegraphics[trim=175bp 456bp 680bp 282.5bp,clip,width=0.92\linewidth]{assets/opa1-tutorial-screenshots/08-crispr-features.png}\par\bigskip
+\includegraphics[trim=720bp 456bp 150bp 282.5bp,clip,width=0.92\linewidth]{assets/opa1-tutorial-screenshots/08-crispr-features.png}
 \par\medskip
 {\footnotesize\raggedright\textbf{How:} sort OPA1 CRISPR rows by feature rank and compare significance with signed effect size; the leading row is a Mito texture feature.\par}
 % Published JUMP_rr OPA1 CRISPR feature rows; see provenance JSON.
@@ -69,7 +73,9 @@
 \newcommand{\TutorialOrfSlide}{%
 \begin{frame}[label={tutorial:orf}]{What happens with a different perturbation type?}
 \centering
-\includegraphics[trim=0 250bp 0 0,clip,width=0.98\linewidth,height=0.72\textheight,keepaspectratio]{assets/opa1-tutorial-screenshots/09-orf-features.png}
+{\small\textbf{OPA1 ORF: a separate perturbation and feature ranking}}\par\medskip
+\includegraphics[trim=175bp 456bp 700bp 282.5bp,clip,width=0.92\linewidth]{assets/opa1-tutorial-screenshots/09-orf-features.png}\par\bigskip
+\includegraphics[trim=920bp 456bp 175bp 282.5bp,clip,width=0.65\linewidth]{assets/opa1-tutorial-screenshots/09-orf-features.png}
 \par\medskip
 {\footnotesize\raggedright\textbf{How:} open OPA1 in the ORF table and compare its separate reagent, activity and ranked feature effects with CRISPR.\par}
 % Published JUMP_rr OPA1 ORF feature rows; see provenance JSON.
@@ -84,8 +90,8 @@
 % Published JUMP_rr OPA1 CRISPR match rows and preview images; see provenance JSON.
 \end{frame}}
 
-\newcommand{\TutorialGallerySlide}{%
-\begin{frame}[label={tutorial:gallery-perturbation}]{Where can we see the perturbed cells?}
+\newcommand{\FilteringExampleSlide}{%
+\begin{frame}[label={filtering_example}]{Filtering example: one OPA1 well}
 \centering
 \includegraphics[trim=0 200bp 300bp 0,clip,width=0.98\linewidth,height=0.72\textheight,keepaspectratio]{assets/opa1-tutorial-screenshots/04-gallery-perturbation.png}
 \par\medskip

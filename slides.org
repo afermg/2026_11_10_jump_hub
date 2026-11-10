@@ -451,7 +451,7 @@ Blebbistatin can disrupt contractility and cytokinesis. Query its CellProfiler p
 \small Minh Doan, GSK Bioimaging Analytics\par
 \begin{itemize}
 \item Bright-field time series, Cell Painting, cell cycle and viability.
-\item Which dyes/imaging methods are better for an different Mechanisms of Action
+\item Which dyes and imaging methods best distinguish different mechanisms of action?
 \end{itemize}
 \end{block}
 \end{column}
@@ -522,6 +522,7 @@ LZTR1 G248R\par\smallskip
 # The presenter requested removal of the MisLocus Hugging Face link and on-slide attribution as unpublished data. No dataset link is displayed on this slide. The previously checked public README is retained solely as count provenance; unpublished attribution does not assert that no data are publicly accessible. No manuscript, comments or unrelated proposal slides are distributed.
 
 ** Take-home messages
+- Known biology helps us identify informative features and develop methods for discovery.
 - JUMP provides public Cell Painting data for around 136,000 chemical and genetic perturbations.
 - Biologists can use JUMP Hub to find tested genes and compounds, compare phenotypes and inspect images.
 - Open-source image-analysis tools extend morphological profiling to your own experiments.
@@ -578,6 +579,33 @@ Runxi Shen
 # Edinburgh is credited on Kenneth's application slide, not repeated here. Purdue remains the confirmed affiliation.
 # The presenter requested separate gratitude and QR slides. Show or skip References, then leave the final QR page visible.
 
+
+** JUMP Hub and slides
+#+BEGIN_EXPORT latex
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.48\textwidth}
+\centering
+\href{https://broadinstitute.github.io/jump_hub/}{JUMP Hub}\par\smallskip
+\href{https://broadinstitute.github.io/jump_hub/}{\includegraphics[width=40mm]{assets/qr-jump-hub.png}}\par\smallskip
+\href{https://broad.io/jump}{\texttt{broad.io/jump}}
+\end{column}
+\begin{column}{0.48\textwidth}
+\centering
+\href{https://raw.githubusercontent.com/afermg/2026_11_10_jump_hub/main/slides.pdf}{Slides (PDF)}\par\smallskip
+\href{https://raw.githubusercontent.com/afermg/2026_11_10_jump_hub/main/slides.pdf}{\includegraphics[width=40mm]{assets/qr-slides.png}}
+\end{column}
+\end{columns}
+#+END_EXPORT
+
+# Speaker note: Leave this QR slide visible at the end of the main talk. The following additional slides are for questions. The two codes remain 40 mm.
+# The JUMP Hub QR and broad.io/jump shortlink are unchanged.
+# The Slides QR and both PDF hyperlinks target https://raw.githubusercontent.com/afermg/2026_11_10_jump_hub/main/slides.pdf.
+# The presenter explicitly requested making the GitHub mirror public and pointing the QR at this presentation PDF.
+# Preserve the author's Overleaf sharing settings. The published PDF retains the current full deck, including additional slides.
+# QR generation and verification details are recorded in docs/slides-qr.json.
+
+* Additional slides
+
 ** References
 #+BEGIN_EXPORT latex
 {\footnotesize All named tools and models below are clickable.}
@@ -625,32 +653,6 @@ Runxi Shen
 \end{column}
 \end{columns}
 #+END_EXPORT
-
-** JUMP Hub and slides
-#+BEGIN_EXPORT latex
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.48\textwidth}
-\centering
-\href{https://broadinstitute.github.io/jump_hub/}{JUMP Hub}\par\smallskip
-\href{https://broadinstitute.github.io/jump_hub/}{\includegraphics[width=40mm]{assets/qr-jump-hub.png}}\par\smallskip
-\href{https://broad.io/jump}{\texttt{broad.io/jump}}
-\end{column}
-\begin{column}{0.48\textwidth}
-\centering
-\href{https://raw.githubusercontent.com/afermg/2026_11_10_jump_hub/main/slides.pdf}{Slides (PDF)}\par\smallskip
-\href{https://raw.githubusercontent.com/afermg/2026_11_10_jump_hub/main/slides.pdf}{\includegraphics[width=40mm]{assets/qr-slides.png}}
-\end{column}
-\end{columns}
-#+END_EXPORT
-
-# Speaker note: Leave this QR slide visible at the end of the main talk. The following additional slides are for questions. The two codes remain 40 mm.
-# The JUMP Hub QR and broad.io/jump shortlink are unchanged.
-# The Slides QR and both PDF hyperlinks target https://raw.githubusercontent.com/afermg/2026_11_10_jump_hub/main/slides.pdf.
-# The presenter explicitly requested making the GitHub mirror public and pointing the QR at this presentation PDF.
-# Preserve the author's Overleaf sharing settings. The published PDF retains the current full deck, including additional slides.
-# QR generation and verification details are recorded in docs/slides-qr.json.
-
-* Additional slides
 
 ** Morphological profiling: How to turn images into profiles
 Start with a simple question: are control and perturbed cells different?

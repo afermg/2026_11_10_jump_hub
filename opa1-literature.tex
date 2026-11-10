@@ -60,12 +60,12 @@
 \begin{frame}[label={sec:org000000d}]{What do we want to find in JUMP?}
 \textbf{Find the perturbations for OPA1 and DNM1L.}\par\bigskip
 \begin{itemize}
-\item Check which genetic perturbations are available.
-\item Identify the exact CRISPR reagent for each gene.
-\item Carry those identifiers into the image and feature tables.
+\item Start with the gallery and find matching negative controls.
+\item Follow the gene and reagent into the feature tables.
+\item Find related perturbations through profile similarity.
 \end{itemize}
 \bigskip
-\textbf{How:} search the gene-availability table, then filter JUMP\_rr by gene and reagent.
+\textbf{How:} explore images, investigate features, then follow the matches.
 \par\smallskip
 {\scriptsize\href{https://broadinstitute.github.io/jump_hub/reference/00_gene_index.html}{JUMP Hub gene availability}}
 \end{frame}
@@ -80,7 +80,7 @@
 {\scriptsize\raggedright\textbf{Tip:} enlarge image previews on hover with \href{https://addons.mozilla.org/en-US/firefox/addon/imagus/}{Imagus (Firefox)} or \href{https://chromewebstore.google.com/detail/hover-zoom\%2B/pccckmaobkjjboncdfnnofkonhgpceea}{Hover Zoom+ (Chrome)}.\par}
 \end{frame}
 
-\TutorialGallerySlide
+\FilteringExampleSlide
 \TutorialControlsSlide
 \TutorialDefinitionsSlide
 \TutorialFiltersSlide
@@ -138,7 +138,7 @@ Both panels share intensity limits 187--4463. \href{https://github.com/jump-cell
 
 \begin{frame}[label={analysis:gene-validation}]{we can validate existing knowledge\\to develop methods leading to new discoveries}
 \centering
-\includegraphics[width=\linewidth,height=0.62\textheight,keepaspectratio]{assets/opa1-dnm1l-analysis/feature-validation.pdf}
+\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{assets/opa1-dnm1l-analysis/feature-validation.pdf}
 \par\smallskip
 {\small\textbf{Shared overall shifts; opposite mitochondrial changes around the controls.}\par}
 \par\smallskip

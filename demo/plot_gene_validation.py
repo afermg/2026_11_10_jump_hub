@@ -21,7 +21,7 @@ try:
     family = font_manager.FontProperties(fname=font).get_name()
 except (OSError, subprocess.CalledProcessError):
     family = 'DejaVu Sans'
-plt.rcParams.update({'font.family':family,'font.size':14,'axes.titlesize':17,'axes.labelsize':14,'xtick.labelsize':12,'ytick.labelsize':13,'pdf.fonttype':3,'axes.spines.top':False,'axes.spines.right':False,'axes.edgecolor':'#80898b','text.color':'#22373b','axes.labelcolor':'#22373b'})
+plt.rcParams.update({'font.family':family,'font.size':16,'axes.titlesize':19,'axes.labelsize':16,'xtick.labelsize':15,'ytick.labelsize':16,'pdf.fonttype':3,'axes.spines.top':False,'axes.spines.right':False,'axes.edgecolor':'#80898b','text.color':'#22373b','axes.labelcolor':'#22373b'})
 with (DATA/'all-features.csv').open() as f:
     rows=list(csv.DictReader(f))
 with (DATA/'representative-feature-wells.csv').open() as f:
@@ -39,8 +39,8 @@ ax.scatter(x[~selected],y[~selected],s=9,c='#a5adb0',alpha=.42,linewidths=0)
 ax.scatter(x[selected],y[selected],s=27,c='#c16e19',linewidths=.4,edgecolors='white',zorder=3)
 ax.set(xlim=(-6.5,6.5),ylim=(-6.5,6.5),xticks=[-6,-3,0,3,6],yticks=[-6,-3,0,3,6],xlabel='OPA1 effect (Cohen’s d)',ylabel='DNM1L effect (Cohen’s d)')
 ax.set_title('All 3,651 feature shifts',loc='left',pad=17)
-ax.text(.02,1.015,'86.4% same direction',transform=ax.transAxes,fontsize=13)
-ax.text(.04,.04,'15 opposing mitochondrial features',transform=ax.transAxes,color='#a45409',fontsize=11.5)
+ax.text(.02,1.015,'86.4% same direction',transform=ax.transAxes,fontsize=16)
+ax.text(.04,.04,'15 opposing mitochondrial features',transform=ax.transAxes,color='#a45409',fontsize=14)
 
 features=[('Nuclei_ObjectSkeleton_NumberTrunks_mito_skel','Mitochondrial skeleton trunks'),('Cells_RadialDistribution_RadialCV_mito_tubeness_15of16','Mito tubeness variation · radial bin 15/16')]
 groups=[('OPA1 KO','#17817c'),('OPA1 controls','#8a9294'),('DNM1L controls','#8a9294'),('DNM1L KO','#8155a6')]
@@ -54,13 +54,13 @@ for k,(feature,title) in enumerate(features):
         jitter=((np.arange(len(vals))*7)%13-6)*.022
         ax.scatter(vals,3-i+jitter,s=14 if 'KO' in name else 7,c=color,alpha=.8 if 'KO' in name else .3,linewidths=0)
         ax.scatter([vals.mean()],[3-i],marker='D',s=64,c=color,edgecolors='white',linewidths=.9,zorder=4)
-        ax.text(1.015,3-i,f'{vals.mean():+.2f}',transform=ax.get_yaxis_transform(),va='center',fontsize=13,color=color)
+        ax.text(1.015,3-i,f'{vals.mean():+.2f}',transform=ax.get_yaxis_transform(),va='center',fontsize=16,color=color)
     ax.set(yticks=[3,2,1,0],yticklabels=[g[0] for g in groups],ylim=(-.55,3.55),xlim=(-8.4,6),xticks=[-8,-4,0,4])
     ax.set_title(title,loc='left',pad=10)
     ax.spines['left'].set_visible(False)
     ax.tick_params(axis='y',length=0)
     if k==1:
-        ax.set_xlabel('Normalized feature value (before control subtraction)')
+        ax.set_xlabel('Normalized feature value · before control subtraction',fontsize=14)
 fig.savefig(OUT/'feature-validation.pdf',metadata={'Title':'OPA1 and DNM1L feature shifts and plate-matched controls','CreationDate':None,'ModDate':None})
 fig.savefig(OUT/'feature-validation.png',dpi=180)
 print(OUT/'feature-validation.pdf')
