@@ -65,6 +65,26 @@ class GeneExamplesTests(unittest.TestCase):
             x0, y0, x1, y1 = panel['crop_xyxy']
             self.assertEqual(struct.unpack('>II', data[16:24]), (x1-x0, y1-y0))
 
+    def test_question_table_example_order(self):
+        shared = (ROOT / 'opa1-literature.tex').read_text()
+        sequence = [
+            '\\TutorialAvailabilitySlide', '\\TutorialDefinitionsSlide', '\\TutorialFiltersSlide',
+            '\\TutorialGallerySlide', '\\TutorialControlsSlide',
+            'JUMP example: OPA1', 'JUMP example: DNM1L',
+            '\\TutorialActivitySlide', '\\TutorialRowsSlide', '\\TutorialFeaturesSlide',
+            'CellProfiler detects mitochondrial feature changes',
+            '\\TutorialOrfSlide', '\\TutorialMatchesSlide', '\\TutorialExportSlide',
+        ]
+        positions = [shared.index(item) for item in sequence]
+        self.assertEqual(positions, sorted(positions))
+        for item in sequence:
+            self.assertEqual(shared.count(item), 1)
+        tutorial = (ROOT / 'tutorial-walkthrough.tex').read_text()
+        self.assertEqual(tutorial.count('\\textbf{How:}'), 11)
+        self.assertIn('We will compare knockouts and their negative controls.', shared)
+        self.assertIn('Mitochondrial organization changes.', shared)
+        self.assertNotIn('These features do not directly establish', shared)
+
     def test_sources_aligned_and_tools_preserved(self):
         org = (ROOT / 'slides.org').read_text()
         tex = (ROOT / 'slides.tex').read_text()

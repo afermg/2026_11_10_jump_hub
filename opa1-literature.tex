@@ -57,6 +57,39 @@
 {\scriptsize\href{https://doi.org/10.1083/jcb.200704112}{Griparic, Kanazawa \& van der Bliek, JCB (2007), Fig. 3B/A}. Published microscopy, cropped; \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{CC BY-NC-SA 4.0}.}
 \end{frame}
 
+\begin{frame}[label={sec:org000000d}]{What do we want to find in JUMP?}
+\textbf{Find the perturbations for OPA1 and DNM1L.}\par\bigskip
+\begin{itemize}
+\item Check which genetic perturbations are available.
+\item Identify the exact CRISPR reagent for each gene.
+\item Carry those identifiers into the image and feature tables.
+\end{itemize}
+\bigskip
+\textbf{How:} search the gene-availability table, then filter JUMP\_rr by gene and reagent.
+\par\smallskip
+{\scriptsize\href{https://broadinstitute.github.io/jump_hub/reference/00_gene_index.html}{JUMP Hub gene availability}}
+\end{frame}
+
+\TutorialAvailabilitySlide
+\TutorialDefinitionsSlide
+\TutorialFiltersSlide
+
+\begin{frame}[label={sec:org0000010}]{Can we see the expected phenotype in JUMP?}
+\textbf{Compare each knockout with its negative controls.}\par\bigskip
+\begin{itemize}
+\item Find the gene's images and identify their source and plate.
+\item Bring in genetic negative controls from that plate.
+\item Inspect the mitochondrial channel and zoom into individual cells.
+\end{itemize}
+\bigskip
+\textbf{How:} filter the image table by perturbation, then select the matching plates and controls.
+\par\medskip
+{\small The next screenshots demonstrate the table steps with MYT1; then we return to OPA1 and DNM1L.}
+\end{frame}
+
+\TutorialGallerySlide
+\TutorialControlsSlide
+
 \begin{frame}[label={sec:org000000a}]{JUMP example: OPA1 knockout}
 \begin{columns}[c,onlytextwidth]
 \begin{column}{0.48\textwidth}
@@ -89,6 +122,10 @@ Central 512\,$\times$\,512-pixel crops; both panels share intensity limits 219--
 Central 512\,$\times$\,512-pixel crops; both panels share intensity limits 187--4463. \href{https://github.com/jump-cellpainting/datasets}{JUMP data}.}
 \end{frame}
 
+\TutorialActivitySlide
+\TutorialRowsSlide
+\TutorialFeaturesSlide
+
 \begin{frame}[label={sec:org000000c}]{CellProfiler detects mitochondrial feature changes}
 \begin{tabular}{@{}l l r@{}}
 \textbf{Gene} & \textbf{Feature} & \textbf{Cohen's $d$} \\[8pt]
@@ -101,41 +138,9 @@ DNM1L & Mito-skeleton total length & $-3.55$
 \textbf{Mitochondrial organization changes.}
 \end{frame}
 
-\begin{frame}[label={sec:org000000d}]{Workflow 1: follow the genes from papers to JUMP}
-\textbf{Search: OPA1 and DNM1L}\par\bigskip
-\bigskip
-\begin{itemize}
-\item Follow each gene to its exact perturbation identifier.
-\item Open the feature, match and image tables.
-\item Start the image comparison with CRISPR and its genetic controls.
-\end{itemize}
-\par\smallskip
-{\scriptsize\href{https://broadinstitute.github.io/jump_hub/reference/00_gene_index.html}{JUMP Hub gene availability}; \href{https://zenodo.org/records/16883068}{coverage reference}}
-\end{frame}
-
-\TutorialAvailabilitySlide
-\TutorialDefinitionsSlide
-\TutorialFiltersSlide
-\TutorialExportSlide
-
-\begin{frame}[label={sec:org0000010}]{Workflow 2: read the returned phenotype}
-\begin{enumerate}
-\item Read overall activity and the changing CellProfiler features.
-\item Compare CRISPR and overexpression without assuming opposite effects.
-\item Follow similar profiles to their annotations and images.
-\item Bring in genetic controls from the same source and plates.
-\end{enumerate}
-\bigskip
-\textbf{Tutorial navigation examples: SLC2A2 for tables; MYT1 for the gallery.}
-\end{frame}
-
-\TutorialRowsSlide
-\TutorialActivitySlide
-\TutorialFeaturesSlide
 \TutorialOrfSlide
 \TutorialMatchesSlide
-\TutorialGallerySlide
-\TutorialControlsSlide
+\TutorialExportSlide
 
 \begin{frame}[label={sec:org000000f}]{Bring the workflow together with an agent}
 \begin{block}{Start with a biological question}

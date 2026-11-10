@@ -8,10 +8,10 @@ The presenter confirmed a visible OPA1 CRISPR/control difference, reported that 
 
 - OPA1 supports mitochondrial inner-membrane fusion; loss is expected to favor fragmentation. [Griparic et al., JCB 2007](https://doi.org/10.1083/jcb.200704112), [Song et al., JCB 2007](https://doi.org/10.1083/jcb.200704110).
 - DNM1L/DRP1 supports mitochondrial division; impaired division is expected to favor elongated/interconnected networks. [Smirnova et al., MBoC 2001](https://doi.org/10.1091/mbc.12.8.2245), [Griparic et al., Fig. 3A/B](https://doi.org/10.1083/jcb.200704112).
-- PDF8–9 show published siRNA microscopy (Griparic et al., Fig. 3G/A and B/A) before the JUMP CRISPR fields on PDF10–11. The paper's panel A is the scrambled Yme1 oligonucleotide comparator, reused as published context for both examples—not a claim of separate matched DRP1-control acquisition. The figures show HeLa cells stained with MitoTracker; gene-targeting siRNA panels are at 2 days. Do not apply the paper's 99% fragmentation value to JUMP.
+- PDF8–9 show published siRNA microscopy (Griparic et al., Fig. 3G/A and B/A) before the JUMP CRISPR fields on PDF17–18, with the gene-selection and image/control table operations in between. The paper's panel A is the scrambled Yme1 oligonucleotide comparator, reused as published context for both examples—not a claim of separate matched DRP1-control acquisition. The figures show HeLa cells stained with MitoTracker; gene-targeting siRNA panels are at 2 days. Do not apply the paper's 99% fragmentation value to JUMP.
 - Brightness alone does not establish connectivity. Mito-channel intensity also depends on staining and acquisition; no new mechanism or phenotype quantification is claimed. Display magnification adds no optical resolution.
 
-## Published feature summary (PDF12)
+## Published feature summary (PDF22)
 
 The slide shows OPA1 cytoplasmic Mito texture correlation (scale 3, orientation 00, 256 levels), Cohen's d +3.56; DNM1L mito-skeleton branch ends, −5.953; cellular Mito granularity at scale 3, +4.09; and mito-skeleton total length, −3.551. Skeleton rows carry the `Nuclei` object label and `mito_skel` suffix in the source; they are not nuclear shape measures. Do not reinterpret them as a direct measurement of individual mitochondrial length.
 
@@ -43,4 +43,4 @@ Suggested demonstration: define a question in plain language, have the agent bui
 
 ## Navigation
 
-PDF7: expected biology; PDF8–9: published OPA1 and DRP1 siRNA examples; PDF10–11: JUMP OPA1 and DNM1L knockout/control pairs; PDF12: published mitochondrial feature effects; PDF13: availability of both genes; PDF14–17 and 19–25: original SLC2A2/MYT1 Hub tutorials; PDF26: agent prompt; PDF27: gene/raw-image explorer; PDF28: phenotype comparison viewer. Each interface has its own larger screenshot and slide. Main talk ends at PDF35; ten extra slides follow. Original tutorial gene labels are preserved and are not presented as results for OPA1 or DNM1L.
+PDF7: expected biology; PDF8–9: published siRNA examples; PDF10–13: find the genes → availability/definitions/filters; PDF14–16: inspect phenotype → image/control table operations; PDF17–18: JUMP OPA1/DNM1L image pairs; PDF19–21: measurable phenotype → activity/feature tables; PDF22: OPA1/DNM1L feature summary; PDF23–25: ORF/matches/export; PDF26: agent prompt; PDF27: gene/raw-image explorer; PDF28: phenotype comparison viewer. Each interface has its own larger screenshot and slide. Main talk ends at PDF35; ten extra slides follow. Original tutorial gene labels are preserved and are not presented as results for OPA1 or DNM1L.

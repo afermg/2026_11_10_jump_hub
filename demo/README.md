@@ -1,19 +1,18 @@
 # OPA1 and DNM1L: images, controls and AI-assisted tools
 
-**Story:** fusion versus division → inspect actual JUMP knockout/control images → distinguish shape from brightness → follow genes through the Hub → build the interface needed to inspect them.
+**Story:** expected biology → find the genes in the tables → retrieve images and controls → inspect OPA1/DNM1L → read activity and feature changes → explore matches and save the result → build tools for the question. Each goal is paired with the relevant JUMP_rr operation.
 
 | PDF pages | Content |
 | --- | --- |
 | 7 | OPA1 and DNM1L: literature expectations |
 | 8 | Published OPA1 siRNA versus scrambled comparator (Griparic 2007, Fig. 3G/A) |
 | 9 | Published DNM1L/DRP1 siRNA versus scrambled comparator (Griparic 2007, Fig. 3B/A) |
-| 10 | JUMP OPA1 CRISPR versus its same-plate no-guide control |
-| 11 | JUMP DNM1L CRISPR versus its own same-plate no-guide control |
-| 12 | Published mitochondrial feature changes: OPA1 texture and DNM1L skeleton/granularity effects |
-| 13 | Both genes have CRISPR and ORF coverage; start with CRISPR |
-| 14–17 | Hub availability/navigation tutorial (original example labels preserved) |
-| 18 | Reading returned phenotype tables |
-| 19–25 | Original SLC2A2/MYT1 table and gallery tutorials |
+| 10–13 | Find the genes → availability table, column definitions and filters |
+| 14–16 | See the phenotype → image-table filters and plate-matched genetic controls (MYT1 tutorial) |
+| 17–18 | Apply it: OPA1 and DNM1L CRISPR images, each with its own same-plate control |
+| 19–21 | Measure the differences → activity, feature rows and effect sizes (SLC2A2 tutorial) |
+| 22 | Apply it: published OPA1/DNM1L mitochondrial feature effects |
+| 23–25 | Follow up → ORF comparison, related profiles, filtered-view export |
 | 26 | Agent prompt: expectations → traceable images → usable viewer |
 | 27 | AI-assisted gene/raw-image explorer |
 | 28 | AI-assisted phenotype comparison viewer |
@@ -27,6 +26,6 @@
 
 These are examples of interfaces built and refined through natural-language requests. Keep both running and retain their projects; do not replace them with static screenshots alone. Screenshot fallbacks are embedded in the deck. Localhost URLs are not public audience resources.
 
-The presenter selected OPA1/DNM1L after visual review. DNM1L looked brighter; do not narrate this as confirmed increased connectivity. The literature expectations and the actual JUMP observations are different evidence layers. PDF12 includes a lookup of published CellProfiler CRISPR feature effects, archived with hashes in `gene-feature-summary/`. No new statistics or measurements of the image crops were calculated. Nuclei are not assumed to provide a stable reference.
+The presenter selected OPA1/DNM1L after visual review. DNM1L looked brighter; do not narrate this as confirmed increased connectivity. The literature expectations and the actual JUMP observations are different evidence layers. PDF22 includes a lookup of published CellProfiler CRISPR feature effects, archived with hashes in `gene-feature-summary/`. No new statistics or measurements of the image crops were calculated. Nuclei are not assumed to provide a stable reference.
 
 See [exact field provenance](../docs/gene-examples-provenance.json), [current presenter notes](../docs/gene-examples.md) and [copyable prompts](prompts.md). Published siRNA examples precede JUMP knockout images; their perturbation types are explicitly labeled. Historical nocodazole/blebbistatin/SLC2A2 extracts and OPA1 rescue materials remain archived.
