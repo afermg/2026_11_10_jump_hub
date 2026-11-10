@@ -1,12 +1,12 @@
 # JUMP Hub — 10 November 2026
 
-Alán F. Muñoz's November 10 talk, adapted from the FASEB presentation. OPA1 and DNM1L are the genetic examples, shown as zoomed raw JUMP CRISPR fields beside their own plate-matched negative controls. Literature expectations are distinguished from image observations. Annotated Hub screenshots support finding a gene and interpreting the returned views. The agent walkthrough culminates in two working vibe-coded interfaces: a lazy raw-image explorer and a phenotype comparison viewer. Word2vec, representation background/comparison and the modern-tools overview are now extra slides. The earlier single-cell recording remains available as backup.
+Alán F. Muñoz's November 10 talk, adapted from the FASEB presentation. OPA1 and DNM1L are the genetic examples, shown as zoomed raw JUMP CRISPR fields beside their own plate-matched negative controls. Literature expectations are distinguished from image observations. Annotated Hub screenshots support finding a gene and interpreting the returned views. The agent walkthrough culminates in two working AI-assisted interfaces: a lazy raw-image explorer and a phenotype comparison viewer. Word2vec, representation background/comparison and the modern-tools overview are now extra slides. The earlier single-cell recording remains available as backup.
 
 - [Overleaf editor](https://overleaf.quasimorphic.com/project/6af238ebaa6d5b0395871289) — root **slides.tex**, compiler **XeLaTeX**. Its current link-sharing setting was preserved.
 - [Private GitHub repository](https://github.com/afermg/2026_11_10_jump_hub).
 - [PDF preview](slides.pdf) — **42 pages**: main talk through the QR on PDF32, followed by ten existing extra slides.
 - [Shared gene examples and workflow source](opa1-literature.tex), [current image/tool notes](docs/gene-examples.md), [raw-image provenance](docs/gene-examples-provenance.json), [historical literature notes](docs/opa1-literature.md), and [reusable tutorial frames](tutorial-walkthrough.tex).
-- Tutorial images appear within the main workflows on **PDF12–15 and PDF17–23**. The two vibe-coded interfaces appear on **PDF25**. Gray tutorial footers and visible “checked November …” timestamps are removed.
+- Tutorial images appear within the main workflows on **PDF12–15 and PDF17–23**. The two AI-assisted interfaces appear on **PDF25**. Gray tutorial footers and visible “checked November …” timestamps are removed.
 - [Review walkthrough](demo/README.md) and [copyable agent prompts](demo/prompts.md). Earlier compound and SLC2A2 analysis artifacts are retained as historical material.
 - Local checkout: `/home/amunoz/Documents/broad/drafts/slides/2026_11_10_jump_hub`.
 

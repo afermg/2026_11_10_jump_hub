@@ -1,4 +1,4 @@
-# Agent-assisted gene examples and vibe-coded interfaces
+# Agent-assisted gene examples and interactive tools
 
 ## 1. Establish expectations
 

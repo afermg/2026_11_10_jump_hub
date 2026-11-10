@@ -1,4 +1,4 @@
-# OPA1 and DNM1L: images, controls and vibe-coded tools
+# OPA1 and DNM1L: images, controls and AI-assisted tools
 
 **Story:** fusion versus division → inspect actual JUMP knockout/control images → distinguish shape from brightness → follow genes through the Hub → build the interface needed to inspect them.
 
@@ -13,7 +13,7 @@
 | 16 | Reading returned phenotype tables |
 | 17–23 | Original SLC2A2/MYT1 table and gallery tutorials |
 | 24 | Agent prompt: expectations → traceable images → usable viewer |
-| 25 | Two working vibe-coded interfaces |
+| 25 | Two interfaces built with AI assistance |
 | 26–32 | Existing applications/resources and closing QR |
 | 33–42 | Existing extra slides |
 

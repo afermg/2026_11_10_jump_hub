@@ -1,4 +1,4 @@
-# OPA1 / DNM1L image examples and vibe-coded interfaces
+# OPA1 / DNM1L image examples and AI-assisted interfaces
 
 ## Presenter decision
 
@@ -33,7 +33,7 @@ These are the viewer's default first CRISPR fields and documented no-guide contr
 
 Both remain separate functioning projects. No service or interface was removed for the slide update. The slide screenshots are from isolated test browsers: `assets/vibe-coded/gene-explorer.png` and `phenotype-review.png`. The latter contains Griparic Fig. 3A/G (CC BY-NC-SA 4.0, attributed in the app and retained source notes). The former shows JUMP raw-field derivatives. Screenshots show actual interfaces, not mockups. Localhost links require the existing private tunnel and are not public audience links.
 
-Suggested demonstration: define a question in plain language, have the agent build a narrowly scoped viewer, inspect the results, request a refinement (the matched zoom), then validate it. “Vibe coding” here includes testing and scientific checking, not accepting generated output without review.
+Suggested demonstration: define a question in plain language, have the agent build a narrowly scoped viewer, inspect the results, request a refinement (the matched zoom), then validate it. AI-assisted development includes testing and scientific checking, not accepting generated output without review.
 
 ## Navigation
 

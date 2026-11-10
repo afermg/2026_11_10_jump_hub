@@ -44,7 +44,8 @@ class GeneExamplesTests(unittest.TestCase):
         for gene in ['OPA1', 'DNM1L']:
             for role in ['treatment', 'control']:
                 self.assertIn(f'{gene}-{role}-center512.png', shared)
-        self.assertIn('Vibe coding:', shared)
+        self.assertIn('Build interactive tools with AI assistance', shared)
+        self.assertNotIn('Vibe coding', shared)
         self.assertIn('phenotype-review.png', shared)
         self.assertIn('gene-explorer.png', shared)
         self.assertNotIn('99\\%', shared)
