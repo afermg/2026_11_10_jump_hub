@@ -1,93 +1,102 @@
-% Annotated JUMP Hub tutorial screenshots: temporary end-of-deck walkthrough.
-% Each frame is independent so it can be moved into the main story later.
-% Original PNG bytes and annotations are unchanged; see docs/tutorial-screenshots-provenance.json.
-% Historical SLC2A2/MYT1 examples, separate from the compound queries.
-% Gray footers hidden at presenter request; source/license credit remains in frame comments and docs.
+% Reusable tutorial frames, called alongside the corresponding workflow questions.
+% Loading this file defines commands; it does not append a separate slide bank.
+% Original highlighted PNGs are unchanged. Sources/licenses: docs/tutorial-screenshots-provenance.json.
 
-\begin{frame}[label={tutorial:availability}]{1. Is my gene represented?}
+\newcommand{\TutorialAvailabilitySlide}{%
+\begin{frame}[label={tutorial:availability}]{Gene availability: search a gene family}
 \centering
 \includegraphics[width=0.98\linewidth,height=0.72\textheight,keepaspectratio]{assets/tutorial-screenshots/03-Figure3.png}
 \par\medskip
-{\footnotesize\raggedright\textbf{Read it as:} coverage by dataset and perturbation type, not evidence of a phenotype.\par}
-% Attribution: Broad Institute, JUMP Hub tutorial, Fig. 3, https://zenodo.org/records/16878487, CC BY 4.0. Original annotations retained.
-\end{frame}
+{\footnotesize\raggedright\textbf{Read the dataset columns:} find the available CRISPR and ORF perturbations.\par}
+% Attribution: Broad Institute, JUMP Hub tutorial Fig. 3, https://zenodo.org/records/16878487, CC BY 4.0.
+\end{frame}}
 
-\begin{frame}[label={tutorial:interface}]{2. Read the column definitions first}
+\newcommand{\TutorialDefinitionsSlide}{%
+\begin{frame}[label={tutorial:interface}]{Read the column definitions first}
 \centering
 \includegraphics[width=0.98\linewidth,height=0.72\textheight,keepaspectratio]{assets/tutorial-screenshots/01-Figure1.png}
 \par\medskip
-{\footnotesize\raggedright\textbf{Look at the red boxes:} column definitions explain what the numbers mean; filters define the question.\par}
-% Attribution: Broad Institute, JUMP Hub tutorial, Fig. 1, https://zenodo.org/records/15252378, CC BY 4.0. Original annotations retained.
-\end{frame}
+{\footnotesize\raggedright\textbf{Use the red boxes:} read the field definitions, then choose the filter for your question.\par}
+% Attribution: Broad Institute, JUMP Hub tutorial Fig. 1, https://zenodo.org/records/15252378, CC BY 4.0.
+\end{frame}}
 
-\begin{frame}[label={tutorial:rows}]{3. What does a result row represent?}
+\newcommand{\TutorialRowsSlide}{%
+\begin{frame}[label={tutorial:rows}]{Understand a feature-table result}
 \centering
 \includegraphics[width=0.98\linewidth,height=0.72\textheight,keepaspectratio]{assets/tutorial-screenshots/02-Figure2.png}
 \par\medskip
-{\footnotesize\raggedright\textbf{Read it as:} a feature--perturbation summary, not one cell or an independent replicate.\par}
-% Attribution: Broad Institute, JUMP Hub tutorial, Fig. 2, https://zenodo.org/records/15252378, CC BY 4.0. Published screenshot unchanged.
-\end{frame}
+{\footnotesize\raggedright\textbf{Read across the row:} perturbation, feature, compartment, channel and statistical summary.\par}
+% Attribution: Broad Institute, JUMP Hub tutorial Fig. 2, https://zenodo.org/records/15252378, CC BY 4.0.
+\end{frame}}
 
-\begin{frame}[label={tutorial:filters}]{4. Ask a precise question with filters}
+\newcommand{\TutorialFiltersSlide}{%
+\begin{frame}[label={tutorial:filters}]{Filtering: exact gene, family and synonym}
 \centering
 \includegraphics[width=0.98\linewidth,height=0.72\textheight,keepaspectratio]{assets/tutorial-screenshots/06-Figure4.png}
 \par\medskip
-{\footnotesize\raggedright\textbf{Compare the panels:} exact symbol, family pattern and synonym searches can return different sets.\par}
-% Attribution: Broad Institute, JUMP Hub tutorial, Fig. 4, https://zenodo.org/records/15252378, CC BY 4.0. Original panels retained.
-\end{frame}
+{\footnotesize\raggedright\textbf{Compare the panels:} select SLC2A2, expand to the SLC2A family, or search the GLUT2 synonym.\par}
+% Attribution: Broad Institute, JUMP Hub tutorial Fig. 4, https://zenodo.org/records/15252378, CC BY 4.0.
+\end{frame}}
 
-\begin{frame}[label={tutorial:export}]{5. Narrow the question and save the result}
+\newcommand{\TutorialExportSlide}{%
+\begin{frame}[label={tutorial:export}]{Keep the relevant compartments and save the view}
 \centering
 \includegraphics[width=0.98\linewidth,height=0.72\textheight,keepaspectratio]{assets/tutorial-screenshots/07-Figure5.png}
 \par\medskip
-{\footnotesize\raggedright\textbf{Read it as:} a filtered view of a ranked subset, not the full screen. Save the filters and source.\par}
-% Attribution: Broad Institute, JUMP Hub tutorial, Fig. 5, https://zenodo.org/records/15252378, CC BY 4.0. Original annotations retained.
-\end{frame}
+{\footnotesize\raggedright\textbf{Save the query context:} selected gene, compartments, identifiers and source link.\par}
+% Attribution: Broad Institute, JUMP Hub tutorial Fig. 5, https://zenodo.org/records/15252378, CC BY 4.0.
+\end{frame}}
 
-\begin{frame}[label={tutorial:activity}]{6. Is the perturbation phenotypically active?}
+\newcommand{\TutorialActivitySlide}{%
+\begin{frame}[label={tutorial:activity}]{Overall activity: SLC2A2 CRISPR}
 \centering
 \includegraphics[width=0.98\linewidth,height=0.72\textheight,keepaspectratio]{assets/tutorial-screenshots/08-Figure6.png}
 \par\medskip
-{\footnotesize\raggedright\textbf{Read the boxed corrected p-value:} activity is tested per perturbation, not separately for every row.\par}
-% Attribution: Broad Institute, JUMP Hub tutorial, Fig. 6, https://zenodo.org/records/15252378, CC BY 4.0. Historical SLC2A2 example.
-\end{frame}
+{\footnotesize\raggedright\textbf{Read the boxed corrected p-value:} it summarizes overall perturbation activity.\par}
+% Attribution: Broad Institute, JUMP Hub tutorial Fig. 6, https://zenodo.org/records/15252378, CC BY 4.0.
+\end{frame}}
 
-\begin{frame}[label={tutorial:features}]{7. Which morphological features change?}
+\newcommand{\TutorialFeaturesSlide}{%
+\begin{frame}[label={tutorial:features}]{Describe the changes: SLC2A2 CRISPR}
 \centering
 \includegraphics[width=0.98\linewidth,height=0.72\textheight,keepaspectratio]{assets/tutorial-screenshots/09-Figure7.png}
 \par\medskip
-{\footnotesize\raggedright\textbf{Read feature significance separately.} A displayed 0.0 is rounded; also inspect rank and effect size.\par}
-% Attribution: Broad Institute, JUMP Hub tutorial, Fig. 7, https://zenodo.org/records/15252378, CC BY 4.0. Historical SLC2A2 CRISPR example.
-\end{frame}
+{\footnotesize\raggedright\textbf{Read feature significance, rank and effect size} to describe the morphological changes.\par}
+% Attribution: Broad Institute, JUMP Hub tutorial Fig. 7, https://zenodo.org/records/15252378, CC BY 4.0.
+\end{frame}}
 
-\begin{frame}[label={tutorial:orf}]{8. Keep overall activity and features distinct}
+\newcommand{\TutorialOrfSlide}{%
+\begin{frame}[label={tutorial:orf}]{Compare perturbation types: SLC2A2 ORF}
 \centering
 \includegraphics[width=0.98\linewidth,height=0.72\textheight,keepaspectratio]{assets/tutorial-screenshots/10-Figure8.png}
 \par\medskip
-{\footnotesize\raggedright\textbf{ORF example:} significant individual features need not imply significant overall activity.\par}
-% Attribution: Broad Institute, JUMP Hub tutorial, Fig. 8, https://zenodo.org/records/15252378, CC BY 4.0. Historical SLC2A2 ORF example.
-\end{frame}
+{\footnotesize\raggedright\textbf{Compare the two levels:} overall perturbation activity and the individual feature results.\par}
+% Attribution: Broad Institute, JUMP Hub tutorial Fig. 8, https://zenodo.org/records/15252378, CC BY 4.0.
+\end{frame}}
 
-\begin{frame}[label={tutorial:matches}]{9. What does a profile match tell us?}
+\newcommand{\TutorialMatchesSlide}{%
+\begin{frame}[label={tutorial:matches}]{Explore related profiles: SLC2A2 CRISPR}
 \centering
 \includegraphics[width=0.98\linewidth,height=0.72\textheight,keepaspectratio]{assets/tutorial-screenshots/11-Figure9.png}
 \par\medskip
-{\footnotesize\raggedright\textbf{Read the signed similarity and follow the links.} A match suggests follow-up, not a shared mechanism.\par}
-% Attribution: Broad Institute, JUMP Hub tutorial, Fig. 9, https://zenodo.org/records/15252378, CC BY 4.0. Historical SLC2A2 example.
-\end{frame}
+{\footnotesize\raggedright\textbf{Sort by signed similarity,} then follow the annotation links and inspect the example images.\par}
+% Attribution: Broad Institute, JUMP Hub tutorial Fig. 9, https://zenodo.org/records/15252378, CC BY 4.0.
+\end{frame}}
 
-\begin{frame}[label={tutorial:gallery-perturbation}]{10. Find the perturbed wells and images}
+\newcommand{\TutorialGallerySlide}{%
+\begin{frame}[label={tutorial:gallery-perturbation}]{Find the perturbed images: MYT1}
 \centering
 \includegraphics[width=0.98\linewidth,height=0.72\textheight,keepaspectratio]{assets/tutorial-screenshots/04-gallery_negcon_123.png}
 \par\medskip
 {\footnotesize\raggedright\textbf{Follow steps 1--3:} select the perturbation, apply the filter, and identify its source and plates.\par}
-% Attribution: Broad Institute, JUMP Hub gallery tutorial, steps 1--3, https://zenodo.org/records/16878778, CC BY 4.0. Historical MYT1 example.
-\end{frame}
+% Attribution: Broad Institute, gallery tutorial steps 1--3, https://zenodo.org/records/16878778, CC BY 4.0.
+\end{frame}}
 
-\begin{frame}[label={tutorial:gallery-controls}]{11. Compare with appropriate negative controls}
+\newcommand{\TutorialControlsSlide}{%
+\begin{frame}[label={tutorial:gallery-controls}]{Bring in matched controls: MYT1}
 \centering
 \includegraphics[width=0.98\linewidth,height=0.72\textheight,keepaspectratio]{assets/tutorial-screenshots/05-gallery_negcon_456789.png}
 \par\medskip
-{\footnotesize\raggedright\textbf{Follow steps 4--9:} match source and plate; check cell density, staining and focus before interpreting biology.\par}
-% Attribution: Broad Institute, JUMP Hub gallery tutorial, steps 4--9, https://zenodo.org/records/16878778, CC BY 4.0. Genetic controls shown; compounds use DMSO.
-\end{frame}
+{\footnotesize\raggedright\textbf{Follow steps 4--9:} select the same plates and compare cell appearance, density, staining and focus.\par}
+% Attribution: Broad Institute, gallery tutorial steps 4--9, https://zenodo.org/records/16878778, CC BY 4.0.
+\end{frame}}

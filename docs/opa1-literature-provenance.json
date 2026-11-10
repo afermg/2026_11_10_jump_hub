@@ -1,0 +1,71 @@
+{
+  "retrieved_utc": "2026-11-09T23:56:06.670862+00:00",
+  "paper": {
+    "authors": "Griparic L, Kanazawa T, van der Bliek AM",
+    "title": "Regulation of the mitochondrial dynamin-like protein Opa1 by proteolytic cleavage",
+    "year": 2007,
+    "doi": "10.1083/jcb.200704112",
+    "pmcid": "PMC2064541",
+    "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2064541/",
+    "fulltext_xml_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2064541/fullTextXML",
+    "fulltext_xml_sha256": "557431bd024eeed51e6e215fd2d9f498a64a56788556da65e041c01652f15b70",
+    "license": "CC BY-NC-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+  },
+  "original_figure": {
+    "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/19e1/2064541/b1463a781422/jcb1780757f03.jpg",
+    "path": "assets/opa1-literature/Griparic2007-Fig3.jpg",
+    "sha256": "98f65e8f88b43b02f135fa7c0f107b757ae7002af59bd1921a866d97fbc39e93",
+    "size": [
+      400,
+      726
+    ]
+  },
+  "panels": [
+    {
+      "path": "assets/opa1-literature/control-siRNA-panel-A.png",
+      "panel": "Figure 3A, scrambled control",
+      "crop_xyxy": [
+        0,
+        0,
+        198,
+        147
+      ],
+      "sha256": "f3b4d17c12cf623f38a151d268ed19dbdb8a37798f21bb3dde75f48a456ce4dd",
+      "transform": "Crop only; no resize, contrast change or recoloring."
+    },
+    {
+      "path": "assets/opa1-literature/OPA1-siRNA-panel-G.png",
+      "panel": "Figure 3G, Opa1 siRNA, 2 days",
+      "crop_xyxy": [
+        0,
+        446,
+        198,
+        594
+      ],
+      "sha256": "e14ea3e9cd3887761ae06c7b2d56826d627c03185bbb2d62090d4d46e40f5e4b",
+      "transform": "Crop only; no resize, contrast change or recoloring."
+    }
+  ],
+  "published_observations": {
+    "microscopy": "HeLa cells; MitoTracker; Fig. 3A scrambled control and Fig. 3G pan-Opa1 siRNA, 2 d.",
+    "reported_quantification": "Results: 99% of cells transfected with Opa1 siRNA alone had fragmented mitochondria. This is the paper's reported value; no recount or new analysis.",
+    "specificity_context": "The paper distinguishes pan-Opa1 depletion from exon-specific siRNA and combined Opa1/Yme1 perturbations."
+  },
+  "additional_paper": {
+    "authors": "Song Z, Chen H, Fiket M, Alexander C, Chan DC",
+    "title": "OPA1 processing controls mitochondrial fusion and is regulated by mRNA splicing, membrane potential, and Yme1L",
+    "doi": "10.1083/jcb.200704110",
+    "pmcid": "PMC2064540",
+    "figure": "Fig. 1C-D: OPA1 splice-form re-expression in OPA1-null MEFs; morphology scoring and PEG cell-hybrid fusion assay."
+  },
+  "coverage_reference": {
+    "url": "https://zenodo.org/records/16883068",
+    "file_url": "https://zenodo.org/api/records/16883068/files/table.csv/content",
+    "sha256": "40f12b266d632d8593b29c4a327cd82cffc36ad354e92815bf77e6d2f5008ec7",
+    "OPA1": {
+      "CRISPR": 1,
+      "ORF": 1
+    }
+  }
+}

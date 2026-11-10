@@ -46,10 +46,9 @@ class BlebbistatinTests(unittest.TestCase):
         for r in images:
             self.assertEqual(hashlib.sha256((ROOT / r["path"]).read_bytes()).hexdigest(), r["sha256"])
 
-    def test_requested_slide_sequence_and_removals(self):
+    def test_requested_slide_removals(self):
         tex = (ROOT / "slides.tex").read_text()
-        self.assertLess(tex.index("{First, an extreme example: nocodazole}"), tex.index("{Next: blebbistatin, a known biological effect}"))
-        self.assertIn("{What we will check}", tex)
+        self.assertLess(tex.index("{An extreme example: nocodazole}"), tex.index("\\input{opa1-literature.tex}"))
         self.assertNotIn("Checked before the demo", tex)
         self.assertNotIn("From a recognizable phenotype to a testable biological hypothesis", tex)
         bank = (ROOT / "tutorial-walkthrough.tex").read_text()

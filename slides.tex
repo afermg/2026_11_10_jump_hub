@@ -113,102 +113,10 @@ The Hub contains practical guides to help biologists use JUMP.
 \par\smallskip
 
 \end{frame}
-\begin{frame}[label={sec:org0000009}]{Next: blebbistatin, a known biological effect}
-\begin{block}{}
-Can we see evidence consistent with altered contractility or cytokinesis?
-\end{block}
-\begin{itemize}
-\item Blebbistatin inhibits myosin II; it can impair contractility and cell division.
-\item JUMP reagent: \texttt{JCP2022\_052617}, annotated blebbistatin-(+/-).
-\item Inspect cell shape, nuclear organization and matched controls.
-\item Use CellProfiler-derived profiles; distinguish prior biology from observations.
-\end{itemize}
-\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://doi.org/10.1126/science.1081412}{Straight et al., Science (2003)}; \href{https://broad.io/compound}{JUMP\_rr}}
-\end{frame}
-\begin{frame}[label={sec:org000000a}]{Which compounds look similar to blebbistatin?}
-\textbf{Query: ``Show the closest published matches and resolve their annotations.''}\par\medskip
-\begin{tabular}{@{}l r@{}}
-\textbf{Returned match} & \textbf{Similarity} \\[5pt]
-PF-04418948 & 0.737 \\
-\texttt{JCP2022\_018073} & 0.732 \\
-\texttt{JCP2022\_034452} & 0.731
-\end{tabular}
-\medskip
-\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broad.io/compound}{JUMP\_rr compound matches}; checked 9 November 2026}
-\end{frame}
-\begin{frame}[label={sec:org000000b}]{Does blebbistatin change cell morphology?}
-\begin{block}{Published activity result}
-Corrected activity p-value: \textbf{0.01278}
-\end{block}
-\begin{itemize}
-\item A detectable profile at a 0.05 threshold in this analysis.
-\item Higher nuclear DNA-channel median intensity: Cohen's $d=2.241$.
-\item Intensity alone does not establish DNA content or failed cytokinesis.
-\end{itemize}
-\medskip
-\textbf{Follow-up question:} do images and replicate measurements support the known phenotype?
-\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broad.io/compound_feature}{JUMP\_rr compound features}; checked 9 November 2026}
-\end{frame}
-\begin{frame}[label={sec:org000000c}]{Use JUMP to investigate a phenotype}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.48\textwidth}
-\textbf{Simple questions in JUMP\_rr}
-\begin{enumerate}
-\item Was blebbistatin tested?
-\item Does it have a detectable profile?
-\item Which compounds look similar?
-\item Which measurements change?
-\end{enumerate}
-\end{column}
-\begin{column}{0.48\textwidth}
-\textbf{Then investigate the result}
-\begin{itemize}
-\item Check images and matched controls.
-\item Check consistency across replicates.
-\item Test whether cell density explains part of the similarity.
-\end{itemize}
-\end{column}
-\end{columns}
-\bigskip
-\centering One extreme reference, then a focused CellProfiler investigation.
-\end{frame}
-\begin{frame}[label={sec:org000000d}]{What do blebbistatin-treated cells look like?}
-\begin{columns}[c,onlytextwidth]
-\begin{column}{0.48\textwidth}
-\centering\textbf{DMSO control}\par\smallskip
-\includegraphics[width=0.88\linewidth,height=0.62\textheight,keepaspectratio]{assets/dmso-source2-A02-1086291986-site1.jpg}\par
-{\scriptsize A02, site 1}
-\end{column}
-\begin{column}{0.48\textwidth}
-\centering\textbf{Blebbistatin}\par\smallskip
-\includegraphics[width=0.88\linewidth,height=0.62\textheight,keepaspectratio]{assets/blebbistatin-source2-M16-1086291986-site1.jpg}\par
-{\scriptsize M16, site 1}
-\end{column}
-\end{columns}
-\smallskip
-{\small Same source and plate: source\_2 / 1086291986. What would we measure to test cytokinesis?}
-\par\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broad.io/compound_gallery}{JUMP gallery / Ardigen previews}}
-\end{frame}
-\begin{frame}[label={sec:org000000f}]{Live demo: investigate blebbistatin's phenotype}
-\begin{block}{From prior biology to a testable question}
-Blebbistatin can disrupt contractility and cytokinesis. Query its CellProfiler profiles, inspect images and matched controls, and test whether cell shape and nuclear organization are consistent across replicates. Treat profile matches as hypotheses, not mechanistic proof.
-\end{block}
-\medskip
-\textbf{My follow-up:}\par
-``Could this reflect cell density or toxicity? Check cell counts and quality-control measurements.''\par\medskip
-\textbf{Finish with:}\par
-``Turn the result into one slide with an image comparison, a quantitative check and the main limitation. Build a preview.''
-\par\smallskip
-{\footnotesize External agent and backends on Oppy; forwarded interface on the MacBook.}
-\end{frame}
-\begin{frame}[label={sec:org0000010}]{What we will check}
-\textbf{The live investigation}
-\begin{itemize}
-\item How consistent are the replicates?
-\item Do images and measurements support the expected phenotype?
-\item How much is explained by density or QC?
-\end{itemize}
-\end{frame}
+\section*{From the literature to a JUMP workflow}
+\input{tutorial-walkthrough.tex}
+\input{opa1-literature.tex}
+\section*{Applications and resources}
 \begin{frame}[label={sec:org0000012}]{Not just JUMP: Extract morphological profiles from your own images}
 \begin{columns} [c,onlytextwidth]
 \begin{column}{0.44\textwidth}
@@ -518,6 +426,4 @@ Interactive marimo notebook --- separate recorded example
 \end{itemize}
 \par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://doi.org/10.5281/zenodo.23462248}{Source: Muñoz (2026), JUMP Target-2 notebook recording}}
 \end{frame}
-\section*{Tutorial screenshot walkthrough}
-\input{tutorial-walkthrough.tex}
 \end{document}

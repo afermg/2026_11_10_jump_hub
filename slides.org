@@ -12,14 +12,14 @@
 #+LATEX_HEADER: \usepackage{array}
 #+LATEX_HEADER: \setsansfont{FiraSans-Regular.otf}[BoldFont=FiraSans-Bold.otf,ItalicFont=FiraSans-Italic.otf,BoldItalicFont=FiraSans-BoldItalic.otf]
 #+LATEX_HEADER: \AtBeginDocument{\AtBeginSection[]{}}
-#+LATEX_HEADER: \institute{Carpenter-Shen Lab, Purdue University; Carpenter-Singh Lab, Broad Institute}
+#+LATEX_HEADER: \institute{Carpenter-Shen Lab, Purdue University}
 #+PROPERTY: header-args :eval never-export
 
 # Talk date: 10 November 2026. Venue, title revisions and duration not yet specified.
 # Adapted from the FASEB deck at abdd682d172d44a7f3b5d514328dd37bc8b4bfab.
-# Biologist audience; live coding-agent JUMP query replaces the scheduled recording.
-# Aim for a 5–7 minute demo; total duration and the old FASEB timing require rehearsal.
-# Current demo instructions: demo/README.md. docs/presenter-notes.md is historical.
+# Biologist audience; published OPA1 literature and realistic Hub navigation/interpretation workflows.
+# The agent retrieves sources and explains published views. Current review instructions: demo/README.md.
+# Total timing requires rehearsal; docs/presenter-notes.md describes the historical FASEB version.
 # Keep slides direct and question-led. Interpretation limits belong in notes.
 # References and QR close the main talk; additional slides follow for questions. Illustration provenance stays in the evidence documents.
 # Direct Overleaf edits take content priority: preserve and port them into Org.
@@ -167,7 +167,7 @@ The Hub contains practical guides to help biologists use JUMP.
 # No-code guides include availability queries, JUMP_rr and Morpheus heatmaps. Dataset explanations describe experimental context. The Guide to Cell Painting for Biologists is an external Cimini Lab resource linked by the Hub, not a guide newly authored by us.
 # The MisLocus how-to is a separate VarChAMP companion workflow, not a JUMP assay or one of the Colab notebooks. Do not promise it runs in Colab.
 
-** First, an extreme example: nocodazole
+** An extreme example: nocodazole
 #+BEGIN_EXPORT latex
 \begin{columns}[c,onlytextwidth]
 \begin{column}{0.48\textwidth}
@@ -180,9 +180,7 @@ The Hub contains practical guides to help biologists use JUMP.
 \end{column}
 \end{columns}
 \medskip
-{\small An obvious change in this field pair. Could cell density dominate the profile?}
-\par\smallskip
-{\scriptsize Same source and plate; one illustrative field pair, not a direct assay of microtubules.}
+% Author removed the image commentary in Overleaf; opening comparison has no caption.
 #+END_EXPORT
 
 # Nocodazole is now the opening extreme reference, not the main investigation.
@@ -190,7 +188,21 @@ The Hub contains practical guides to help biologists use JUMP.
 # The sparse treated field does not prove toxicity or mitotic arrest; CP does not directly stain tubulin.
 # Original nocodazole activity/match extracts remain in demo/rehearsal-nocodazole/; they are not blebbistatin evidence.
 
-** Next: blebbistatin, a known biological effect
+* From the literature to a JUMP workflow
+#+BEGIN_EXPORT latex
+\input{tutorial-walkthrough.tex}
+\input{opa1-literature.tex}
+#+END_EXPORT
+
+# Published literature only: Griparic et al. JCB 2007, DOI 10.1083/jcb.200704112, Fig. 3A/G and Results; Song et al. JCB 2007, DOI 10.1083/jcb.200704110, Fig. 1C/D.
+# Griparic images show HeLa cells, MitoTracker, scrambled siRNA and pan-Opa1 siRNA at 2 d. This is depletion by RNA interference; label it siRNA, not JUMP CRISPR knockout.
+# The 99% fragmentation figure is quoted from published Results, not re-counted. The rescue paper uses OPA1-null mouse embryonic fibroblasts and selected splice forms; keep those contexts in the review notes.
+# Images are cropped panels A and G from the original 400x726 public figure, without resizing/recoloring/contrast edits; image scale bars remain documented by the full-figure caption.
+# Attribution and CC BY-NC-SA 4.0 for the cropped panels are retained on the literature-image slide; source hashes and crop coordinates are in docs/opa1-literature-provenance.json.
+# JUMP availability is taken from the published coverage reference; no OPA1 profile analysis or new statistics are run for this revision.
+# Use direct wording on slides; detailed study design and source context stay in docs/opa1-literature.md.
+
+** Historical: blebbistatin introduction :noexport:
 #+BEGIN_EXPORT latex
 \begin{block}{A more focused question}
 Can we see evidence consistent with altered contractility or cytokinesis?
@@ -208,7 +220,7 @@ Can we see evidence consistent with altered contractility or cytokinesis?
 # JUMP uses the racemate blebbistatin-(+/-), JCP2022_052617 / LZAXPYOBKSJSEX-UHFFFAOYSA-N; do not describe it as enantiopure active reagent.
 # Saved summaries and input hashes: demo/rehearsal-blebbistatin/. A lower activity score does not establish lower toxicity, stronger specificity or reproducibility.
 
-** Which compounds look similar to blebbistatin?
+** Historical: blebbistatin profile matches :noexport:
 #+BEGIN_EXPORT latex
 \textbf{Query: ``Show the closest published matches and resolve their annotations.''}\par\medskip
 \begin{tabular}{@{}l r@{}}
@@ -224,7 +236,7 @@ PF-04418948 & 0.737 \\
 \item Do the matches share a phenotype, or a confounding change?
 \end{itemize}
 {\footnotesize Published ranked subset; the saved annotation snapshot is incomplete.}
-\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broad.io/compound}{JUMP\_rr compound matches}; checked 9 November 2026}
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broad.io/compound}{JUMP\_rr compound matches}}
 #+END_EXPORT
 
 # Existing published scores, not recomputed: demo/rehearsal-blebbistatin/matches.csv.
@@ -232,7 +244,7 @@ PF-04418948 & 0.737 \\
 # Two next IDs lack names/MOA in that snapshot; absence of annotations is not proof of unrelated biology.
 # Resolve identities/annotations and examine confounding before mechanistic interpretation. No exhaustive enrichment analysis was run.
 
-** Does blebbistatin change cell morphology?
+** Historical: blebbistatin activity :noexport:
 #+BEGIN_EXPORT latex
 \begin{block}{Published activity result}
 Corrected activity p-value: \textbf{0.01278}
@@ -244,14 +256,14 @@ Corrected activity p-value: \textbf{0.01278}
 \end{itemize}
 \medskip
 \textbf{Follow-up question:} do images and replicate measurements support the known phenotype?
-\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broad.io/compound_feature}{JUMP\_rr compound features}; checked 9 November 2026}
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broad.io/compound_feature}{JUMP\_rr compound features}}
 #+END_EXPORT
 
 # Published activity score 0.67118 and corrected p-value 0.01278 agree across match and feature tables.
 # Nuclear DNA-channel median intensity is an observed summary feature, not a measurement of DNA amount, ploidy, nuclei per cell or cytokinesis.
 # Nuclear size, staining/processing, segmentation and density may contribute. Need aligned images, actual counts/QC and replicate-level checks.
 
-** Use JUMP to investigate a phenotype
+** Historical: compound investigation plan :noexport:
 #+BEGIN_EXPORT latex
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.48\textwidth}
@@ -278,7 +290,7 @@ Corrected activity p-value: \textbf{0.01278}
 
 # The ranked tables support the simple queries, not a full replicate-level or enrichment analysis. Those require aligned full well-level profiles, annotations and metadata. This next investigation is the live workflow, not a preclaimed result.
 
-** What do blebbistatin-treated cells look like?
+** Historical: blebbistatin image pair :noexport:
 #+BEGIN_EXPORT latex
 \begin{columns}[c,onlytextwidth]
 \begin{column}{0.48\textwidth}
@@ -318,7 +330,7 @@ Example prompt: Using the JUMP Hub docs, create a marimo dashboard to link selec
 # Stable identifiers and documented inputs/outputs support repeatable analysis. No claim that every AI/model supports this workflow.
 # The old recorded marimo notebook remains in the appendix; the main demo now investigates blebbistatin with an agent, after the extreme nocodazole reference.
 
-** Live demo: investigate blebbistatin's phenotype
+** Historical: blebbistatin live investigation :noexport:
 #+BEGIN_EXPORT latex
 \begin{block}{From prior biology to a testable question}
 Blebbistatin can disrupt contractility and cytokinesis. Query its CellProfiler profiles, inspect images and matched controls, and test whether cell shape and nuclear organization are consistent across replicates. Treat profile matches as hypotheses, not mechanistic proof.
@@ -338,7 +350,7 @@ Blebbistatin can disrupt contractility and cytokinesis. Query its CellProfiler p
 # No representation comparison or model inference. A build preview is not permission to publish a manuscript or alter shared Overleaf content.
 # If execution stalls, show the cached summary and label it as the preflight result; do not imply that the full analysis already ran.
 
-** What we will check
+** Historical: compound investigation checklist :noexport:
 #+BEGIN_EXPORT latex
 \textbf{The live investigation}
 \begin{itemize}
@@ -380,6 +392,7 @@ Blebbistatin can disrupt contractility and cytokinesis. Query its CellProfiler p
 # Nix deploys the wrappers. Most neural models require GPU resources; model-specific preprocessing, licences, weights and output conventions still apply.
 # Do not imply embeddings from different models share coordinates or dimensions, or that every wrapper was runtime-tested for this talk.
 
+* Applications and resources
 ** Not just JUMP: Extract morphological profiles from your own images
 #+BEGIN_EXPORT latex
 \begin{columns} [c,onlytextwidth]
@@ -854,14 +867,10 @@ Interactive marimo notebook --- separate recorded example
 # Reference includes selected cells; feature-based selection changes distributions by construction.
 # UMAP separation does not establish treatment effects or mechanism. Cells are not independent experimental replicates.
 
-* Tutorial screenshot walkthrough
-#+BEGIN_EXPORT latex
-\input{tutorial-walkthrough.tex}
-#+END_EXPORT
-
-# Temporary end-of-deck sequence, at the presenter's request; do not move into the main talk yet.
-# The 11 independent frames are maintained once in tutorial-walkthrough.tex, shared by Org export and the Overleaf root.
-# Walk through availability -> definitions/rows -> filters -> activity -> features -> matches -> images/controls.
+* Historical tutorial placement notes :noexport:
+# Originally appended at the end. Now the 11 tutorial frames are integrated with the gene-lookup and phenotype-reading workflows.
+# tutorial-walkthrough.tex defines reusable frame commands; opa1-literature.tex calls each once in context.
+# Workflow 1: gene availability -> definitions -> filters -> export. Workflow 2: rows -> activity -> features -> ORF -> matches -> images/controls.
 # Original tutorial highlight boxes/arrows are preserved. Historical SLC2A2 and MYT1 examples are separate from the current compound queries.
 # Added interpretation cues are slide captions, not edits to the screenshot pixels. Treat old interface values as historical.
 # Activity p-values apply per perturbation; feature significance is a different test. Displayed zeroes are rounded.
