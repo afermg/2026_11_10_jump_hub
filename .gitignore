@@ -8,6 +8,7 @@ __pycache__/
 !assets/vector-interpretability.pdf
 !assets/cell-painting-edited.pdf
 !assets/word2vec-example.pdf
+!assets/opa1-dnm1l-analysis/feature-validation.pdf
 
 # TeX build products.
 *.aux
