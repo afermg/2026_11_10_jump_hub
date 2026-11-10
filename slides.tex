@@ -195,7 +195,7 @@ The Hub contains practical guides to help biologists use JUMP.
 % END FRAME: sec:org000000d
 
 % BEGIN FRAME: tutorial:availability
-\begin{frame}[label={tutorial:availability}]{Is the gene represented in JUMP?}
+\begin{frame}[label={tutorial:availability}]{Is the gene available in JUMP?}
 \centering
 \includegraphics[width=0.98\linewidth,height=0.72\textheight,keepaspectratio]{assets/opa1-tutorial-screenshots/01-availability.png}
 \par\medskip
@@ -205,7 +205,8 @@ The Hub contains practical guides to help biologists use JUMP.
 % END FRAME: tutorial:availability
 
 % BEGIN FRAME: sec:org0000010
-\begin{frame}[label={sec:org0000010}]{How do the cells look?}
+\begin{frame}[label={sec:org0000010}]{How do our perturbed cells look?}
+JUMP_rr tables, built on Datasette-Lite
 \centering
 {\small\textbf{CRISPR Gallery --- OPA1}}\par\smallskip
 \includegraphics[width=0.98\linewidth,height=0.65\textheight,keepaspectratio]{assets/opa1-tutorial-screenshots/00-opa1-crispr-gallery.png}
@@ -224,7 +225,7 @@ The Hub contains practical guides to help biologists use JUMP.
 \end{frame}
 % END FRAME: filtering_example
 % BEGIN FRAME: tutorial:gallery-controls
-\begin{frame}[label={tutorial:gallery-controls}]{What should we compare those cells against?}
+\begin{frame}[label={tutorial:gallery-controls}]{Basic image comparison of perturbation vs negative control?}
 \centering
 \includegraphics[trim=0 0 300bp 260bp,clip,width=0.98\linewidth,height=0.72\textheight,keepaspectratio]{assets/opa1-tutorial-screenshots/05-gallery-controls.png}
 \par\medskip
@@ -266,22 +267,9 @@ The Hub contains practical guides to help biologists use JUMP.
 \includegraphics[trim=175bp 700bp 680bp 40bp,clip,width=0.92\linewidth]{assets/opa1-tutorial-screenshots/07-feature-row.png}\par\bigskip
 \includegraphics[trim=720bp 700bp 150bp 40bp,clip,width=0.92\linewidth]{assets/opa1-tutorial-screenshots/07-feature-row.png}
 \par\medskip
-{\footnotesize\raggedright\textbf{How:} read across one OPA1 row: reagent, object, feature, channel, significance, effect size and rank. It summarizes a profile, not one cell.\par}
 % Published JUMP_rr OPA1 CRISPR feature row; see provenance JSON.
 \end{frame}
 % END FRAME: tutorial:rows
-% BEGIN FRAME: tutorial:features
-\begin{frame}[label={tutorial:features}]{Which features explain the differences?}
-\centering
-{\small\textbf{OPA1 CRISPR: the top-ranked feature}}\par\medskip
-\includegraphics[trim=175bp 456bp 680bp 282.5bp,clip,width=0.92\linewidth]{assets/opa1-tutorial-screenshots/08-crispr-features.png}\par\bigskip
-\includegraphics[trim=720bp 456bp 150bp 282.5bp,clip,width=0.92\linewidth]{assets/opa1-tutorial-screenshots/08-crispr-features.png}
-\par\medskip
-{\footnotesize\raggedright\textbf{How:} sort OPA1 CRISPR rows by feature rank and compare significance with signed effect size; the leading row is a Mito texture feature.\par}
-% Published JUMP_rr OPA1 CRISPR feature rows; see provenance JSON.
-\end{frame}
-% END FRAME: tutorial:features
-
 % BEGIN FRAME: sec:org000000c
 \begin{frame}[label={sec:org000000c}]{CellProfiler detects mitochondrial feature changes}
 \begin{tabular}{@{}l l r@{}}
@@ -297,7 +285,7 @@ DNM1L & Mito-skeleton total length & $-3.55$
 % END FRAME: sec:org000000c
 
 % BEGIN FRAME: tutorial:orf
-\begin{frame}[label={tutorial:orf}]{What happens with a different perturbation type?}
+\begin{frame}[label={tutorial:orf}]{What happens if we look at its overexpression?}
 \centering
 {\small\textbf{OPA1 ORF: a separate perturbation and feature ranking}}\par\medskip
 \includegraphics[trim=175bp 456bp 700bp 282.5bp,clip,width=0.92\linewidth]{assets/opa1-tutorial-screenshots/09-orf-features.png}\par\bigskip
@@ -317,7 +305,7 @@ DNM1L & Mito-skeleton total length & $-3.55$
 \end{frame}
 % END FRAME: tutorial:matches
 % BEGIN FRAME: tutorial:export
-\begin{frame}[label={tutorial:export}]{How do we keep and share the result?}
+\begin{frame}[label={tutorial:export}]{Exporting to perform your own plotting}
 \centering
 \includegraphics[trim=10bp 495bp 840bp 35bp,clip,width=0.98\linewidth,height=0.66\textheight,keepaspectratio]{assets/opa1-tutorial-screenshots/11-export.png}
 \par\medskip
