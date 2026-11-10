@@ -150,10 +150,13 @@ class GeneExamplesTests(unittest.TestCase):
 
     def test_validation_slide_and_baseline(self):
         shared = (ROOT / 'slides.tex').read_text().replace('\\\\', ' ')
-        title = 'we can validate existing knowledge to develop methods leading to new discoveries'
+        title = 'Validate known biology to discover new phenotypes'
         self.assertEqual(shared.count(title), 1)
         self.assertLess(shared.index('JUMP example: DNM1L'), shared.index(title))
-        self.assertLess(shared.index(title), shared.index('Agents can help'))
+        self.assertLess(shared.index('Agents can help'), shared.index(title))
+        explorer_end = shared.index('% END FRAME: demo:ai-assisted-gene-explorer')
+        following = shared[explorer_end:].split('\\begin{frame}', 1)[1]
+        self.assertTrue(following.startswith('[label={analysis:gene-validation}]'))
         frame = shared.split(']{' + title + '}', 1)[1].split('\\end{frame}', 1)[0]
         self.assertIn('feature-validation.pdf', frame)
         self.assertNotIn('exploratory', frame.lower())
