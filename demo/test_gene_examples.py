@@ -1,4 +1,5 @@
 """Offline integrity tests for the two displayed JUMP image pairs."""
+import csv
 import hashlib
 import json
 from pathlib import Path
@@ -32,6 +33,23 @@ class GeneExamplesTests(unittest.TestCase):
                     self.assertEqual(hashlib.sha256(data).hexdigest(), image[kind + '_png_sha256'])
                     self.assertEqual(struct.unpack('>II', data[16:24]), size)
         self.assertEqual(len(set(plates)), 2)
+
+    def test_published_feature_values(self):
+        with (ROOT / 'demo/gene-feature-summary/all-published-features.csv').open() as source:
+            rows = list(csv.DictReader(source))
+        expected = [
+            ('OPA1', 'Cytoplasm', 'Texture_Correlation', 'Mito', '_3_00_256', 3.56),
+            ('DNM1L', 'Nuclei', 'ObjectSkeletonNumberBranchEnds', '', '_mito_skel', -5.953),
+            ('DNM1L', 'Cells', 'Granularity_3', 'Mito', '', 4.09),
+            ('DNM1L', 'Nuclei', 'ObjectSkeletonTotalObjectSkeletonLength', '', '_mito_skel', -3.551),
+        ]
+        keys = ['Perturbation', 'Compartment', 'Feature', 'Channel', 'Suffix']
+        tex = (ROOT / 'opa1-literature.tex').read_text()
+        for *identity, effect in expected:
+            selected = [r for r in rows if [r[k] for k in keys] == identity]
+            self.assertEqual(len(selected), 1)
+            self.assertEqual(float(selected[0]["Cohen's d"]), effect)
+            self.assertIn(f'${effect:+.2f}$', tex)
 
     def test_sources_aligned_and_tools_preserved(self):
         org = (ROOT / 'slides.org').read_text()

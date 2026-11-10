@@ -1,0 +1,15 @@
+{
+  "inputs": {
+    "crispr_interpretable_features.parquet": {
+      "path": "/work/scratch/amunoz/oppy-builds/jump-hub-20261110-agent-demo/data/crispr_interpretable_features.parquet",
+      "sha256": "905abb022cb9b510baf3577331c2eca4b4cad7cf7b3e91fd2f8d6d01e9371219",
+      "public_url": "https://d3dw4c1b79pj57.cloudfront.net/latest/crispr_interpretable_features.parquet/content"
+    },
+    "crispr.parquet": {
+      "path": "/work/scratch/amunoz/oppy-builds/jump-hub-20261110-agent-demo/data/crispr.parquet",
+      "sha256": "639cb7267ba54d551619e4e8a622445065680c53c21eee11933a497b1966100d",
+      "public_url": "https://d3dw4c1b79pj57.cloudfront.net/latest/crispr.parquet/content"
+    }
+  },
+  "scope": "Published ranked feature subset, not complete feature matrix; exact CRISPR IDs matched across views. No new significance calculation; not measurements of the displayed crops. Feature p-values rounded to five decimals in exporter, 0.0 is not an exact zero. Positive Cohen d means treatment > controls. Missing intensity rows do not imply no intensity change."
+}

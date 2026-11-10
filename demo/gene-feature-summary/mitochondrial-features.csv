@@ -1,0 +1,24 @@
+Perturbation,Compartment,Feature,Channel,Suffix,Cohen's d,Feature significance,Feature Rank
+DNM1L,Nuclei,ObjectSkeletonNumberBranchEnds,"",_mito_skel,-5.953,0.0,0
+DNM1L,Nuclei,ObjectSkeletonNumberTrunks,"",_mito_skel,-4.204,0.0,1
+DNM1L,Cells,Granularity_3,Mito,"",4.09,0.0,2
+DNM1L,Cells,Granularity_4,Mito,"",3.93,0.0,3
+DNM1L,Cells,RadialDistributionRadialCV,"",_mito_tubeness_16of16,3.912,0.0,4
+DNM1L,Cells,RadialDistributionRadialCV,"",_mito_tubeness_20of20,3.984,0.0,5
+DNM1L,Nuclei,ObjectSkeletonTotalObjectSkeletonLength,"",_mito_skel,-3.551,0.0,6
+DNM1L,Nuclei,Correlation_Correlation_Mito,RNA,"",-3.599,0.0,7
+DNM1L,Nuclei,ObjectSkeletonNumberNonTrunkBranches,"",_mito_skel,-3.492,0.0,8
+DNM1L,Cells,RadialDistributionRadialCV,"",_mito_tubeness_19of20,3.449,0.0,9
+DNM1L,Cells,Correlation_Manders_Mito,RNA,"",3.351,0.0,10
+DNM1L,Nuclei,RadialDistribution_RadialCV,Mito,_1of4,-3.297,0.0,11
+DNM1L,Cytoplasm,Granularity_3,Mito,"",3.059,0.0,13
+DNM1L,Cells,RadialDistributionRadialCV,"",_mito_tubeness_15of16,2.973,0.0,15
+DNM1L,Cytoplasm,Granularity_4,Mito,"",2.853,0.0,16
+DNM1L,Cytoplasm,Correlation_RWC_RNA,Mito,"",-2.889,0.0,18
+DNM1L,Cells,RadialDistributionFracAtD,"",_mito_tubeness_1of20,-2.536,0.0,28
+OPA1,Cytoplasm,Texture_Correlation,Mito,_3_00_256,3.56,0.0,0
+OPA1,Nuclei,RadialDistribution_FracAtD,Mito,_4of4,-3.166,0.0,6
+OPA1,Nuclei,RadialDistribution_FracAtD,Mito,_2of4,3.127,0.0,14
+OPA1,Cytoplasm,Texture_Correlation,Mito,_3_02_256,3.055,0.0,15
+OPA1,Cells,RadialDistributionRadialCV,"",_mito_tubeness_18of20,-3.165,0.0,16
+OPA1,Nuclei,Correlation_Correlation_AGP,Mito,"",-3.109,0.0,99999

@@ -11,6 +11,12 @@ The presenter confirmed a visible OPA1 CRISPR/control difference, reported that 
 - The displayed fields are JUMP CRISPR images, not the siRNA paper's microscopy. Do not apply its 99% fragmentation value to JUMP.
 - Brightness alone does not establish connectivity. Mito-channel intensity also depends on staining and acquisition; no new mechanism or phenotype quantification is claimed. Display magnification adds no optical resolution.
 
+## Published feature summary (PDF10)
+
+The slide shows OPA1 cytoplasmic Mito texture correlation (scale 3, orientation 00, 256 levels), Cohen's d +3.56; DNM1L mito-skeleton branch ends, −5.953; cellular Mito granularity at scale 3, +4.09; and mito-skeleton total length, −3.551. Skeleton rows carry the `Nuclei` object label and `mito_skel` suffix in the source; they are not nuclear shape measures. Do not reinterpret them as a direct measurement of individual mitochondrial length.
+
+Exact decomposed feature names, reagent IDs, all published rows for both genes and input hashes are retained in `demo/gene-feature-summary/`. These summaries describe the CRISPR profiles, not the displayed image crops. They support changes in mitochondrial organization, not direct confirmation of the expected fragmentation/elongation directions. The total skeleton-length feature is included to avoid selectively presenting only apparently supportive measurements. No stable-nucleus baseline was added: OPA1 also has strong nuclear morphology changes. Missing features in this ranked subset are not evidence of stability. Source feature p-values displayed as 0.0 were rounded, not exactly zero; the slide uses effect sizes rather than these rounded values.
+
 ## Image provenance and reproducibility
 
 `demo/export_gene_pairs.py` exports two explicitly selected raw-field pairs from the local viewer API. Both use source_13 / 20220914_Run1 / index site 0 / Mito:
@@ -37,4 +43,4 @@ Suggested demonstration: define a question in plain language, have the agent bui
 
 ## Navigation
 
-PDF7: expected biology; PDF8: OPA1 pair; PDF9: DNM1L pair; PDF10: shape versus brightness; PDF11: availability of both genes; PDF12–15 and 17–23: original SLC2A2/MYT1 Hub tutorials; PDF24: agent prompt; PDF25: the two built interfaces. Main talk ends at PDF32; ten extra slides follow. Original tutorial gene labels are preserved and are not presented as results for OPA1 or DNM1L.
+PDF7: expected biology; PDF8: OPA1 pair; PDF9: DNM1L pair; PDF10: published mitochondrial feature effects; PDF11: availability of both genes; PDF12–15 and 17–23: original SLC2A2/MYT1 Hub tutorials; PDF24: agent prompt; PDF25: the two built interfaces. Main talk ends at PDF32; ten extra slides follow. Original tutorial gene labels are preserved and are not presented as results for OPA1 or DNM1L.

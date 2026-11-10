@@ -7,7 +7,7 @@
 | 7 | OPA1 and DNM1L: literature expectations |
 | 8 | OPA1 CRISPR, zoomed Mito image versus its same-plate no-guide control |
 | 9 | DNM1L CRISPR, zoomed Mito image versus its own same-plate no-guide control |
-| 10 | Compare morphology, not just brightness |
+| 10 | Published mitochondrial feature changes: OPA1 texture and DNM1L skeleton/granularity effects |
 | 11 | Both genes have CRISPR and ORF coverage; start with CRISPR |
 | 12–15 | Hub availability/navigation tutorial (original example labels preserved) |
 | 16 | Reading returned phenotype tables |
@@ -24,6 +24,6 @@
 
 These are examples of interfaces built and refined through natural-language requests. Keep both running and retain their projects; do not replace them with static screenshots alone. Screenshot fallbacks are embedded in the deck. Localhost URLs are not public audience resources.
 
-The presenter selected OPA1/DNM1L after visual review. DNM1L looked brighter; do not narrate this as confirmed increased connectivity. The literature expectations and the actual JUMP observations are different evidence layers. No new phenotype quantification or CellProfiler profile analysis was performed for these slides.
+The presenter selected OPA1/DNM1L after visual review. DNM1L looked brighter; do not narrate this as confirmed increased connectivity. The literature expectations and the actual JUMP observations are different evidence layers. PDF10 now includes a lookup of published CellProfiler CRISPR feature effects, archived with hashes in `gene-feature-summary/`. No new statistics or measurements of the image crops were calculated. Nuclei are not assumed to provide a stable reference.
 
 See [exact field provenance](../docs/gene-examples-provenance.json), [current presenter notes](../docs/gene-examples.md) and [copyable prompts](prompts.md). Historical nocodazole/blebbistatin/SLC2A2 extracts and OPA1 literature/rescue materials are retained as archives, not new results.

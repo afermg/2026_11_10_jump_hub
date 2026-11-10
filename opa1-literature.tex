@@ -55,16 +55,21 @@ Central 512\,$\times$\,512-pixel crops; both panels share intensity limits 219--
 Central 512\,$\times$\,512-pixel crops; both panels share intensity limits 187--4463. \href{https://github.com/jump-cellpainting/datasets}{JUMP data}.}
 \end{frame}
 
-\begin{frame}[label={sec:org000000c}]{Compare shape, not just brightness}
-\begin{itemize}
-\item Zoom into individual cells: short, separate objects or longer structures?
-\item Keep intensity limits and magnification matched within each pair.
-\item Inspect other cells and fields before generalizing.
-\end{itemize}
-\bigskip
-\textbf{A brighter mitochondrial channel is not, by itself, a more-connected network.}
+\begin{frame}[label={sec:org000000c}]{CellProfiler detects mitochondrial feature changes}
+\begin{tabular}{@{}l l r@{}}
+\textbf{Gene} & \textbf{Feature} & \textbf{Cohen's $d$} \\[8pt]
+OPA1 & Mito texture correlation & $+3.56$ \\[6pt]
+DNM1L & Mito-skeleton branch ends & $-5.95$ \\[6pt]
+DNM1L & Mito granularity & $+4.09$ \\[6pt]
+DNM1L & Mito-skeleton total length & $-3.55$
+\end{tabular}
 \par\bigskip
-{\small OPA1 and DNM1L are on different plates: each has its own matched control.}
+\textbf{The image differences accompany changes in mitochondrial organization.}
+\par\medskip
+{\small These features do not directly establish fragmentation versus elongation.}
+\par\medskip
+{\scriptsize Published CRISPR profile summaries, not measurements of the displayed crops. Positive $d$: treatment above controls; negative $d$: below.\par
+\href{https://d3dw4c1b79pj57.cloudfront.net/latest/crispr_interpretable_features.parquet/content}{Source: JUMP CellProfiler feature table}. Exact feature names and snapshot: demo/gene-feature-summary/.}
 \end{frame}
 
 \begin{frame}[label={sec:org000000d}]{Workflow 1: follow the genes from papers to JUMP}
