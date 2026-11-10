@@ -426,7 +426,7 @@ Blebbistatin can disrupt contractility and cytokinesis. Query its CellProfiler p
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.48\textwidth}
 \begin{block}{Evaluate new lysosomal fluorescence probes}
-\small Kenneth Li, Vendrell Lab, University of Edinburgh\par
+\small Kenneth Li, University of Edinburgh\par
 \begin{itemize}
 \item Lysosomal acidification probes in cardiomyocytes.
 \item Uptake, localization and morphology over time.
@@ -505,7 +505,6 @@ LZTR1 G248R\par\smallskip
 \end{column}
 \end{columns}\medskip
 \centering\small
-Unpublished data (preprint coming soon)
 #+END_EXPORT
 
 #+BEGIN_EXPORT latex
