@@ -1,17 +1,21 @@
 # JUMP Hub — 10 November 2026
 
-Alán F. Muñoz's November 10 talk, adapted from the FASEB presentation. OPA1 and DNM1L are the genetic examples, shown as zoomed raw JUMP CRISPR fields beside their own plate-matched negative controls. Literature expectations are distinguished from image observations. Biological goals are interleaved with concrete JUMP_rr table actions: find genes, retrieve images/controls, read activity/features, compare perturbations, follow matches and save results. The OPA1/DNM1L examples follow the relevant table instructions. The agent walkthrough culminates in two working AI-assisted interfaces: a lazy raw-image explorer and a phenotype comparison viewer. Word2vec, representation background/comparison and the modern-tools overview are now extra slides. The earlier single-cell recording remains available as backup.
+**Final presentation archive.** The source and PDF include the presenter’s final Overleaf edits. See [archive validation](docs/final-archive.md). The GitHub repository is retained read-only; Overleaf and the local demos are separate and unchanged by archiving.
+
+Alán F. Muñoz's November 10 talk, adapted from the FASEB presentation. OPA1 and DNM1L are the genetic examples, shown as zoomed raw JUMP CRISPR fields beside their own plate-matched negative controls. Literature expectations are distinguished from image observations. Biological goals are interleaved with concrete JUMP_rr table actions: find genes, retrieve images/controls, read activity/features, compare perturbations, follow matches and save results. The OPA1/DNM1L examples follow the relevant table instructions. The agent walkthrough culminates in the gene/raw-image explorer, followed by validation against known biology. The phenotype comparison viewer is not part of the final slides. Word2vec, representation background/comparison and the modern-tools overview are now extra slides. The earlier single-cell recording remains available as backup.
 
 - [Overleaf editor](https://overleaf.quasimorphic.com/project/6af238ebaa6d5b0395871289) — root **slides.tex**, compiler **XeLaTeX**. Its current link-sharing setting was preserved.
 - [Public GitHub repository](https://github.com/afermg/2026_11_10_jump_hub).
 - [Direct PDF download](https://raw.githubusercontent.com/afermg/2026_11_10_jump_hub/main/slides.pdf) — the Slides QR destination.
-- [PDF preview](slides.pdf) — **45 pages**: main talk through the QR on PDF35, followed by ten existing extra slides.
+- [PDF preview](slides.pdf) — **43 pages**, including the additional slides.
 - [Complete slide source](slides.tex), [current image/tool notes](docs/gene-examples.md), [raw-image provenance](docs/gene-examples-provenance.json), and [historical literature notes](docs/opa1-literature.md).
-- Question-led tutorial images appear on **PDF11–13, 15–16, 19–21 and 23–25**, interleaved with the OPA1/DNM1L image and feature results. The AI-assisted gene explorer and phenotype viewer each have a slide, on **PDF27 and PDF28** respectively. Gray tutorial footers and visible “checked November …” timestamps are removed.
+- Question-led tutorial images are interleaved with the OPA1/DNM1L image and feature results. The gene/raw-image explorer is followed immediately by “Validate known biology to discover new phenotypes.”
 - [Review walkthrough](demo/README.md), [published feature summary](demo/gene-feature-summary/), and [copyable agent prompts](demo/prompts.md). Edit every slide directly in **`slides.tex`**. Earlier compound and SLC2A2 analysis artifacts are retained as historical material.
 - Local checkout: `/home/amunoz/Documents/broad/drafts/slides/2026_11_10_jump_hub`.
 
-## Editing and synchronization
+## Source and historical editing workflow
+
+The talk is complete. The instructions below document its preparation workflow, not an active synchronization service. Do not resume publication without a new request.
 
 `slides.tex` is the sole slide source and the Overleaf entry point. All frames are written out directly, with no slide includes or custom slide commands. Move a complete `% BEGIN FRAME: ...` / `% END FRAME: ...` block to reorder a slide. Images remain in `assets/`. The former helper files and `main.tex` wrapper have been removed. `slides.org` retains historical presenter notes only; it is not synchronized and must not be exported over the live source.
 

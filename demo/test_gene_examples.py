@@ -71,7 +71,7 @@ class GeneExamplesTests(unittest.TestCase):
             'label={tutorial:availability}',
             'label={filtering_example}', 'label={tutorial:gallery-controls}',
             'label={tutorial:interface}', 'label={tutorial:filters}',
-            'label={tutorial:activity}', 'label={tutorial:rows}', 'label={tutorial:features}',
+            'label={tutorial:activity}', 'label={tutorial:rows}',
             'CellProfiler detects mitochondrial feature changes',
             'label={tutorial:orf}', 'label={tutorial:matches}', 'label={tutorial:export}',
             'JUMP example: OPA1', 'JUMP example: DNM1L',
@@ -81,14 +81,14 @@ class GeneExamplesTests(unittest.TestCase):
         for item in sequence:
             self.assertEqual(shared.count(item), 1)
         tutorial = (ROOT / 'slides.tex').read_text()
-        self.assertEqual(tutorial.count('\\textbf{How:}'), 11)
+        self.assertEqual(tutorial.count('\\textbf{How:}'), 9)
         self.assertIn('Can we validate the phenotypes using our high-throughput methods?', shared)
         self.assertIn('Mitochondrial organization changes.', shared)
         self.assertNotIn('These features do not directly establish', shared)
 
     def test_expected_phenotype_uses_gallery_and_hover_tip(self):
         shared = (ROOT / 'slides.tex').read_text()
-        frame = shared.split(']{How do the cells look?}', 1)[1].split('\\end{frame}', 1)[0]
+        frame = shared.split('label={sec:org0000010}', 1)[1].split('\\end{frame}', 1)[0]
         self.assertIn('00-opa1-crispr-gallery.png', frame)
         self.assertIn('CRISPR Gallery --- OPA1', frame)
         self.assertLess(shared.index('00-opa1-crispr-gallery.png'), shared.index('label={filtering_example}'))
@@ -126,8 +126,8 @@ class GeneExamplesTests(unittest.TestCase):
         ends = [line.removeprefix('% END FRAME: ') for line in tex.splitlines()
                 if line.startswith('% END FRAME: ')]
         self.assertEqual(starts, ends)
-        self.assertEqual(len(starts), 44)
-        self.assertEqual(len(set(starts)), 44)
+        self.assertEqual(len(starts), 43)
+        self.assertEqual(len(set(starts)), 43)
         self.assertEqual([p.name for p in ROOT.glob('*.tex')], ['slides.tex'])
         for gene in ['OPA1', 'DNM1L']:
             for role in ['treatment', 'control']:
