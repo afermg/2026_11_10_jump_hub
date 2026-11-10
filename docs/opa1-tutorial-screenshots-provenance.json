@@ -1,219 +1,156 @@
 {
-  "generated_utc": "2026-11-10T12:21:35.722806+00:00",
-  "gene": "OPA1",
-  "generator": "demo/render_opa1_walkthrough.py",
-  "description": "Static OPA1 walkthrough panels rendered from published JUMP_rr table extracts; no values relabeled and no new statistics calculated.",
-  "table_inputs": {
-    "query_utc": "2026-11-10T12:03:08.754698+00:00",
-    "gene": "OPA1",
-    "polars_version": "1.40.1",
-    "offline": true,
-    "inputs": {
-      "coverage": {
-        "url": "https://zenodo.org/api/records/16883068/files/table.csv/content",
-        "sha256": "40f12b266d632d8593b29c4a327cd82cffc36ad354e92815bf77e6d2f5008ec7",
-        "bytes": 290114
-      },
-      "crispr": {
-        "url": "https://d3dw4c1b79pj57.cloudfront.net/latest/crispr.parquet/content",
-        "sha256": "639cb7267ba54d551619e4e8a622445065680c53c21eee11933a497b1966100d",
-        "bytes": 14159101
-      },
-      "orf": {
-        "url": "https://d3dw4c1b79pj57.cloudfront.net/latest/orf.parquet/content",
-        "sha256": "cded790675d5cf2f9e0a17bda6f7eb25afc3c49df68d14ea1cacf6bdc4cd3356",
-        "bytes": 31536714
-      },
-      "crispr_interpretable_features": {
-        "url": "https://d3dw4c1b79pj57.cloudfront.net/latest/crispr_interpretable_features.parquet/content",
-        "sha256": "905abb022cb9b510baf3577331c2eca4b4cad7cf7b3e91fd2f8d6d01e9371219",
-        "bytes": 11977200
-      },
-      "orf_interpretable_features": {
-        "url": "https://d3dw4c1b79pj57.cloudfront.net/latest/orf_interpretable_features.parquet/content",
-        "sha256": "d7af02f376b760ff8cb2ae71c1323366dc36af97020ffd1f74bd402be639d921",
-        "bytes": 21622328
-      },
-      "crispr_gallery": {
-        "url": "https://d3dw4c1b79pj57.cloudfront.net/latest/crispr_gallery.parquet/content",
-        "sha256": "0049760efc70d652a52b8f5954aa6e244606f22f617cdee8e96723a8c075a305",
-        "bytes": 3327310
-      }
-    },
-    "summary": {
-      "availability_rows": 1,
-      "activity_rows": 2,
-      "crispr_image_wells": 5,
-      "same_plate_control_wells": 101
-    }
-  },
-  "auxiliary_inputs": {
-    "availability_opa_prefix": {
-      "path": "demo/tutorial-opa1/availability-opa-prefix.csv",
-      "sha256": "e75b48864ae4105c496d96834829f98dcd3a4403eb049c2a2effe973f5e3cf8c",
-      "bytes": 102,
-      "derived_from": "https://zenodo.org/api/records/16883068/files/table.csv/content"
-    }
-  },
-  "preview_images": {
-    "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R1-06/D20_0.jpg": {
-      "path": "demo/tutorial-opa1/previews/389199762f7aa9b4c873.jpg",
-      "sha256": "7ccce64863a37870f574220bc7146f882a37ff4d08e282a81ee973f7be75da20",
-      "bytes": 776552
-    },
-    "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R1-06/D20_1.jpg": {
-      "path": "demo/tutorial-opa1/previews/3d4e4a02f84bd2195d11.jpg",
-      "sha256": "ddb22aa49b4244d62cd33b3d9746df357367e24fafe784d5f670e66673d6130d",
-      "bytes": 684957
-    },
-    "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R1-06/D20_2.jpg": {
-      "path": "demo/tutorial-opa1/previews/1dfd4bd78e5d1f6cf181.jpg",
-      "sha256": "dc4a5919ad7e986d4eb1a58eb8bec6e2c2b6e6ee190c984b81a9be36dc37dd31",
-      "bytes": 768739
-    },
-    "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R1-06/D20_3.jpg": {
-      "path": "demo/tutorial-opa1/previews/ddec72035c93b72d6cd7.jpg",
-      "sha256": "a062a6ad69de9f305060514aa2b7b0b32dc271848c059b7b5dbea128bda73d1b",
-      "bytes": 655264
-    },
-    "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R1-06/D20_4.jpg": {
-      "path": "demo/tutorial-opa1/previews/15be2ec52bd81d4c5d2d.jpg",
-      "sha256": "243c3ef6154e458193aa7d34fd287b939e7f2eeec3dc65309ed9516446740f0e",
-      "bytes": 734753
-    },
-    "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R1-06/K02_0.jpg": {
-      "path": "demo/tutorial-opa1/previews/b7e8e6eb8bed9648a039.jpg",
-      "sha256": "367eaa428b136f56c08dd466eb833850bda65fec5fb407c55978c3a9622204d4",
-      "bytes": 773461
-    },
-    "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R1-06/L23_0.jpg": {
-      "path": "demo/tutorial-opa1/previews/d4c569c248400bc3b3d5.jpg",
-      "sha256": "4c40543525135a311a766932a10eca795d30e6d2cc9c91daca600e7940555f3b",
-      "bytes": 852965
-    },
-    "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R1-06/J23_0.jpg": {
-      "path": "demo/tutorial-opa1/previews/ef0b7b6e4e222be4e0a6.jpg",
-      "sha256": "f3ed454d7ca48861a4b023c6e779c2c8ea3db704a48466c2feede09ce5ad095b",
-      "bytes": 782546
-    },
-    "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R2-06/D20_0.jpg": {
-      "path": "demo/tutorial-opa1/previews/a6882e786c5c640806cf.jpg",
-      "sha256": "2e577d73443d3c8c7d4b51f2605e61e2fe747373119673b47a1b129bca6ed8b4",
-      "bytes": 804608
-    },
-    "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R4-08/G06_7.jpg": {
-      "path": "demo/tutorial-opa1/previews/8a33c5e72cd9123ee7fe.jpg",
-      "sha256": "c86b867dacba37536a73ef8ebfc829cbeafd524523802aa5dda19473afc92825",
-      "bytes": 693796
-    },
-    "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R3-06/D20_1.jpg": {
-      "path": "demo/tutorial-opa1/previews/553a4a6320cb6a5fc803.jpg",
-      "sha256": "9314180ee4430d05644e2de63909d343c2fab70559bf8492aee3e5adb87923d4",
-      "bytes": 762584
-    },
-    "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R3-09/G10_5.jpg": {
-      "path": "demo/tutorial-opa1/previews/369fb4c852e0d564bedd.jpg",
-      "sha256": "8f910d987c37ee28d96291018c72ecd7e584a0974232dfa2b036d929271dec07",
-      "bytes": 716727
-    },
-    "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R5-06/D20_2.jpg": {
-      "path": "demo/tutorial-opa1/previews/81ad5ef863b5b6ba4fb9.jpg",
-      "sha256": "ad29cb57ee1053ada7fdbca660edbf0be643ffc176137200d768f78df57f8e73",
-      "bytes": 746637
-    },
-    "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R5-07/G15_5.jpg": {
-      "path": "demo/tutorial-opa1/previews/d241a34829d7b310f72d.jpg",
-      "sha256": "bfd97e52fba21e87c08e3808b9c828619ec09d880b9a7c8e356056c056bd0bbe",
-      "bytes": 699336
-    },
-    "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R4-06/D20_3.jpg": {
-      "path": "demo/tutorial-opa1/previews/8b5e39ccf7e737ed322f.jpg",
-      "sha256": "c7d62e2d370fdaa0e5f9197b729b8d10385a897abf740531ea9b5f02e74220f3",
-      "bytes": 753756
-    },
-    "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R1-20/J21_4.jpg": {
-      "path": "demo/tutorial-opa1/previews/3361ee6fca7b1e7c6ad6.jpg",
-      "sha256": "9bb12b36b6ffd286c7df70ca58a1784e0146465e6cc0f93f737b1a57a6f4b897",
-      "bytes": 586684
-    }
-  },
-  "outputs": [
-    {
-      "path": "assets/opa1-tutorial-screenshots/01-availability.png",
-      "sha256": "623f692acdcd2b96e52c6d2d7c7e11ab3d27d20087347fbc31d5d137ed4c3e0b",
-      "bytes": 70790,
-      "width": 1800,
-      "height": 1000
-    },
+  "captured_at": "2026-11-10T14:22:56.929386+00:00",
+  "method": "Actual Firefox screenshots of public JUMP Hub and Datasette Lite interfaces; 125% page zoom, native column selection and DOM outline callouts; no reconstructed UI or data. Slide-level crops are declared in tutorial-walkthrough.tex; original screenshots remain intact.",
+  "browser": "156.0",
+  "screenshots": [
     {
       "path": "assets/opa1-tutorial-screenshots/02-columns.png",
-      "sha256": "5251c9eb2dfa97369fd6c5ff6d4ce3f846909e92cb76f22a4f81c17da6b4707a",
-      "bytes": 91841,
-      "width": 1800,
-      "height": 1000
+      "url": "https://lite.datasette.io/?metadata=https://raw.githubusercontent.com/broadinstitute/monorepo/main/libs/jump_rr/metadata/crispr_feature.json&install=datasette-json-html&parquet=https://d3dw4c1b79pj57.cloudfront.net/latest/crispr_interpretable_features.parquet/content#/data/content?Perturbation__exact=OPA1&_sort=Feature+Rank",
+      "sha256": "89244d751428088b35c54bcbdec2ccb54ed790058b6db58649b28bb0ffeb1149",
+      "scroll": [
+        0,
+        0
+      ],
+      "highlighted_columns": []
     },
     {
       "path": "assets/opa1-tutorial-screenshots/03-filters.png",
-      "sha256": "bf0f5fee1e65ffd78be2b96bd893ecc76648b43df88f1244ad97d3646ac2a874",
-      "bytes": 81858,
-      "width": 1800,
-      "height": 1000
-    },
-    {
-      "path": "assets/opa1-tutorial-screenshots/04-gallery-perturbation.png",
-      "sha256": "8e5eb9f537da9dd87f76ac74c5601423bd7fe916493cf34a6ff1b754cd9ab016",
-      "bytes": 948413,
-      "width": 1800,
-      "height": 1000
-    },
-    {
-      "path": "assets/opa1-tutorial-screenshots/05-gallery-controls.png",
-      "sha256": "56b1263679e9bbcb3f75c3ab2284c85fd30e34e058d7a10ee6ba514cb1b23891",
-      "bytes": 925063,
-      "width": 1800,
-      "height": 1000
-    },
-    {
-      "path": "assets/opa1-tutorial-screenshots/06-activity.png",
-      "sha256": "08b5f2bca4a6f73f357aa295caa3fa4178e9a7ca4135bad82e49e10f31a5f782",
-      "bytes": 71946,
-      "width": 1800,
-      "height": 1000
-    },
-    {
-      "path": "assets/opa1-tutorial-screenshots/07-feature-row.png",
-      "sha256": "d78057e84b81faf97f931a917feed4859cd2e1f040a2b8e421bd782c40998712",
-      "bytes": 74003,
-      "width": 1800,
-      "height": 1000
+      "url": "https://lite.datasette.io/?metadata=https://raw.githubusercontent.com/broadinstitute/monorepo/main/libs/jump_rr/metadata/crispr_feature.json&install=datasette-json-html&parquet=https://d3dw4c1b79pj57.cloudfront.net/latest/crispr_interpretable_features.parquet/content#/data/content?Perturbation__exact=OPA1&_sort=Feature+Rank",
+      "sha256": "184a0f51e77042cdb0706b53d7c1dfd88dde2791dd878e64977072fa7f72a861",
+      "scroll": [
+        0,
+        1265
+      ],
+      "highlighted_columns": []
     },
     {
       "path": "assets/opa1-tutorial-screenshots/08-crispr-features.png",
-      "sha256": "54a861adaaaa9ddfca77a8b8951b62c5f5dd67814cb72aa33088705d08435064",
-      "bytes": 79679,
-      "width": 1800,
-      "height": 1000
-    },
-    {
-      "path": "assets/opa1-tutorial-screenshots/09-orf-features.png",
-      "sha256": "7e3c5639518feaf4d329cfc2036b63dda976451f073b2c9bca449b2c176d5265",
-      "bytes": 82226,
-      "width": 1800,
-      "height": 1000
-    },
-    {
-      "path": "assets/opa1-tutorial-screenshots/10-matches.png",
-      "sha256": "f7305674f838e996c2a03b37298d8a8bcb59b22dde3f21cc2cdc9acc15c0118b",
-      "bytes": 453453,
-      "width": 1800,
-      "height": 1000
+      "url": "https://lite.datasette.io/?metadata=https://raw.githubusercontent.com/broadinstitute/monorepo/main/libs/jump_rr/metadata/crispr_feature.json&install=datasette-json-html&parquet=https://d3dw4c1b79pj57.cloudfront.net/latest/crispr_interpretable_features.parquet/content#/data/content?Perturbation__exact=OPA1&_sort=Feature+Rank",
+      "sha256": "61e9fb845dd406080ba1faa63d7a793bc313b4c322ffc97a05fd2a9c1ee1bd29",
+      "scroll": [
+        0,
+        1265
+      ],
+      "highlighted_columns": [
+        "Feature",
+        "Channel",
+        "Cohen's d",
+        "Feature significance"
+      ]
     },
     {
       "path": "assets/opa1-tutorial-screenshots/11-export.png",
-      "sha256": "2f603f0ae98858acf3657c077ebabc641376dc1229dbaa643004e0d3128ef2b0",
-      "bytes": 85819,
-      "width": 1800,
-      "height": 1000
+      "url": "https://lite.datasette.io/?metadata=https://raw.githubusercontent.com/broadinstitute/monorepo/main/libs/jump_rr/metadata/crispr_feature.json&install=datasette-json-html&parquet=https://d3dw4c1b79pj57.cloudfront.net/latest/crispr_interpretable_features.parquet/content#/data/content?Perturbation__exact=OPA1&Compartment__in=Cytoplasm%2CNuclei&_sort=Feature+Rank",
+      "sha256": "3aec38eab37eec7b63a3dbfdc4b4d39a168b318c4ffa11fc17a4dee85a680ac1",
+      "scroll": [
+        0,
+        1265
+      ],
+      "highlighted_columns": []
+    },
+    {
+      "path": "assets/opa1-tutorial-screenshots/09-orf-features.png",
+      "url": "https://lite.datasette.io/?metadata=https://raw.githubusercontent.com/broadinstitute/monorepo/main/libs/jump_rr/metadata/orf_feature.json&install=datasette-json-html&parquet=https://d3dw4c1b79pj57.cloudfront.net/latest/orf_interpretable_features.parquet/content#/data/content?Perturbation__exact=OPA1&_sort=Feature+Rank",
+      "sha256": "260c11c171347e6088599f21b88569c8ddcc1b9b579431cadbf04ef5c05ae6bb",
+      "scroll": [
+        0,
+        1265
+      ],
+      "highlighted_columns": [
+        "Feature",
+        "Channel",
+        "Corrected p-value",
+        "Phenotypic activity"
+      ]
+    },
+    {
+      "path": "assets/opa1-tutorial-screenshots/10-matches.png",
+      "url": "https://lite.datasette.io/?metadata=https://raw.githubusercontent.com/broadinstitute/monorepo/main/libs/jump_rr/metadata/crispr_matches.json&install=datasette-json-html&parquet=https://d3dw4c1b79pj57.cloudfront.net/latest/crispr.parquet/content#/data/content?Perturbation__exact=OPA1&_sort_desc=Perturbation-Match+Similarity",
+      "sha256": "a94a235a271f93a0670a63f87f5fff676b3d17b9f2e0b250cf4756d620d8761c",
+      "scroll": [
+        0,
+        1087
+      ],
+      "highlighted_columns": [
+        "Match",
+        "Perturbation-Match Similarity"
+      ]
+    },
+    {
+      "path": "assets/opa1-tutorial-screenshots/06-activity.png",
+      "url": "https://lite.datasette.io/?metadata=https://raw.githubusercontent.com/broadinstitute/monorepo/main/libs/jump_rr/metadata/crispr_feature.json&install=datasette-json-html&parquet=https://d3dw4c1b79pj57.cloudfront.net/latest/crispr_interpretable_features.parquet/content#/data/content?Perturbation__exact=OPA1&_sort=Feature+Rank",
+      "sha256": "3f05911b651388737a11bf1d0d6f0b75096bf5271c6f3a96afe074af098b3ee2",
+      "scroll": [
+        0,
+        1265
+      ],
+      "highlighted_columns": [
+        "Perturbation",
+        "Corrected p-value",
+        "Phenotypic activity"
+      ]
+    },
+    {
+      "path": "assets/opa1-tutorial-screenshots/01-availability.png",
+      "url": "https://broadinstitute.github.io/jump_hub/reference/00_gene_index.html",
+      "sha256": "b5bc442952e76cdd6a21cc9b060eff5b9c158b4064730d975edfe6794b1a2f0a",
+      "scroll": [
+        0,
+        346
+      ],
+      "highlighted_columns": []
+    },
+    {
+      "path": "assets/opa1-tutorial-screenshots/07-feature-row.png",
+      "url": "https://lite.datasette.io/?metadata=https://raw.githubusercontent.com/broadinstitute/monorepo/main/libs/jump_rr/metadata/crispr_feature.json&install=datasette-json-html&parquet=https://d3dw4c1b79pj57.cloudfront.net/latest/crispr_interpretable_features.parquet/content#/data/content?Perturbation__exact=OPA1&_sort=Feature+Rank",
+      "sha256": "c2bc83950c53a56d5d8b01638176a4eec379a4b5c1766217c26dc8ec49bd0920",
+      "scroll": [
+        0,
+        1505
+      ],
+      "highlighted_columns": [
+        "Compartment",
+        "Feature",
+        "Channel",
+        "Cohen's d"
+      ]
+    },
+    {
+      "path": "assets/opa1-tutorial-screenshots/04-gallery-perturbation.png",
+      "url": "https://lite.datasette.io/?metadata=https://raw.githubusercontent.com/broadinstitute/monorepo/main/libs/jump_rr/metadata/crispr_gallery.json&install=datasette-json-html&parquet=https://d3dw4c1b79pj57.cloudfront.net/latest/crispr_gallery.parquet/content#/data/content?Perturbation__exact=OPA1&Plate__exact=CP-CC9-R1-06&_sort=rowid&_col=Perturbation&_col=JCP2022&_col=Site+0&_col=Source&_col=Plate&_col=Well",
+      "sha256": "42d1a7acfb46b2b44b411ef0c05b8004dfe4722c13991c3cc7b3283a7497c920",
+      "scroll": [
+        0,
+        805
+      ],
+      "highlighted_columns": [
+        "Perturbation",
+        "Plate",
+        "Well"
+      ]
+    },
+    {
+      "path": "assets/opa1-tutorial-screenshots/05-gallery-controls.png",
+      "url": "https://lite.datasette.io/?metadata=https://raw.githubusercontent.com/broadinstitute/monorepo/main/libs/jump_rr/metadata/crispr_gallery.json&install=datasette-json-html&parquet=https://d3dw4c1b79pj57.cloudfront.net/latest/crispr_gallery.parquet/content#/data/content?Perturbation__in=OPA1%2Cno-guide%2Cnon-targeting&Plate__exact=CP-CC9-R1-06&_sort=Perturbation&_col=Perturbation&_col=JCP2022&_col=Site+0&_col=Source&_col=Plate&_col=Well",
+      "sha256": "d0fbf7165aa13ec1ac0bb680615d218738c4f9a62b84e200d68bce13750d486b",
+      "scroll": [
+        0,
+        843
+      ],
+      "highlighted_columns": [
+        "Perturbation",
+        "Plate",
+        "Well"
+      ]
     }
-  ]
+  ],
+  "links": {
+    "Available genes (search OPA)": "https://broadinstitute.github.io/jump_hub/reference/00_gene_index.html",
+    "OPA1 CRISPR features": "https://lite.datasette.io/?metadata=https://raw.githubusercontent.com/broadinstitute/monorepo/main/libs/jump_rr/metadata/crispr_feature.json&install=datasette-json-html&parquet=https://d3dw4c1b79pj57.cloudfront.net/latest/crispr_interpretable_features.parquet/content#/data/content?Perturbation__exact=OPA1&_sort=Feature+Rank",
+    "OPA1 filtered export": "https://lite.datasette.io/?metadata=https://raw.githubusercontent.com/broadinstitute/monorepo/main/libs/jump_rr/metadata/crispr_feature.json&install=datasette-json-html&parquet=https://d3dw4c1b79pj57.cloudfront.net/latest/crispr_interpretable_features.parquet/content#/data/content?Perturbation__exact=OPA1&Compartment__in=Cytoplasm%2CNuclei&_sort=Feature+Rank",
+    "OPA1 ORF features": "https://lite.datasette.io/?metadata=https://raw.githubusercontent.com/broadinstitute/monorepo/main/libs/jump_rr/metadata/orf_feature.json&install=datasette-json-html&parquet=https://d3dw4c1b79pj57.cloudfront.net/latest/orf_interpretable_features.parquet/content#/data/content?Perturbation__exact=OPA1&_sort=Feature+Rank",
+    "OPA1 CRISPR matches": "https://lite.datasette.io/?metadata=https://raw.githubusercontent.com/broadinstitute/monorepo/main/libs/jump_rr/metadata/crispr_matches.json&install=datasette-json-html&parquet=https://d3dw4c1b79pj57.cloudfront.net/latest/crispr.parquet/content#/data/content?Perturbation__exact=OPA1&_sort_desc=Perturbation-Match+Similarity",
+    "OPA1 gallery": "https://lite.datasette.io/?metadata=https://raw.githubusercontent.com/broadinstitute/monorepo/main/libs/jump_rr/metadata/crispr_gallery.json&install=datasette-json-html&parquet=https://d3dw4c1b79pj57.cloudfront.net/latest/crispr_gallery.parquet/content#/data/content?Perturbation__exact=OPA1&Plate__exact=CP-CC9-R1-06&_sort=rowid&_col=Perturbation&_col=JCP2022&_col=Site+0&_col=Source&_col=Plate&_col=Well",
+    "OPA1 with plate-matched controls": "https://lite.datasette.io/?metadata=https://raw.githubusercontent.com/broadinstitute/monorepo/main/libs/jump_rr/metadata/crispr_gallery.json&install=datasette-json-html&parquet=https://d3dw4c1b79pj57.cloudfront.net/latest/crispr_gallery.parquet/content#/data/content?Perturbation__in=OPA1%2Cno-guide%2Cnon-targeting&Plate__exact=CP-CC9-R1-06&_sort=Perturbation&_col=Perturbation&_col=JCP2022&_col=Site+0&_col=Source&_col=Plate&_col=Well"
+  }
 }

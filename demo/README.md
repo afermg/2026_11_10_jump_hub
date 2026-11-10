@@ -21,6 +21,8 @@
 
 ## Live interfaces
 
+The MBP launch page is `~/Documents/JUMP-OPA1-demo-links.html`. It links the live Overleaf project, Hub and exact OPA1-filtered feature, match, gallery/control and export views. Generated from the actual screenshot manifest, not manually reconstructed URLs. Oppy demo processes run as user units `jump-talk-raw-demo` and `jump-talk-review-demo`; both listen only on loopback. The MBP's existing SSH forwarding uses `oppy-via-spirit` and must remain connected.
+
 - Gene/raw-image explorer: http://127.0.0.1:8766/ (Oppy + private Mac forward). Choose OPA1 or DNM1L, CRISPR, exact reagent/well and Mito; press Load pair; use 2× zoom to inspect cells. Refreshing resets the selection. Each gene needs its own same-plate control.
 - Phenotype review: http://127.0.0.1:8765/. Compare candidate images and literature expectations, inspect originals, record whether differences are visible. It is distinct from raw-image retrieval.
 

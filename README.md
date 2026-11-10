@@ -40,6 +40,8 @@ The presenter approved making this GitHub mirror **public**. The closing **Slide
 
 ## Build
 
+The current OPA1 walkthrough assets are authentic, close-up Firefox captures of the live JUMP Hub tools, not generated interface mockups. `demo/capture_opa1_walkthrough.py` and `docs/opa1-tutorial-screenshots-provenance.json` retain their filtered URLs and hashes. `~/Documents/JUMP-OPA1-demo-links.html` on the MBP collects the demo and tool links.
+
 Requires XeLaTeX, latexmk, moloch and Fira Sans (TeX Live full).
 
 ```sh
