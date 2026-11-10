@@ -1,0 +1,165 @@
+{
+  "selection_rule": "Default first production CRISPR well and first documented same-plate no-guide control in the viewer; site index 0, Mito. Not a claim to reconstruct exact browser selections.",
+  "display_rule": "Original uint16 TIFF -> full-resolution grayscale PNG with common pooled 0.5\u201399.5 percentile limits within each pair. Limits differ across plates; no cross-pair brightness comparison. Center 512x512 crop, no additional contrast or sharpening.",
+  "interpretation": "User confirmed visible OPA1 CRISPR/control difference and selected OPA1 and DNM1L as examples. DNM1L increased brightness does not establish increased connectivity. No phenotype quantification.",
+  "pairs": [
+    {
+      "gene": "OPA1",
+      "selection": {
+        "treatment": 1804,
+        "control": 1743,
+        "site": 0,
+        "channel": "Mito"
+      },
+      "images": [
+        {
+          "well": {
+            "id": 1804,
+            "source": "source_13",
+            "batch": "20220914_Run1",
+            "plate": "CP-CC9-R1-06",
+            "well": "D20",
+            "jcp": "JCP2022_804796",
+            "modality": "crispr",
+            "gene": "OPA1",
+            "pert_type": "trt",
+            "broad_sample": null
+          },
+          "site": 0,
+          "channel": "Mito",
+          "original_uri": "s3://cellpainting-gallery/cpg0016-jump/source_13/images/20220914_Run1/images/CP-CC9-R1-06/CP-CC9-R1-06_D20_T0001F001L01A01Z01C02.tif",
+          "original_url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0016-jump/source_13/images/20220914_Run1/images/CP-CC9-R1-06/CP-CC9-R1-06_D20_T0001F001L01A01Z01C02.tif",
+          "width": 1280,
+          "height": 1080,
+          "dtype": "uint16",
+          "full_png": "assets/gene-examples/OPA1-treatment-full.png",
+          "crop_png": "assets/gene-examples/OPA1-treatment-center512.png",
+          "crop_xyxy": [
+            384,
+            284,
+            896,
+            796
+          ],
+          "full_png_sha256": "a39fc9f172ec1439c9cb0c0449a0916e8155a7b32c8a18e21412d4744b2f307c",
+          "crop_png_sha256": "0e3d5f973dce9ebc1de605b1eec53d035c17c3d16f718347edd534f36a10670b"
+        },
+        {
+          "well": {
+            "id": 1743,
+            "source": "source_13",
+            "batch": "20220914_Run1",
+            "plate": "CP-CC9-R1-06",
+            "well": "B02",
+            "jcp": "JCP2022_800001",
+            "modality": "crispr",
+            "gene": "no-guide",
+            "pert_type": "negcon",
+            "broad_sample": null
+          },
+          "site": 0,
+          "channel": "Mito",
+          "original_uri": "s3://cellpainting-gallery/cpg0016-jump/source_13/images/20220914_Run1/images/CP-CC9-R1-06/CP-CC9-R1-06_B02_T0001F001L01A01Z01C02.tif",
+          "original_url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0016-jump/source_13/images/20220914_Run1/images/CP-CC9-R1-06/CP-CC9-R1-06_B02_T0001F001L01A01Z01C02.tif",
+          "width": 1280,
+          "height": 1080,
+          "dtype": "uint16",
+          "full_png": "assets/gene-examples/OPA1-control-full.png",
+          "crop_png": "assets/gene-examples/OPA1-control-center512.png",
+          "crop_xyxy": [
+            384,
+            284,
+            896,
+            796
+          ],
+          "full_png_sha256": "31894887e531b77c0bb0a021b16c2d8d1a108fee4cd9caa4037393fb1f4b8779",
+          "crop_png_sha256": "5062525cbef8f15a8d0b2ac5f8fdf7a900003a7f07cb180cf12312c2f87d0f18"
+        }
+      ],
+      "scaling": {
+        "low": 219.0,
+        "high": 3985.0,
+        "mode": "common pooled 0.5\u201399.5 percentile limits (both fields); clipped outside limits",
+        "display": "8-bit grayscale PNG derived from original TIFF; no illumination correction or inference"
+      }
+    },
+    {
+      "gene": "DNM1L",
+      "selection": {
+        "treatment": 683,
+        "control": 367,
+        "site": 0,
+        "channel": "Mito"
+      },
+      "images": [
+        {
+          "well": {
+            "id": 683,
+            "source": "source_13",
+            "batch": "20220914_Run1",
+            "plate": "CP-CC9-R1-02",
+            "well": "P18",
+            "jcp": "JCP2022_801877",
+            "modality": "crispr",
+            "gene": "DNM1L",
+            "pert_type": "trt",
+            "broad_sample": null
+          },
+          "site": 0,
+          "channel": "Mito",
+          "original_uri": "s3://cellpainting-gallery/cpg0016-jump/source_13/images/20220914_Run1/images/CP-CC9-R1-02/CP-CC9-R1-02_P18_T0001F001L01A01Z01C02.tif",
+          "original_url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0016-jump/source_13/images/20220914_Run1/images/CP-CC9-R1-02/CP-CC9-R1-02_P18_T0001F001L01A01Z01C02.tif",
+          "width": 1280,
+          "height": 1080,
+          "dtype": "uint16",
+          "full_png": "assets/gene-examples/DNM1L-treatment-full.png",
+          "crop_png": "assets/gene-examples/DNM1L-treatment-center512.png",
+          "crop_xyxy": [
+            384,
+            284,
+            896,
+            796
+          ],
+          "full_png_sha256": "6744885b754f9a5b988c1329c020e919c368146883f52e4df2456313bceb81b5",
+          "crop_png_sha256": "a2d980d0c00f406489f580c6b7e4bb05b3698fc9a6cfe3d1bd9df72e0a8127f4"
+        },
+        {
+          "well": {
+            "id": 367,
+            "source": "source_13",
+            "batch": "20220914_Run1",
+            "plate": "CP-CC9-R1-02",
+            "well": "B02",
+            "jcp": "JCP2022_800001",
+            "modality": "crispr",
+            "gene": "no-guide",
+            "pert_type": "negcon",
+            "broad_sample": null
+          },
+          "site": 0,
+          "channel": "Mito",
+          "original_uri": "s3://cellpainting-gallery/cpg0016-jump/source_13/images/20220914_Run1/images/CP-CC9-R1-02/CP-CC9-R1-02_B02_T0001F001L01A01Z01C02.tif",
+          "original_url": "https://cellpainting-gallery.s3.amazonaws.com/cpg0016-jump/source_13/images/20220914_Run1/images/CP-CC9-R1-02/CP-CC9-R1-02_B02_T0001F001L01A01Z01C02.tif",
+          "width": 1280,
+          "height": 1080,
+          "dtype": "uint16",
+          "full_png": "assets/gene-examples/DNM1L-control-full.png",
+          "crop_png": "assets/gene-examples/DNM1L-control-center512.png",
+          "crop_xyxy": [
+            384,
+            284,
+            896,
+            796
+          ],
+          "full_png_sha256": "83dbbdae4521079c655f197e6db55b1c4af40f6c789bd2ad28f0033c8ffebe6a",
+          "crop_png_sha256": "9f15b06908bd413abcd907fe59b8ce7c4068305b033abf2e65302f9d67efb6e1"
+        }
+      ],
+      "scaling": {
+        "low": 187.0,
+        "high": 4463.0,
+        "mode": "common pooled 0.5\u201399.5 percentile limits (both fields); clipped outside limits",
+        "display": "8-bit grayscale PNG derived from original TIFF; no illumination correction or inference"
+      }
+    }
+  ]
+}

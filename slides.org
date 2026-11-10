@@ -17,7 +17,7 @@
 
 # Talk date: 10 November 2026. Venue, title revisions and duration not yet specified.
 # Adapted from the FASEB deck at abdd682d172d44a7f3b5d514328dd37bc8b4bfab.
-# Biologist audience; published OPA1 literature and realistic Hub navigation/interpretation workflows.
+# Biologist audience; OPA1/DNM1L JUMP CRISPR images, matched controls, Hub workflows and vibe-coded interfaces.
 # The agent retrieves sources and explains published views. Current review instructions: demo/README.md.
 # Total timing requires rehearsal; docs/presenter-notes.md describes the historical FASEB version.
 # Keep slides direct and question-led. Interpretation limits belong in notes.
@@ -167,7 +167,7 @@ The Hub contains practical guides to help biologists use JUMP.
 # No-code guides include availability queries, JUMP_rr and Morpheus heatmaps. Dataset explanations describe experimental context. The Guide to Cell Painting for Biologists is an external Cimini Lab resource linked by the Hub, not a guide newly authored by us.
 # The MisLocus how-to is a separate VarChAMP companion workflow, not a JUMP assay or one of the Colab notebooks. Do not promise it runs in Colab.
 
-** An extreme example: nocodazole
+** Historical: extreme nocodazole example :noexport:
 #+BEGIN_EXPORT latex
 \begin{columns}[c,onlytextwidth]
 \begin{column}{0.48\textwidth}
@@ -183,7 +183,7 @@ The Hub contains practical guides to help biologists use JUMP.
 % Author removed the image commentary in Overleaf; opening comparison has no caption.
 #+END_EXPORT
 
-# Nocodazole is now the opening extreme reference, not the main investigation.
+# Archived opening reference; the active examples are now OPA1 and DNM1L CRISPR with separate plate-matched controls.
 # Unchanged source_2/1086292020 previews, DMSO A02 and nocodazole P15, site 1; see demo/rehearsal-nocodazole/image-provenance.json.
 # The sparse treated field does not prove toxicity or mitotic arrest; CP does not directly stain tubulin.
 # Original nocodazole activity/match extracts remain in demo/rehearsal-nocodazole/; they are not blebbistatin evidence.
@@ -194,13 +194,13 @@ The Hub contains practical guides to help biologists use JUMP.
 \input{opa1-literature.tex}
 #+END_EXPORT
 
-# Published literature only: Griparic et al. JCB 2007, DOI 10.1083/jcb.200704112, Fig. 3A/G and Results; Song et al. JCB 2007, DOI 10.1083/jcb.200704110, Fig. 1C/D.
-# Griparic images show HeLa cells, MitoTracker, scrambled siRNA and pan-Opa1 siRNA at 2 d. This is depletion by RNA interference; label it siRNA, not JUMP CRISPR knockout.
-# The 99% fragmentation figure is quoted from published Results, not re-counted. The rescue paper uses OPA1-null mouse embryonic fibroblasts and selected splice forms; keep those contexts in the review notes.
-# Images are cropped panels A and G from the original 400x726 public figure, without resizing/recoloring/contrast edits; image scale bars remain documented by the full-figure caption.
-# Attribution and CC BY-NC-SA 4.0 for the cropped panels are retained on the literature-image slide; source hashes and crop coordinates are in docs/opa1-literature-provenance.json.
-# JUMP availability is taken from the published coverage reference; no OPA1 profile analysis or new statistics are run for this revision.
-# Use direct wording on slides; detailed study design and source context stay in docs/opa1-literature.md.
+# Active sequence lives in opa1-literature.tex, shared with slides.tex. Literature expectations: OPA1 loss impairs fusion; DNM1L/DRP1 loss impairs division (Griparic 2007 and Smirnova 2001). Expectations are not a new JUMP finding.
+# User confirmed a visible OPA1 knockout/control difference and chose OPA1 plus DNM1L. DNM1L appeared brighter; do not equate brightness with connected networks or claim a quantified phenotype.
+# Actual JUMP raw TIFF derivatives: source_13 / 20220914_Run1; OPA1 CP-CC9-R1-06 D20 vs B02, DNM1L CP-CC9-R1-02 P18 vs B02. Each has a separate no-guide control, JCP2022_800001; site index 0; Mito channel.
+# Fixed central 512x512 crops in every field, shared percentile limits within each pair (not across the different plates); full fields and exact URLs/hashes in docs/gene-examples-provenance.json. No cell selection or sharpening.
+# The historical literature crops and notes remain in assets/opa1-literature and docs/opa1-literature.md; the 99% literature value and rescue slide are no longer in the active deck.
+# The two interfaces remain live on Oppy: localhost:8766 gene/raw-image explorer, localhost:8765 phenotype review, privately forwarded to the MacBook. See docs/gene-examples.md. They are shown as examples of vibe-coded tools; user inspection and tests remain essential.
+# Hub screenshots retain original SLC2A2/MYT1 tutorial labels, not OPA1/DNM1L results. No new profile statistics or representation comparisons.
 
 ** Historical: blebbistatin introduction :noexport:
 #+BEGIN_EXPORT latex

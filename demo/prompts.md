@@ -1,23 +1,27 @@
-# Agent-assisted literature and JUMP navigation
+# Agent-assisted gene examples and vibe-coded interfaces
 
-These are presenter prompts for a literature-review walkthrough. The task is to locate published evidence, explain the figures and link the tools.
+## 1. Establish expectations
 
-## 1. Start with the genetic phenotype
+> Find primary studies explaining how OPA1 and DNM1L/DRP1 affect mitochondrial fusion and division. Explain the expected effects of loss of function and show the published evidence. Start with Griparic et al., JCB 2007 (10.1083/jcb.200704112), and Smirnova et al., MBoC 2001 (10.1091/mbc.12.8.2245). Keep the study perturbation and cell system clear.
 
-> Find primary studies linking OPA1 depletion to mitochondrial fragmentation. Start with Griparic et al., JCB 2007 (10.1083/jcb.200704112), and Song et al., JCB 2007 (10.1083/jcb.200704110). Summarize each study's genetic perturbation, cell system, imaging readout and main finding. Show the published control and OPA1-depleted images and explain the difference in network shape. Link every finding to its source.
+## 2. Find the data
 
-## 2. Follow the gene into JUMP
+> Locate OPA1 and DNM1L in JUMP Hub. Show exact CRISPR and ORF identifiers, then link the CellProfiler feature, match and image resources. Use the Hub's worked tutorials to explain the views; keep their original example gene names visible.
 
-> Open the JUMP Hub documentation and locate OPA1 in the gene-availability reference. Link the CRISPR and ORF resources and explain how to follow the gene to the published feature, match and image tables. Use the Hub's annotated examples to show how exact-symbol, family and synonym filters work, then how to save a filtered view.
+## 3. Build the raw-image explorer
 
-## 3. Read the published worked examples
+> Build an interactive interface where I can select a gene, modality and reagent; choose an available treatment field and documented genetic negative control from the same source, batch and plate; and load the original raw TIFFs only when requested. Show provenance and use shared display limits within each pair. Add matched zoom and independent pan so I can inspect individual cells.
 
-> Walk through the Hub tutorial's SLC2A2 example. Explain the overall activity result, the individual feature results and the ORF comparison. Follow the similarity table to its annotations and images. Then use the MYT1 gallery example to explain selecting the relevant plates and bringing in negative controls. Keep the example gene names visible as you move between views.
+Existing implementation: `/work/users/amunoz/projects/jump-gene-image-browser`; local private URL http://127.0.0.1:8766/. Do not redeploy or replace it during the talk. OPA1 and DNM1L occupy different plates and therefore require separate matched control fields.
 
-## 4. Summarize the route
+## 4. Build the image-review interface
 
-> Give me a short cited summary of the OPA1 phenotype, the published figure illustrating it and a linked checklist for following a gene from the literature into JUMP. Organize it as: find the gene, read the phenotype, inspect images and controls.
+> Build a comparison viewer for candidate perturbations, with control/treated images, source links and optional literature expectations. Clearly label published figure crops versus JUMP previews. Let me record whether I can actually see the difference before selecting an example.
 
-## Presenter source notes
+Existing implementation: `/work/users/amunoz/projects/phenotype-comparator`; local private URL http://127.0.0.1:8765/. This viewer uses published images and JUMP JPEG previews; it is not a raw-image loader.
 
-The microscopy slide uses Griparic Fig. 3A and G: scrambled control and pan-Opa1 siRNA in HeLa cells after two days, stained with MitoTracker. The 99% fragmentation figure is the article's reported value. The rescue findings come from Song Fig. 1C/D in OPA1-null mouse fibroblasts. The Hub tutorial images retain their original SLC2A2 and MYT1 examples. Source URLs, crop coordinates and licenses are in `docs/opa1-literature-provenance.json` and `docs/tutorial-screenshots-provenance.json`.
+## 5. Inspect and refine
+
+> The image looks brighter overall. Add zoom while retaining shared intensity limits, so I can assess structure rather than brightness alone. Confirm that zoom does not fetch more raw images or alter intensity scaling.
+
+The matched zoom refinement is implemented and tested. The presenter selected OPA1 and DNM1L after visual review. This selection does not establish a quantified mitochondrial phenotype. No automatic biological interpretation follows from the viewer's output.

@@ -1,77 +1,84 @@
-% Literature review: published OPA1 perturbation, imaging and rescue evidence.
-% Primary source detail, image crops and licenses: docs/opa1-literature.md and provenance JSON.
-
-\begin{frame}[label={sec:org0000009}]{OPA1 links genes to mitochondrial shape}
+% Shared Org/TeX sequence: OPA1 and DNM1L, raw JUMP images and built interfaces.
+% Exact source fields, display limits and crop rule: docs/gene-examples-provenance.json.
+\begin{frame}[label={sec:org0000009}]{Two genes, two routes to mitochondrial shape}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.47\textwidth}
+\textbf{OPA1: mitochondrial fusion}
 \begin{itemize}
-\item OPA1 is a dynamin-related GTPase in the mitochondrial inner membrane.
-\item It supports inner-membrane fusion and mitochondrial network organization.
-\item OPA1 depletion produces fragmented mitochondrial networks.
+\item Helps mitochondria fuse.
+\item Loss is expected to produce shorter, fragmented networks.
 \end{itemize}
+\end{column}
+\begin{column}{0.47\textwidth}
+\textbf{DNM1L / DRP1: mitochondrial division}
+\begin{itemize}
+\item Helps mitochondria divide.
+\item Loss is expected to produce longer, more-connected networks.
+\end{itemize}
+\end{column}
+\end{columns}
 \bigskip
-\textbf{A genetic example with a recognizable imaging phenotype.}
+\textbf{Inspect each knockout beside its plate-matched negative control.}
 \par\bigskip
-{\scriptsize\href{https://doi.org/10.1083/jcb.200704112}{Griparic et al., JCB (2007)}; \href{https://doi.org/10.1083/jcb.200704110}{Song et al., JCB (2007)}}
+{\scriptsize Literature expectations: \href{https://doi.org/10.1083/jcb.200704112}{Griparic et al., JCB (2007), Fig. 3}; \href{https://doi.org/10.1091/mbc.12.8.2245}{Smirnova et al., MBoC (2001)}.}
 \end{frame}
 
-\begin{frame}[label={sec:org000000a}]{OPA1 depletion fragments mitochondria}
+\begin{frame}[label={sec:org000000a}]{OPA1 knockout: inspect mitochondrial shape}
 \begin{columns}[c,onlytextwidth]
 \begin{column}{0.48\textwidth}
-\centering\textbf{Control siRNA}\par\medskip
-\includegraphics[width=0.88\linewidth,height=0.54\textheight,keepaspectratio]{assets/opa1-literature/control-siRNA-panel-A.png}
+\centering\textbf{OPA1 CRISPR knockout}\par\smallskip
+\includegraphics[width=0.92\linewidth,height=0.61\textheight,keepaspectratio]{assets/gene-examples/OPA1-treatment-center512.png}
 \end{column}
 \begin{column}{0.48\textwidth}
-\centering\textbf{OPA1 siRNA}\par\medskip
-\includegraphics[width=0.88\linewidth,height=0.54\textheight,keepaspectratio]{assets/opa1-literature/OPA1-siRNA-panel-G.png}
+\centering\textbf{No-guide negative control}\par\smallskip
+\includegraphics[width=0.92\linewidth,height=0.61\textheight,keepaspectratio]{assets/gene-examples/OPA1-control-center512.png}
 \end{column}
 \end{columns}
-\medskip
-\centering {\small HeLa cells; MitoTracker; OPA1 depletion for 48 hours.}\par\medskip
-{\scriptsize\href{https://doi.org/10.1083/jcb.200704112}{Griparic et al., JCB (2007), Fig. 3A,G}; cropped panels, \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{CC BY-NC-SA 4.0}}
+\smallskip
+{\scriptsize JUMP Mito channel; source\_13, CP-CC9-R1-06, D20 / B02, field index 0.\\
+Central 512\,$\times$\,512-pixel crops; both panels share intensity limits 219--3985. \href{https://github.com/jump-cellpainting/datasets}{JUMP data}.}
 \end{frame}
 
-\begin{frame}[label={sec:org000000b}]{A phenotype that can be scored}
-\begin{columns}[T,onlytextwidth]
+\begin{frame}[label={sec:org000000b}]{DNM1L knockout: inspect mitochondrial shape}
+\begin{columns}[c,onlytextwidth]
 \begin{column}{0.48\textwidth}
-\textbf{Read the network}
-\begin{itemize}
-\item Tubular mitochondria form elongated, connected structures.
-\item Fragmented mitochondria appear as short, separate objects.
-\end{itemize}
+\centering\textbf{DNM1L CRISPR knockout}\par\smallskip
+\includegraphics[width=0.92\linewidth,height=0.61\textheight,keepaspectratio]{assets/gene-examples/DNM1L-treatment-center512.png}
 \end{column}
 \begin{column}{0.48\textwidth}
-\centering
-{\Huge\bfseries 99\%}\par\medskip
-Cells with fragmented mitochondria after OPA1 siRNA.
+\centering\textbf{No-guide negative control}\par\smallskip
+\includegraphics[width=0.92\linewidth,height=0.61\textheight,keepaspectratio]{assets/gene-examples/DNM1L-control-center512.png}
 \end{column}
 \end{columns}
-\par\bigskip
-{\scriptsize\href{https://pmc.ncbi.nlm.nih.gov/articles/PMC2064541/}{Griparic et al., JCB (2007), Results and Fig. 3}}
+\smallskip
+{\scriptsize JUMP Mito channel; source\_13, CP-CC9-R1-02, P18 / B02, field index 0.\\
+Central 512\,$\times$\,512-pixel crops; both panels share intensity limits 187--4463. \href{https://github.com/jump-cellpainting/datasets}{JUMP data}.}
 \end{frame}
 
-\begin{frame}[label={sec:org000000c}]{Re-expression connects OPA1 to fusion}
+\begin{frame}[label={sec:org000000c}]{Compare shape, not just brightness}
 \begin{itemize}
-\item OPA1-null mouse fibroblasts have fragmented mitochondria.
-\item Fusion-active OPA1 splice forms restore tubular networks.
-\item A cell-hybrid assay measures recovery of mitochondrial fusion.
+\item Zoom into individual cells: short, separate objects or longer structures?
+\item Keep intensity limits and magnification matched within each pair.
+\item Inspect other cells and fields before generalizing.
 \end{itemize}
 \bigskip
-\textbf{Depletion, imaging and rescue build the biological explanation.}
+\textbf{A brighter mitochondrial channel is not, by itself, a more-connected network.}
 \par\bigskip
-{\scriptsize\href{https://doi.org/10.1083/jcb.200704110}{Song et al., JCB (2007), Fig. 1C,D}}
+{\small OPA1 and DNM1L are on different plates: each has its own matched control.}
 \end{frame}
 
-\begin{frame}[label={sec:org000000d}]{Workflow 1: follow a gene from the papers to JUMP}
-\textbf{Search: OPA1}\par\bigskip
-\begin{tabular}{@{}l l@{}}
-\textbf{Perturbation} & \textbf{Available in JUMP} \\[7pt]
-CRISPR knockout & Yes \\
-ORF overexpression & Yes
+\begin{frame}[label={sec:org000000d}]{Workflow 1: follow the genes from papers to JUMP}
+\textbf{Search: OPA1 and DNM1L}\par\bigskip
+\begin{tabular}{@{}l l l@{}}
+\textbf{Gene} & \textbf{CRISPR knockout} & \textbf{ORF overexpression} \\[7pt]
+OPA1 & Available & Available \\
+DNM1L & Available & Available
 \end{tabular}
 \bigskip
 \begin{itemize}
-\item Follow the gene to its perturbation identifiers.
-\item Open the published feature, match and image tables.
-\item Use the Hub's worked examples to follow each step.
+\item Follow each gene to its exact perturbation identifier.
+\item Open the feature, match and image tables.
+\item Start the image comparison with CRISPR and its genetic controls.
 \end{itemize}
 \par\smallskip
 {\scriptsize\href{https://broadinstitute.github.io/jump_hub/reference/00_gene_index.html}{JUMP Hub gene availability}; \href{https://zenodo.org/records/16883068}{coverage reference}}
@@ -84,13 +91,13 @@ ORF overexpression & Yes
 
 \begin{frame}[label={sec:org0000010}]{Workflow 2: read the returned phenotype}
 \begin{enumerate}
-\item Read overall activity and the changing features.
-\item Compare CRISPR and overexpression.
+\item Read overall activity and the changing CellProfiler features.
+\item Compare CRISPR and overexpression without assuming opposite effects.
 \item Follow similar profiles to their annotations and images.
-\item Bring in controls from the same source and plates.
+\item Bring in genetic controls from the same source and plates.
 \end{enumerate}
 \bigskip
-\textbf{Worked examples: SLC2A2 for the tables; MYT1 for the image gallery.}
+\textbf{Tutorial navigation examples: SLC2A2 for tables; MYT1 for the gallery.}
 \end{frame}
 
 \TutorialRowsSlide
@@ -102,12 +109,30 @@ ORF overexpression & Yes
 \TutorialControlsSlide
 
 \begin{frame}[label={sec:org000000f}]{Bring the workflow together with an agent}
-\begin{block}{Start with the papers}
-Find primary studies linking OPA1 depletion to mitochondrial fragmentation. Show the control and perturbed images, then summarize the genetic perturbation, imaging readout and main finding.
+\begin{block}{Start with a biological question}
+How does disrupting mitochondrial fusion or division change cell images? Find primary studies for OPA1 and DNM1L and explain the expected phenotypes.
 \end{block}
 \medskip
-\textbf{Follow the gene into JUMP:}\par
-``Find OPA1 in the Hub. Link the availability, feature, match and image resources, then explain how to read each view using the tutorial examples.''
+\textbf{Build a tool to inspect the data:}\par
+``Let me choose a gene and CRISPR reagent, load its raw images beside a plate-matched negative control, and zoom into cells using shared intensity limits.''
 \par\bigskip
-\textbf{Output:} a cited biological summary and a linked route through the data.
+\textbf{Output:} cited expectations, traceable image pairs and an interactive viewer.
+\end{frame}
+
+\begin{frame}[label={demo:vibe-coded-interfaces}]{Vibe coding: build the interface your question needs}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.48\textwidth}
+\centering\textbf{Gene and raw-image explorer}\par\smallskip
+\includegraphics[width=\linewidth,height=0.49\textheight,keepaspectratio]{assets/vibe-coded/gene-explorer.png}
+\par\smallskip{\small Choose a gene, load matched fields, zoom into cells.}
+\end{column}
+\begin{column}{0.48\textwidth}
+\centering\textbf{Phenotype comparison viewer}\par\smallskip
+\includegraphics[width=\linewidth,height=0.49\textheight,keepaspectratio]{assets/vibe-coded/phenotype-review.png}
+\par\smallskip{\small Compare candidate images, inspect sources, record what is visible.}
+\end{column}
+\end{columns}
+\bigskip
+\textbf{You define the question. The agent builds. You inspect and refine.}
+\par\smallskip{\fontsize{5.5}{6.5}\selectfont Review-viewer microscopy: \href{https://doi.org/10.1083/jcb.200704112}{Griparic et al., JCB (2007), Fig. 3A/G}, cropped; \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{CC BY-NC-SA 4.0}. Explorer images: JUMP.}
 \end{frame}

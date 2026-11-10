@@ -1,36 +1,29 @@
-# OPA1: literature review and realistic JUMP workflows
+# OPA1 and DNM1L: images, controls and vibe-coded tools
 
-**Story:** an extreme nocodazole image example → published OPA1 depletion and rescue evidence → find a gene in JUMP → interpret the returned views → use an agent to navigate sources.
+**Story:** fusion versus division → inspect actual JUMP knockout/control images → distinguish shape from brightness → follow genes through the Hub → build the interface needed to inspect them.
 
-## Stage cues
+| PDF pages | Content |
+| --- | --- |
+| 7 | OPA1 and DNM1L: literature expectations |
+| 8 | OPA1 CRISPR, zoomed Mito image versus its same-plate no-guide control |
+| 9 | DNM1L CRISPR, zoomed Mito image versus its own same-plate no-guide control |
+| 10 | Compare morphology, not just brightness |
+| 11 | Both genes have CRISPR and ORF coverage; start with CRISPR |
+| 12–15 | Hub availability/navigation tutorial (original example labels preserved) |
+| 16 | Reading returned phenotype tables |
+| 17–23 | Original SLC2A2/MYT1 table and gallery tutorials |
+| 24 | Agent prompt: expectations → traceable images → usable viewer |
+| 25 | Two working vibe-coded interfaces |
+| 26–32 | Existing applications/resources and closing QR |
+| 33–42 | Existing extra slides |
 
-| PDF | Purpose |
-|---|---|
-| 7 | Nocodazole opening image pair, preserving the presenter's concise Overleaf edit. |
-| 8–11 | OPA1's role in mitochondrial fusion, published control/depletion images, reported fragmentation and rescue evidence. |
-| 12 | Workflow 1: take a gene from the papers into JUMP. OPA1 is listed in both CRISPR and ORF coverage. |
-| 13–16 | Annotated tutorial screenshots: availability, column definitions, filters and saved views. |
-| 17 | Workflow 2: read the returned phenotype and follow it to images. |
-| 18–24 | Tutorial screenshots: rows, activity, features, ORF comparison, matches, MYT1 images and matched controls. |
-| 25 | Agent handoff: sources, published findings and a linked route through the Hub. |
-| 26–32 | Applications, take-home messages, acknowledgements, references and QR. |
-| 33–42 | Existing extra slides, including the historical single-cell recording. |
+## Live interfaces
 
-The tutorial images are now embedded in the workflow, not repeated in an appendix. Their titles identify the original SLC2A2/MYT1 examples. The main talk uses direct language; provenance and study details are in [the literature notes](../docs/opa1-literature.md).
+- Gene/raw-image explorer: http://127.0.0.1:8766/ (Oppy + private Mac forward). Choose OPA1 or DNM1L, CRISPR, exact reagent/well and Mito; press Load pair; use 2× zoom to inspect cells. Refreshing resets the selection. Each gene needs its own same-plate control.
+- Phenotype review: http://127.0.0.1:8765/. Compare candidate images and literature expectations, inspect originals, record whether differences are visible. It is distinct from raw-image retrieval.
 
-## Published sources
+These are examples of interfaces built and refined through natural-language requests. Keep both running and retain their projects; do not replace them with static screenshots alone. Screenshot fallbacks are embedded in the deck. Localhost URLs are not public audience resources.
 
-- [Griparic et al., JCB (2007)](https://doi.org/10.1083/jcb.200704112): OPA1 depletion, MitoTracker microscopy in HeLa cells, Fig. 3A/G. The paper reports 99% fragmented mitochondria after Opa1 siRNA.
-- [Song et al., JCB (2007)](https://doi.org/10.1083/jcb.200704110): selected OPA1 splice forms restore tubular morphology and fusion in OPA1-null mouse fibroblasts, Fig. 1C/D.
-- [JUMP gene availability](https://broadinstitute.github.io/jump_hub/reference/00_gene_index.html) and [published coverage reference](https://zenodo.org/records/16883068).
-- [JUMP_rr tutorial](https://broadinstitute.github.io/jump_hub/howto/interactive/1_jumprr_steps.html): the highlighted worked examples used in the two workflows.
+The presenter selected OPA1/DNM1L after visual review. DNM1L looked brighter; do not narrate this as confirmed increased connectivity. The literature expectations and the actual JUMP observations are different evidence layers. No new phenotype quantification or CellProfiler profile analysis was performed for these slides.
 
-## Agent walkthrough
-
-Use [prompts.md](prompts.md) to retrieve and summarize literature, locate published examples and link the Hub resources. This review does not require a new dataset analysis, an experiment, a backend deployment or new significance calculations.
-
-If a source cannot be opened during the presentation, use the cited slide and saved source notes. The figures are published examples; no live computation is implied.
-
-## Historical artifacts
-
-Earlier compound-query plans and cached extracts remain available in `nocodazole-reference.md`, `blebbistatin-reference.md`, `blebbistatin-prompts.md`, `rehearsal-nocodazole/` and `rehearsal-blebbistatin/`. The SLC2A2 query extracts are also retained. These are archives, not the active literature-review instructions or OPA1 results.
+See [exact field provenance](../docs/gene-examples-provenance.json), [current presenter notes](../docs/gene-examples.md) and [copyable prompts](prompts.md). Historical nocodazole/blebbistatin/SLC2A2 extracts and OPA1 literature/rescue materials are retained as archives, not new results.
