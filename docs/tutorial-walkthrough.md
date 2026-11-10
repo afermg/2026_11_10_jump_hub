@@ -2,7 +2,11 @@
 
 ## Current discovery order (10 November update)
 
-The current order supersedes the historical page numbers below: availability (PDF11), gallery and controls (12–14), feature definitions/filtering/activity/interpretation (15–21), matches and export (22–23), then single-channel OPA1 and DNM1L images (24–25). The deck remains 45 pages. Red boxes have been removed. Table screenshots use 2x browser resolution; the gallery and match screenshots use 6x to preserve source cell-image detail, all saved as lossless PNGs with density metadata that preserves the existing slide crops. Capture requires Selenium and Pillow; `CAPTURE_DEVICE_SCALE` selects the device density. Blue callouts remain unchanged.
+The phenotype-comparison viewer slide has been removed; the deck now has 44 pages. Its “Record which differences are visible” point is on the gene/raw-image explorer slide, whose “You define the question…” footer is also removed. The standalone demo remains available; only the presentation slide is removed.
+
+Latest adjustment: the OPA1 gallery is now the first table screenshot (PDF12), followed by controls (PDF13) and gene availability (PDF14). Features, matches and single-channel images follow as below. Both red and blue annotation boxes/lines are absent.
+
+The current order supersedes the historical page numbers below: availability (PDF11), gallery and controls (12–14), feature definitions/filtering/activity/interpretation (15–21), matches and export (22–23), then single-channel OPA1 and DNM1L images (24–25). The deck remains 45 pages. Both red and blue callout boxes have been removed. Table screenshots use 2x browser resolution; the gallery and match screenshots use 6x to preserve source cell-image detail, all saved as lossless PNGs with density metadata that preserves the existing slide crops. Capture requires Selenium and Pillow; `CAPTURE_DEVICE_SCALE` selects the device density.
 
 The published microscopy panels now use native-resolution crops of the 1202×2181 Figure 3 image embedded in the article PDF, replacing the 400×726 web preview. `demo/upgrade_literature_images.py` records the PDF hash and extraction provenance. No sharpening or contrast change was applied. JUMP single-channel panels retain their native pixels and shared intensity limits.
 

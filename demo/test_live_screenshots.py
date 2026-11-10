@@ -10,6 +10,8 @@ class LiveScreenshotTests(unittest.TestCase):
     def test_complete_authentic_capture_manifest(self):
         manifest = json.loads((ROOT / 'docs/opa1-tutorial-screenshots-provenance.json').read_text())
         self.assertIn('Actual Firefox', manifest['method'])
+        self.assertIn('no red or blue callout boxes', manifest['method'])
+        self.assertNotIn("style.outline='4px", (ROOT / 'demo/capture_opa1_walkthrough.py').read_text())
         self.assertEqual(len(manifest['screenshots']), 11)
         for record in manifest['screenshots']:
             self.assertEqual(hashlib.sha256((ROOT / record['path']).read_bytes()).hexdigest(), record['sha256'])

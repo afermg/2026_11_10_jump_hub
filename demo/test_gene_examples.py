@@ -68,8 +68,8 @@ class GeneExamplesTests(unittest.TestCase):
     def test_question_table_example_order(self):
         shared = (ROOT / 'opa1-literature.tex').read_text()
         sequence = [
-            '\\TutorialAvailabilitySlide',
             '\\TutorialGallerySlide', '\\TutorialControlsSlide',
+            '\\TutorialAvailabilitySlide',
             '\\TutorialDefinitionsSlide', '\\TutorialFiltersSlide',
             '\\TutorialActivitySlide', '\\TutorialRowsSlide', '\\TutorialFeaturesSlide',
             'CellProfiler detects mitochondrial feature changes',
@@ -98,13 +98,15 @@ class GeneExamplesTests(unittest.TestCase):
             for role in ['treatment', 'control']:
                 self.assertIn(f'{gene}-{role}-center512.png', shared)
         self.assertIn('AI-assisted tools: gene and raw-image explorer', shared)
-        self.assertIn('AI-assisted tools: phenotype comparison viewer', shared)
+        self.assertNotIn('AI-assisted tools: phenotype comparison viewer', shared)
+        self.assertIn('Record which differences are visible.', shared)
+        self.assertNotIn('You define the question.', shared)
         app_frames = [f for f in shared.split('\\begin{frame}') if 'assets/vibe-coded/' in f]
-        self.assertEqual(len(app_frames), 2)
+        self.assertEqual(len(app_frames), 1)
         for frame in app_frames:
             self.assertEqual(frame.count('assets/vibe-coded/'), 1)
         self.assertNotIn('Vibe coding', shared)
-        self.assertIn('phenotype-review.png', shared)
+        self.assertNotIn('phenotype-review.png', shared)
         self.assertIn('gene-explorer.png', shared)
         self.assertNotIn('99\\%', shared)
         self.assertNotIn('Central 512', shared)

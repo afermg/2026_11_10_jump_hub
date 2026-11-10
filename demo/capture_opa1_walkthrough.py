@@ -59,13 +59,6 @@ def load(url):
     return driver.find_element(By.CSS_SELECTOR, 'table.rows-and-columns')
 
 
-def outline(element, color):
-    # Red callouts were removed at the presenter's request.
-    if color == '#e12626':
-        return
-    driver.execute_script("arguments[0].style.outline='4px solid '+arguments[1]; arguments[0].style.outlineOffset='2px'", element, color)
-
-
 def form():
     return driver.find_element(By.NAME, '_filter_column').find_element(By.XPATH, 'ancestor::form')
 
@@ -73,12 +66,9 @@ def form():
 def capture(name, anchor=None, columns=(), focus=None):
     if capture_only and name not in capture_only.split(','):
         return
+    driver.execute_script('if(document.activeElement instanceof HTMLElement) document.activeElement.blur()')
     if anchor is not None:
         driver.execute_script('window.scrollTo(0, Math.max(0, arguments[0].getBoundingClientRect().top+window.scrollY-40))', anchor)
-    for title in columns:
-        for header in driver.find_elements(By.CSS_SELECTOR, 'table.rows-and-columns th'):
-            if header.text.strip().replace(' ▼', '').replace(' ▲', '') == title:
-                outline(header, '#e12626')
     if focus:
         for header in driver.find_elements(By.CSS_SELECTOR, 'table.rows-and-columns th'):
             if header.text.strip() == focus:
@@ -108,10 +98,6 @@ try:
     search = wait.until(lambda browser: browser.find_element(By.CSS_SELECTOR, 'input[type=search]'))
     search.send_keys('OPA')
     wait.until(lambda browser: 'OPALIN' in browser.find_element(By.CSS_SELECTOR, 'table').text and 'A1BG' not in browser.find_element(By.CSS_SELECTOR, 'table').text)
-    outline(search, '#e12626')
-    for heading in driver.find_elements(By.CSS_SELECTOR, 'th'):
-        if heading.text.split('\n')[0] in ('CRISPR', 'ORF'):
-            outline(heading, '#1469c7')
     driver.execute_script("document.documentElement.style.zoom='1.25'")
     capture('01-availability.png', search)
     links['Available genes (search OPA)'] = availability
@@ -122,21 +108,16 @@ try:
     load(crispr_url)
     links['OPA1 CRISPR features'] = crispr_url
     capture('02-columns.png')
-    outline(form(), '#e12626')
     capture('03-filters.png', form())
     load(crispr_url)
     capture('08-crispr-features.png', form(), ('Feature', 'Channel', "Cohen's d", 'Feature significance'))
     load(crispr_url)
     capture('06-activity.png', form(), ('Perturbation', 'Corrected p-value', 'Phenotypic activity'), 'Perturbation')
     load(crispr_url)
-    outline(driver.find_element(By.CSS_SELECTOR, 'table.rows-and-columns tbody tr'), '#1469c7')
     capture('07-feature-row.png', driver.find_element(By.CSS_SELECTOR, 'table.rows-and-columns'), ('Compartment', 'Feature', 'Channel', "Cohen's d"))
     export_url = table_url('crispr_feature', exact + [('Compartment', 'in', 'Cytoplasm,Nuclei')], 'Feature Rank')
     load(export_url)
     links['OPA1 filtered export'] = export_url
-    for anchor in driver.find_elements(By.TAG_NAME, 'a'):
-        if anchor.text in ('json', 'CSV', 'advanced'):
-            outline(anchor, '#e12626')
     capture('11-export.png', form())
 
     orf_url = table_url('orf_feature', exact, 'Feature Rank')
@@ -158,5 +139,5 @@ try:
     links['OPA1 with plate-matched controls'] = controls_url
     capture('05-gallery-controls.png', form(), ('Perturbation', 'Plate', 'Well'))
 finally:
-    (output / 'provenance.json').write_text(json.dumps({'captured_at': datetime.now(timezone.utc).isoformat(), 'method': 'Actual Firefox screenshots of public JUMP Hub and Datasette Lite interfaces; 125% page zoom, high-density browser rendering (per-image device_pixel_ratio), lossless PNG, native column selection and blue callouts only; no red boxes, reconstructed UI, post-capture resizing or synthetic cell detail. PNG density preserves existing slide crops.', 'browser': driver.capabilities.get('browserVersion'), 'screenshots': records, 'links': links}, indent=2) + '\n')
+    (output / 'provenance.json').write_text(json.dumps({'captured_at': datetime.now(timezone.utc).isoformat(), 'method': 'Actual Firefox screenshots of public JUMP Hub and Datasette Lite interfaces; 125% page zoom, high-density browser rendering (per-image device_pixel_ratio), lossless PNG and native column selection; no red or blue callout boxes, reconstructed UI, post-capture resizing or synthetic cell detail. PNG density preserves existing slide crops.', 'browser': driver.capabilities.get('browserVersion'), 'screenshots': records, 'links': links}, indent=2) + '\n')
     driver.quit()

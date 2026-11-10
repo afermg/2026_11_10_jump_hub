@@ -1,26 +1,8 @@
 {
-  "captured_at": "2026-11-10T14:43:47.621934+00:00",
-  "method": "Actual Firefox screenshots of public JUMP Hub and Datasette Lite interfaces; 125% page zoom, high-density browser rendering (per-image device_pixel_ratio), lossless PNG, native column selection and blue callouts only; no red boxes, reconstructed UI, post-capture resizing or synthetic cell detail. PNG density preserves existing slide crops.",
+  "captured_at": "2026-11-10T14:53:55.115940+00:00",
+  "method": "Actual Firefox screenshots of public JUMP Hub and Datasette Lite interfaces; 125% page zoom, high-density browser rendering (per-image device_pixel_ratio), lossless PNG and native column selection; no red or blue callout boxes, reconstructed UI, post-capture resizing or synthetic cell detail. PNG density preserves existing slide crops.",
   "browser": "156.0",
   "screenshots": [
-    {
-      "path": "assets/opa1-tutorial-screenshots/01-availability.png",
-      "url": "https://broadinstitute.github.io/jump_hub/reference/00_gene_index.html",
-      "sha256": "cf174c36093f7d826bdfcc3064e304e6b4d8d27559c952aa0d672adb4bdaf440",
-      "scroll": [
-        0,
-        346
-      ],
-      "highlighted_columns": [],
-      "title": "Available genes in JUMP \u2013 JUMP documentation and examples",
-      "viewport": [
-        1250,
-        766
-      ],
-      "page_zoom": 1.25,
-      "device_pixel_ratio": 2,
-      "image_sources": []
-    },
     {
       "path": "assets/opa1-tutorial-screenshots/02-columns.png",
       "url": "https://lite.datasette.io/?metadata=https://raw.githubusercontent.com/broadinstitute/monorepo/main/libs/jump_rr/metadata/crispr_feature.json&install=datasette-json-html&parquet=https://d3dw4c1b79pj57.cloudfront.net/latest/crispr_interpretable_features.parquet/content#/data/content?Perturbation__exact=OPA1&_sort=Feature+Rank",
@@ -140,49 +122,6 @@
           "height": 1080,
           "loaded": true,
           "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R3-06/D20_0.jpg",
-          "width": 1280
-        }
-      ]
-    },
-    {
-      "path": "assets/opa1-tutorial-screenshots/07-feature-row.png",
-      "url": "https://lite.datasette.io/?metadata=https://raw.githubusercontent.com/broadinstitute/monorepo/main/libs/jump_rr/metadata/crispr_feature.json&install=datasette-json-html&parquet=https://d3dw4c1b79pj57.cloudfront.net/latest/crispr_interpretable_features.parquet/content#/data/content?Perturbation__exact=OPA1&_sort=Feature+Rank",
-      "sha256": "b5220fab31fea4a4887e43f18b71196eb648f73ac537dddb3228fbbda412405a",
-      "scroll": [
-        0,
-        1504.5
-      ],
-      "highlighted_columns": [],
-      "title": "data: content: 31 rows where Perturbation = \"OPA1\" sorted by Feature Rank",
-      "viewport": [
-        1400,
-        816
-      ],
-      "page_zoom": 1.25,
-      "device_pixel_ratio": 2,
-      "image_sources": [
-        {
-          "display_height": 210.9333343505859,
-          "display_width": 250,
-          "height": 1080,
-          "loaded": true,
-          "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R3-06/D20_6.jpg",
-          "width": 1280
-        },
-        {
-          "display_height": 210.9333343505859,
-          "display_width": 250,
-          "height": 1080,
-          "loaded": true,
-          "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R3-06/D20_0.jpg",
-          "width": 1280
-        },
-        {
-          "display_height": 210.9333343505859,
-          "display_width": 250,
-          "height": 1080,
-          "loaded": true,
-          "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R3-06/D20_7.jpg",
           "width": 1280
         }
       ]
@@ -369,6 +308,67 @@
           "width": 1280
         }
       ]
+    },
+    {
+      "path": "assets/opa1-tutorial-screenshots/07-feature-row.png",
+      "url": "https://lite.datasette.io/?metadata=https://raw.githubusercontent.com/broadinstitute/monorepo/main/libs/jump_rr/metadata/crispr_feature.json&install=datasette-json-html&parquet=https://d3dw4c1b79pj57.cloudfront.net/latest/crispr_interpretable_features.parquet/content#/data/content?Perturbation__exact=OPA1&_sort=Feature+Rank",
+      "sha256": "bceace266e1a0a5efa87197e7b04a83ab3d3c06a9b9ec512752d221650e02170",
+      "scroll": [
+        0,
+        1504.5
+      ],
+      "highlighted_columns": [],
+      "title": "data: content: 31 rows where Perturbation = \"OPA1\" sorted by Feature Rank",
+      "viewport": [
+        1400,
+        816
+      ],
+      "page_zoom": 1.25,
+      "device_pixel_ratio": 2,
+      "image_sources": [
+        {
+          "display_height": 210.9333343505859,
+          "display_width": 250,
+          "height": 1080,
+          "loaded": true,
+          "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R3-06/D20_6.jpg",
+          "width": 1280
+        },
+        {
+          "display_height": 210.9333343505859,
+          "display_width": 250,
+          "height": 1080,
+          "loaded": true,
+          "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R3-06/D20_0.jpg",
+          "width": 1280
+        },
+        {
+          "display_height": 210.9333343505859,
+          "display_width": 250,
+          "height": 1080,
+          "loaded": true,
+          "src": "https://phenaid.ardigen.com/static-jumpcpexplorer/images/source_13/CP-CC9-R3-06/D20_7.jpg",
+          "width": 1280
+        }
+      ]
+    },
+    {
+      "path": "assets/opa1-tutorial-screenshots/01-availability.png",
+      "url": "https://broadinstitute.github.io/jump_hub/reference/00_gene_index.html",
+      "sha256": "da259243c2c8bcd11ec2d5c90a6ed7285478c562bb4882657afb74f695a184cb",
+      "scroll": [
+        0,
+        346
+      ],
+      "highlighted_columns": [],
+      "title": "Available genes in JUMP \u2013 JUMP documentation and examples",
+      "viewport": [
+        1250,
+        766
+      ],
+      "page_zoom": 1.25,
+      "device_pixel_ratio": 2,
+      "image_sources": []
     }
   ],
   "links": {
