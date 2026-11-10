@@ -68,12 +68,13 @@ class GeneExamplesTests(unittest.TestCase):
     def test_question_table_example_order(self):
         shared = (ROOT / 'opa1-literature.tex').read_text()
         sequence = [
-            '\\TutorialAvailabilitySlide', '\\TutorialDefinitionsSlide', '\\TutorialFiltersSlide',
+            '\\TutorialAvailabilitySlide',
             '\\TutorialGallerySlide', '\\TutorialControlsSlide',
-            'JUMP example: OPA1', 'JUMP example: DNM1L',
+            '\\TutorialDefinitionsSlide', '\\TutorialFiltersSlide',
             '\\TutorialActivitySlide', '\\TutorialRowsSlide', '\\TutorialFeaturesSlide',
             'CellProfiler detects mitochondrial feature changes',
             '\\TutorialOrfSlide', '\\TutorialMatchesSlide', '\\TutorialExportSlide',
+            'JUMP example: OPA1', 'JUMP example: DNM1L',
         ]
         positions = [shared.index(item) for item in sequence]
         self.assertEqual(positions, sorted(positions))
@@ -106,6 +107,9 @@ class GeneExamplesTests(unittest.TestCase):
         self.assertIn('phenotype-review.png', shared)
         self.assertIn('gene-explorer.png', shared)
         self.assertNotIn('99\\%', shared)
+        self.assertNotIn('Central 512', shared)
+        self.assertIn('intensity limits 219--3985', shared)
+        self.assertIn('intensity limits 187--4463', shared)
 
 
 if __name__ == '__main__':

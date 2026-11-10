@@ -4,6 +4,7 @@ import os
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlencode
+from PIL import Image
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -16,6 +17,8 @@ output = Path(os.environ.get('CAPTURE_OUTPUT', '/tmp/jump-opa1-live'))
 output.mkdir(parents=True, exist_ok=True)
 options = Options()
 options.add_argument('-headless')
+device_scale = float(os.environ.get('CAPTURE_DEVICE_SCALE', '2'))
+options.set_preference('layout.css.devPixelsPerPx', str(device_scale))
 options.binary_location = os.environ['FIREFOX']
 driver = webdriver.Firefox(service=Service(os.environ['GECKODRIVER']), options=options)
 driver.set_window_size(1400, 900)
@@ -57,6 +60,9 @@ def load(url):
 
 
 def outline(element, color):
+    # Red callouts were removed at the presenter's request.
+    if color == '#e12626':
+        return
     driver.execute_script("arguments[0].style.outline='4px solid '+arguments[1]; arguments[0].style.outlineOffset='2px'", element, color)
 
 
@@ -83,8 +89,13 @@ def capture(name, anchor=None, columns=(), focus=None):
         driver.find_element(By.CSS_SELECTOR, '.dt-container').screenshot(str(path))
     else:
         driver.save_screenshot(str(path))
+    # Preserve every captured pixel; density metadata keeps the existing TeX
+    # crops at their original physical size with a 2x-resolution screenshot.
+    with Image.open(path) as screenshot:
+        screenshot.save(path, dpi=(72 * device_scale, 72 * device_scale))
+    image_sources = driver.execute_script('return [...document.images].filter(i=>i.getBoundingClientRect().bottom>0 && i.getBoundingClientRect().top<innerHeight).map(i=>({src:i.currentSrc,width:i.naturalWidth,height:i.naturalHeight,display_width:i.getBoundingClientRect().width,display_height:i.getBoundingClientRect().height,loaded:i.complete && i.naturalWidth>0}))')
     records[:] = [record for record in records if record['path'] != 'assets/opa1-tutorial-screenshots/' + name]
-    records.append({'path': 'assets/opa1-tutorial-screenshots/' + name, 'url': driver.current_url, 'sha256': hashlib.sha256(path.read_bytes()).hexdigest(), 'scroll': driver.execute_script('return [scrollX,scrollY]'), 'highlighted_columns': list(columns), 'title': driver.title, 'viewport': driver.execute_script('return [innerWidth,innerHeight]'), 'page_zoom': 1.25})
+    records.append({'path': 'assets/opa1-tutorial-screenshots/' + name, 'url': driver.current_url, 'sha256': hashlib.sha256(path.read_bytes()).hexdigest(), 'scroll': driver.execute_script('return [scrollX,scrollY]'), 'highlighted_columns': [], 'title': driver.title, 'viewport': driver.execute_script('return [innerWidth,innerHeight]'), 'page_zoom': 1.25, 'device_pixel_ratio': driver.execute_script('return devicePixelRatio'), 'image_sources': image_sources})
     print('CAPTURED', name, driver.title, flush=True)
     if capture_only and name == capture_only.split(',')[-1]:
         raise SystemExit(0)
@@ -147,5 +158,5 @@ try:
     links['OPA1 with plate-matched controls'] = controls_url
     capture('05-gallery-controls.png', form(), ('Perturbation', 'Plate', 'Well'))
 finally:
-    (output / 'provenance.json').write_text(json.dumps({'captured_at': datetime.now(timezone.utc).isoformat(), 'method': 'Actual Firefox screenshots of public JUMP Hub and Datasette Lite interfaces; page zoom, native column selection and DOM outline callouts; no reconstructed UI or data', 'browser': driver.capabilities.get('browserVersion'), 'screenshots': records, 'links': links}, indent=2) + '\n')
+    (output / 'provenance.json').write_text(json.dumps({'captured_at': datetime.now(timezone.utc).isoformat(), 'method': 'Actual Firefox screenshots of public JUMP Hub and Datasette Lite interfaces; 125% page zoom, high-density browser rendering (per-image device_pixel_ratio), lossless PNG, native column selection and blue callouts only; no red boxes, reconstructed UI, post-capture resizing or synthetic cell detail. PNG density preserves existing slide crops.', 'browser': driver.capabilities.get('browserVersion'), 'screenshots': records, 'links': links}, indent=2) + '\n')
     driver.quit()

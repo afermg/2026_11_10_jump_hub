@@ -1,5 +1,13 @@
 # Question → JUMP_rr action → example
 
+## Current discovery order (10 November update)
+
+The current order supersedes the historical page numbers below: availability (PDF11), gallery and controls (12–14), feature definitions/filtering/activity/interpretation (15–21), matches and export (22–23), then single-channel OPA1 and DNM1L images (24–25). The deck remains 45 pages. Red boxes have been removed. Table screenshots use 2x browser resolution; the gallery and match screenshots use 6x to preserve source cell-image detail, all saved as lossless PNGs with density metadata that preserves the existing slide crops. Capture requires Selenium and Pillow; `CAPTURE_DEVICE_SCALE` selects the device density. Blue callouts remain unchanged.
+
+The published microscopy panels now use native-resolution crops of the 1202×2181 Figure 3 image embedded in the article PDF, replacing the 400×726 web preview. `demo/upgrade_literature_images.py` records the PDF hash and extraction provenance. No sharpening or contrast change was applied. JUMP single-channel panels retain their native pixels and shared intensity limits.
+
+## Historical sequence notes
+
 The main sequence now interleaves the biological question with the corresponding table operation and example, rather than presenting the results first and placing all instructions in a separate walkthrough. `tutorial-walkthrough.tex` defines the eleven reusable screenshot frames; `opa1-literature.tex` calls each exactly once in context. The deck remains 45 pages, with the main talk ending at PDF35 and ten existing extra slides following.
 
 ## Find the perturbations
