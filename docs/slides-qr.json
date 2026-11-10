@@ -1,0 +1,15 @@
+{
+  "destination": "https://raw.githubusercontent.com/afermg/2026_11_10_jump_hub/main/slides.pdf",
+  "pdf_path": "slides.pdf",
+  "repository": "https://github.com/afermg/2026_11_10_jump_hub",
+  "branch": "main",
+  "qr_asset": "assets/qr-slides.png",
+  "sha256": "4ff0c9cb27119abc92b3763d04da689976f212acd65d9f711db8d929fa9d5049",
+  "qr_version": 5,
+  "error_correction": "M",
+  "quiet_zone_modules": 4,
+  "module_pixels": 12,
+  "display_width_mm": 40,
+  "scope": "Slides QR and its two PDF hyperlinks updated together. JUMP Hub QR unchanged.",
+  "publication": "GitHub mirror made public at presenter request; Overleaf sharing unchanged."
+}

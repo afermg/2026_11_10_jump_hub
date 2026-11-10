@@ -3,7 +3,8 @@
 Alán F. Muñoz's November 10 talk, adapted from the FASEB presentation. OPA1 and DNM1L are the genetic examples, shown as zoomed raw JUMP CRISPR fields beside their own plate-matched negative controls. Literature expectations are distinguished from image observations. Biological goals are interleaved with concrete JUMP_rr table actions: find genes, retrieve images/controls, read activity/features, compare perturbations, follow matches and save results. The OPA1/DNM1L examples follow the relevant table instructions. The agent walkthrough culminates in two working AI-assisted interfaces: a lazy raw-image explorer and a phenotype comparison viewer. Word2vec, representation background/comparison and the modern-tools overview are now extra slides. The earlier single-cell recording remains available as backup.
 
 - [Overleaf editor](https://overleaf.quasimorphic.com/project/6af238ebaa6d5b0395871289) — root **slides.tex**, compiler **XeLaTeX**. Its current link-sharing setting was preserved.
-- [Private GitHub repository](https://github.com/afermg/2026_11_10_jump_hub).
+- [Public GitHub repository](https://github.com/afermg/2026_11_10_jump_hub).
+- [Direct PDF download](https://raw.githubusercontent.com/afermg/2026_11_10_jump_hub/main/slides.pdf) — the Slides QR destination.
 - [PDF preview](slides.pdf) — **45 pages**: main talk through the QR on PDF35, followed by ten existing extra slides.
 - [Shared gene examples and workflow source](opa1-literature.tex), [current image/tool notes](docs/gene-examples.md), [raw-image provenance](docs/gene-examples-provenance.json), [historical literature notes](docs/opa1-literature.md), and [reusable tutorial frames](tutorial-walkthrough.tex).
 - Question-led tutorial images appear on **PDF11–13, 15–16, 19–21 and 23–25**, interleaved with the OPA1/DNM1L image and feature results. The AI-assisted gene explorer and phenotype viewer each have a slide, on **PDF27 and PDF28** respectively. Gray tutorial footers and visible “checked November …” timestamps are removed.
@@ -35,7 +36,7 @@ test "$(git rev-parse HEAD)" = "$(git rev-parse oppy-overleaf/master)"
 
 The GitHub mirror can be synchronized separately with `git push origin HEAD:main`.
 
-Keep GitHub private unless explicitly approved otherwise; preserve the presenter's Overleaf sharing settings. The closing **Slides QR and link intentionally still point to the public FASEB PDF**, not this new draft. Replace them together only after deciding how to distribute the new talk. The inherited demo recording and JUMP Hub links are unchanged.
+The presenter approved making this GitHub mirror **public**. The closing **Slides QR, its clickable image and the Slides (PDF) label all point directly to this repository's `main/slides.pdf`**, using the raw GitHub URL above. The target follows future committed PDF updates. Preserve the presenter's Overleaf sharing settings; no Overleaf access change is part of this publication. The JUMP Hub QR and demo recording links are unchanged. `docs/slides-qr.json` records the QR target and image hash.
 
 ## Build
 

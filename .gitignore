@@ -1,4 +1,4 @@
-# PDF snapshots are private; intermediate build products stay local.
+# Published PDF snapshot is tracked; intermediate build products stay local.
 /build/
 __pycache__/
 *.pyc
@@ -20,7 +20,7 @@ __pycache__/
 *.fdb_latexmk
 *.synctex.gz
 
-# Private presentation snapshot.
+# Public presentation snapshot.
 !/slides.pdf
 # Label-only vector-artwork derivative.
 !assets/vector-control-perturbation.pdf

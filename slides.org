@@ -637,18 +637,18 @@ Runxi Shen
 \end{column}
 \begin{column}{0.48\textwidth}
 \centering
-\href{https://github.com/afermg/2026_10_21_faseb_jump_hub/blob/main/slides.pdf}{Slides (PDF)}\par\smallskip
-\href{https://github.com/afermg/2026_10_21_faseb_jump_hub/blob/main/slides.pdf}{\includegraphics[width=40mm]{assets/qr-slides.png}}
+\href{https://raw.githubusercontent.com/afermg/2026_11_10_jump_hub/main/slides.pdf}{Slides (PDF)}\par\smallskip
+\href{https://raw.githubusercontent.com/afermg/2026_11_10_jump_hub/main/slides.pdf}{\includegraphics[width=40mm]{assets/qr-slides.png}}
 \end{column}
 \end{columns}
 #+END_EXPORT
 
 # Speaker note: Leave this QR slide visible at the end of the main talk. The following additional slides are for questions. The two codes remain 40 mm.
-# The presenter supplied broad.io/jump as the visible shortlink. The two existing QR payloads are unchanged.
-# The Slides QR targets the GitHub PDF viewer in afermg/2026_10_21_faseb_jump_hub, branch main, slides.pdf.
-# On 2026-10-20 the presenter explicitly approved uploading the validated slides.pdf and making this QR-linked repository public after checking tool references.
-# This approval applies to the presentation repository only; the authoring repository and Overleaf projects remain private.
-# The presenter subsequently requested that the public PDF end at this QR slide. Keep all additional slides in the full Overleaf deck; exclude them only from the public PDF.
+# The JUMP Hub QR and broad.io/jump shortlink are unchanged.
+# The Slides QR and both PDF hyperlinks target https://raw.githubusercontent.com/afermg/2026_11_10_jump_hub/main/slides.pdf.
+# The presenter explicitly requested making the GitHub mirror public and pointing the QR at this presentation PDF.
+# Preserve the author's Overleaf sharing settings. The published PDF retains the current full deck, including additional slides.
+# QR generation and verification details are recorded in docs/slides-qr.json.
 
 * Additional slides
 
