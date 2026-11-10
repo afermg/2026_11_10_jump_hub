@@ -1,6 +1,6 @@
 # Tutorial images integrated with realistic workflows
 
-The eleven highlighted tutorial images now sit inside the main talk, next to the question each view answers. There is no separate end-of-deck screenshot bank and no duplicate set of figures. `tutorial-walkthrough.tex` defines reusable frame commands; `opa1-literature.tex` calls each once in context. The main talk ends at PDF32; ten existing extra slides follow.
+The eleven highlighted tutorial images now sit inside the main talk, next to the question each view answers. There is no separate end-of-deck screenshot bank and no duplicate set of figures. `tutorial-walkthrough.tex` defines reusable frame commands; `opa1-literature.tex` calls each once in context. The main talk ends at PDF33; ten existing extra slides follow.
 
 ## Workflow 1: follow a gene from the papers to JUMP
 
@@ -27,7 +27,8 @@ OPA1 and DNM1L supply the biological questions, with actual JUMP CRISPR/control 
 | 22 | Perturbation images | Gallery steps 1–3 | Select MYT1 and identify its source and plates. |
 | 23 | Image controls | Gallery steps 4–9 | Bring in negative controls from the same source/plates; inspect appearance, density, staining and focus. |
 | 24 | Agent handoff | — | Connect cited expectations, traceable image pairs and an interactive viewer. |
-| 25 | AI-assisted interfaces | Actual interface screenshots | Demonstrate the gene/raw-image explorer and phenotype-review viewer. |
+| 25 | AI-assisted gene explorer | Actual interface screenshot | Choose a gene, load matched raw fields and zoom. |
+| 26 | AI-assisted phenotype viewer | Actual interface screenshot | Compare candidate images, inspect sources and record visible differences. |
 
 The screenshots retain their original highlighted regions, panel labels and pixels. Their titles identify the actual SLC2A2/MYT1 examples, rather than relabeling them as OPA1/DNM1L results. The caption wording is direct and action-oriented. Gray source/history footers and visible verification-date labels are removed; attribution remains in frame comments, this document and the provenance manifest.
 

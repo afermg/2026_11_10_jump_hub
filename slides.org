@@ -200,7 +200,7 @@ The Hub contains practical guides to help biologists use JUMP.
 # Actual JUMP raw TIFF derivatives: source_13 / 20220914_Run1; OPA1 CP-CC9-R1-06 D20 vs B02, DNM1L CP-CC9-R1-02 P18 vs B02. Each has a separate no-guide control, JCP2022_800001; site index 0; Mito channel.
 # Fixed central 512x512 crops in every field, shared percentile limits within each pair (not across the different plates); full fields and exact URLs/hashes in docs/gene-examples-provenance.json. No cell selection or sharpening.
 # The historical literature crops and notes remain in assets/opa1-literature and docs/opa1-literature.md; the 99% literature value and rescue slide are no longer in the active deck.
-# The two interfaces remain live on Oppy: localhost:8766 gene/raw-image explorer, localhost:8765 phenotype review, privately forwarded to the MacBook. See docs/gene-examples.md. They are shown as examples of tools built with AI assistance; user inspection and tests remain essential.
+# The two interfaces remain live on Oppy: localhost:8766 gene/raw-image explorer, localhost:8765 phenotype review, privately forwarded to the MacBook. See docs/gene-examples.md. Each has its own slide (PDF25 gene explorer, PDF26 phenotype viewer) as a tool built with AI assistance; user inspection and tests remain essential.
 # Hub screenshots retain original SLC2A2/MYT1 tutorial labels, not OPA1/DNM1L results. No new profile statistics or representation comparisons.
 
 ** Historical: blebbistatin introduction :noexport:

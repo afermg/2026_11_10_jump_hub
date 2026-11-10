@@ -4,9 +4,9 @@ Alán F. Muñoz's November 10 talk, adapted from the FASEB presentation. OPA1 an
 
 - [Overleaf editor](https://overleaf.quasimorphic.com/project/6af238ebaa6d5b0395871289) — root **slides.tex**, compiler **XeLaTeX**. Its current link-sharing setting was preserved.
 - [Private GitHub repository](https://github.com/afermg/2026_11_10_jump_hub).
-- [PDF preview](slides.pdf) — **42 pages**: main talk through the QR on PDF32, followed by ten existing extra slides.
+- [PDF preview](slides.pdf) — **43 pages**: main talk through the QR on PDF33, followed by ten existing extra slides.
 - [Shared gene examples and workflow source](opa1-literature.tex), [current image/tool notes](docs/gene-examples.md), [raw-image provenance](docs/gene-examples-provenance.json), [historical literature notes](docs/opa1-literature.md), and [reusable tutorial frames](tutorial-walkthrough.tex).
-- Tutorial images appear within the main workflows on **PDF12–15 and PDF17–23**. The two AI-assisted interfaces appear on **PDF25**. Gray tutorial footers and visible “checked November …” timestamps are removed.
+- Tutorial images appear within the main workflows on **PDF12–15 and PDF17–23**. The AI-assisted gene explorer and phenotype viewer each have a slide, on **PDF25 and PDF26** respectively. Gray tutorial footers and visible “checked November …” timestamps are removed.
 - [Review walkthrough](demo/README.md), [published feature summary behind PDF10](demo/gene-feature-summary/), and [copyable agent prompts](demo/prompts.md). Edit the image, feature-summary and interface slides directly in **`opa1-literature.tex`**, included by `slides.tex` and `slides.org`. Earlier compound and SLC2A2 analysis artifacts are retained as historical material.
 - Local checkout: `/home/amunoz/Documents/broad/drafts/slides/2026_11_10_jump_hub`.
 

@@ -62,7 +62,12 @@ class GeneExamplesTests(unittest.TestCase):
         for gene in ['OPA1', 'DNM1L']:
             for role in ['treatment', 'control']:
                 self.assertIn(f'{gene}-{role}-center512.png', shared)
-        self.assertIn('Build interactive tools with AI assistance', shared)
+        self.assertIn('AI-assisted tools: gene and raw-image explorer', shared)
+        self.assertIn('AI-assisted tools: phenotype comparison viewer', shared)
+        app_frames = [f for f in shared.split('\\begin{frame}') if 'assets/vibe-coded/' in f]
+        self.assertEqual(len(app_frames), 2)
+        for frame in app_frames:
+            self.assertEqual(frame.count('assets/vibe-coded/'), 1)
         self.assertNotIn('Vibe coding', shared)
         self.assertIn('phenotype-review.png', shared)
         self.assertIn('gene-explorer.png', shared)

@@ -43,4 +43,4 @@ Suggested demonstration: define a question in plain language, have the agent bui
 
 ## Navigation
 
-PDF7: expected biology; PDF8: OPA1 pair; PDF9: DNM1L pair; PDF10: published mitochondrial feature effects; PDF11: availability of both genes; PDF12–15 and 17–23: original SLC2A2/MYT1 Hub tutorials; PDF24: agent prompt; PDF25: the two built interfaces. Main talk ends at PDF32; ten extra slides follow. Original tutorial gene labels are preserved and are not presented as results for OPA1 or DNM1L.
+PDF7: expected biology; PDF8: OPA1 pair; PDF9: DNM1L pair; PDF10: published mitochondrial feature effects; PDF11: availability of both genes; PDF12–15 and 17–23: original SLC2A2/MYT1 Hub tutorials; PDF24: agent prompt; PDF25: the gene/raw-image explorer; PDF26: the phenotype comparison viewer. Each interface has its own larger screenshot and slide. Main talk ends at PDF33; ten extra slides follow. Original tutorial gene labels are preserved and are not presented as results for OPA1 or DNM1L.

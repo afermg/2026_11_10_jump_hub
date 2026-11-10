@@ -124,20 +124,42 @@ How does disrupting mitochondrial fusion or division change cell images? Find pr
 \textbf{Output:} cited expectations, traceable image pairs and an interactive viewer.
 \end{frame}
 
-\begin{frame}[label={demo:ai-assisted-interfaces}]{Build interactive tools with AI assistance}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.48\textwidth}
-\centering\textbf{Gene and raw-image explorer}\par\smallskip
-\includegraphics[width=\linewidth,height=0.49\textheight,keepaspectratio]{assets/vibe-coded/gene-explorer.png}
-\par\smallskip{\small Choose a gene, load matched fields, zoom into cells.}
+\begin{frame}[label={demo:ai-assisted-gene-explorer}]{AI-assisted tools: gene and raw-image explorer}
+\begin{columns}[c,onlytextwidth]
+\begin{column}{0.64\textwidth}
+\centering
+\includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{assets/vibe-coded/gene-explorer.png}
 \end{column}
-\begin{column}{0.48\textwidth}
-\centering\textbf{Phenotype comparison viewer}\par\smallskip
-\includegraphics[width=\linewidth,height=0.49\textheight,keepaspectratio]{assets/vibe-coded/phenotype-review.png}
-\par\smallskip{\small Compare candidate images, inspect sources, record what is visible.}
+\begin{column}{0.32\textwidth}
+\textbf{From a gene to its images}
+\begin{itemize}
+\item Select a gene and perturbation.
+\item Load raw images with plate-matched controls.
+\item Zoom into cells with shared intensity limits.
+\end{itemize}
+\medskip
+{\small You define the question. The agent builds. You inspect and refine.}
 \end{column}
 \end{columns}
-\bigskip
-\textbf{You define the question. The agent builds. You inspect and refine.}
-\par\smallskip{\fontsize{5.5}{6.5}\selectfont Review-viewer microscopy: \href{https://doi.org/10.1083/jcb.200704112}{Griparic et al., JCB (2007), Fig. 3A/G}, cropped; \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{CC BY-NC-SA 4.0}. Explorer images: JUMP.}
+\par\smallskip{\fontsize{5.5}{6.5}\selectfont Explorer images: JUMP.}
+\end{frame}
+
+\begin{frame}[label={demo:ai-assisted-phenotype-viewer}]{AI-assisted tools: phenotype comparison viewer}
+\begin{columns}[c,onlytextwidth]
+\begin{column}{0.64\textwidth}
+\centering
+\includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{assets/vibe-coded/phenotype-review.png}
+\end{column}
+\begin{column}{0.32\textwidth}
+\textbf{Compare before choosing}
+\begin{itemize}
+\item Compare candidate image pairs.
+\item Inspect original figures and sources.
+\item Record which differences are visible.
+\end{itemize}
+\medskip
+{\small Published figures and JUMP previews remain clearly labeled.}
+\end{column}
+\end{columns}
+\par\smallskip{\fontsize{5.5}{6.5}\selectfont Microscopy: \href{https://doi.org/10.1083/jcb.200704112}{Griparic et al., JCB (2007), Fig. 3A/G}, cropped; \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{CC BY-NC-SA 4.0}.}
 \end{frame}

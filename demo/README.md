@@ -13,9 +13,10 @@
 | 16 | Reading returned phenotype tables |
 | 17–23 | Original SLC2A2/MYT1 table and gallery tutorials |
 | 24 | Agent prompt: expectations → traceable images → usable viewer |
-| 25 | Two interfaces built with AI assistance |
-| 26–32 | Existing applications/resources and closing QR |
-| 33–42 | Existing extra slides |
+| 25 | AI-assisted gene/raw-image explorer |
+| 26 | AI-assisted phenotype comparison viewer |
+| 27–33 | Existing applications/resources and closing QR |
+| 34–43 | Existing extra slides |
 
 ## Live interfaces
 
