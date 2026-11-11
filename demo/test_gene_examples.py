@@ -91,6 +91,8 @@ class GeneExamplesTests(unittest.TestCase):
         frame = shared.split('label={sec:org0000010}', 1)[1].split('\\end{frame}', 1)[0]
         self.assertIn('00-opa1-crispr-gallery.png', frame)
         self.assertIn('CRISPR Gallery --- OPA1', frame)
+        self.assertIn(r'{\small\textbf{CRISPR Gallery --- OPA1}\par}', frame)
+        self.assertIn(r'{\footnotesize JUMP\_rr tables, built on Datasette-Lite\par}', frame)
         self.assertLess(shared.index('00-opa1-crispr-gallery.png'), shared.index('label={filtering_example}'))
         self.assertIn('Imagus (Firefox)', frame)
         self.assertIn('Hover Zoom+ (Chrome)', frame)
